@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Researches on Chengyu Zhang</title>
-    <link>https://gnehcuyz.github.io/research/</link>
+    <link>http://localhost:1313/research/</link>
     <description>Recent content in Researches on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gnehcuyz.github.io/research/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/research/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Membership Inference Attacks for Large Language Models</title>
-      <link>https://gnehcuyz.github.io/research/mia_llm/</link>
+      <link>http://localhost:1313/research/mia_llm/</link>
       <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/research/mia_llm/</guid>
+      <guid>http://localhost:1313/research/mia_llm/</guid>
       <description>Uncovered privacy risks in LLMs through attacks, API development, and experiments.</description>
     </item>
     <item>
       <title>Label Inference Attacks in Federated Learning</title>
-      <link>https://gnehcuyz.github.io/research/lia_vfl/</link>
+      <link>http://localhost:1313/research/lia_vfl/</link>
       <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/research/lia_vfl/</guid>
+      <guid>http://localhost:1313/research/lia_vfl/</guid>
       <description>Optimized label attacks and assessed risks in federated learning.</description>
     </item>
     <item>
       <title>Membership Inference Attacks for Machine Learning Models</title>
-      <link>https://gnehcuyz.github.io/research/mia_ml/</link>
+      <link>http://localhost:1313/research/mia_ml/</link>
       <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/research/mia_ml/</guid>
+      <guid>http://localhost:1313/research/mia_ml/</guid>
       <description>Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.</description>
     </item>
   </channel>

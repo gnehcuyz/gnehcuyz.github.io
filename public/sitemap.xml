@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gnehcuyz.github.io/posts/binarysearch/</loc>
+    <loc>http://localhost:1313/posts/binarysearch/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/research/mia_llm/</loc>
+    <loc>http://localhost:1313/research/mia_llm/</loc>
     <lastmod>2024-12-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/research/</loc>
+    <loc>http://localhost:1313/research/</loc>
     <lastmod>2024-12-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/research/lia_vfl/</loc>
+    <loc>http://localhost:1313/research/lia_vfl/</loc>
     <lastmod>2024-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/research/mia_ml/</loc>
+    <loc>http://localhost:1313/research/mia_ml/</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/projects/familyplus/</loc>
+    <loc>http://localhost:1313/projects/familyplus/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/projects/</loc>
+    <loc>http://localhost:1313/projects/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/reading/attention_is_all_you_need/</loc>
+    <loc>http://localhost:1313/reading/attention_is_all_you_need/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/reading/</loc>
+    <loc>http://localhost:1313/reading/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/projects/wordlegameserver/</loc>
+    <loc>http://localhost:1313/projects/wordlegameserver/</loc>
     <lastmod>2023-08-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/projects/campusconnect/</loc>
+    <loc>http://localhost:1313/projects/campusconnect/</loc>
     <lastmod>2023-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/projects/hasspathway/</loc>
+    <loc>http://localhost:1313/projects/hasspathway/</loc>
     <lastmod>2022-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>https://gnehcuyz.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://gnehcuyz.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

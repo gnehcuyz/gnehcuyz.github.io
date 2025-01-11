@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Attention Is All You Need | Chengyu Zhang</title>
 <meta name="keywords" content="">
 <meta name="description" content="Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="https://gnehcuyz.github.io/reading/attention_is_all_you_need/">
+<link rel="canonical" href="http://localhost:1313/reading/attention_is_all_you_need/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -28,14 +28,14 @@
   });
 </script>
   
-<link rel="icon" href="https://gnehcuyz.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://gnehcuyz.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://gnehcuyz.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://gnehcuyz.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/reading/attention_is_all_you_need/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/reading/attention_is_all_you_need/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,73 +72,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gnehcuyz.github.io/reading/attention_is_all_you_need/">
-  <meta property="og:site_name" content="Chengyu Zhang">
-  <meta property="og:title" content="Attention Is All You Need">
-  <meta property="og:description" content="Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="reading">
-    <meta property="article:published_time" content="2023-09-07T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-09-07T00:00:00+00:00">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Attention Is All You Need">
-<meta name="twitter:description" content="Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Readings",
-      "item": "https://gnehcuyz.github.io/reading/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Attention Is All You Need",
-      "item": "https://gnehcuyz.github.io/reading/attention_is_all_you_need/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Attention Is All You Need",
-  "name": "Attention Is All You Need",
-  "description": "Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.",
-  "keywords": [
-    
-  ],
-  "articleBody": "Key Ideas Introduced the Transformer model, based entirely on self-attention mechanisms. Eliminated recurrence and convolution, enabling better parallelization and reduced training costs. Outperformed state-of-the-art models in machine translation tasks (e.g., English-to-German, English-to-French). Structure and Approach Background Traditional sequence models used RNNs and CNNs, which had limitations in parallelization and computational efficiency. Attention mechanisms address these limitations by enabling global dependency modeling. Transformer Architecture Encoder-Decoder Framework:\nEncoder: Six identical layers with multi-head self-attention and feed-forward sub-layers. Decoder: Similar to encoder but includes encoder-decoder attention and masking to ensure autoregression. Attention Mechanism:\nScaled Dot-Product Attention: \\[ Attention(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V \\] Multi-Head Attention: Projects queries, keys, and values into multiple subspaces for joint attention. Positional Encoding:\nUses sine and cosine functions to encode token positions in the sequence. Training and Efficiency Hardware: Trained on 8 NVIDIA P100 GPUs. Optimizer: Adam with a custom learning rate schedule: \\[ l_{rate} = d_{\\text{model}}^{-0.5} \\cdot \\min(\\text{step\\_num}^{-0.5}, \\text{step\\_num} \\cdot \\text{warmup\\_steps}^{-1.5}) \\] Regularization: Dropout (\\(P_{drop} = 0.1\\)). Label smoothing (\\(\\epsilon_{ls} = 0.1\\)). Results Machine Translation: English-to-German: Achieved 28.4 BLEU score with “big” model. English-to-French: Achieved 41.8 BLEU score, outperforming previous models at lower training costs. Generalization: Applied to English constituency parsing, achieving competitive results even in small-data settings. Significance and Impact Simplified architecture with no recurrence or convolution. Scales efficiently with sequence length, reducing path length for dependencies. Established a new state of the art in machine translation tasks, showcasing broad applicability. Future Directions Extend the Transformer to other modalities like images and audio. Explore local attention mechanisms for handling very large inputs. My Thoughts The Transformer’s simplicity and effectiveness highlight the potential of self-attention mechanisms to reshape how sequence tasks are approached. Key takeaway: Efficient architectural design can significantly reduce computational costs while improving performance. References Vaswani, Ashish, et al. Attention Is All You Need. arXiv:1706.03762 ",
-  "wordCount" : "300",
-  "inLanguage": "en",
-  "datePublished": "2023-09-07T00:00:00Z",
-  "dateModified": "2023-09-07T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Chengyu Zhang"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://gnehcuyz.github.io/reading/attention_is_all_you_need/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Chengyu Zhang",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://gnehcuyz.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+</noscript>
 </head>
 
 <body class="" id="top">
@@ -156,7 +90,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://gnehcuyz.github.io/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -182,27 +116,27 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gnehcuyz.github.io/research/" title="Research">
+                <a href="http://localhost:1313/research/" title="Research">
                     <span>Research</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/projects/" title="Projects">
+                <a href="http://localhost:1313/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/posts/" title="Blog">
+                <a href="http://localhost:1313/posts/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/reading/" title="Reading">
+                <a href="http://localhost:1313/reading/" title="Reading">
                     <span>Reading</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
@@ -213,7 +147,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/reading/">Readings</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/reading/">Readings</a></div>
     <h1 class="post-title entry-hint-parent">
       Attention Is All You Need
     </h1>
@@ -320,7 +254,7 @@ Projects queries, keys, and values into multiple subspaces for joint attention.<
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://gnehcuyz.github.io/">Chengyu Zhang</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">Chengyu Zhang</a></span> · 
 
     <span>
         Powered by
