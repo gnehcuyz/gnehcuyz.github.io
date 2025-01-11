@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Attention Is All You Need | Chengyu Zhang</title>
+<meta name="keywords" content="">
+<meta name="description" content="Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.">
+<meta name="author" content="Chengyu Zhang">
+<link rel="canonical" href="https://gnehcuyz.github.io/PersonalBlog/reading/attention_is_all_you_need/">
+<link crossorigin="anonymous" href="/PersonalBlog/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},   
+        {left: '$$', right: '$$', display: true},     
+        {left: '\\(', right: '\\)', display: false},  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+  
+<link rel="icon" href="https://gnehcuyz.github.io/PersonalBlog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gnehcuyz.github.io/PersonalBlog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gnehcuyz.github.io/PersonalBlog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://gnehcuyz.github.io/PersonalBlog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://gnehcuyz.github.io/PersonalBlog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/PersonalBlog/reading/attention_is_all_you_need/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/PersonalBlog/reading/attention_is_all_you_need/">
+  <meta property="og:site_name" content="Chengyu Zhang">
+  <meta property="og:title" content="Attention Is All You Need">
+  <meta property="og:description" content="Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="reading">
+    <meta property="article:published_time" content="2023-09-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-09-07T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Attention Is All You Need">
+<meta name="twitter:description" content="Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Readings",
+      "item": "https://gnehcuyz.github.io/PersonalBlog/reading/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Attention Is All You Need",
+      "item": "https://gnehcuyz.github.io/PersonalBlog/reading/attention_is_all_you_need/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Attention Is All You Need",
+  "name": "Attention Is All You Need",
+  "description": "Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.",
+  "keywords": [
+    
+  ],
+  "articleBody": "Key Ideas Introduced the Transformer model, based entirely on self-attention mechanisms. Eliminated recurrence and convolution, enabling better parallelization and reduced training costs. Outperformed state-of-the-art models in machine translation tasks (e.g., English-to-German, English-to-French). Structure and Approach Background Traditional sequence models used RNNs and CNNs, which had limitations in parallelization and computational efficiency. Attention mechanisms address these limitations by enabling global dependency modeling. Transformer Architecture Encoder-Decoder Framework:\nEncoder: Six identical layers with multi-head self-attention and feed-forward sub-layers. Decoder: Similar to encoder but includes encoder-decoder attention and masking to ensure autoregression. Attention Mechanism:\nScaled Dot-Product Attention: \\[ Attention(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V \\] Multi-Head Attention: Projects queries, keys, and values into multiple subspaces for joint attention. Positional Encoding:\nUses sine and cosine functions to encode token positions in the sequence. Training and Efficiency Hardware: Trained on 8 NVIDIA P100 GPUs. Optimizer: Adam with a custom learning rate schedule: \\[ l_{rate} = d_{\\text{model}}^{-0.5} \\cdot \\min(\\text{step\\_num}^{-0.5}, \\text{step\\_num} \\cdot \\text{warmup\\_steps}^{-1.5}) \\] Regularization: Dropout (\\(P_{drop} = 0.1\\)). Label smoothing (\\(\\epsilon_{ls} = 0.1\\)). Results Machine Translation: English-to-German: Achieved 28.4 BLEU score with “big” model. English-to-French: Achieved 41.8 BLEU score, outperforming previous models at lower training costs. Generalization: Applied to English constituency parsing, achieving competitive results even in small-data settings. Significance and Impact Simplified architecture with no recurrence or convolution. Scales efficiently with sequence length, reducing path length for dependencies. Established a new state of the art in machine translation tasks, showcasing broad applicability. Future Directions Extend the Transformer to other modalities like images and audio. Explore local attention mechanisms for handling very large inputs. My Thoughts The Transformer’s simplicity and effectiveness highlight the potential of self-attention mechanisms to reshape how sequence tasks are approached. Key takeaway: Efficient architectural design can significantly reduce computational costs while improving performance. References Vaswani, Ashish, et al. Attention Is All You Need. arXiv:1706.03762 ",
+  "wordCount" : "300",
+  "inLanguage": "en",
+  "datePublished": "2023-09-07T00:00:00Z",
+  "dateModified": "2023-09-07T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Chengyu Zhang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gnehcuyz.github.io/PersonalBlog/reading/attention_is_all_you_need/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chengyu Zhang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gnehcuyz.github.io/PersonalBlog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gnehcuyz.github.io/PersonalBlog/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gnehcuyz.github.io/PersonalBlog/research/" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/PersonalBlog/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/PersonalBlog/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/PersonalBlog/reading/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/PersonalBlog/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/PersonalBlog/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/PersonalBlog/reading/">Readings</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Attention Is All You Need
+    </h1>
+    <div class="post-meta"><span title='2023-09-07 00:00:00 +0000 UTC'>September 7, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#key-ideas" aria-label="Key Ideas">Key Ideas</a></li>
+                <li>
+                    <a href="#structure-and-approach" aria-label="Structure and Approach">Structure and Approach</a><ul>
+                        
+                <li>
+                    <a href="#background" aria-label="Background">Background</a></li>
+                <li>
+                    <a href="#transformer-architecture" aria-label="Transformer Architecture">Transformer Architecture</a></li>
+                <li>
+                    <a href="#training-and-efficiency" aria-label="Training and Efficiency">Training and Efficiency</a></li>
+                <li>
+                    <a href="#results" aria-label="Results">Results</a></li></ul>
+                </li>
+                <li>
+                    <a href="#significance-and-impact" aria-label="Significance and Impact">Significance and Impact</a></li>
+                <li>
+                    <a href="#future-directions" aria-label="Future Directions">Future Directions</a></li>
+                <li>
+                    <a href="#my-thoughts" aria-label="My Thoughts">My Thoughts</a></li>
+                <li>
+                    <a href="#references" aria-label="References">References</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="key-ideas">Key Ideas<a hidden class="anchor" aria-hidden="true" href="#key-ideas">#</a></h2>
+<ul>
+<li>Introduced the <strong>Transformer</strong> model, based entirely on self-attention mechanisms.</li>
+<li>Eliminated recurrence and convolution, enabling better parallelization and reduced training costs.</li>
+<li>Outperformed state-of-the-art models in machine translation tasks (e.g., English-to-German, English-to-French).</li>
+</ul>
+<h2 id="structure-and-approach">Structure and Approach<a hidden class="anchor" aria-hidden="true" href="#structure-and-approach">#</a></h2>
+<h3 id="background">Background<a hidden class="anchor" aria-hidden="true" href="#background">#</a></h3>
+<ul>
+<li>Traditional sequence models used RNNs and CNNs, which had limitations in parallelization and computational efficiency.</li>
+<li>Attention mechanisms address these limitations by enabling global dependency modeling.</li>
+</ul>
+<h3 id="transformer-architecture">Transformer Architecture<a hidden class="anchor" aria-hidden="true" href="#transformer-architecture">#</a></h3>
+<ol>
+<li>
+<p><strong>Encoder-Decoder Framework</strong>:</p>
+<ul>
+<li><strong>Encoder</strong>: Six identical layers with multi-head self-attention and feed-forward sub-layers.</li>
+<li><strong>Decoder</strong>: Similar to encoder but includes encoder-decoder attention and masking to ensure autoregression.</li>
+</ul>
+</li>
+<li>
+<p><strong>Attention Mechanism</strong>:</p>
+<ul>
+<li><strong>Scaled Dot-Product Attention</strong>:
+\[
+     Attention(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+     \]</li>
+<li><strong>Multi-Head Attention</strong>:
+Projects queries, keys, and values into multiple subspaces for joint attention.</li>
+</ul>
+</li>
+<li>
+<p><strong>Positional Encoding</strong>:</p>
+<ul>
+<li>Uses sine and cosine functions to encode token positions in the sequence.</li>
+</ul>
+</li>
+</ol>
+<h3 id="training-and-efficiency">Training and Efficiency<a hidden class="anchor" aria-hidden="true" href="#training-and-efficiency">#</a></h3>
+<ul>
+<li><strong>Hardware</strong>: Trained on 8 NVIDIA P100 GPUs.</li>
+<li><strong>Optimizer</strong>: Adam with a custom learning rate schedule:
+\[
+  l_{rate} = d_{\text{model}}^{-0.5} \cdot \min(\text{step\_num}^{-0.5}, \text{step\_num} \cdot \text{warmup\_steps}^{-1.5})
+  \]</li>
+<li><strong>Regularization</strong>:
+<ul>
+<li>Dropout (\(P_{drop} = 0.1\)).</li>
+<li>Label smoothing (\(\epsilon_{ls} = 0.1\)).</li>
+</ul>
+</li>
+</ul>
+<h3 id="results">Results<a hidden class="anchor" aria-hidden="true" href="#results">#</a></h3>
+<ul>
+<li><strong>Machine Translation</strong>:
+<ul>
+<li><strong>English-to-German</strong>: Achieved 28.4 BLEU score with &ldquo;big&rdquo; model.</li>
+<li><strong>English-to-French</strong>: Achieved 41.8 BLEU score, outperforming previous models at lower training costs.</li>
+</ul>
+</li>
+<li><strong>Generalization</strong>:
+<ul>
+<li>Applied to English constituency parsing, achieving competitive results even in small-data settings.</li>
+</ul>
+</li>
+</ul>
+<h2 id="significance-and-impact">Significance and Impact<a hidden class="anchor" aria-hidden="true" href="#significance-and-impact">#</a></h2>
+<ul>
+<li>Simplified architecture with no recurrence or convolution.</li>
+<li>Scales efficiently with sequence length, reducing path length for dependencies.</li>
+<li>Established a new state of the art in machine translation tasks, showcasing broad applicability.</li>
+</ul>
+<h2 id="future-directions">Future Directions<a hidden class="anchor" aria-hidden="true" href="#future-directions">#</a></h2>
+<ul>
+<li>Extend the Transformer to other modalities like images and audio.</li>
+<li>Explore local attention mechanisms for handling very large inputs.</li>
+</ul>
+<h2 id="my-thoughts">My Thoughts<a hidden class="anchor" aria-hidden="true" href="#my-thoughts">#</a></h2>
+<ul>
+<li>The Transformer’s simplicity and effectiveness highlight the potential of self-attention mechanisms to reshape how sequence tasks are approached.</li>
+<li>Key takeaway: Efficient architectural design can significantly reduce computational costs while improving performance.</li>
+</ul>
+<h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
+<ul>
+<li>Vaswani, Ashish, et al. <em>Attention Is All You Need</em>. <a href="https://arxiv.org/abs/1706.03762">arXiv:1706.03762</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://gnehcuyz.github.io/PersonalBlog/">Chengyu Zhang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
