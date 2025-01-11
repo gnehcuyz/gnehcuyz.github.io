@@ -10,72 +10,72 @@
     <atom:link href="https://gnehcuyz.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Binary Search</title>
-      <link>https://gnehcuyz.github.io/posts/binarysearch/</link>
+      <link>https://gnehcuyz.github.io/posts/BinarySearch/</link>
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/posts/binarysearch/</guid>
+      <guid>https://gnehcuyz.github.io/posts/BinarySearch/</guid>
       <description>Binary search, your go-to algorithm</description>
     </item>
     <item>
       <title>Membership Inference Attacks for Large Language Models</title>
-      <link>https://gnehcuyz.github.io/research/mia_llm/</link>
+      <link>https://gnehcuyz.github.io/research/MIA_LLM/</link>
       <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/research/mia_llm/</guid>
+      <guid>https://gnehcuyz.github.io/research/MIA_LLM/</guid>
       <description>Uncovered privacy risks in LLMs through attacks, API development, and experiments.</description>
     </item>
     <item>
       <title>Label Inference Attacks in Federated Learning</title>
-      <link>https://gnehcuyz.github.io/research/lia_vfl/</link>
+      <link>https://gnehcuyz.github.io/research/LIA_VFL/</link>
       <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/research/lia_vfl/</guid>
+      <guid>https://gnehcuyz.github.io/research/LIA_VFL/</guid>
       <description>Optimized label attacks and assessed risks in federated learning.</description>
     </item>
     <item>
       <title>Membership Inference Attacks for Machine Learning Models</title>
-      <link>https://gnehcuyz.github.io/research/mia_ml/</link>
+      <link>https://gnehcuyz.github.io/research/MIA_ML/</link>
       <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/research/mia_ml/</guid>
+      <guid>https://gnehcuyz.github.io/research/MIA_ML/</guid>
       <description>Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.</description>
     </item>
     <item>
       <title>Label Inference Attacks Against Vertical Federated Learning</title>
-      <link>https://gnehcuyz.github.io/reading/label_inference_attack_vfl/</link>
+      <link>https://gnehcuyz.github.io/reading/label_inference_attack_VFL/</link>
       <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/reading/label_inference_attack_vfl/</guid>
+      <guid>https://gnehcuyz.github.io/reading/label_inference_attack_VFL/</guid>
       <description>Evaluates privacy risks of vertical federated learning (VFL) and proposes label inference attacks with outstanding performance, highlighting vulnerabilities and defense limitations.</description>
     </item>
     <item>
       <title>FamilyPlus - A Healthcare Platform</title>
-      <link>https://gnehcuyz.github.io/projects/familyplus/</link>
+      <link>https://gnehcuyz.github.io/projects/FamilyPlus/</link>
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/familyplus/</guid>
+      <guid>https://gnehcuyz.github.io/projects/FamilyPlus/</guid>
       <description>Built an AI and blockchain platform for secure, accessible health data.</description>
     </item>
     <item>
       <title>Attention Is All You Need</title>
-      <link>https://gnehcuyz.github.io/reading/attention_is_all_you_need/</link>
+      <link>https://gnehcuyz.github.io/reading/Attention_is_all_you_need/</link>
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/reading/attention_is_all_you_need/</guid>
+      <guid>https://gnehcuyz.github.io/reading/Attention_is_all_you_need/</guid>
       <description>Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.</description>
     </item>
     <item>
       <title>Wordle Game</title>
-      <link>https://gnehcuyz.github.io/projects/wordlegameserver/</link>
+      <link>https://gnehcuyz.github.io/projects/WordleGameServer/</link>
       <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/wordlegameserver/</guid>
+      <guid>https://gnehcuyz.github.io/projects/WordleGameServer/</guid>
       <description>Developed a multi-threaded Wordle server with efficient protocols.</description>
     </item>
     <item>
       <title>Campus Connect Hub</title>
-      <link>https://gnehcuyz.github.io/projects/campusconnect/</link>
+      <link>https://gnehcuyz.github.io/projects/CampusConnect/</link>
       <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/campusconnect/</guid>
+      <guid>https://gnehcuyz.github.io/projects/CampusConnect/</guid>
       <description>Built a platform for event management and user engagement with Agile/Scrum practices.</description>
     </item>
     <item>
       <title>HassPathway - Course Navigation Platform</title>
-      <link>https://gnehcuyz.github.io/projects/hasspathway/</link>
+      <link>https://gnehcuyz.github.io/projects/HassPathway/</link>
       <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/hasspathway/</guid>
+      <guid>https://gnehcuyz.github.io/projects/HassPathway/</guid>
       <description>Built a tool to simplify and display course data with an intuitive interface.</description>
     </item>
     <item>

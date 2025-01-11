@@ -10,30 +10,30 @@
     <atom:link href="https://gnehcuyz.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FamilyPlus - A Healthcare Platform</title>
-      <link>https://gnehcuyz.github.io/projects/familyplus/</link>
+      <link>https://gnehcuyz.github.io/projects/FamilyPlus/</link>
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/familyplus/</guid>
+      <guid>https://gnehcuyz.github.io/projects/FamilyPlus/</guid>
       <description>Built an AI and blockchain platform for secure, accessible health data.</description>
     </item>
     <item>
       <title>Wordle Game</title>
-      <link>https://gnehcuyz.github.io/projects/wordlegameserver/</link>
+      <link>https://gnehcuyz.github.io/projects/WordleGameServer/</link>
       <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/wordlegameserver/</guid>
+      <guid>https://gnehcuyz.github.io/projects/WordleGameServer/</guid>
       <description>Developed a multi-threaded Wordle server with efficient protocols.</description>
     </item>
     <item>
       <title>Campus Connect Hub</title>
-      <link>https://gnehcuyz.github.io/projects/campusconnect/</link>
+      <link>https://gnehcuyz.github.io/projects/CampusConnect/</link>
       <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/campusconnect/</guid>
+      <guid>https://gnehcuyz.github.io/projects/CampusConnect/</guid>
       <description>Built a platform for event management and user engagement with Agile/Scrum practices.</description>
     </item>
     <item>
       <title>HassPathway - Course Navigation Platform</title>
-      <link>https://gnehcuyz.github.io/projects/hasspathway/</link>
+      <link>https://gnehcuyz.github.io/projects/HassPathway/</link>
       <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/hasspathway/</guid>
+      <guid>https://gnehcuyz.github.io/projects/HassPathway/</guid>
       <description>Built a tool to simplify and display course data with an intuitive interface.</description>
     </item>
   </channel>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gnehcuyz.github.io/posts/binarysearch/</loc>
+    <loc>https://gnehcuyz.github.io/posts/BinarySearch/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/</loc>
@@ -11,40 +11,40 @@
     <loc>https://gnehcuyz.github.io/posts/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/research/mia_llm/</loc>
+    <loc>https://gnehcuyz.github.io/research/MIA_LLM/</loc>
     <lastmod>2024-12-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/research/</loc>
     <lastmod>2024-12-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/research/lia_vfl/</loc>
+    <loc>https://gnehcuyz.github.io/research/LIA_VFL/</loc>
     <lastmod>2024-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/research/mia_ml/</loc>
+    <loc>https://gnehcuyz.github.io/research/MIA_ML/</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/reading/label_inference_attack_vfl/</loc>
+    <loc>https://gnehcuyz.github.io/reading/label_inference_attack_VFL/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/projects/familyplus/</loc>
+    <loc>https://gnehcuyz.github.io/projects/FamilyPlus/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/projects/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/reading/attention_is_all_you_need/</loc>
+    <loc>https://gnehcuyz.github.io/reading/Attention_is_all_you_need/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/projects/wordlegameserver/</loc>
+    <loc>https://gnehcuyz.github.io/projects/WordleGameServer/</loc>
     <lastmod>2023-08-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/projects/campusconnect/</loc>
+    <loc>https://gnehcuyz.github.io/projects/CampusConnect/</loc>
     <lastmod>2023-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/projects/hasspathway/</loc>
+    <loc>https://gnehcuyz.github.io/projects/HassPathway/</loc>
     <lastmod>2022-12-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/about/</loc>
