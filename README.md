@@ -1,6 +1,6 @@
-# Personal Blog
+# Portfolio
 
-Hello, World! Welcome to my Personal Blog! This project is a personal blogging platform designed to serve as my brain bank for storing and organizing thoughts, experiences, and insights.
+Hello, World! Welcome to my portfolio! It serves as my brain bank, a space for storing and organizing thoughts, experiences, and insights while showcasing my journey, projects, and professional growth.
 
 ---
 
