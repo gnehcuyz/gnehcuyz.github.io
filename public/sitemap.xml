@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/binarysearch/</loc>
+    <loc>http://localhost:1313/posts/BinarySearch/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
@@ -11,40 +11,40 @@
     <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/research/mia_llm/</loc>
+    <loc>http://localhost:1313/research/MIA_LLM/</loc>
     <lastmod>2024-12-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/research/</loc>
     <lastmod>2024-12-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/research/lia_vfl/</loc>
+    <loc>http://localhost:1313/research/LIA_VFL/</loc>
     <lastmod>2024-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/research/mia_ml/</loc>
+    <loc>http://localhost:1313/research/MIA_ML/</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/reading/label_inference_attack_vfl/</loc>
+    <loc>http://localhost:1313/reading/label_inference_attack_VFL/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/reading/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/familyplus/</loc>
+    <loc>http://localhost:1313/projects/FamilyPlus/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/reading/attention_is_all_you_need/</loc>
+    <loc>http://localhost:1313/reading/Attention_is_all_you_need/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/wordlegameserver/</loc>
+    <loc>http://localhost:1313/projects/WordleGameServer/</loc>
     <lastmod>2023-08-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/campusconnect/</loc>
+    <loc>http://localhost:1313/projects/CampusConnect/</loc>
     <lastmod>2023-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/hasspathway/</loc>
+    <loc>http://localhost:1313/projects/HassPathway/</loc>
     <lastmod>2022-12-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>

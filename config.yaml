@@ -66,3 +66,6 @@ markup:
         enable: true
     renderer:
       unsafe: true
+
+disablePathToLower: true
+pluralizeListTitles: false
