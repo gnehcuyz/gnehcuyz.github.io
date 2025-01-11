@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Chengyu Zhang</title>
-    <link>https://gnehcuyz.github.io/PersonalBlog/posts/</link>
+    <link>http://localhost:1313/PersonalBlog/posts/</link>
     <description>Recent content in Posts on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gnehcuyz.github.io/PersonalBlog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/PersonalBlog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Binary Search</title>
-      <link>https://gnehcuyz.github.io/PersonalBlog/posts/binarysearch/</link>
+      <link>http://localhost:1313/PersonalBlog/posts/binarysearch/</link>
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/PersonalBlog/posts/binarysearch/</guid>
+      <guid>http://localhost:1313/PersonalBlog/posts/binarysearch/</guid>
       <description>Binary search, your go-to algorithm</description>
     </item>
   </channel>

@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Chengyu Zhang</title>
-    <link>https://gnehcuyz.github.io/PersonalBlog/</link>
+    <link>http://localhost:1313/PersonalBlog/</link>
     <description>Recent content on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gnehcuyz.github.io/PersonalBlog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/PersonalBlog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Binary Search</title>
-      <link>https://gnehcuyz.github.io/PersonalBlog/posts/binarysearch/</link>
+      <link>http://localhost:1313/PersonalBlog/posts/binarysearch/</link>
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/PersonalBlog/posts/binarysearch/</guid>
+      <guid>http://localhost:1313/PersonalBlog/posts/binarysearch/</guid>
       <description>Binary search, your go-to algorithm</description>
     </item>
     <item>
       <title>Membership Inference Attacks for Large Language Models</title>
-      <link>https://gnehcuyz.github.io/PersonalBlog/research/mia_llm/</link>
+      <link>http://localhost:1313/PersonalBlog/research/mia_llm/</link>
       <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/PersonalBlog/research/mia_llm/</guid>
+      <guid>http://localhost:1313/PersonalBlog/research/mia_llm/</guid>
       <description>Uncovered privacy risks in LLMs through attacks, API development, and experiments.</description>
     </item>
     <item>
       <title>Label Inference Attacks in Federated Learning</title>
-      <link>https://gnehcuyz.github.io/PersonalBlog/research/lia_vfl/</link>
+      <link>http://localhost:1313/PersonalBlog/research/lia_vfl/</link>
       <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/PersonalBlog/research/lia_vfl/</guid>
+      <guid>http://localhost:1313/PersonalBlog/research/lia_vfl/</guid>
       <description>Optimized label attacks and assessed risks in federated learning.</description>
     </item>
     <item>
       <title>Membership Inference Attacks for Machine Learning Models</title>
-      <link>https://gnehcuyz.github.io/PersonalBlog/research/mia_ml/</link>
+      <link>http://localhost:1313/PersonalBlog/research/mia_ml/</link>
       <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/PersonalBlog/research/mia_ml/</guid>
+      <guid>http://localhost:1313/PersonalBlog/research/mia_ml/</guid>
       <description>Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.</description>
     </item>
     <item>
       <title>FamilyPlus - A Healthcare Platform</title>
-      <link>https://gnehcuyz.github.io/PersonalBlog/projects/familyplus/</link>
+      <link>http://localhost:1313/PersonalBlog/projects/familyplus/</link>
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/PersonalBlog/projects/familyplus/</guid>
+      <guid>http://localhost:1313/PersonalBlog/projects/familyplus/</guid>
       <description>Built an AI and blockchain platform for secure, accessible health data.</description>
     </item>
     <item>
       <title>Attention Is All You Need</title>
-      <link>https://gnehcuyz.github.io/PersonalBlog/reading/attention_is_all_you_need/</link>
+      <link>http://localhost:1313/PersonalBlog/reading/attention_is_all_you_need/</link>
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/PersonalBlog/reading/attention_is_all_you_need/</guid>
+      <guid>http://localhost:1313/PersonalBlog/reading/attention_is_all_you_need/</guid>
       <description>Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.</description>
     </item>
     <item>
       <title>Wordle Game</title>
-      <link>https://gnehcuyz.github.io/PersonalBlog/projects/wordlegameserver/</link>
+      <link>http://localhost:1313/PersonalBlog/projects/wordlegameserver/</link>
       <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/PersonalBlog/projects/wordlegameserver/</guid>
+      <guid>http://localhost:1313/PersonalBlog/projects/wordlegameserver/</guid>
       <description>Developed a multi-threaded Wordle server with efficient protocols.</description>
     </item>
     <item>
       <title>Campus Connect Hub</title>
-      <link>https://gnehcuyz.github.io/PersonalBlog/projects/campusconnect/</link>
+      <link>http://localhost:1313/PersonalBlog/projects/campusconnect/</link>
       <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/PersonalBlog/projects/campusconnect/</guid>
+      <guid>http://localhost:1313/PersonalBlog/projects/campusconnect/</guid>
       <description>Built a platform for event management and user engagement with Agile/Scrum practices.</description>
     </item>
     <item>
       <title>HassPathway - Course Navigation Platform</title>
-      <link>https://gnehcuyz.github.io/PersonalBlog/projects/hasspathway/</link>
+      <link>http://localhost:1313/PersonalBlog/projects/hasspathway/</link>
       <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/PersonalBlog/projects/hasspathway/</guid>
+      <guid>http://localhost:1313/PersonalBlog/projects/hasspathway/</guid>
       <description>Built a tool to simplify and display course data with an intuitive interface.</description>
     </item>
     <item>
       <title></title>
-      <link>https://gnehcuyz.github.io/PersonalBlog/about/</link>
+      <link>http://localhost:1313/PersonalBlog/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/PersonalBlog/about/</guid>
+      <guid>http://localhost:1313/PersonalBlog/about/</guid>
       <description>&lt;p&gt;A recent graduate from Rensselaer Polytechnic Institute (RPI) with a degree in Computer Science and a minor in Economics. My focus has been on &lt;strong&gt;Artificial Intelligence&lt;/strong&gt;, &lt;strong&gt;Machine Learning&lt;/strong&gt;, and &lt;strong&gt;Software Development&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;I have worked as a Research Assistant in the Data Security and Privacy Lab, studying privacy vulnerabilities in machine learning models and large language models (LLMs). I also gained experience with Python, PyTorch, TensorFlow, and full-stack development through projects and research.&lt;/p&gt;</description>
     </item>

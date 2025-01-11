@@ -1,5 +1,5 @@
 ---
-ShowToc: true
+ShowToc: false
 title: "Attention Is All You Need"
 date: "2023-09-07"
 draft: false
