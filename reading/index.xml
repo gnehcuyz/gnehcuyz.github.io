@@ -6,8 +6,15 @@
     <description>Recent content in Readings on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gnehcuyz.github.io/reading/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Label Inference Attacks Against Vertical Federated Learning</title>
+      <link>https://gnehcuyz.github.io/reading/label_inference_attack_vfl/</link>
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/reading/label_inference_attack_vfl/</guid>
+      <description>Evaluates privacy risks of vertical federated learning (VFL) and proposes label inference attacks with outstanding performance, highlighting vulnerabilities and defense limitations.</description>
+    </item>
     <item>
       <title>Attention Is All You Need</title>
       <link>https://gnehcuyz.github.io/reading/attention_is_all_you_need/</link>

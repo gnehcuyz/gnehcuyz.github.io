@@ -37,6 +37,13 @@
       <description>Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.</description>
     </item>
     <item>
+      <title>Label Inference Attacks Against Vertical Federated Learning</title>
+      <link>https://gnehcuyz.github.io/reading/label_inference_attack_vfl/</link>
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/reading/label_inference_attack_vfl/</guid>
+      <description>Evaluates privacy risks of vertical federated learning (VFL) and proposes label inference attacks with outstanding performance, highlighting vulnerabilities and defense limitations.</description>
+    </item>
+    <item>
       <title>FamilyPlus - A Healthcare Platform</title>
       <link>https://gnehcuyz.github.io/projects/familyplus/</link>
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
