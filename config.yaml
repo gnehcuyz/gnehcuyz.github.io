@@ -24,28 +24,7 @@ params:
   ShowToc: true
   # TocOpen: true
   author: Chengyu Zhang
-  
 
-# params:
-#   defaultTheme: auto
-
-#   # profileMode:
-#   enabled: true
-#   title: "Chengyu Zhang" 
-#   subtitle: "Software Engineer || Machine Learning Engineer"
-#   imageUrl: "static/images/profile.jpg" 
-#   imageWidth: 180 # custom size
-#   imageHeight: 180 # custom size
-  
-
-
-  # socialIcons:
-  #   - name: github
-  #     url: "https://github.com/gnehcuyz"
-  #   - name: linkedin
-  #     url: "https://www.linkedin.com/in/chengyuz"
-  #   - name: email
-  #     url: "mailto:chengyuz0921@gmail.com"
 
 # Navbar Settings:
 menu:
