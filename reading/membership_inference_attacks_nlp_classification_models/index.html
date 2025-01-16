@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Membership Inference Attacks for Machine Learning Models | Chengyu Zhang</title>
+<title>Membership Inference Attacks Against NLP Classification Models | Chengyu Zhang</title>
 <meta name="keywords" content="">
-<meta name="description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+<meta name="description" content="A comprehensive analysis of privacy risks in NLP classification models, focusing on membership inference attacks (MIAs) at both sample and user levels.">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="https://gnehcuyz.github.io/research/MIA_ML/">
+<link rel="canonical" href="https://gnehcuyz.github.io/reading/membership_inference_attacks_nlp_classification_models/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -35,7 +35,7 @@
 <link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/research/MIA_ML/">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/reading/membership_inference_attacks_nlp_classification_models/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,18 +72,18 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gnehcuyz.github.io/research/MIA_ML/">
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/reading/membership_inference_attacks_nlp_classification_models/">
   <meta property="og:site_name" content="Chengyu Zhang">
-  <meta property="og:title" content="Membership Inference Attacks for Machine Learning Models">
-  <meta property="og:description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+  <meta property="og:title" content="Membership Inference Attacks Against NLP Classification Models">
+  <meta property="og:description" content="A comprehensive analysis of privacy risks in NLP classification models, focusing on membership inference attacks (MIAs) at both sample and user levels.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
-    <meta property="article:section" content="research">
-    <meta property="article:published_time" content="2024-12-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-20T00:00:00+00:00">
+    <meta property="article:section" content="reading">
+    <meta property="article:published_time" content="2023-09-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-09-19T00:00:00+00:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Membership Inference Attacks for Machine Learning Models">
-<meta name="twitter:description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+<meta name="twitter:title" content="Membership Inference Attacks Against NLP Classification Models">
+<meta name="twitter:description" content="A comprehensive analysis of privacy risks in NLP classification models, focusing on membership inference attacks (MIAs) at both sample and user levels.">
 
 
 <script type="application/ld+json">
@@ -94,14 +94,14 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "Research",
-      "item": "https://gnehcuyz.github.io/research/"
+      "name": "Reading",
+      "item": "https://gnehcuyz.github.io/reading/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Membership Inference Attacks for Machine Learning Models",
-      "item": "https://gnehcuyz.github.io/research/MIA_ML/"
+      "name": "Membership Inference Attacks Against NLP Classification Models",
+      "item": "https://gnehcuyz.github.io/reading/membership_inference_attacks_nlp_classification_models/"
     }
   ]
 }
@@ -110,24 +110,24 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Membership Inference Attacks for Machine Learning Models",
-  "name": "Membership Inference Attacks for Machine Learning Models",
-  "description": "Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.",
+  "headline": "Membership Inference Attacks Against NLP Classification Models",
+  "name": "Membership Inference Attacks Against NLP Classification Models",
+  "description": "A comprehensive analysis of privacy risks in NLP classification models, focusing on membership inference attacks (MIAs) at both sample and user levels.",
   "keywords": [
     
   ],
-  "articleBody": "Description Focused on understanding and visualizing membership inference vulnerabilities in machine learning models. Tech Stack Python, NumPy, Matplotlib. Contributions Built data pipelines for processing attack predictions across multiple seeds. Calculated metrics such as Jaccard similarity, set variance, and entropy for reliability analysis. Created visualizations, including Venn diagrams and upset diagrams, to identify patterns and disparities in attack outcomes. Automated data processing workflows with Shell Scripts to handle large datasets. ",
-  "wordCount" : "69",
+  "articleBody": "Overview This paper addresses privacy concerns in NLP classification models, focusing on how these models can leak private information through Membership Inference Attacks (MIAs). It explores both sample-level MIAs and introduces user-level MIAs, demonstrating the latter’s stronger privacy risks due to aggregated data features.\nContributions The study makes three key contributions:\nA systematic analysis of privacy risks in NLP classification models. A suite of MIA methods for sample-level and novel user-level inferences. Experimental results showcasing user-level MIAs’ heightened accuracy (up to 25% better than sample-level MIAs). Methodology Sample-Level MIAs These attacks infer if a single data sample was part of the model’s training data. Features such as cross-entropy loss, rank, and confidence are used, with a threshold distinguishing members from non-members.\nUser-Level MIAs Unlike sample-level, user-level MIAs aggregate information from multiple samples tied to a user. This study proposed three types:\nThreshold-based: Using average statistics of user data features. Learning-based: Leveraging machine learning models trained on aggregated user features. Sample-to-user-level: Combining individual sample predictions to infer user membership. Experimental Findings Using datasets like Reddit and Amazon reviews, the experiments highlight:\nUser-level MIAs are more effective than sample-level, especially with Transformer-based models like BERT. Privacy risks increase with more classes, larger vocabularies, and longer token sequences. User contributions across multiple data classes increase their susceptibility. Implications The research emphasizes the need for stronger privacy measures in NLP models, as current practices are insufficient to prevent MIAs. Future directions include:\nAuditing data collection processes using MIAs. Developing text perturbation methods to mitigate privacy risks. Reference Shejwalkar, V., Inan, H. A., Houmansadr, A., \u0026 Sim, R. (2021). Membership Inference Attacks Against NLP Classification Models. Proceedings of the 35th Conference on Neural Information Processing Systems (NeurIPS 2021). Read the full paper.\n",
+  "wordCount" : "287",
   "inLanguage": "en",
-  "datePublished": "2024-12-20T00:00:00Z",
-  "dateModified": "2024-12-20T00:00:00Z",
+  "datePublished": "2023-09-19T00:00:00Z",
+  "dateModified": "2023-09-19T00:00:00Z",
   "author":{
     "@type": "Person",
     "name": "Chengyu Zhang"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://gnehcuyz.github.io/research/MIA_ML/"
+    "@id": "https://gnehcuyz.github.io/reading/membership_inference_attacks_nlp_classification_models/"
   },
   "publisher": {
     "@type": "Organization",
@@ -213,29 +213,48 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/research/">Research</a></div>
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/reading/">Reading</a></div>
     <h1 class="post-title entry-hint-parent">
-      Membership Inference Attacks for Machine Learning Models
+      Membership Inference Attacks Against NLP Classification Models
     </h1>
-    <div class="post-meta"><span title='2024-12-20 00:00:00 +0000 UTC'>December 20, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang
+    <div class="post-meta"><span title='2023-09-19 00:00:00 +0000 UTC'>September 19, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h2>
+  <div class="post-content"><h3 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h3>
+<p>This paper addresses privacy concerns in NLP classification models, focusing on how these models can leak private information through Membership Inference Attacks (MIAs). It explores both <strong>sample-level MIAs</strong> and introduces <strong>user-level MIAs</strong>, demonstrating the latter&rsquo;s stronger privacy risks due to aggregated data features.</p>
+<h3 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h3>
+<p>The study makes three key contributions:</p>
+<ol>
+<li>A systematic analysis of privacy risks in NLP classification models.</li>
+<li>A suite of MIA methods for sample-level and novel user-level inferences.</li>
+<li>Experimental results showcasing user-level MIAs&rsquo; heightened accuracy (up to 25% better than sample-level MIAs).</li>
+</ol>
+<h3 id="methodology">Methodology<a hidden class="anchor" aria-hidden="true" href="#methodology">#</a></h3>
+<h4 id="sample-level-mias">Sample-Level MIAs<a hidden class="anchor" aria-hidden="true" href="#sample-level-mias">#</a></h4>
+<p>These attacks infer if a single data sample was part of the model&rsquo;s training data. Features such as cross-entropy loss, rank, and confidence are used, with a threshold distinguishing members from non-members.</p>
+<h4 id="user-level-mias">User-Level MIAs<a hidden class="anchor" aria-hidden="true" href="#user-level-mias">#</a></h4>
+<p>Unlike sample-level, user-level MIAs aggregate information from multiple samples tied to a user. This study proposed three types:</p>
 <ul>
-<li>Focused on understanding and visualizing membership inference vulnerabilities in machine learning models.</li>
+<li><strong>Threshold-based:</strong> Using average statistics of user data features.</li>
+<li><strong>Learning-based:</strong> Leveraging machine learning models trained on aggregated user features.</li>
+<li><strong>Sample-to-user-level:</strong> Combining individual sample predictions to infer user membership.</li>
 </ul>
-<h2 id="tech-stack">Tech Stack<a hidden class="anchor" aria-hidden="true" href="#tech-stack">#</a></h2>
+<h3 id="experimental-findings">Experimental Findings<a hidden class="anchor" aria-hidden="true" href="#experimental-findings">#</a></h3>
+<p>Using datasets like Reddit and Amazon reviews, the experiments highlight:</p>
 <ul>
-<li>Python, NumPy, Matplotlib.</li>
+<li>User-level MIAs are more effective than sample-level, especially with Transformer-based models like BERT.</li>
+<li>Privacy risks increase with more classes, larger vocabularies, and longer token sequences.</li>
+<li>User contributions across multiple data classes increase their susceptibility.</li>
 </ul>
-<h2 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h2>
+<h3 id="implications">Implications<a hidden class="anchor" aria-hidden="true" href="#implications">#</a></h3>
+<p>The research emphasizes the need for stronger privacy measures in NLP models, as current practices are insufficient to prevent MIAs. Future directions include:</p>
 <ul>
-<li>Built data pipelines for processing attack predictions across multiple seeds.</li>
-<li>Calculated metrics such as Jaccard similarity, set variance, and entropy for reliability analysis.</li>
-<li>Created visualizations, including Venn diagrams and upset diagrams, to identify patterns and disparities in attack outcomes.</li>
-<li>Automated data processing workflows with Shell Scripts to handle large datasets.</li>
+<li>Auditing data collection processes using MIAs.</li>
+<li>Developing text perturbation methods to mitigate privacy risks.</li>
 </ul>
+<h3 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h3>
+<p>Shejwalkar, V., Inan, H. A., Houmansadr, A., &amp; Sim, R. (2021). Membership Inference Attacks Against NLP Classification Models. <em>Proceedings of the 35th Conference on Neural Information Processing Systems (NeurIPS 2021)</em>. <a href="https://arxiv.org/abs/2111.07960">Read the full paper</a>.</p>
 
 
   </div>

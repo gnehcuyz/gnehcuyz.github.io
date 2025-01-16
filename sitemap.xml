@@ -2,10 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gnehcuyz.github.io/posts/BinarySearch/</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://gnehcuyz.github.io/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/reading/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/reading/text_style_transfer_review_evaluation/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/posts/BinarySearch/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/posts/</loc>
@@ -23,17 +29,35 @@
     <loc>https://gnehcuyz.github.io/research/MIA_ML/</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gnehcuyz.github.io/reading/Does_Label_DP_Prevent_Label_Attacks/</loc>
+    <lastmod>2024-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/reading/uncovering_memorization_in_instruction_tuned_models/</loc>
+    <lastmod>2024-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/reading/Defending_Batch_Level_Label_Attacks/</loc>
+    <lastmod>2024-10-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gnehcuyz.github.io/reading/label_inference_attack_VFL/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/reading/</loc>
-    <lastmod>2024-09-16T00:00:00+00:00</lastmod>
+    <loc>https://gnehcuyz.github.io/reading/Do_membership_inference_attacks_work_on_large_language_models/</loc>
+    <lastmod>2024-06-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/reading/practical_membership_inference_attacks_multimodal_models/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/reading/membership_inference_attacks_fine_tuned_llms/</loc>
+    <lastmod>2024-01-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/projects/FamilyPlus/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/projects/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/reading/membership_inference_attacks_nlp_classification_models/</loc>
+    <lastmod>2023-09-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/Attention_is_all_you_need/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>

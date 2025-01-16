@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Membership Inference Attacks for Machine Learning Models | Chengyu Zhang</title>
+<title>Text Style Transfer - A Review and Experimental Evaluation | Chengyu Zhang</title>
 <meta name="keywords" content="">
-<meta name="description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+<meta name="description" content="A comprehensive review of text style transfer (TST) techniques, their evaluation, and benchmarking results across various datasets.">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="https://gnehcuyz.github.io/research/MIA_ML/">
+<link rel="canonical" href="https://gnehcuyz.github.io/reading/text_style_transfer_review_evaluation/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -35,7 +35,7 @@
 <link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/research/MIA_ML/">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/reading/text_style_transfer_review_evaluation/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,18 +72,18 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gnehcuyz.github.io/research/MIA_ML/">
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/reading/text_style_transfer_review_evaluation/">
   <meta property="og:site_name" content="Chengyu Zhang">
-  <meta property="og:title" content="Membership Inference Attacks for Machine Learning Models">
-  <meta property="og:description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+  <meta property="og:title" content="Text Style Transfer - A Review and Experimental Evaluation">
+  <meta property="og:description" content="A comprehensive review of text style transfer (TST) techniques, their evaluation, and benchmarking results across various datasets.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
-    <meta property="article:section" content="research">
-    <meta property="article:published_time" content="2024-12-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-20T00:00:00+00:00">
+    <meta property="article:section" content="reading">
+    <meta property="article:published_time" content="2025-01-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-15T00:00:00+00:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Membership Inference Attacks for Machine Learning Models">
-<meta name="twitter:description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+<meta name="twitter:title" content="Text Style Transfer - A Review and Experimental Evaluation">
+<meta name="twitter:description" content="A comprehensive review of text style transfer (TST) techniques, their evaluation, and benchmarking results across various datasets.">
 
 
 <script type="application/ld+json">
@@ -94,14 +94,14 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "Research",
-      "item": "https://gnehcuyz.github.io/research/"
+      "name": "Reading",
+      "item": "https://gnehcuyz.github.io/reading/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Membership Inference Attacks for Machine Learning Models",
-      "item": "https://gnehcuyz.github.io/research/MIA_ML/"
+      "name": "Text Style Transfer - A Review and Experimental Evaluation",
+      "item": "https://gnehcuyz.github.io/reading/text_style_transfer_review_evaluation/"
     }
   ]
 }
@@ -110,24 +110,24 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Membership Inference Attacks for Machine Learning Models",
-  "name": "Membership Inference Attacks for Machine Learning Models",
-  "description": "Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.",
+  "headline": "Text Style Transfer - A Review and Experimental Evaluation",
+  "name": "Text Style Transfer - A Review and Experimental Evaluation",
+  "description": "A comprehensive review of text style transfer (TST) techniques, their evaluation, and benchmarking results across various datasets.",
   "keywords": [
     
   ],
-  "articleBody": "Description Focused on understanding and visualizing membership inference vulnerabilities in machine learning models. Tech Stack Python, NumPy, Matplotlib. Contributions Built data pipelines for processing attack predictions across multiple seeds. Calculated metrics such as Jaccard similarity, set variance, and entropy for reliability analysis. Created visualizations, including Venn diagrams and upset diagrams, to identify patterns and disparities in attack outcomes. Automated data processing workflows with Shell Scripts to handle large datasets. ",
-  "wordCount" : "69",
+  "articleBody": "Overview This paper provides a detailed review of the field of text style transfer (TST), which involves modifying the stylistic properties of text while retaining its content. It introduces a taxonomy for TST models, evaluates 19 state-of-the-art TST algorithms on two datasets, and discusses open challenges and future directions.\nContributions The paper highlights three key contributions:\nTaxonomy and Categorization: Organizes TST models based on data settings, strategies, and techniques, providing a structured understanding of the field. Evaluation Methodologies: Reviews existing metrics and methods for evaluating TST models, emphasizing reproducibility and benchmarking. Experimental Study: Benchmarks 19 state-of-the-art TST algorithms on two publicly available datasets, offering insights into their strengths and weaknesses. Methodology Taxonomy of TST Models TST models are categorized into:\nData Settings: Parallel supervised, non-parallel supervised, and purely unsupervised. Strategies: Style-content disentanglement (explicit, implicit, or without disentanglement). Techniques: Adversarial learning, back-translation, reinforcement learning, and attribute-controlled generation. Evaluation Metrics Automated Metrics: BLEU, ROUGE-L, and style transfer accuracy. Human Evaluation: Measures fluency, content preservation, and style transfer accuracy. Experimental Findings Datasets: Evaluated on Yelp reviews and Caption datasets, focusing on sentiment transfer and stylistic variation. Results: Models leveraging non-parallel supervised settings showed better performance due to their flexibility and robustness. Adversarial learning and back-translation were particularly effective for preserving content while altering style. Implications The study highlights challenges in TST, such as the lack of standard evaluation metrics and limited datasets for diverse stylistic attributes. Future research directions include:\nDeveloping more reliable evaluation frameworks. Exploring unsupervised and multi-modal approaches for TST. Addressing ethical concerns in style transfer applications. Reference Hu, Z., Lee, R. K.-W., Aggarwal, C. C., \u0026 Zhang, A. (2023). Text Style Transfer: A Review and Experimental Evaluation. Read the full paper.\n",
+  "wordCount" : "281",
   "inLanguage": "en",
-  "datePublished": "2024-12-20T00:00:00Z",
-  "dateModified": "2024-12-20T00:00:00Z",
+  "datePublished": "2025-01-15T00:00:00Z",
+  "dateModified": "2025-01-15T00:00:00Z",
   "author":{
     "@type": "Person",
     "name": "Chengyu Zhang"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://gnehcuyz.github.io/research/MIA_ML/"
+    "@id": "https://gnehcuyz.github.io/reading/text_style_transfer_review_evaluation/"
   },
   "publisher": {
     "@type": "Organization",
@@ -213,29 +213,51 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/research/">Research</a></div>
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/reading/">Reading</a></div>
     <h1 class="post-title entry-hint-parent">
-      Membership Inference Attacks for Machine Learning Models
+      Text Style Transfer - A Review and Experimental Evaluation
     </h1>
-    <div class="post-meta"><span title='2024-12-20 00:00:00 +0000 UTC'>December 20, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang
+    <div class="post-meta"><span title='2025-01-15 00:00:00 +0000 UTC'>January 15, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h2>
+  <div class="post-content"><h3 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h3>
+<p>This paper provides a detailed review of the field of text style transfer (TST), which involves modifying the stylistic properties of text while retaining its content. It introduces a taxonomy for TST models, evaluates 19 state-of-the-art TST algorithms on two datasets, and discusses open challenges and future directions.</p>
+<h3 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h3>
+<p>The paper highlights three key contributions:</p>
+<ol>
+<li><strong>Taxonomy and Categorization:</strong> Organizes TST models based on data settings, strategies, and techniques, providing a structured understanding of the field.</li>
+<li><strong>Evaluation Methodologies:</strong> Reviews existing metrics and methods for evaluating TST models, emphasizing reproducibility and benchmarking.</li>
+<li><strong>Experimental Study:</strong> Benchmarks 19 state-of-the-art TST algorithms on two publicly available datasets, offering insights into their strengths and weaknesses.</li>
+</ol>
+<h3 id="methodology">Methodology<a hidden class="anchor" aria-hidden="true" href="#methodology">#</a></h3>
+<h4 id="taxonomy-of-tst-models">Taxonomy of TST Models<a hidden class="anchor" aria-hidden="true" href="#taxonomy-of-tst-models">#</a></h4>
+<p>TST models are categorized into:</p>
 <ul>
-<li>Focused on understanding and visualizing membership inference vulnerabilities in machine learning models.</li>
+<li><strong>Data Settings:</strong> Parallel supervised, non-parallel supervised, and purely unsupervised.</li>
+<li><strong>Strategies:</strong> Style-content disentanglement (explicit, implicit, or without disentanglement).</li>
+<li><strong>Techniques:</strong> Adversarial learning, back-translation, reinforcement learning, and attribute-controlled generation.</li>
 </ul>
-<h2 id="tech-stack">Tech Stack<a hidden class="anchor" aria-hidden="true" href="#tech-stack">#</a></h2>
+<h4 id="evaluation-metrics">Evaluation Metrics<a hidden class="anchor" aria-hidden="true" href="#evaluation-metrics">#</a></h4>
 <ul>
-<li>Python, NumPy, Matplotlib.</li>
+<li><strong>Automated Metrics:</strong> BLEU, ROUGE-L, and style transfer accuracy.</li>
+<li><strong>Human Evaluation:</strong> Measures fluency, content preservation, and style transfer accuracy.</li>
 </ul>
-<h2 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h2>
+<h3 id="experimental-findings">Experimental Findings<a hidden class="anchor" aria-hidden="true" href="#experimental-findings">#</a></h3>
 <ul>
-<li>Built data pipelines for processing attack predictions across multiple seeds.</li>
-<li>Calculated metrics such as Jaccard similarity, set variance, and entropy for reliability analysis.</li>
-<li>Created visualizations, including Venn diagrams and upset diagrams, to identify patterns and disparities in attack outcomes.</li>
-<li>Automated data processing workflows with Shell Scripts to handle large datasets.</li>
+<li><strong>Datasets:</strong> Evaluated on Yelp reviews and Caption datasets, focusing on sentiment transfer and stylistic variation.</li>
+<li><strong>Results:</strong> Models leveraging non-parallel supervised settings showed better performance due to their flexibility and robustness. Adversarial learning and back-translation were particularly effective for preserving content while altering style.</li>
 </ul>
+<h3 id="implications">Implications<a hidden class="anchor" aria-hidden="true" href="#implications">#</a></h3>
+<p>The study highlights challenges in TST, such as the lack of standard evaluation metrics and limited datasets for diverse stylistic attributes. Future research directions include:</p>
+<ul>
+<li>Developing more reliable evaluation frameworks.</li>
+<li>Exploring unsupervised and multi-modal approaches for TST.</li>
+<li>Addressing ethical concerns in style transfer applications.</li>
+</ul>
+<hr>
+<h3 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h3>
+<p>Hu, Z., Lee, R. K.-W., Aggarwal, C. C., &amp; Zhang, A. (2023). Text Style Transfer: A Review and Experimental Evaluation. <a href="https://arxiv.org/abs/2010.12742">Read the full paper</a>.</p>
 
 
   </div>

@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Membership Inference Attacks for Machine Learning Models | Chengyu Zhang</title>
+<title>Does Label Differential Privacy Prevent Label Inference Attacks? | Chengyu Zhang</title>
 <meta name="keywords" content="">
-<meta name="description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+<meta name="description" content="Analyzes the effectiveness of label-DP in mitigating label inference attacks and provides insights on privacy settings and attack bounds.">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="https://gnehcuyz.github.io/research/MIA_ML/">
+<link rel="canonical" href="https://gnehcuyz.github.io/reading/Does_Label_DP_Prevent_Label_Attacks/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -35,7 +35,7 @@
 <link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/research/MIA_ML/">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/reading/Does_Label_DP_Prevent_Label_Attacks/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,18 +72,18 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gnehcuyz.github.io/research/MIA_ML/">
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/reading/Does_Label_DP_Prevent_Label_Attacks/">
   <meta property="og:site_name" content="Chengyu Zhang">
-  <meta property="og:title" content="Membership Inference Attacks for Machine Learning Models">
-  <meta property="og:description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+  <meta property="og:title" content="Does Label Differential Privacy Prevent Label Inference Attacks?">
+  <meta property="og:description" content="Analyzes the effectiveness of label-DP in mitigating label inference attacks and provides insights on privacy settings and attack bounds.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
-    <meta property="article:section" content="research">
-    <meta property="article:published_time" content="2024-12-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-20T00:00:00+00:00">
+    <meta property="article:section" content="reading">
+    <meta property="article:published_time" content="2024-10-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-11T00:00:00+00:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Membership Inference Attacks for Machine Learning Models">
-<meta name="twitter:description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+<meta name="twitter:title" content="Does Label Differential Privacy Prevent Label Inference Attacks?">
+<meta name="twitter:description" content="Analyzes the effectiveness of label-DP in mitigating label inference attacks and provides insights on privacy settings and attack bounds.">
 
 
 <script type="application/ld+json">
@@ -94,14 +94,14 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "Research",
-      "item": "https://gnehcuyz.github.io/research/"
+      "name": "Reading",
+      "item": "https://gnehcuyz.github.io/reading/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Membership Inference Attacks for Machine Learning Models",
-      "item": "https://gnehcuyz.github.io/research/MIA_ML/"
+      "name": "Does Label Differential Privacy Prevent Label Inference Attacks?",
+      "item": "https://gnehcuyz.github.io/reading/Does_Label_DP_Prevent_Label_Attacks/"
     }
   ]
 }
@@ -110,24 +110,24 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Membership Inference Attacks for Machine Learning Models",
-  "name": "Membership Inference Attacks for Machine Learning Models",
-  "description": "Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.",
+  "headline": "Does Label Differential Privacy Prevent Label Inference Attacks?",
+  "name": "Does Label Differential Privacy Prevent Label Inference Attacks?",
+  "description": "Analyzes the effectiveness of label-DP in mitigating label inference attacks and provides insights on privacy settings and attack bounds.",
   "keywords": [
     
   ],
-  "articleBody": "Description Focused on understanding and visualizing membership inference vulnerabilities in machine learning models. Tech Stack Python, NumPy, Matplotlib. Contributions Built data pipelines for processing attack predictions across multiple seeds. Calculated metrics such as Jaccard similarity, set variance, and entropy for reliability analysis. Created visualizations, including Venn diagrams and upset diagrams, to identify patterns and disparities in attack outcomes. Automated data processing workflows with Shell Scripts to handle large datasets. ",
-  "wordCount" : "69",
+  "articleBody": "Abstract Label differential privacy (label-DP) trains private machine learning models with public features and sensitive labels. While label-DP provides strong privacy guarantees, models remain vulnerable to label inference attacks (LIAs). The findings show that label-DP reduces an attacker’s advantage relative to a Bayes classifier but doesn’t prevent attacks entirely.\nIntroduction Label-DP protects label privacy without hindering statistical inference. Key findings include:\nLabel-DP reduces an attacker’s advantage but cannot fully prevent LIAs, especially for generalizable models. Privacy should limit an attacker’s advantage over a Bayes classifier rather than eliminate statistical inference. Preliminaries Label-DP assumes public features and private labels, commonly used in:\nOnline advertising. Recommendation systems. Methods for Achieving Label-DP Randomized Response (RR): Adds randomness to released labels. Label Private Multi-Stage Training (LP-MST): Predicts labels from learned priors. PATE-FixMatch (PATE-FM): Uses teacher models to train private student models. ALIBI: Adds noise to labels, recovering them via Bayesian inference. Does Label-DP Prevent LIAs? Experiments reveal that label-DP struggles to protect against LIAs effectively. Attack accuracy aligns closely with model test accuracy, highlighting limitations even under strong privacy settings.\nLabel-DP Provably Bounds Attack Advantage Label-DP reduces attack advantage depending on privacy parameters (ε, δ), but attacks remain possible, particularly when the feature matrix is known.\nExperiments Simulated Dataset (Gaussian Mixture): Stronger privacy (lower ε) reduces Expected Attack Utility (EAU). Attack advantage stays below theoretical upper bounds. Real-World Dataset (CTR Prediction): High EAU for large ε values; reduced EAU as ε decreases. Label-DP models approach constant prediction baselines. Limitations Focus on ε, δ-label-DP; future work could explore Rényi-DP or Gaussian-DP. Limited real-world dataset evaluation highlights a need for broader testing. Thoughts After Reading Comprehensive testing on diverse datasets is essential to improve label-DP robustness. Reference Ji, S., Pan, X., Zhang, X., et al. (2022). Privacy-Preserving Machine Learning with Differential Privacy and Secure Multiparty Computation. Proceedings of the 2022 IEEE International Conference on Data Engineering (ICDE), pp. 1854–1865. DOI:10.1109/ICDE53745.2022.00354\n",
+  "wordCount" : "314",
   "inLanguage": "en",
-  "datePublished": "2024-12-20T00:00:00Z",
-  "dateModified": "2024-12-20T00:00:00Z",
+  "datePublished": "2024-10-11T00:00:00Z",
+  "dateModified": "2024-10-11T00:00:00Z",
   "author":{
     "@type": "Person",
     "name": "Chengyu Zhang"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://gnehcuyz.github.io/research/MIA_ML/"
+    "@id": "https://gnehcuyz.github.io/reading/Does_Label_DP_Prevent_Label_Attacks/"
   },
   "publisher": {
     "@type": "Organization",
@@ -213,29 +213,61 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/research/">Research</a></div>
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/reading/">Reading</a></div>
     <h1 class="post-title entry-hint-parent">
-      Membership Inference Attacks for Machine Learning Models
+      Does Label Differential Privacy Prevent Label Inference Attacks?
     </h1>
-    <div class="post-meta"><span title='2024-12-20 00:00:00 +0000 UTC'>December 20, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang
+    <div class="post-meta"><span title='2024-10-11 00:00:00 +0000 UTC'>October 11, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h2>
+  <div class="post-content"><h2 id="abstract">Abstract<a hidden class="anchor" aria-hidden="true" href="#abstract">#</a></h2>
+<p>Label differential privacy (label-DP) trains private machine learning models with public features and sensitive labels. While label-DP provides strong privacy guarantees, models remain vulnerable to label inference attacks (LIAs). The findings show that label-DP reduces an attacker&rsquo;s advantage relative to a Bayes classifier but doesn&rsquo;t prevent attacks entirely.</p>
+<h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+<p>Label-DP protects label privacy without hindering statistical inference. Key findings include:</p>
 <ul>
-<li>Focused on understanding and visualizing membership inference vulnerabilities in machine learning models.</li>
+<li>Label-DP reduces an attacker’s advantage but cannot fully prevent LIAs, especially for generalizable models.</li>
+<li>Privacy should limit an attacker’s advantage over a Bayes classifier rather than eliminate statistical inference.</li>
 </ul>
-<h2 id="tech-stack">Tech Stack<a hidden class="anchor" aria-hidden="true" href="#tech-stack">#</a></h2>
+<h2 id="preliminaries">Preliminaries<a hidden class="anchor" aria-hidden="true" href="#preliminaries">#</a></h2>
+<p>Label-DP assumes public features and private labels, commonly used in:</p>
 <ul>
-<li>Python, NumPy, Matplotlib.</li>
+<li>Online advertising.</li>
+<li>Recommendation systems.</li>
 </ul>
-<h2 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h2>
+<h3 id="methods-for-achieving-label-dp">Methods for Achieving Label-DP<a hidden class="anchor" aria-hidden="true" href="#methods-for-achieving-label-dp">#</a></h3>
+<ol>
+<li><strong>Randomized Response (RR)</strong>: Adds randomness to released labels.</li>
+<li><strong>Label Private Multi-Stage Training (LP-MST)</strong>: Predicts labels from learned priors.</li>
+<li><strong>PATE-FixMatch (PATE-FM)</strong>: Uses teacher models to train private student models.</li>
+<li><strong>ALIBI</strong>: Adds noise to labels, recovering them via Bayesian inference.</li>
+</ol>
+<h2 id="does-label-dp-prevent-lias">Does Label-DP Prevent LIAs?<a hidden class="anchor" aria-hidden="true" href="#does-label-dp-prevent-lias">#</a></h2>
+<p>Experiments reveal that label-DP struggles to protect against LIAs effectively. Attack accuracy aligns closely with model test accuracy, highlighting limitations even under strong privacy settings.</p>
+<h2 id="label-dp-provably-bounds-attack-advantage">Label-DP Provably Bounds Attack Advantage<a hidden class="anchor" aria-hidden="true" href="#label-dp-provably-bounds-attack-advantage">#</a></h2>
+<p>Label-DP reduces attack advantage depending on privacy parameters (ε, δ), but attacks remain possible, particularly when the feature matrix is known.</p>
+<h2 id="experiments">Experiments<a hidden class="anchor" aria-hidden="true" href="#experiments">#</a></h2>
+<h3 id="simulated-dataset-gaussian-mixture">Simulated Dataset (Gaussian Mixture):<a hidden class="anchor" aria-hidden="true" href="#simulated-dataset-gaussian-mixture">#</a></h3>
 <ul>
-<li>Built data pipelines for processing attack predictions across multiple seeds.</li>
-<li>Calculated metrics such as Jaccard similarity, set variance, and entropy for reliability analysis.</li>
-<li>Created visualizations, including Venn diagrams and upset diagrams, to identify patterns and disparities in attack outcomes.</li>
-<li>Automated data processing workflows with Shell Scripts to handle large datasets.</li>
+<li>Stronger privacy (lower ε) reduces Expected Attack Utility (EAU).</li>
+<li>Attack advantage stays below theoretical upper bounds.</li>
 </ul>
+<h3 id="real-world-dataset-ctr-prediction">Real-World Dataset (CTR Prediction):<a hidden class="anchor" aria-hidden="true" href="#real-world-dataset-ctr-prediction">#</a></h3>
+<ul>
+<li>High EAU for large ε values; reduced EAU as ε decreases.</li>
+<li>Label-DP models approach constant prediction baselines.</li>
+</ul>
+<h2 id="limitations">Limitations<a hidden class="anchor" aria-hidden="true" href="#limitations">#</a></h2>
+<ul>
+<li>Focus on ε, δ-label-DP; future work could explore Rényi-DP or Gaussian-DP.</li>
+<li>Limited real-world dataset evaluation highlights a need for broader testing.</li>
+</ul>
+<h2 id="thoughts-after-reading">Thoughts After Reading<a hidden class="anchor" aria-hidden="true" href="#thoughts-after-reading">#</a></h2>
+<ul>
+<li>Comprehensive testing on diverse datasets is essential to improve label-DP robustness.</li>
+</ul>
+<h2 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h2>
+<p>Ji, S., Pan, X., Zhang, X., et al. (2022). <em>Privacy-Preserving Machine Learning with Differential Privacy and Secure Multiparty Computation</em>. <em>Proceedings of the 2022 IEEE International Conference on Data Engineering (ICDE)</em>, pp. 1854–1865. <a href="https://ieeexplore.ieee.org/abstract/document/9833321">DOI:10.1109/ICDE53745.2022.00354</a></p>
 
 
   </div>
