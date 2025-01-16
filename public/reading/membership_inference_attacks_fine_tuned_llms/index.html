@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Membership Inference Attacks for Machine Learning Models | Chengyu Zhang</title>
+<title>Membership Inference Attacks Against Fine-tuned Large Language Models via Self-prompt Calibration | Chengyu Zhang</title>
 <meta name="keywords" content="">
-<meta name="description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+<meta name="description" content="A novel study introducing self-prompt calibration for membership inference attacks (MIAs) against fine-tuned large language models, improving reliability and practicality in privacy assessments.">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="https://gnehcuyz.github.io/research/MIA_ML/">
+<link rel="canonical" href="https://gnehcuyz.github.io/reading/membership_inference_attacks_fine_tuned_llms/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -35,7 +35,7 @@
 <link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/research/MIA_ML/">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/reading/membership_inference_attacks_fine_tuned_llms/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,18 +72,18 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gnehcuyz.github.io/research/MIA_ML/">
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/reading/membership_inference_attacks_fine_tuned_llms/">
   <meta property="og:site_name" content="Chengyu Zhang">
-  <meta property="og:title" content="Membership Inference Attacks for Machine Learning Models">
-  <meta property="og:description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+  <meta property="og:title" content="Membership Inference Attacks Against Fine-tuned Large Language Models via Self-prompt Calibration">
+  <meta property="og:description" content="A novel study introducing self-prompt calibration for membership inference attacks (MIAs) against fine-tuned large language models, improving reliability and practicality in privacy assessments.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
-    <meta property="article:section" content="research">
-    <meta property="article:published_time" content="2024-12-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-20T00:00:00+00:00">
+    <meta property="article:section" content="reading">
+    <meta property="article:published_time" content="2024-01-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-01-18T00:00:00+00:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Membership Inference Attacks for Machine Learning Models">
-<meta name="twitter:description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+<meta name="twitter:title" content="Membership Inference Attacks Against Fine-tuned Large Language Models via Self-prompt Calibration">
+<meta name="twitter:description" content="A novel study introducing self-prompt calibration for membership inference attacks (MIAs) against fine-tuned large language models, improving reliability and practicality in privacy assessments.">
 
 
 <script type="application/ld+json">
@@ -94,14 +94,14 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "Research",
-      "item": "https://gnehcuyz.github.io/research/"
+      "name": "Reading",
+      "item": "https://gnehcuyz.github.io/reading/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Membership Inference Attacks for Machine Learning Models",
-      "item": "https://gnehcuyz.github.io/research/MIA_ML/"
+      "name": "Membership Inference Attacks Against Fine-tuned Large Language Models via Self-prompt Calibration",
+      "item": "https://gnehcuyz.github.io/reading/membership_inference_attacks_fine_tuned_llms/"
     }
   ]
 }
@@ -110,24 +110,24 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Membership Inference Attacks for Machine Learning Models",
-  "name": "Membership Inference Attacks for Machine Learning Models",
-  "description": "Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.",
+  "headline": "Membership Inference Attacks Against Fine-tuned Large Language Models via Self-prompt Calibration",
+  "name": "Membership Inference Attacks Against Fine-tuned Large Language Models via Self-prompt Calibration",
+  "description": "A novel study introducing self-prompt calibration for membership inference attacks (MIAs) against fine-tuned large language models, improving reliability and practicality in privacy assessments.",
   "keywords": [
     
   ],
-  "articleBody": "Description Focused on understanding and visualizing membership inference vulnerabilities in machine learning models. Tech Stack Python, NumPy, Matplotlib. Contributions Built data pipelines for processing attack predictions across multiple seeds. Calculated metrics such as Jaccard similarity, set variance, and entropy for reliability analysis. Created visualizations, including Venn diagrams and upset diagrams, to identify patterns and disparities in attack outcomes. Automated data processing workflows with Shell Scripts to handle large datasets. ",
-  "wordCount" : "69",
+  "articleBody": "Overview This paper presents an innovative approach to Membership Inference Attacks (MIAs) targeting fine-tuned large language models (LLMs). The proposed Self-calibrated Probabilistic Variation-based MIA (SPV-MIA) addresses limitations of existing methods, such as dependency on overfitting and access to high-quality reference datasets.\nContributions The study makes three major contributions:\nSelf-prompt Calibration: A method to generate reference datasets by prompting the target LLM, enabling attacks without unrealistic assumptions. Probabilistic Variation Metric: A robust membership signal leveraging LLM memorization rather than overfitting. Experimental Validation: Demonstrates superior privacy risks using SPV-MIA across various LLMs and datasets, achieving an average 23.6% improvement in AUC compared to baseline methods. Methodology Self-prompt Calibration Existing MIAs rely on reference datasets, often impractical to obtain. The authors propose using the target LLM to generate a self-prompt dataset, mimicking the training data distribution. This reference model significantly enhances attack performance.\nProbabilistic Variation Assessment By focusing on LLM memorization, the study introduces a probabilistic variation metric to measure membership likelihood, mitigating the reliance on overfitting. This involves analyzing symmetrical perturbations and paraphrased text variations.\nExperimental Findings Datasets: WikiText-103, AG News, and XSum. Models: GPT-2, GPT-J, Falcon-7B, and LLaMA-7B. SPV-MIA outperformed existing MIAs, with an average AUC of 0.924 and TPR@1%FPR of 46.9%. Resilience: Demonstrated robustness in scenarios with limited data and diverse sources for self-prompts. Implications This work highlights critical privacy risks in fine-tuned LLMs and underscores the importance of considering memorization over overfitting. Future research should extend SPV-MIA to other LLM paradigms and explore defensive strategies.\nReference Fu, W., Wang, H., Gao, C., Liu, G., Li, Y., \u0026 Jiang, T. (2024). Membership Inference Attacks Against Fine-tuned Large Language Models via Self-prompt Calibration. Proceedings of the 38th Conference on Neural Information Processing Systems (NeurIPS 2024). Read the full paper.\n",
+  "wordCount" : "288",
   "inLanguage": "en",
-  "datePublished": "2024-12-20T00:00:00Z",
-  "dateModified": "2024-12-20T00:00:00Z",
+  "datePublished": "2024-01-18T00:00:00Z",
+  "dateModified": "2024-01-18T00:00:00Z",
   "author":{
     "@type": "Person",
     "name": "Chengyu Zhang"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://gnehcuyz.github.io/research/MIA_ML/"
+    "@id": "https://gnehcuyz.github.io/reading/membership_inference_attacks_fine_tuned_llms/"
   },
   "publisher": {
     "@type": "Organization",
@@ -213,29 +213,40 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/research/">Research</a></div>
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/reading/">Reading</a></div>
     <h1 class="post-title entry-hint-parent">
-      Membership Inference Attacks for Machine Learning Models
+      Membership Inference Attacks Against Fine-tuned Large Language Models via Self-prompt Calibration
     </h1>
-    <div class="post-meta"><span title='2024-12-20 00:00:00 +0000 UTC'>December 20, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang
+    <div class="post-meta"><span title='2024-01-18 00:00:00 +0000 UTC'>January 18, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h2>
+  <div class="post-content"><h3 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h3>
+<p>This paper presents an innovative approach to Membership Inference Attacks (MIAs) targeting fine-tuned large language models (LLMs). The proposed <strong>Self-calibrated Probabilistic Variation-based MIA (SPV-MIA)</strong> addresses limitations of existing methods, such as dependency on overfitting and access to high-quality reference datasets.</p>
+<h3 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h3>
+<p>The study makes three major contributions:</p>
+<ol>
+<li><strong>Self-prompt Calibration:</strong> A method to generate reference datasets by prompting the target LLM, enabling attacks without unrealistic assumptions.</li>
+<li><strong>Probabilistic Variation Metric:</strong> A robust membership signal leveraging LLM memorization rather than overfitting.</li>
+<li><strong>Experimental Validation:</strong> Demonstrates superior privacy risks using SPV-MIA across various LLMs and datasets, achieving an average 23.6% improvement in AUC compared to baseline methods.</li>
+</ol>
+<h3 id="methodology">Methodology<a hidden class="anchor" aria-hidden="true" href="#methodology">#</a></h3>
+<h4 id="self-prompt-calibration">Self-prompt Calibration<a hidden class="anchor" aria-hidden="true" href="#self-prompt-calibration">#</a></h4>
+<p>Existing MIAs rely on reference datasets, often impractical to obtain. The authors propose using the target LLM to generate a self-prompt dataset, mimicking the training data distribution. This reference model significantly enhances attack performance.</p>
+<h4 id="probabilistic-variation-assessment">Probabilistic Variation Assessment<a hidden class="anchor" aria-hidden="true" href="#probabilistic-variation-assessment">#</a></h4>
+<p>By focusing on LLM memorization, the study introduces a probabilistic variation metric to measure membership likelihood, mitigating the reliance on overfitting. This involves analyzing symmetrical perturbations and paraphrased text variations.</p>
+<h3 id="experimental-findings">Experimental Findings<a hidden class="anchor" aria-hidden="true" href="#experimental-findings">#</a></h3>
 <ul>
-<li>Focused on understanding and visualizing membership inference vulnerabilities in machine learning models.</li>
+<li><strong>Datasets:</strong> WikiText-103, AG News, and XSum.</li>
+<li><strong>Models:</strong> GPT-2, GPT-J, Falcon-7B, and LLaMA-7B.</li>
+<li>SPV-MIA outperformed existing MIAs, with an average AUC of 0.924 and TPR@1%FPR of 46.9%.</li>
+<li><strong>Resilience:</strong> Demonstrated robustness in scenarios with limited data and diverse sources for self-prompts.</li>
 </ul>
-<h2 id="tech-stack">Tech Stack<a hidden class="anchor" aria-hidden="true" href="#tech-stack">#</a></h2>
-<ul>
-<li>Python, NumPy, Matplotlib.</li>
-</ul>
-<h2 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h2>
-<ul>
-<li>Built data pipelines for processing attack predictions across multiple seeds.</li>
-<li>Calculated metrics such as Jaccard similarity, set variance, and entropy for reliability analysis.</li>
-<li>Created visualizations, including Venn diagrams and upset diagrams, to identify patterns and disparities in attack outcomes.</li>
-<li>Automated data processing workflows with Shell Scripts to handle large datasets.</li>
-</ul>
+<h3 id="implications">Implications<a hidden class="anchor" aria-hidden="true" href="#implications">#</a></h3>
+<p>This work highlights critical privacy risks in fine-tuned LLMs and underscores the importance of considering memorization over overfitting. Future research should extend SPV-MIA to other LLM paradigms and explore defensive strategies.</p>
+<hr>
+<h3 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h3>
+<p>Fu, W., Wang, H., Gao, C., Liu, G., Li, Y., &amp; Jiang, T. (2024). Membership Inference Attacks Against Fine-tuned Large Language Models via Self-prompt Calibration. <em>Proceedings of the 38th Conference on Neural Information Processing Systems (NeurIPS 2024)</em>. <a href="https://arxiv.org/abs/2311.06062">Read the full paper</a>.</p>
 
 
   </div>

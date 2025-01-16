@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Membership Inference Attacks for Machine Learning Models | Chengyu Zhang</title>
+<title>Practical Membership Inference Attacks Against Large-Scale Multi-Modal Models - A Pilot Study | Chengyu Zhang</title>
 <meta name="keywords" content="">
-<meta name="description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+<meta name="description" content="An investigation of membership inference attacks (MIAs) targeting large-scale multi-modal models like CLIP, introducing practical attack strategies without shadow training.">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="https://gnehcuyz.github.io/research/MIA_ML/">
+<link rel="canonical" href="https://gnehcuyz.github.io/reading/practical_membership_inference_attacks_multimodal_models/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -35,7 +35,7 @@
 <link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/research/MIA_ML/">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/reading/practical_membership_inference_attacks_multimodal_models/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,18 +72,18 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gnehcuyz.github.io/research/MIA_ML/">
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/reading/practical_membership_inference_attacks_multimodal_models/">
   <meta property="og:site_name" content="Chengyu Zhang">
-  <meta property="og:title" content="Membership Inference Attacks for Machine Learning Models">
-  <meta property="og:description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+  <meta property="og:title" content="Practical Membership Inference Attacks Against Large-Scale Multi-Modal Models - A Pilot Study">
+  <meta property="og:description" content="An investigation of membership inference attacks (MIAs) targeting large-scale multi-modal models like CLIP, introducing practical attack strategies without shadow training.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
-    <meta property="article:section" content="research">
-    <meta property="article:published_time" content="2024-12-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-20T00:00:00+00:00">
+    <meta property="article:section" content="reading">
+    <meta property="article:published_time" content="2024-01-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-01-24T00:00:00+00:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Membership Inference Attacks for Machine Learning Models">
-<meta name="twitter:description" content="Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.">
+<meta name="twitter:title" content="Practical Membership Inference Attacks Against Large-Scale Multi-Modal Models - A Pilot Study">
+<meta name="twitter:description" content="An investigation of membership inference attacks (MIAs) targeting large-scale multi-modal models like CLIP, introducing practical attack strategies without shadow training.">
 
 
 <script type="application/ld+json">
@@ -94,14 +94,14 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "Research",
-      "item": "https://gnehcuyz.github.io/research/"
+      "name": "Reading",
+      "item": "https://gnehcuyz.github.io/reading/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Membership Inference Attacks for Machine Learning Models",
-      "item": "https://gnehcuyz.github.io/research/MIA_ML/"
+      "name": "Practical Membership Inference Attacks Against Large-Scale Multi-Modal Models - A Pilot Study",
+      "item": "https://gnehcuyz.github.io/reading/practical_membership_inference_attacks_multimodal_models/"
     }
   ]
 }
@@ -110,24 +110,24 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Membership Inference Attacks for Machine Learning Models",
-  "name": "Membership Inference Attacks for Machine Learning Models",
-  "description": "Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.",
+  "headline": "Practical Membership Inference Attacks Against Large-Scale Multi-Modal Models - A Pilot Study",
+  "name": "Practical Membership Inference Attacks Against Large-Scale Multi-Modal Models - A Pilot Study",
+  "description": "An investigation of membership inference attacks (MIAs) targeting large-scale multi-modal models like CLIP, introducing practical attack strategies without shadow training.",
   "keywords": [
     
   ],
-  "articleBody": "Description Focused on understanding and visualizing membership inference vulnerabilities in machine learning models. Tech Stack Python, NumPy, Matplotlib. Contributions Built data pipelines for processing attack predictions across multiple seeds. Calculated metrics such as Jaccard similarity, set variance, and entropy for reliability analysis. Created visualizations, including Venn diagrams and upset diagrams, to identify patterns and disparities in attack outcomes. Automated data processing workflows with Shell Scripts to handle large datasets. ",
-  "wordCount" : "69",
+  "articleBody": "Overview This paper explores privacy risks in large-scale multi-modal models, such as CLIP, focusing on Membership Inference Attacks (MIAs). These attacks identify whether a data point was used in model training, revealing potential privacy vulnerabilities. The study develops practical strategies to perform MIAs without shadow training, addressing computational challenges in large-scale models.\nContributions The study introduces three key MIA strategies:\nCosine Similarity Attack (CSA): A baseline method using cosine similarity between image and text features. Augmentation-Enhanced Attack (AEA): Improves CSA by aggregating cosine similarity changes across data transformations. Weakly Supervised Attack (WSA): Leverages non-member data (e.g., data created after the model’s training) to enhance attack accuracy. Methodology Cosine Similarity Attack (CSA) This attack predicts membership based on cosine similarity scores, which are higher for training data due to the model’s optimization during training.\nAugmentation-Enhanced Attack (AEA) Enhances CSA by applying transformations (e.g., cropping, rotation) to inputs and measuring the resulting changes in cosine similarity. Members exhibit larger decreases in similarity than non-members.\nWeakly Supervised Attack (WSA) Uses a set of guaranteed non-members (e.g., data from after the model’s publication) to estimate membership distributions. This method identifies “pseudo-members” and trains an attack model for improved inference accuracy.\nExperimental Findings Datasets: Experiments used datasets like LAION, CC12M, and MSCOCO, combining large-scale web-scraped data for evaluation. Performance: WSA showed the best results, improving membership accuracy by 17% over CSA and achieving seven times better accuracy at low false-positive rates. Insights: Multi-modal models are more vulnerable to MIAs than previously assumed, with larger models (e.g., ViT-L/14) exhibiting more significant privacy risks. Implications The findings highlight the need for privacy-preserving measures in large-scale multi-modal models. Future research directions include:\nDeveloping efficient privacy defenses for multi-modal systems. Extending the proposed attacks to other foundational models like GPT-3 and BERT. Reference Ko, M., Jin, M., Wang, C., \u0026 Jia, R. (2023). Practical Membership Inference Attacks Against Large-Scale Multi-Modal Models: A Pilot Study. Read the full paper.\n",
+  "wordCount" : "319",
   "inLanguage": "en",
-  "datePublished": "2024-12-20T00:00:00Z",
-  "dateModified": "2024-12-20T00:00:00Z",
+  "datePublished": "2024-01-24T00:00:00Z",
+  "dateModified": "2024-01-24T00:00:00Z",
   "author":{
     "@type": "Person",
     "name": "Chengyu Zhang"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://gnehcuyz.github.io/research/MIA_ML/"
+    "@id": "https://gnehcuyz.github.io/reading/practical_membership_inference_attacks_multimodal_models/"
   },
   "publisher": {
     "@type": "Organization",
@@ -213,29 +213,45 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/research/">Research</a></div>
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/reading/">Reading</a></div>
     <h1 class="post-title entry-hint-parent">
-      Membership Inference Attacks for Machine Learning Models
+      Practical Membership Inference Attacks Against Large-Scale Multi-Modal Models - A Pilot Study
     </h1>
-    <div class="post-meta"><span title='2024-12-20 00:00:00 +0000 UTC'>December 20, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang
+    <div class="post-meta"><span title='2024-01-24 00:00:00 +0000 UTC'>January 24, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h2>
+  <div class="post-content"><h3 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h3>
+<p>This paper explores privacy risks in large-scale multi-modal models, such as CLIP, focusing on Membership Inference Attacks (MIAs). These attacks identify whether a data point was used in model training, revealing potential privacy vulnerabilities. The study develops practical strategies to perform MIAs without shadow training, addressing computational challenges in large-scale models.</p>
+<h3 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h3>
+<p>The study introduces three key MIA strategies:</p>
+<ol>
+<li><strong>Cosine Similarity Attack (CSA):</strong> A baseline method using cosine similarity between image and text features.</li>
+<li><strong>Augmentation-Enhanced Attack (AEA):</strong> Improves CSA by aggregating cosine similarity changes across data transformations.</li>
+<li><strong>Weakly Supervised Attack (WSA):</strong> Leverages non-member data (e.g., data created after the model&rsquo;s training) to enhance attack accuracy.</li>
+</ol>
+<h3 id="methodology">Methodology<a hidden class="anchor" aria-hidden="true" href="#methodology">#</a></h3>
+<h4 id="cosine-similarity-attack-csa">Cosine Similarity Attack (CSA)<a hidden class="anchor" aria-hidden="true" href="#cosine-similarity-attack-csa">#</a></h4>
+<p>This attack predicts membership based on cosine similarity scores, which are higher for training data due to the model&rsquo;s optimization during training.</p>
+<h4 id="augmentation-enhanced-attack-aea">Augmentation-Enhanced Attack (AEA)<a hidden class="anchor" aria-hidden="true" href="#augmentation-enhanced-attack-aea">#</a></h4>
+<p>Enhances CSA by applying transformations (e.g., cropping, rotation) to inputs and measuring the resulting changes in cosine similarity. Members exhibit larger decreases in similarity than non-members.</p>
+<h4 id="weakly-supervised-attack-wsa">Weakly Supervised Attack (WSA)<a hidden class="anchor" aria-hidden="true" href="#weakly-supervised-attack-wsa">#</a></h4>
+<p>Uses a set of guaranteed non-members (e.g., data from after the model’s publication) to estimate membership distributions. This method identifies &ldquo;pseudo-members&rdquo; and trains an attack model for improved inference accuracy.</p>
+<h3 id="experimental-findings">Experimental Findings<a hidden class="anchor" aria-hidden="true" href="#experimental-findings">#</a></h3>
 <ul>
-<li>Focused on understanding and visualizing membership inference vulnerabilities in machine learning models.</li>
+<li><strong>Datasets:</strong> Experiments used datasets like LAION, CC12M, and MSCOCO, combining large-scale web-scraped data for evaluation.</li>
+<li><strong>Performance:</strong> WSA showed the best results, improving membership accuracy by 17% over CSA and achieving seven times better accuracy at low false-positive rates.</li>
+<li><strong>Insights:</strong> Multi-modal models are more vulnerable to MIAs than previously assumed, with larger models (e.g., ViT-L/14) exhibiting more significant privacy risks.</li>
 </ul>
-<h2 id="tech-stack">Tech Stack<a hidden class="anchor" aria-hidden="true" href="#tech-stack">#</a></h2>
+<h3 id="implications">Implications<a hidden class="anchor" aria-hidden="true" href="#implications">#</a></h3>
+<p>The findings highlight the need for privacy-preserving measures in large-scale multi-modal models. Future research directions include:</p>
 <ul>
-<li>Python, NumPy, Matplotlib.</li>
+<li>Developing efficient privacy defenses for multi-modal systems.</li>
+<li>Extending the proposed attacks to other foundational models like GPT-3 and BERT.</li>
 </ul>
-<h2 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h2>
-<ul>
-<li>Built data pipelines for processing attack predictions across multiple seeds.</li>
-<li>Calculated metrics such as Jaccard similarity, set variance, and entropy for reliability analysis.</li>
-<li>Created visualizations, including Venn diagrams and upset diagrams, to identify patterns and disparities in attack outcomes.</li>
-<li>Automated data processing workflows with Shell Scripts to handle large datasets.</li>
-</ul>
+<hr>
+<h3 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h3>
+<p>Ko, M., Jin, M., Wang, C., &amp; Jia, R. (2023). Practical Membership Inference Attacks Against Large-Scale Multi-Modal Models: A Pilot Study. <a href="https://arxiv.org/abs/2310.00108">Read the full paper</a>.</p>
 
 
   </div>
