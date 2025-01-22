@@ -1,19 +1,20 @@
 ---
 ShowToc: false
 title: Membership Inference Attacks for Large Language Models
-date: 2024-12-27
+date: 2025-01-01
 draft: false
-summary: Uncovered privacy risks in LLMs through attacks, API development, and experiments.
+summary: Advanced the understanding of privacy risks in LLMs by extending prior work with new attacks and experiments.
 math: true
 ---
 
 ## Description
-- Conducted research on privacy vulnerabilities in large language models (LLMs) by implementing membership inference attacks to evaluate risks and disparities in privacy.
+- Extended previous research on privacy vulnerabilities to large language models (LLMs)
+- Contributed to this research from **September 2024** to **January 2025**, focusing on implementing attack algorithms and building APIs to facilitate smoother experimentation with different target models and attack methods, ensuring consistency and efficiency in evaluations.
 
 ## Tech Stack
 - Python, PyTorch, NumPy, Scikit-learn.
 
 ## Contributions
-- Implemented several attack algorithms using PyTorch.
-- Built APIs to streamline experimental workflows, facilitating efficient handling of datasets and models.
-- Designed and conducted experiments to evaluate the reliability and disparities in attack outcomes.
+- Implemented attack algorithms and adapted them for new experimental setups.
+- Enhanced APIs to accommodate additional functionality and streamline the evaluation process.
+- Designed advanced experiments to analyze and validate findings, leading to deeper insights into privacy risks in LLMs.

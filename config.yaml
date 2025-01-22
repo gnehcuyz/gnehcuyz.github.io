@@ -29,15 +29,18 @@ params:
 # Navbar Settings:
 menu:
   main:
-    - name: "Blog"
-      url: "/posts/"
-      weight: 3
+    - name: "Experience"
+      url: "/experience"
+      weight: 1
     - name: "Research"
       url: "/research/"
       weight: 1
     - name: "Projects"
       url: "/projects/"
       weight: 2
+    - name: "Blog"
+      url: "/posts/"
+      weight: 3
     - name: "Reading"
       url: "/reading/"
       weight: 3

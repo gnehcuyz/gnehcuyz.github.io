@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Experience on Chengyu Zhang</title>
+    <link>http://localhost:1313/experience/</link>
+    <description>Recent content in Experience on Chengyu Zhang</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/experience/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning Engineer</title>
+      <link>http://localhost:1313/experience/HarpResearch/</link>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/HarpResearch/</guid>
+      <description>Optimizing ML and LLM workflows, including text style transfer, while enhancing data handling for scalable advertising.</description>
+    </item>
+    <item>
+      <title>Undergraduate Research Assistant</title>
+      <link>http://localhost:1313/experience/UndergradResearchAssistant/</link>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/UndergradResearchAssistant/</guid>
+      <description>Researching privacy vulnerabilities in ML and LLMs to advance ethical AI practices.</description>
+    </item>
+    <item>
+      <title>Resident Assistant</title>
+      <link>http://localhost:1313/experience/Resident-Assistant/</link>
+      <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/Resident-Assistant/</guid>
+      <description>Building community and supporting residents at RPI.</description>
+    </item>
+    <item>
+      <title>Course Mentor for Machine Learning from Data</title>
+      <link>http://localhost:1313/experience/MentorMLFD/</link>
+      <pubDate>Wed, 18 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/MentorMLFD/</guid>
+      <description>Mentored students and provided feedback in ML coursework.</description>
+    </item>
+    <item>
+      <title>AI Camp Mentor</title>
+      <link>http://localhost:1313/experience/AICampMentor/</link>
+      <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/AICampMentor/</guid>
+      <description>Guided teens in learning AI concepts and applications remotely.</description>
+    </item>
+  </channel>
+</rss>

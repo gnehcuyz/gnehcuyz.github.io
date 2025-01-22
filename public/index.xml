@@ -9,6 +9,13 @@
     <lastBuildDate>Wed, 22 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Machine Learning Engineer</title>
+      <link>http://localhost:1313/experience/HarpResearch/</link>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/HarpResearch/</guid>
+      <description>Optimizing ML and LLM workflows, including text style transfer, while enhancing data handling for scalable advertising.</description>
+    </item>
+    <item>
       <title>Style Transfer in Text - Exploration and Evaluation</title>
       <link>http://localhost:1313/reading/style_transfer_text_exploration_evaluation/</link>
       <pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate>
@@ -30,11 +37,25 @@
       <description>Binary search, your go-to algorithm</description>
     </item>
     <item>
+      <title>Undergraduate Research Assistant</title>
+      <link>http://localhost:1313/experience/UndergradResearchAssistant/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/UndergradResearchAssistant/</guid>
+      <description>Researching privacy vulnerabilities in ML and LLMs to advance ethical AI practices.</description>
+    </item>
+    <item>
+      <title>Membership Inference Attacks for Machine Learning Models</title>
+      <link>http://localhost:1313/research/MIA_ML/</link>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/MIA_ML/</guid>
+      <description>Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.</description>
+    </item>
+    <item>
       <title>Membership Inference Attacks for Large Language Models</title>
       <link>http://localhost:1313/research/MIA_LLM/</link>
-      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/research/MIA_LLM/</guid>
-      <description>Uncovered privacy risks in LLMs through attacks, API development, and experiments.</description>
+      <description>Advanced the understanding of privacy risks in LLMs by extending prior work with new attacks and experiments.</description>
     </item>
     <item>
       <title>Label Inference Attacks in Federated Learning</title>
@@ -44,11 +65,11 @@
       <description>Optimized label attacks and assessed risks in federated learning.</description>
     </item>
     <item>
-      <title>Membership Inference Attacks for Machine Learning Models</title>
-      <link>http://localhost:1313/research/MIA_ML/</link>
+      <title>Resident Assistant</title>
+      <link>http://localhost:1313/experience/Resident-Assistant/</link>
       <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/research/MIA_ML/</guid>
-      <description>Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.</description>
+      <guid>http://localhost:1313/experience/Resident-Assistant/</guid>
+      <description>Building community and supporting residents at RPI.</description>
     </item>
     <item>
       <title>Does Label Differential Privacy Prevent Label Inference Attacks?</title>
@@ -100,6 +121,13 @@
       <description>A novel study introducing self-prompt calibration for membership inference attacks (MIAs) against fine-tuned large language models, improving reliability and practicality in privacy assessments.</description>
     </item>
     <item>
+      <title>Handwriting Digits Recognition</title>
+      <link>http://localhost:1313/projects/HandwritingDigitsRecognition/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/HandwritingDigitsRecognition/</guid>
+      <description>Achieved high precision in handwritten digit classification through ML optimization.</description>
+    </item>
+    <item>
       <title>FamilyPlus - A Healthcare Platform</title>
       <link>http://localhost:1313/projects/FamilyPlus/</link>
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
@@ -119,6 +147,13 @@
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/reading/Attention_is_all_you_need/</guid>
       <description>Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.</description>
+    </item>
+    <item>
+      <title>Operating Systems Simulation</title>
+      <link>http://localhost:1313/projects/OperatingSystemSimulation/</link>
+      <pubDate>Thu, 31 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/OperatingSystemSimulation/</guid>
+      <description>Simulated an operating system and optimized CPU scheduling algorithms for performance analysis.</description>
     </item>
     <item>
       <title>Wordle Game</title>
@@ -148,6 +183,13 @@
       <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;A recent graduate from Rensselaer Polytechnic Institute (RPI) with a degree in Computer Science and a minor in Economics. My focus has been on &lt;strong&gt;Artificial Intelligence&lt;/strong&gt;, &lt;strong&gt;Machine Learning&lt;/strong&gt;, and &lt;strong&gt;Software Development&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;I have worked as a Research Assistant in the Data Security and Privacy Lab, studying privacy vulnerabilities in machine learning models and large language models (LLMs). I also gained experience with Python, PyTorch, TensorFlow, and full-stack development through projects and research.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/experience/MentorMLFD/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/MentorMLFD/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
