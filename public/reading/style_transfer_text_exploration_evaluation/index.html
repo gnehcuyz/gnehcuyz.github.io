@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Campus Connect Hub | Chengyu Zhang</title>
+<title>Style Transfer in Text - Exploration and Evaluation | Chengyu Zhang</title>
 <meta name="keywords" content="">
-<meta name="description" content="Built a platform for event management and user engagement with Agile/Scrum practices.">
+<meta name="description" content="This paper explores text style transfer (TST) using non-parallel data, introducing new evaluation metrics for transfer strength and content preservation.">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="http://localhost:1313/projects/CampusConnect/">
+<link rel="canonical" href="http://localhost:1313/reading/style_transfer_text_exploration_evaluation/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -35,7 +35,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/CampusConnect/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/reading/style_transfer_text_exploration_evaluation/">
 <noscript>
     <style>
         #theme-toggle,
@@ -147,27 +147,104 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/projects/">Projects</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/reading/">Reading</a></div>
     <h1 class="post-title entry-hint-parent">
-      Campus Connect Hub
+      Style Transfer in Text - Exploration and Evaluation
     </h1>
-    <div class="post-meta"><span title='2023-08-15 00:00:00 +0000 UTC'>August 15, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang
+    <div class="post-meta"><span title='2025-01-22 00:00:00 +0000 UTC'>January 22, 2025</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Chengyu Zhang
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h2>
+  <div class="post-content"><p><a href="https://ojs.aaai.org/index.php/AAAI/article/view/11330">Read the paper</a></p>
+<h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
 <ul>
-<li>Created a platform for event management, study groups, and item resale, focusing on user engagement and reliable data handling.</li>
+<li>This paper looks at the challenges of changing the style of text without using matching input-output examples.</li>
+<li>It introduces two new ways to measure performance:
+<ul>
+<li><strong>Transfer Strength:</strong> How well the style is changed.</li>
+<li><strong>Content Preservation:</strong> How much of the original content is kept.</li>
 </ul>
-<h2 id="tech-stack">Tech Stack<a hidden class="anchor" aria-hidden="true" href="#tech-stack">#</a></h2>
+</li>
+<li>The methods are tested on two tasks:
 <ul>
-<li>Node.js, React, MongoDB, Postman, Agile/Scrum.</li>
+<li>Turning academic paper titles into news-style titles.</li>
+<li>Changing reviews from positive to negative.</li>
 </ul>
-<h2 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h2>
+</li>
+<li>Results show the models balance changing style and keeping content well.</li>
+</ul>
+<h2 id="related-work">Related Work<a hidden class="anchor" aria-hidden="true" href="#related-work">#</a></h2>
 <ul>
-<li>Developed the back-end using Node.js for API requests and MongoDB to manage user data, events, and transactions.</li>
-<li>Designed a responsive front-end with React, enabling easy navigation and user engagement.</li>
-<li>Streamlined development with Agile/Scrum and validated APIs with Postman based on user feedback.</li>
+<li>The paper talks about earlier work on style transfer in images and text.</li>
+<li>It explains the difficulties in text style transfer, like not having matching input-output examples and lacking good evaluation methods.</li>
+<li>Different approaches, like adversarial networks and multi-task learning, are reviewed.</li>
+<li>The authors point out the need for better ways to keep content and separate style.</li>
+</ul>
+<h2 id="models">Models<a hidden class="anchor" aria-hidden="true" href="#models">#</a></h2>
+<ul>
+<li>Two models are proposed:
+<ul>
+<li>The <strong>multi-decoder model</strong>, which has separate decoders for each style.</li>
+<li>The <strong>style-embedding model</strong>, which adds style information during generation.</li>
+</ul>
+</li>
+<li>To test these models, two metrics are used:
+<ul>
+<li><strong>Transfer strength:</strong> Measures how well the new style is applied.</li>
+<li><strong>Content preservation:</strong> Measures how much content stays the same.</li>
+</ul>
+</li>
+<li>Tests on two datasets—paper-news titles and positive-negative reviews—show these models balance style change and content retention.</li>
+<li>The multi-decoder model focuses more on style change, while the style-embedding model keeps more content.</li>
+<li>Human evaluations show the content preservation metric aligns well with human opinions.</li>
+</ul>
+<h2 id="evaluation">Evaluation<a hidden class="anchor" aria-hidden="true" href="#evaluation">#</a></h2>
+<ul>
+<li>The models manage to change style while keeping content to varying levels.</li>
+<li>The new metrics (transfer strength and content preservation) match human evaluations well, proving their usefulness.</li>
+<li>The paper notes a trade-off between style change and content retention, suggesting different models for different tasks.</li>
+</ul>
+<h2 id="experiment">Experiment<a hidden class="anchor" aria-hidden="true" href="#experiment">#</a></h2>
+<ul>
+<li>Two datasets are used:
+<ul>
+<li>A <strong>paper-news title dataset</strong> with academic paper titles and their news-style versions.</li>
+<li>A <strong>positive-negative review dataset</strong> with Amazon reviews labeled as positive or negative.</li>
+</ul>
+</li>
+<li>The datasets were split into training, validation, and test sets.</li>
+<li>Preprocessing steps included:
+<ul>
+<li>Filtering sentence lengths.</li>
+<li>Converting text to lowercase.</li>
+<li>Replacing numbers with placeholders.</li>
+</ul>
+</li>
+<li>Different settings were tested to ensure fair evaluation:
+<ul>
+<li>Word embedding size: Tried values like 64, 128, etc.</li>
+<li>Encoder hidden size: Tested sizes like 16, 32, 64, 128.</li>
+<li>Style embedding size: Checked 32, 64, 128 dimensions.</li>
+<li>Batch size: Set to 128.</li>
+<li>Optimizer: Used Adadelta with a learning rate of 0.0001.</li>
+</ul>
+</li>
+</ul>
+<h2 id="results-and-analysis">Results and Analysis<a hidden class="anchor" aria-hidden="true" href="#results-and-analysis">#</a></h2>
+<ul>
+<li>The content preservation metric matched human opinions with a Spearman’s correlation of 0.5656 (p &lt; 0.0001).</li>
+<li>In the paper-news title task:
+<ul>
+<li>The style-embedding model got content preservation scores of 0.89<del>0.95 and transfer strength scores of 0.2</del>0.6, better than the baseline.</li>
+</ul>
+</li>
+<li>In the positive-negative review task:
+<ul>
+<li>The multi-decoder model got transfer strength of 0.8 and content preservation of 0.85, doing better than the style-embedding model, which scored 0.6 and 0.75.</li>
+</ul>
+</li>
+<li>The multi-decoder model improved transfer strength by 50% compared to the auto-encoder in this task, reaching 0.6.</li>
+<li>Overall, the models improved style change and content retention by 20~50% compared to the baseline.</li>
 </ul>
 
 

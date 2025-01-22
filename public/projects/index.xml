@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Projects on Chengyu Zhang</title>
-    <link>https://gnehcuyz.github.io/projects/</link>
+    <link>http://localhost:1313/projects/</link>
     <description>Recent content in Projects on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gnehcuyz.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FamilyPlus - A Healthcare Platform</title>
-      <link>https://gnehcuyz.github.io/projects/FamilyPlus/</link>
+      <link>http://localhost:1313/projects/FamilyPlus/</link>
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/FamilyPlus/</guid>
+      <guid>http://localhost:1313/projects/FamilyPlus/</guid>
       <description>Built an AI and blockchain platform for secure, accessible health data.</description>
     </item>
     <item>
       <title>Wordle Game</title>
-      <link>https://gnehcuyz.github.io/projects/WordleGameServer/</link>
+      <link>http://localhost:1313/projects/WordleGameServer/</link>
       <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/WordleGameServer/</guid>
+      <guid>http://localhost:1313/projects/WordleGameServer/</guid>
       <description>Developed a multi-threaded Wordle server with efficient protocols.</description>
     </item>
     <item>
       <title>Campus Connect Hub</title>
-      <link>https://gnehcuyz.github.io/projects/CampusConnect/</link>
+      <link>http://localhost:1313/projects/CampusConnect/</link>
       <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/CampusConnect/</guid>
+      <guid>http://localhost:1313/projects/CampusConnect/</guid>
       <description>Built a platform for event management and user engagement with Agile/Scrum practices.</description>
     </item>
     <item>
       <title>HassPathway - Course Navigation Platform</title>
-      <link>https://gnehcuyz.github.io/projects/HassPathway/</link>
+      <link>http://localhost:1313/projects/HassPathway/</link>
       <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/HassPathway/</guid>
+      <guid>http://localhost:1313/projects/HassPathway/</guid>
       <description>Built a tool to simplify and display course data with an intuitive interface.</description>
     </item>
   </channel>
