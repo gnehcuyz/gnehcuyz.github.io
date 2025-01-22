@@ -79,8 +79,8 @@
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="reading">
-    <meta property="article:published_time" content="2025-01-15T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-15T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-01-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-21T00:00:00+00:00">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Text Style Transfer - A Review and Experimental Evaluation">
 <meta name="twitter:description" content="A comprehensive review of text style transfer (TST) techniques, their evaluation, and benchmarking results across various datasets.">
@@ -116,11 +116,11 @@
   "keywords": [
     
   ],
-  "articleBody": "Overview This paper provides a detailed review of the field of text style transfer (TST), which involves modifying the stylistic properties of text while retaining its content. It introduces a taxonomy for TST models, evaluates 19 state-of-the-art TST algorithms on two datasets, and discusses open challenges and future directions.\nContributions The paper highlights three key contributions:\nTaxonomy and Categorization: Organizes TST models based on data settings, strategies, and techniques, providing a structured understanding of the field. Evaluation Methodologies: Reviews existing metrics and methods for evaluating TST models, emphasizing reproducibility and benchmarking. Experimental Study: Benchmarks 19 state-of-the-art TST algorithms on two publicly available datasets, offering insights into their strengths and weaknesses. Methodology Taxonomy of TST Models TST models are categorized into:\nData Settings: Parallel supervised, non-parallel supervised, and purely unsupervised. Strategies: Style-content disentanglement (explicit, implicit, or without disentanglement). Techniques: Adversarial learning, back-translation, reinforcement learning, and attribute-controlled generation. Evaluation Metrics Automated Metrics: BLEU, ROUGE-L, and style transfer accuracy. Human Evaluation: Measures fluency, content preservation, and style transfer accuracy. Experimental Findings Datasets: Evaluated on Yelp reviews and Caption datasets, focusing on sentiment transfer and stylistic variation. Results: Models leveraging non-parallel supervised settings showed better performance due to their flexibility and robustness. Adversarial learning and back-translation were particularly effective for preserving content while altering style. Implications The study highlights challenges in TST, such as the lack of standard evaluation metrics and limited datasets for diverse stylistic attributes. Future research directions include:\nDeveloping more reliable evaluation frameworks. Exploring unsupervised and multi-modal approaches for TST. Addressing ethical concerns in style transfer applications. Reference Hu, Z., Lee, R. K.-W., Aggarwal, C. C., \u0026 Zhang, A. (2023). Text Style Transfer: A Review and Experimental Evaluation. Read the full paper.\n",
-  "wordCount" : "281",
+  "articleBody": "Introduction The text provides an overview of a survey paper on Text Style Transfer (TST), discussing its history, significance, recent developments, and the structure of the survey. Below are the key points:\nDefinition of Text Style Text style refers to linguistic variations that preserve meaning but change stylistic properties. Example: The same content expressed in different styles: Informal: “let’s hang out on Sunday afternoon!” Formal: “We will arrange a meeting on Sunday afternoon.” Emergence of Text Style Transfer (TST) TST is a task in Natural Language Generation (NLG) that alters stylistic properties of text while retaining semantic content. It has gained significant attention from computer science researchers. Initial Approaches to TST Early TST relied on parallel corpora: Datasets with sentences of the same semantics but different styles. Example: Modern and Shakespearean English sentences as parallel examples. Challenge: Parallel data is scarce for real-world applications (e.g., dialogue generation). Modern Developments in TST Non-parallel data algorithms emerged to address the scarcity of parallel corpora. This survey explores various TST methods, comparing their strengths and weaknesses. Purpose of the Survey Thorough Review: Investigates, classifies, and summarizes advancements in TST. Experimental Comparisons: Benchmarks algorithms using publicly available datasets. Challenges and Directions: Discusses open problems and future research directions. 2. Related Research Areas This section explores the foundational and related fields that have influenced Text Style Transfer (TST), including Natural Language Generation (NLG), Controllable Text Generation, Neural Machine Translation (NMT), and Neural Style Transfer (NST).\nTST has drawn heavily from these related research areas. Each area contributes valuable techniques and evaluation methodologies, but TST also faces unique challenges, particularly in disentangling style and content and in evaluating results effectively. 2.1 Natural Language Generation (NLG) NLG involves tasks like machine translation, dialogue generation, text summarization, and paraphrase generation. Common goals shared with TST: Generating fluent, semantically meaningful, and grammatically correct text. Adding an additional objective in TST: generating text in specific styles. Example Technique: Generative Adversarial Networks (GANs) used for disentangling semantics and style. Evolution of TST: Inspired by advancements in NLG, such as Texygen [156], a platform for benchmarking text generation models. Challenges in Evaluation: No standardized automatic metrics to assess contextual quality or informativeness. Lack of consensus on human evaluation methodologies. 2.2 Controllable Text Generation Focuses on controlling aspects of text, such as: Context, topic, emotion, and user preferences. Techniques like GANs, VAEs (Variational Autoencoders), and Transformers from controllable text generation are adapted in TST. These techniques enable control over stylistic properties for effective style transfer. 2.3 Neural Machine Translation (NMT) NMT focuses on changing the language of a text while preserving its content. Similarities with TST: Both aim to keep the content while modifying the style or changing the language. Both use sequence-to-sequence encoder-decoder models and adopt back-translation techniques. Share evaluation metrics, such as BLEU scores, to assess quality. Differences with TST: NMT transfers the observable attribute (language), while TST deals with subtle, abstract attributes (style). NMT often ignores style information, whereas TST emphasizes it. 2.4 Neural Style Transfer (NST) Originated from image style transfer, where content and style features are disentangled and recombined. Example: Gatys et al. [29] used convolutional neural networks (CNNs) to extract and recombine content and style features from images. Influence on TST: Inspired methods to disentangle and manipulate content and style in text using adversarial learning and embeddings. Challenges in Text vs. Image: Text styles are more abstract and subtle compared to visual styles. Content and style in text are tightly coupled, making disentanglement harder. Random changes in text (e.g., altering a word) can distort meaning, unlike arbitrary pixel changes in images. 3. Style and Notation Definition 3.1 Definition of Style Linguistic View Style: The manner in which semantics (content) are delivered. Semantics: The subject matter or argument being conveyed. Style includes: Word choice. Sentence structure. Figurative language. Sentence arrangement. Style works with tone and imagery to shape how the text is perceived. Style reflects how events, objects, and ideas are described, providing additional information for readers to interpret. Style is highly individualized, with each author tailoring their language use for specific interpersonal goals. Style in Text Style Transfer Unlike linguistics, TST defines style using data-driven methods: Style is represented as text attributes or labels derived from style-specific corpora. Examples of style attributes: Sentiment (positive vs. negative). Formality (formal vs. informal). Popular benchmarks for TST include: Sentiment transfer: Positive ↔ Negative. Formality transfer: Formal ↔ Informal. Debate: Some argue that transferring sentiment also alters semantics. However, current TST models can work with any dataset labeled with stylistic attributes. 3.2 Task Formulation Objective: Change the stylistic properties of text while preserving style-independent content. Input: Attributes (\\(A\\)): Style attributes (e.g., formal, informal). Corpus (\\(X\\)): Text data labeled with attributes. Task: Input: Sentence \\(x\\) with a source attribute \\(s\\) (e.g., formal). Output: Sentence \\(x'\\) with a target attribute \\(t\\) (e.g., informal), preserving the style-independent content. Data Settings: Parallel Corpora: Contains aligned sentence pairs with source and target styles. Non-Parallel Corpora: No alignment between sentences with different attributes. 4. A Taxonomy of Text Style Transfer Methods This section explains the main methods for Text Style Transfer (TST), organized by data settings, strategies, and techniques.\n4.1 Categories of Text Style Transfer Models 4.1.1 Data Settings Parallel Supervised: Uses datasets where sentences in the source and target styles are matched. Non-Parallel Supervised: Works with datasets where sentences are labeled by style but not paired. Unsupervised: Does not require style labels or sentence pairs. 4.1.2 Strategies Explicit Disentanglement: Separates and adjusts style-related parts of the text directly. Implicit Disentanglement: Learns hidden representations of style and content without clear separation. No Disentanglement: Focuses on transforming style without splitting content and style explicitly. 4.1.3 Techniques Approaches include sequence-to-sequence models, adversarial training, and other frameworks. 4.2 Sequence-to-Sequence Models with Parallel Data (1) How Does It Work? Leverages encoder-decoder models trained on parallel datasets. Steps: Source sentences (e.g., formal) are encoded into latent representations. The decoder generates target-style sentences (e.g., informal). Augmentation techniques (e.g., pseudo-parallel datasets) expand training data by matching content between non-parallel sentences. (2) Pros and Cons Pros: Generates high-quality style-transferred text due to strong alignment in parallel data. Effective for tasks with clear, well-defined styles (e.g., Modern ↔ Shakespearean English). Cons: Heavily reliant on parallel data, which is often unavailable for many tasks. Poor generalizability to real-world scenarios with non-parallel data. 4.3 Explicit Style-Content Disentanglement (1) How Does It Work? Focuses on identifying and replacing style-related keywords or phrases. Utilizes frameworks like Delete-Retrieve-Generate: Delete: Removes stylistic elements. Retrieve: Finds target-style elements. Generate: Combines original content with new stylistic elements. (2) Pros and Cons Pros: Simplicity in approach; easy to interpret modifications made during style transfer. Effective for datasets with clearly defined style attributes. Cons: Requires precise identification of style-related elements. May struggle with subtler, more abstract styles. 4.4 Implicit Style-Content Disentanglement (1) How Does It Work? Uses latent representations to separate content and style indirectly. Techniques include: Adversarial learning to isolate content-independent features. Back-translation to refine latent spaces without explicit style labels. (2) Pros and Cons Pros: Avoids dependency on parallel datasets. Can handle more abstract style attributes. Cons: Difficult to achieve perfect disentanglement. Results can depend on the quality of the latent representations. 4.5 Without Style-Content Disentanglement (1) How Does It Work? Skips explicit separation of style and content. Methods like denoising autoencoders or domain-adaptive models directly generate target-style sentences without isolating content. (2) Pros and Cons Pros: Simpler model structure. Suitable for tasks where disentanglement is impractical. Cons: May lack control over stylistic changes. Risk of altering the original content unintentionally. 4.6 Attribute Control Generation Attribute control generation is a popular technique in Text Style Transfer (TST). It involves learning an attribute code to control text generation in different styles.\n(1) How Does It Work? Two strategies are commonly used:\nWith Content-Style Disentanglement: Example: Hu et al. [41] proposed a Variational Autoencoder (VAE)-based TST model. The VAE framework learns the latent representation of the sentence and separates content from style. The model combines content representation \\( z \\) and style vector \\( a \\) to generate text with the desired style. Without Disentanglement: Attribute codes are directly learned without explicitly separating content and style. Loss Function:\nA classifier-guided loss ensures the output aligns with the target style. Example: Gumbel-softmax or policy gradient algorithm optimizes style-specific text generation. (2) Pros and Cons Pros: Can effectively control style attributes such as sentiment, formality, and tone. Pre-trained style codes may be transferable to other natural language generation tasks. Cons: Highly dependent on the accuracy of the pre-trained style classifier. If the classifier performs poorly, it limits the effectiveness of attribute control. Challenges in learning disentangled representations of style and content. 4.7 Entangled Latent Representation Editing (1) How Does It Work? This approach directly edits the latent representation learned from autoencoder-based models. Steps: The encoder generates a latent representation of the input text. Style-related adjustments are applied to the latent representation. The decoder reconstructs the output text with the desired style. Unlike disentanglement methods, this technique modifies latent representations while keeping style and content entangled. (2) Pros and Cons Pros: Eliminates the complexity of disentangling style and content. Works well when style attributes and content are tightly interlinked. Cons: Risk of unintended content alterations when modifying latent representations. May struggle to achieve precise control over stylistic changes. 4.8 Reinforcement Learning in Text Style Transfer Reinforcement learning is a promising technique for Text Style Transfer (TST). It introduces reward functions to guide the TST process instead of relying solely on predefined loss functions.\n(1) How Does It Work? Core Idea: Optimize TST models using reward signals. Policy Gradient Algorithm: Maximizes expected rewards for transferred text to optimize model parameters. Applications: Dual-Task Framework: Example: Luo et al. proposed a dual-task RL framework using two Seq2Seq models for source-to-target and target-to-source transfers. Reward Functions: Style Classifier Reward (\\(R_s\\)): Encourages style transfer accuracy. Reconstruction Reward (\\(R_c\\)): Ensures content preservation. Total Reward: Harmonic mean of \\(R_s\\) and \\(R_c\\). Advantage: Works without disentangling style and content or requiring parallel data. Generator-Evaluator Setup: Example: Gong et al. used an attention-based encoder-decoder model. Rewards: Style accuracy. Semantic preservation. Fluency of generated text. (2) Pros and Cons Pros: Allows flexibility in defining and optimizing custom reward functions. Effective for non-parallel data and complex style transfer tasks. Cons: Training stability issues due to high variance in sampling gradients. Dependence on style classifiers, which may limit effectiveness if poorly trained. 4.9 Purely Unsupervised Methods (1) How Does It Work? Operates on mixed corpora without explicit style labels. Key Approaches: Latent Representation Manipulation: Radford et al. [100]: Trained LSTMs on unsupervised byte-level text data, identifying specific neuron units responsible for sentiment. Xu et al. [139]: Used unsupervised learning to separate style and content, achieving high sentiment detection accuracy. External Scorers: Jain et al. [46]: Used language processing tools to score and guide encoder-decoder models in capturing stylistic attributes. Adversarial Autoencoders (AAEs): Shen et al. [113]: Introduced denoising AAEs to map sentences into distinct latent spaces and used sentiment vectors for style transfer. (2) Pros and Cons Pros: Removes reliance on labeled datasets, enabling flexibility in real-world applications. Effective for tasks like sentiment transfer, which rely on latent attribute discovery. Cons: Limited generalizability to other stylistic properties like formality or tone. Evaluation mostly focuses on sentiment transfer, leaving other tasks underexplored. 4.10 Fine-Tuning Pre-Trained Language Models Fine-tuning pre-trained language models has emerged as a significant approach for Text Style Transfer (TST).\n(1) How Does It Work? Core Idea: Utilize pre-trained language models such as GPT-2 to perform TST tasks by adapting them to specific stylistic requirements. Steps: Pre-training: The model is trained on a large corpus of diverse text, capturing general language features. Fine-tuning: The pre-trained model is fine-tuned on a style-specific dataset or with transfer rules. Example: Wang et al. [130] fine-tuned GPT-2 using formality transfer rules derived from the GYAFC parallel dataset. Application: The fine-tuned model generates text that adheres to the target style (e.g., informal to formal). (2) Pros and Cons Pros: Generalizability: Leverages the rich knowledge embedded in pre-trained models, enabling effective style transfer across diverse datasets. Efficiency: Reduces the need for extensive training from scratch. Flexibility: Pre-trained models can adapt to various stylistic tasks with minimal fine-tuning. Cons: Dependency on Pre-Trained Data: The quality of the transferred text heavily depends on the diversity and quality of the pre-training corpus. Limited Stylistic Understanding: Pre-trained models may not fully capture subtle stylistic nuances without significant fine-tuning. 5. Resources and Evaluation Methods 5.1 Tasks and Datasets Datasets: Many datasets are used for TST, containing text labeled with style attributes (e.g., sentiment, formality). Examples: Yelp dataset: Labeled with binary sentiment (positive, negative). GYAFC dataset: Contains formal and informal text pairs for formality transfer. Most datasets are non-parallel, except a few (e.g., Shakespearean-Modern English, GYAFC). 5.2 Automated Evaluation Automated metrics evaluate TST algorithms based on three criteria:\nTransfer Strength:\nMeasures how effectively the text’s style has been transferred. Common metric: Style Transfer Accuracy, using a pre-trained style classifier. Alternative metric: Earth Mover’s Distance, indicating the intensity of the transfer. Content Preservation:\nAssesses how well the original content is preserved in the transferred text. Metrics: BLEU: Compares the transferred text to reference texts (for parallel datasets). source-BLEU (sBLEU): Measures similarity between the original and transferred sentences for non-parallel datasets. Cosine Similarity: Calculates semantic similarity between sentence embeddings. Word Overlap: Counts unigram overlap between the original and transferred sentences, excluding stopwords and style-specific words. Fluency:\nEvaluates the grammatical quality and readability of the generated text. Commonly measured using perplexity scores, with lower perplexity indicating better fluency. 5.3 Human Evaluation Process: Human annotators are recruited to evaluate sentences on three criteria: Transfer Strength: The extent to which the target style is achieved. Content Preservation: How much original meaning is retained. Fluency: The readability and grammatical correctness of the text. Annotators rate each criterion on a Likert scale (e.g., 1-5). Average scores are calculated to minimize individual biases. Challenges: Interpretation of style is subjective and can vary among annotators. Human evaluation is costly and labor-intensive but provides insights into model performance. 6. Reproducibility Study This section evaluates and benchmarks 19 TST models on standardized datasets, addressing inconsistencies in prior studies. The goal is to provide a unified comparison and deeper insights into TST performance.\n6.1 Experimental Setup Environment: Ubuntu 18.04.4 LTS, 24 cores, 128 GB RAM, Nvidia GTX 2080Ti GPU. Datasets: Yelp Reviews: Sentiment transfer task (positive ↔ negative). GYAFC: Formality transfer task (informal ↔ formal). Evaluation Metrics: Transfer Strength: Style Transfer Accuracy (ACC). Content Preservation: BLEU, sBLEU, Cosine Similarity (CS), Word Overlap (WO). Fluency: Perplexity (PPL). Combined Scores: Geometric Mean (G-Score): Aggregates ACC, sBLEU, WO, and 1/PPL. Harmonic Mean (H-Score): Prioritizes different aspects through weighted averages. 6.2 Sentiment Transfer Goal: Evaluate TST models on their ability to change sentiment while preserving content. Results: Transfer strength increases often led to reduced content preservation and fluency. 6.3 Formality Transfer Goal: Assess formality conversion between formal and informal texts. Observation: Unlike sentiment transfer, high style accuracy does not always correlate with fluency or content preservation. 6.4 Computational Efficiency Evaluation Metrics: Number of parameters and FLOPs (Floating Point Operations) were measured to compare efficiency across models. 6.5 Evaluation Metrics Trade-Off Analysis Purpose: Study trade-offs between evaluation criteria: Increased style accuracy often reduces content preservation. Sentence fluency may not always align with style transfer strength. Insight: Semantic and stylistic attributes in text are tightly coupled, making it challenging to optimize both simultaneously. 6.6 Human Evaluation Setup: Human workers rated outputs on: Style transfer accuracy. Content preservation. Fluency. Findings: Human evaluations highlight subjective differences in style interpretation. Models with high automated scores may still fall short in human judgment. 7. Applications 7.1 Writing Tools Usage: TST algorithms can enhance computer-aided writing tools by: Allowing users to switch between writing styles for different audiences. Improving readability by transferring text between expert and layman styles. Examples: A writing tool analyzing a business email draft for excessive informality and suggesting revisions to make it more formal. Modifying text to reduce technical jargon for layman audiences or increase technical precision for professional contexts. 7.2 Persuasive Communication and Marketing Usage: TST algorithms can improve persuasive text by: Adapting text style to appeal to specific audiences, such as authoritative or humorous tones. Modifying marketing messages or news headlines into engaging styles like romantic, humorous, or clickbaity. Examples: Personalizing marketing strategies to user profiles by adjusting text to more appealing styles. Enhancing the persuasiveness of news headlines using TST techniques. 7.3 Chatbot Dialogue Usage: TST enhances chatbot flexibility by enabling: Style adaptation for different conversational contexts. Persuasive styles for product recommendations and formal tones for complaint handling. Impact: Makes chatbots more engaging and effective in influencing user behavior or improving customer support interactions. 8. Ethical Considerations 8.1 Negative Use Cases Content Manipulation and Forgery Potential Misuse: Manipulating review polarities (e.g., converting negative reviews to positive ones). Forging documents in specific writing styles to create fraudulent content. Impact: Challenges to forensic investigation efforts in detecting forged content. Social Bots and Sock Puppets Potential Misuse: Using TST for generating politically biased content on social media. Creating armies of bots with diverse persuasive styles to promote harmful behaviors like: Cyberbullying. Hate speech. Impact: Manipulation of public opinion and promotion of anti-social behavior. 8.2 Ethical Guidelines Raising Awareness Companies and researchers should acknowledge the risks associated with TST misuse. Ethical Review Process Proposals: Set up Ethics Review Boards (ERBs) to assess ethical concerns during all stages of TST research. Include experts in artificial intelligence and natural language processing (NLP) as part of the ERBs. Best Practices Encourage researchers and organizations to follow ethical guidelines proposed in frameworks like the one by Leidner et al. [69]. Build ethical considerations into research from the start to mitigate risks effectively. 9. Future Research Directions and Open Issues 9.1 Deeper Dive into Style-Content Disentanglement Challenge: Separating style and content remains an open question. Current methods lack clarity on the extent of disentanglement. Example: Little is known about what style representations preserve (e.g., sentence structure) and how this impacts tasks like formality transfer. Future Directions: Develop experiments to quantify and analyze style-content disentanglement. Investigate style embeddings to gain new insights for TST model development. 9.2 Unsupervised Text Style Transfer Current Limitation: Most TST methods rely on style-labeled datasets. Goal: Create unsupervised techniques requiring little or no labeled data. Approaches: Use metrics like semantic relatedness, fluency, and readability to guide style transfer without explicit style labels. Explore additional text features (e.g., tone, brevity, sentence structure). 9.3 Going Beyond Transferring Between Two Styles Current Focus: Most TST models are binary (e.g., formal ↔ informal). Future Opportunities: Introduce multi-attribute style transfer (e.g., sentiment and author gender). Develop domain-aware methods that consider both style and content domain (e.g., food vs. movie reviews). 9.4 Style in Other Languages Issue: Most TST research focuses on English. Opportunities: Explore language-specific stylistic properties in non-English corpora. Develop methods tailored to languages with unique syntax and semantics. Example: Dialogue systems capturing stylistic nuances in Japanese. 9.5 Automatic Evaluation for Text Style Transfer Current Challenges: Reliance on style classifiers for evaluation, which may introduce biases. Metrics often trade off between transfer strength and content preservation. Future Directions: Design novel automatic evaluation metrics that better balance style transfer, content retention, and fluency. 10. Discussion and Conclusion This section highlights the progress in Text Style Transfer (TST). It covers the fast growth of research, how models are organized, and a shift from separating style and content to simpler methods. A study of 19 TST models found no single best model, showing the need for better ways to measure success. The survey suggests focusing on style representation and expects TST research to keep growing, guiding future work.\nReference Hu, Z., Lee, R. K.-W., Aggarwal, C. C., \u0026 Zhang, A. (2023). Text Style Transfer: A Review and Experimental Evaluation. Read the full paper.\n",
+  "wordCount" : "3283",
   "inLanguage": "en",
-  "datePublished": "2025-01-15T00:00:00Z",
-  "dateModified": "2025-01-15T00:00:00Z",
+  "datePublished": "2025-01-21T00:00:00Z",
+  "dateModified": "2025-01-21T00:00:00Z",
   "author":{
     "@type": "Person",
     "name": "Chengyu Zhang"
@@ -217,44 +217,1064 @@
     <h1 class="post-title entry-hint-parent">
       Text Style Transfer - A Review and Experimental Evaluation
     </h1>
-    <div class="post-meta"><span title='2025-01-15 00:00:00 +0000 UTC'>January 15, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
+    <div class="post-meta"><span title='2025-01-21 00:00:00 +0000 UTC'>January 21, 2025</span>&nbsp;·&nbsp;16 min&nbsp;·&nbsp;Chengyu Zhang
 
 </div>
-  </header> 
-  <div class="post-content"><h3 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h3>
-<p>This paper provides a detailed review of the field of text style transfer (TST), which involves modifying the stylistic properties of text while retaining its content. It introduces a taxonomy for TST models, evaluates 19 state-of-the-art TST algorithms on two datasets, and discusses open challenges and future directions.</p>
-<h3 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h3>
-<p>The paper highlights three key contributions:</p>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#introduction" aria-label="Introduction">Introduction</a><ul>
+                        
+                <li>
+                    <a href="#definition-of-text-style" aria-label="Definition of Text Style">Definition of Text Style</a></li>
+                <li>
+                    <a href="#emergence-of-text-style-transfer-tst" aria-label="Emergence of Text Style Transfer (TST)">Emergence of Text Style Transfer (TST)</a></li>
+                <li>
+                    <a href="#initial-approaches-to-tst" aria-label="Initial Approaches to TST">Initial Approaches to TST</a></li>
+                <li>
+                    <a href="#modern-developments-in-tst" aria-label="Modern Developments in TST">Modern Developments in TST</a></li>
+                <li>
+                    <a href="#purpose-of-the-survey" aria-label="Purpose of the Survey">Purpose of the Survey</a></li></ul>
+                </li>
+                <li>
+                    <a href="#2-related-research-areas" aria-label="2. Related Research Areas">2. Related Research Areas</a><ul>
+                        
+                <li>
+                    <a href="#21-natural-language-generation-nlg" aria-label="2.1 Natural Language Generation (NLG)">2.1 Natural Language Generation (NLG)</a></li>
+                <li>
+                    <a href="#22-controllable-text-generation" aria-label="2.2 Controllable Text Generation">2.2 Controllable Text Generation</a></li>
+                <li>
+                    <a href="#23-neural-machine-translation-nmt" aria-label="2.3 Neural Machine Translation (NMT)">2.3 Neural Machine Translation (NMT)</a></li>
+                <li>
+                    <a href="#24-neural-style-transfer-nst" aria-label="2.4 Neural Style Transfer (NST)">2.4 Neural Style Transfer (NST)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#3-style-and-notation-definition" aria-label="3. Style and Notation Definition">3. Style and Notation Definition</a><ul>
+                        
+                <li>
+                    <a href="#31-definition-of-style" aria-label="3.1 Definition of Style">3.1 Definition of Style</a><ul>
+                        
+                <li>
+                    <a href="#linguistic-view" aria-label="Linguistic View">Linguistic View</a></li>
+                <li>
+                    <a href="#style-in-text-style-transfer" aria-label="Style in Text Style Transfer">Style in Text Style Transfer</a></li></ul>
+                </li>
+                <li>
+                    <a href="#32-task-formulation" aria-label="3.2 Task Formulation">3.2 Task Formulation</a></li></ul>
+                </li>
+                <li>
+                    <a href="#4-a-taxonomy-of-text-style-transfer-methods" aria-label="4. A Taxonomy of Text Style Transfer Methods">4. A Taxonomy of Text Style Transfer Methods</a><ul>
+                        
+                <li>
+                    <a href="#41-categories-of-text-style-transfer-models" aria-label="4.1 Categories of Text Style Transfer Models">4.1 Categories of Text Style Transfer Models</a><ul>
+                        
+                <li>
+                    <a href="#411-data-settings" aria-label="4.1.1 Data Settings">4.1.1 Data Settings</a></li>
+                <li>
+                    <a href="#412-strategies" aria-label="4.1.2 Strategies">4.1.2 Strategies</a></li>
+                <li>
+                    <a href="#413-techniques" aria-label="4.1.3 Techniques">4.1.3 Techniques</a></li></ul>
+                </li>
+                <li>
+                    <a href="#42-sequence-to-sequence-models-with-parallel-data" aria-label="4.2 Sequence-to-Sequence Models with Parallel Data">4.2 Sequence-to-Sequence Models with Parallel Data</a><ul>
+                        
+                <li>
+                    <a href="#1-how-does-it-work" aria-label="(1) How Does It Work?">(1) How Does It Work?</a></li>
+                <li>
+                    <a href="#2-pros-and-cons" aria-label="(2) Pros and Cons">(2) Pros and Cons</a></li></ul>
+                </li>
+                <li>
+                    <a href="#43-explicit-style-content-disentanglement" aria-label="4.3 Explicit Style-Content Disentanglement">4.3 Explicit Style-Content Disentanglement</a><ul>
+                        
+                <li>
+                    <a href="#1-how-does-it-work-1" aria-label="(1) How Does It Work?">(1) How Does It Work?</a></li>
+                <li>
+                    <a href="#2-pros-and-cons-1" aria-label="(2) Pros and Cons">(2) Pros and Cons</a></li></ul>
+                </li>
+                <li>
+                    <a href="#44-implicit-style-content-disentanglement" aria-label="4.4 Implicit Style-Content Disentanglement">4.4 Implicit Style-Content Disentanglement</a><ul>
+                        
+                <li>
+                    <a href="#1-how-does-it-work-2" aria-label="(1) How Does It Work?">(1) How Does It Work?</a></li>
+                <li>
+                    <a href="#2-pros-and-cons-2" aria-label="(2) Pros and Cons">(2) Pros and Cons</a></li></ul>
+                </li>
+                <li>
+                    <a href="#45-without-style-content-disentanglement" aria-label="4.5 Without Style-Content Disentanglement">4.5 Without Style-Content Disentanglement</a><ul>
+                        
+                <li>
+                    <a href="#1-how-does-it-work-3" aria-label="(1) How Does It Work?">(1) How Does It Work?</a></li>
+                <li>
+                    <a href="#2-pros-and-cons-3" aria-label="(2) Pros and Cons">(2) Pros and Cons</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#46-attribute-control-generation" aria-label="4.6 Attribute Control Generation">4.6 Attribute Control Generation</a><ul>
+                        
+                <li>
+                    <a href="#1-how-does-it-work-4" aria-label="(1) How Does It Work?">(1) How Does It Work?</a></li>
+                <li>
+                    <a href="#2-pros-and-cons-4" aria-label="(2) Pros and Cons">(2) Pros and Cons</a><ul>
+                        
+                <li>
+                    <a href="#pros" aria-label="Pros:">Pros:</a></li>
+                <li>
+                    <a href="#cons" aria-label="Cons:">Cons:</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#47-entangled-latent-representation-editing" aria-label="4.7 Entangled Latent Representation Editing">4.7 Entangled Latent Representation Editing</a><ul>
+                        
+                <li>
+                    <a href="#1-how-does-it-work-5" aria-label="(1) How Does It Work?">(1) How Does It Work?</a></li>
+                <li>
+                    <a href="#2-pros-and-cons-5" aria-label="(2) Pros and Cons">(2) Pros and Cons</a><ul>
+                        
+                <li>
+                    <a href="#pros-1" aria-label="Pros:">Pros:</a></li>
+                <li>
+                    <a href="#cons-1" aria-label="Cons:">Cons:</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#48-reinforcement-learning-in-text-style-transfer" aria-label="4.8 Reinforcement Learning in Text Style Transfer">4.8 Reinforcement Learning in Text Style Transfer</a><ul>
+                        
+                <li>
+                    <a href="#1-how-does-it-work-6" aria-label="(1) How Does It Work?">(1) How Does It Work?</a></li>
+                <li>
+                    <a href="#2-pros-and-cons-6" aria-label="(2) Pros and Cons">(2) Pros and Cons</a><ul>
+                        
+                <li>
+                    <a href="#pros-2" aria-label="Pros:">Pros:</a></li>
+                <li>
+                    <a href="#cons-2" aria-label="Cons:">Cons:</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#49-purely-unsupervised-methods" aria-label="4.9 Purely Unsupervised Methods">4.9 Purely Unsupervised Methods</a><ul>
+                        
+                <li>
+                    <a href="#1-how-does-it-work-7" aria-label="(1) How Does It Work?">(1) How Does It Work?</a></li>
+                <li>
+                    <a href="#2-pros-and-cons-7" aria-label="(2) Pros and Cons">(2) Pros and Cons</a><ul>
+                        
+                <li>
+                    <a href="#pros-3" aria-label="Pros:">Pros:</a></li>
+                <li>
+                    <a href="#cons-3" aria-label="Cons:">Cons:</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#410-fine-tuning-pre-trained-language-models" aria-label="4.10 Fine-Tuning Pre-Trained Language Models">4.10 Fine-Tuning Pre-Trained Language Models</a><ul>
+                        
+                <li>
+                    <a href="#1-how-does-it-work-8" aria-label="(1) How Does It Work?">(1) How Does It Work?</a></li>
+                <li>
+                    <a href="#2-pros-and-cons-8" aria-label="(2) Pros and Cons">(2) Pros and Cons</a><ul>
+                        
+                <li>
+                    <a href="#pros-4" aria-label="Pros:">Pros:</a></li>
+                <li>
+                    <a href="#cons-4" aria-label="Cons:">Cons:</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#5-resources-and-evaluation-methods" aria-label="5. Resources and Evaluation Methods">5. Resources and Evaluation Methods</a><ul>
+                        
+                <li>
+                    <a href="#51-tasks-and-datasets" aria-label="5.1 Tasks and Datasets">5.1 Tasks and Datasets</a></li>
+                <li>
+                    <a href="#52-automated-evaluation" aria-label="5.2 Automated Evaluation">5.2 Automated Evaluation</a></li>
+                <li>
+                    <a href="#53-human-evaluation" aria-label="5.3 Human Evaluation">5.3 Human Evaluation</a></li></ul>
+                </li>
+                <li>
+                    <a href="#6-reproducibility-study" aria-label="6. Reproducibility Study">6. Reproducibility Study</a><ul>
+                        
+                <li>
+                    <a href="#61-experimental-setup" aria-label="6.1 Experimental Setup">6.1 Experimental Setup</a></li>
+                <li>
+                    <a href="#62-sentiment-transfer" aria-label="6.2 Sentiment Transfer">6.2 Sentiment Transfer</a></li>
+                <li>
+                    <a href="#63-formality-transfer" aria-label="6.3 Formality Transfer">6.3 Formality Transfer</a></li>
+                <li>
+                    <a href="#64-computational-efficiency-evaluation" aria-label="6.4 Computational Efficiency Evaluation">6.4 Computational Efficiency Evaluation</a></li>
+                <li>
+                    <a href="#65-evaluation-metrics-trade-off-analysis" aria-label="6.5 Evaluation Metrics Trade-Off Analysis">6.5 Evaluation Metrics Trade-Off Analysis</a></li>
+                <li>
+                    <a href="#66-human-evaluation" aria-label="6.6 Human Evaluation">6.6 Human Evaluation</a></li></ul>
+                </li>
+                <li>
+                    <a href="#7-applications" aria-label="7. Applications">7. Applications</a><ul>
+                        
+                <li>
+                    <a href="#71-writing-tools" aria-label="7.1 Writing Tools">7.1 Writing Tools</a></li>
+                <li>
+                    <a href="#72-persuasive-communication-and-marketing" aria-label="7.2 Persuasive Communication and Marketing">7.2 Persuasive Communication and Marketing</a></li>
+                <li>
+                    <a href="#73-chatbot-dialogue" aria-label="7.3 Chatbot Dialogue">7.3 Chatbot Dialogue</a></li></ul>
+                </li>
+                <li>
+                    <a href="#8-ethical-considerations" aria-label="8. Ethical Considerations">8. Ethical Considerations</a><ul>
+                        
+                <li>
+                    <a href="#81-negative-use-cases" aria-label="8.1 Negative Use Cases">8.1 Negative Use Cases</a><ul>
+                        
+                <li>
+                    <a href="#content-manipulation-and-forgery" aria-label="Content Manipulation and Forgery">Content Manipulation and Forgery</a></li>
+                <li>
+                    <a href="#social-bots-and-sock-puppets" aria-label="Social Bots and Sock Puppets">Social Bots and Sock Puppets</a></li></ul>
+                </li>
+                <li>
+                    <a href="#82-ethical-guidelines" aria-label="8.2 Ethical Guidelines">8.2 Ethical Guidelines</a><ul>
+                        
+                <li>
+                    <a href="#raising-awareness" aria-label="Raising Awareness">Raising Awareness</a></li>
+                <li>
+                    <a href="#ethical-review-process" aria-label="Ethical Review Process">Ethical Review Process</a></li>
+                <li>
+                    <a href="#best-practices" aria-label="Best Practices">Best Practices</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#9-future-research-directions-and-open-issues" aria-label="9. Future Research Directions and Open Issues">9. Future Research Directions and Open Issues</a><ul>
+                        
+                <li>
+                    <a href="#91-deeper-dive-into-style-content-disentanglement" aria-label="9.1 Deeper Dive into Style-Content Disentanglement">9.1 Deeper Dive into Style-Content Disentanglement</a></li>
+                <li>
+                    <a href="#92-unsupervised-text-style-transfer" aria-label="9.2 Unsupervised Text Style Transfer">9.2 Unsupervised Text Style Transfer</a></li>
+                <li>
+                    <a href="#93-going-beyond-transferring-between-two-styles" aria-label="9.3 Going Beyond Transferring Between Two Styles">9.3 Going Beyond Transferring Between Two Styles</a></li>
+                <li>
+                    <a href="#94-style-in-other-languages" aria-label="9.4 Style in Other Languages">9.4 Style in Other Languages</a></li>
+                <li>
+                    <a href="#95-automatic-evaluation-for-text-style-transfer" aria-label="9.5 Automatic Evaluation for Text Style Transfer">9.5 Automatic Evaluation for Text Style Transfer</a></li></ul>
+                </li>
+                <li>
+                    <a href="#10-discussion-and-conclusion" aria-label="10. Discussion and Conclusion">10. Discussion and Conclusion</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#reference" aria-label="Reference">Reference</a>
+                </li>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h1>
+<p>The text provides an <strong>overview of a survey paper on Text Style Transfer (TST)</strong>, discussing its history, significance, recent developments, and the structure of the survey. Below are the key points:</p>
+<h2 id="definition-of-text-style">Definition of Text Style<a hidden class="anchor" aria-hidden="true" href="#definition-of-text-style">#</a></h2>
+<ul>
+<li>Text style refers to linguistic variations that preserve meaning but change stylistic properties.</li>
+<li>Example: The same content expressed in different styles:
+<ul>
+<li>Informal: <em>&ldquo;let’s hang out on Sunday afternoon!&rdquo;</em></li>
+<li>Formal: <em>&ldquo;We will arrange a meeting on Sunday afternoon.&rdquo;</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="emergence-of-text-style-transfer-tst">Emergence of Text Style Transfer (TST)<a hidden class="anchor" aria-hidden="true" href="#emergence-of-text-style-transfer-tst">#</a></h2>
+<ul>
+<li>TST is a task in <strong>Natural Language Generation (NLG)</strong> that alters stylistic properties of text while retaining semantic content.</li>
+<li>It has gained significant attention from computer science researchers.</li>
+</ul>
+<h2 id="initial-approaches-to-tst">Initial Approaches to TST<a hidden class="anchor" aria-hidden="true" href="#initial-approaches-to-tst">#</a></h2>
+<ul>
+<li>Early TST relied on <strong>parallel corpora</strong>:
+<ul>
+<li>Datasets with sentences of the same semantics but different styles.</li>
+<li>Example: Modern and Shakespearean English sentences as parallel examples.</li>
+</ul>
+</li>
+<li>Challenge: Parallel data is scarce for real-world applications (e.g., dialogue generation).</li>
+</ul>
+<h2 id="modern-developments-in-tst">Modern Developments in TST<a hidden class="anchor" aria-hidden="true" href="#modern-developments-in-tst">#</a></h2>
+<ul>
+<li>Non-parallel data algorithms emerged to address the scarcity of parallel corpora.</li>
+<li>This survey explores various TST methods, comparing their strengths and weaknesses.</li>
+</ul>
+<h2 id="purpose-of-the-survey">Purpose of the Survey<a hidden class="anchor" aria-hidden="true" href="#purpose-of-the-survey">#</a></h2>
 <ol>
-<li><strong>Taxonomy and Categorization:</strong> Organizes TST models based on data settings, strategies, and techniques, providing a structured understanding of the field.</li>
-<li><strong>Evaluation Methodologies:</strong> Reviews existing metrics and methods for evaluating TST models, emphasizing reproducibility and benchmarking.</li>
-<li><strong>Experimental Study:</strong> Benchmarks 19 state-of-the-art TST algorithms on two publicly available datasets, offering insights into their strengths and weaknesses.</li>
+<li><strong>Thorough Review</strong>: Investigates, classifies, and summarizes advancements in TST.</li>
+<li><strong>Experimental Comparisons</strong>: Benchmarks algorithms using publicly available datasets.</li>
+<li><strong>Challenges and Directions</strong>: Discusses open problems and future research directions.</li>
 </ol>
-<h3 id="methodology">Methodology<a hidden class="anchor" aria-hidden="true" href="#methodology">#</a></h3>
-<h4 id="taxonomy-of-tst-models">Taxonomy of TST Models<a hidden class="anchor" aria-hidden="true" href="#taxonomy-of-tst-models">#</a></h4>
-<p>TST models are categorized into:</p>
+<!-- ## 6. Organization of the Paper
+- **Section 2**: Related research areas.
+- **Section 3**: Preliminary information on TST.
+- **Section 4**: Categorization and explanation of TST algorithms.
+- **Section 5**: Evaluation methodologies for TST.
+- **Section 6**: Benchmark experiments.
+- **Section 7**: Commercial applications of TST.
+- **Section 8**: Ethical considerations.
+- **Section 9**: Open -->
+<h1 id="2-related-research-areas">2. Related Research Areas<a hidden class="anchor" aria-hidden="true" href="#2-related-research-areas">#</a></h1>
+<p>This section explores the foundational and related fields that have influenced <strong>Text Style Transfer (TST)</strong>, including <strong>Natural Language Generation (NLG)</strong>, <strong>Controllable Text Generation</strong>, <strong>Neural Machine Translation (NMT)</strong>, and <strong>Neural Style Transfer (NST)</strong>.</p>
 <ul>
-<li><strong>Data Settings:</strong> Parallel supervised, non-parallel supervised, and purely unsupervised.</li>
-<li><strong>Strategies:</strong> Style-content disentanglement (explicit, implicit, or without disentanglement).</li>
-<li><strong>Techniques:</strong> Adversarial learning, back-translation, reinforcement learning, and attribute-controlled generation.</li>
+<li>TST has drawn heavily from these related research areas.</li>
+<li>Each area contributes valuable techniques and evaluation methodologies, but TST also faces unique challenges, particularly in disentangling style and content and in evaluating results effectively.</li>
 </ul>
-<h4 id="evaluation-metrics">Evaluation Metrics<a hidden class="anchor" aria-hidden="true" href="#evaluation-metrics">#</a></h4>
+<h2 id="21-natural-language-generation-nlg">2.1 Natural Language Generation (NLG)<a hidden class="anchor" aria-hidden="true" href="#21-natural-language-generation-nlg">#</a></h2>
 <ul>
-<li><strong>Automated Metrics:</strong> BLEU, ROUGE-L, and style transfer accuracy.</li>
-<li><strong>Human Evaluation:</strong> Measures fluency, content preservation, and style transfer accuracy.</li>
-</ul>
-<h3 id="experimental-findings">Experimental Findings<a hidden class="anchor" aria-hidden="true" href="#experimental-findings">#</a></h3>
+<li>NLG involves tasks like machine translation, dialogue generation, text summarization, and paraphrase generation.</li>
+<li>Common goals shared with TST:
 <ul>
-<li><strong>Datasets:</strong> Evaluated on Yelp reviews and Caption datasets, focusing on sentiment transfer and stylistic variation.</li>
-<li><strong>Results:</strong> Models leveraging non-parallel supervised settings showed better performance due to their flexibility and robustness. Adversarial learning and back-translation were particularly effective for preserving content while altering style.</li>
+<li>Generating fluent, semantically meaningful, and grammatically correct text.</li>
+<li>Adding an additional objective in TST: generating text in specific styles.</li>
 </ul>
-<h3 id="implications">Implications<a hidden class="anchor" aria-hidden="true" href="#implications">#</a></h3>
-<p>The study highlights challenges in TST, such as the lack of standard evaluation metrics and limited datasets for diverse stylistic attributes. Future research directions include:</p>
+</li>
+<li>Example Technique:
 <ul>
-<li>Developing more reliable evaluation frameworks.</li>
-<li>Exploring unsupervised and multi-modal approaches for TST.</li>
-<li>Addressing ethical concerns in style transfer applications.</li>
+<li>Generative Adversarial Networks (GANs) used for disentangling semantics and style.</li>
 </ul>
+</li>
+<li>Evolution of TST:
+<ul>
+<li>Inspired by advancements in NLG, such as Texygen [156], a platform for benchmarking text generation models.</li>
+</ul>
+</li>
+<li>Challenges in Evaluation:
+<ul>
+<li>No standardized automatic metrics to assess contextual quality or informativeness.</li>
+<li>Lack of consensus on human evaluation methodologies.</li>
+</ul>
+</li>
+</ul>
+<h2 id="22-controllable-text-generation">2.2 Controllable Text Generation<a hidden class="anchor" aria-hidden="true" href="#22-controllable-text-generation">#</a></h2>
+<ul>
+<li>Focuses on controlling aspects of text, such as:
+<ul>
+<li>Context, topic, emotion, and user preferences.</li>
+</ul>
+</li>
+<li>Techniques like GANs, VAEs (Variational Autoencoders), and Transformers from controllable text generation are adapted in TST.</li>
+<li>These techniques enable control over stylistic properties for effective style transfer.</li>
+</ul>
+<h2 id="23-neural-machine-translation-nmt">2.3 Neural Machine Translation (NMT)<a hidden class="anchor" aria-hidden="true" href="#23-neural-machine-translation-nmt">#</a></h2>
+<ul>
+<li>NMT focuses on changing the language of a text while preserving its content.</li>
+<li>Similarities with TST:
+<ul>
+<li>Both aim to keep the content while modifying the style or changing the language.</li>
+<li>Both use sequence-to-sequence encoder-decoder models and  adopt back-translation techniques.</li>
+<li>Share evaluation metrics, such as BLEU scores, to assess quality.</li>
+</ul>
+</li>
+<li>Differences with TST:
+<ul>
+<li>NMT transfers the observable attribute (language), while TST deals with subtle, abstract attributes (style).</li>
+<li>NMT often ignores style information, whereas TST emphasizes it.</li>
+</ul>
+</li>
+</ul>
+<h2 id="24-neural-style-transfer-nst">2.4 Neural Style Transfer (NST)<a hidden class="anchor" aria-hidden="true" href="#24-neural-style-transfer-nst">#</a></h2>
+<ul>
+<li>Originated from image style transfer, where content and style features are disentangled and recombined.</li>
+<li>Example:
+<ul>
+<li>Gatys et al. [29] used convolutional neural networks (CNNs) to extract and recombine content and style features from images.</li>
+</ul>
+</li>
+<li>Influence on TST:
+<ul>
+<li>Inspired methods to disentangle and manipulate content and style in text using adversarial learning and embeddings.</li>
+</ul>
+</li>
+<li>Challenges in Text vs. Image:
+<ul>
+<li>Text styles are more abstract and subtle compared to visual styles.</li>
+<li>Content and style in text are tightly coupled, making disentanglement harder.</li>
+<li>Random changes in text (e.g., altering a word) can distort meaning, unlike arbitrary pixel changes in images.</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-style-and-notation-definition">3. Style and Notation Definition<a hidden class="anchor" aria-hidden="true" href="#3-style-and-notation-definition">#</a></h1>
+<h2 id="31-definition-of-style">3.1 Definition of Style<a hidden class="anchor" aria-hidden="true" href="#31-definition-of-style">#</a></h2>
+<h3 id="linguistic-view">Linguistic View<a hidden class="anchor" aria-hidden="true" href="#linguistic-view">#</a></h3>
+<ul>
+<li><strong>Style</strong>: The manner in which semantics (content) are delivered.
+<ul>
+<li>Semantics: The subject matter or argument being conveyed.</li>
+<li>Style includes:
+<ul>
+<li>Word choice.</li>
+<li>Sentence structure.</li>
+<li>Figurative language.</li>
+<li>Sentence arrangement.</li>
+</ul>
+</li>
+<li>Style works with tone and imagery to shape how the text is perceived.</li>
+</ul>
+</li>
+<li>Style reflects how events, objects, and ideas are described, providing additional information for readers to interpret.</li>
+<li>Style is highly individualized, with each author tailoring their language use for specific interpersonal goals.</li>
+</ul>
+<h3 id="style-in-text-style-transfer">Style in Text Style Transfer<a hidden class="anchor" aria-hidden="true" href="#style-in-text-style-transfer">#</a></h3>
+<ul>
+<li>Unlike linguistics, TST defines style using <strong>data-driven methods</strong>:
+<ul>
+<li>Style is represented as text attributes or labels derived from style-specific corpora.</li>
+<li>Examples of style attributes:
+<ul>
+<li>Sentiment (positive vs. negative).</li>
+<li>Formality (formal vs. informal).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Popular benchmarks for TST include:
+<ul>
+<li>Sentiment transfer: Positive ↔ Negative.</li>
+<li>Formality transfer: Formal ↔ Informal.</li>
+</ul>
+</li>
+<li>Debate: Some argue that transferring sentiment also alters semantics. However, current TST models can work with any dataset labeled with stylistic attributes.</li>
+</ul>
+<h2 id="32-task-formulation">3.2 Task Formulation<a hidden class="anchor" aria-hidden="true" href="#32-task-formulation">#</a></h2>
+<ul>
+<li><strong>Objective</strong>: Change the stylistic properties of text while preserving style-independent content.</li>
+<li><strong>Input</strong>:
+<ul>
+<li>Attributes (\(A\)): Style attributes (e.g., formal, informal).</li>
+<li>Corpus (\(X\)): Text data labeled with attributes.</li>
+</ul>
+</li>
+<li><strong>Task</strong>:
+<ul>
+<li>Input: Sentence \(x\) with a <strong>source attribute</strong> \(s\) (e.g., formal).</li>
+<li>Output: Sentence \(x'\) with a <strong>target attribute</strong> \(t\) (e.g., informal), preserving the style-independent content.</li>
+</ul>
+</li>
+<li><strong>Data Settings</strong>:
+<ul>
+<li>Parallel Corpora:
+<ul>
+<li>Contains aligned sentence pairs with source and target styles.</li>
+</ul>
+</li>
+<li>Non-Parallel Corpora:
+<ul>
+<li>No alignment between sentences with different attributes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="4-a-taxonomy-of-text-style-transfer-methods">4. A Taxonomy of Text Style Transfer Methods<a hidden class="anchor" aria-hidden="true" href="#4-a-taxonomy-of-text-style-transfer-methods">#</a></h1>
+<p>This section explains the main methods for Text Style Transfer (TST), organized by data settings, strategies, and techniques.</p>
+<h2 id="41-categories-of-text-style-transfer-models">4.1 Categories of Text Style Transfer Models<a hidden class="anchor" aria-hidden="true" href="#41-categories-of-text-style-transfer-models">#</a></h2>
+<h3 id="411-data-settings">4.1.1 Data Settings<a hidden class="anchor" aria-hidden="true" href="#411-data-settings">#</a></h3>
+<ul>
+<li><strong>Parallel Supervised</strong>: Uses datasets where sentences in the source and target styles are matched.</li>
+<li><strong>Non-Parallel Supervised</strong>: Works with datasets where sentences are labeled by style but not paired.</li>
+<li><strong>Unsupervised</strong>: Does not require style labels or sentence pairs.</li>
+</ul>
+<h3 id="412-strategies">4.1.2 Strategies<a hidden class="anchor" aria-hidden="true" href="#412-strategies">#</a></h3>
+<ul>
+<li><strong>Explicit Disentanglement</strong>: Separates and adjusts style-related parts of the text directly.</li>
+<li><strong>Implicit Disentanglement</strong>: Learns hidden representations of style and content without clear separation.</li>
+<li><strong>No Disentanglement</strong>: Focuses on transforming style without splitting content and style explicitly.</li>
+</ul>
+<h3 id="413-techniques">4.1.3 Techniques<a hidden class="anchor" aria-hidden="true" href="#413-techniques">#</a></h3>
+<ul>
+<li>Approaches include sequence-to-sequence models, adversarial training, and other frameworks.</li>
+</ul>
+<h2 id="42-sequence-to-sequence-models-with-parallel-data">4.2 Sequence-to-Sequence Models with Parallel Data<a hidden class="anchor" aria-hidden="true" href="#42-sequence-to-sequence-models-with-parallel-data">#</a></h2>
+<h3 id="1-how-does-it-work">(1) How Does It Work?<a hidden class="anchor" aria-hidden="true" href="#1-how-does-it-work">#</a></h3>
+<ul>
+<li>Leverages encoder-decoder models trained on parallel datasets.</li>
+<li>Steps:
+<ul>
+<li>Source sentences (e.g., formal) are encoded into latent representations.</li>
+<li>The decoder generates target-style sentences (e.g., informal).</li>
+</ul>
+</li>
+<li>Augmentation techniques (e.g., pseudo-parallel datasets) expand training data by matching content between non-parallel sentences.</li>
+</ul>
+<h3 id="2-pros-and-cons">(2) Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#2-pros-and-cons">#</a></h3>
+<ul>
+<li><strong>Pros</strong>:
+<ul>
+<li>Generates high-quality style-transferred text due to strong alignment in parallel data.</li>
+<li>Effective for tasks with clear, well-defined styles (e.g., Modern ↔ Shakespearean English).</li>
+</ul>
+</li>
+<li><strong>Cons</strong>:
+<ul>
+<li>Heavily reliant on parallel data, which is often unavailable for many tasks.</li>
+<li>Poor generalizability to real-world scenarios with non-parallel data.</li>
+</ul>
+</li>
+</ul>
+<h2 id="43-explicit-style-content-disentanglement">4.3 Explicit Style-Content Disentanglement<a hidden class="anchor" aria-hidden="true" href="#43-explicit-style-content-disentanglement">#</a></h2>
+<h3 id="1-how-does-it-work-1">(1) How Does It Work?<a hidden class="anchor" aria-hidden="true" href="#1-how-does-it-work-1">#</a></h3>
+<ul>
+<li>Focuses on identifying and replacing style-related keywords or phrases.</li>
+<li>Utilizes frameworks like Delete-Retrieve-Generate:
+<ul>
+<li><strong>Delete</strong>: Removes stylistic elements.</li>
+<li><strong>Retrieve</strong>: Finds target-style elements.</li>
+<li><strong>Generate</strong>: Combines original content with new stylistic elements.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-pros-and-cons-1">(2) Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#2-pros-and-cons-1">#</a></h3>
+<ul>
+<li><strong>Pros</strong>:
+<ul>
+<li>Simplicity in approach; easy to interpret modifications made during style transfer.</li>
+<li>Effective for datasets with clearly defined style attributes.</li>
+</ul>
+</li>
+<li><strong>Cons</strong>:
+<ul>
+<li>Requires precise identification of style-related elements.</li>
+<li>May struggle with subtler, more abstract styles.</li>
+</ul>
+</li>
+</ul>
+<h2 id="44-implicit-style-content-disentanglement">4.4 Implicit Style-Content Disentanglement<a hidden class="anchor" aria-hidden="true" href="#44-implicit-style-content-disentanglement">#</a></h2>
+<h3 id="1-how-does-it-work-2">(1) How Does It Work?<a hidden class="anchor" aria-hidden="true" href="#1-how-does-it-work-2">#</a></h3>
+<ul>
+<li>Uses latent representations to separate content and style indirectly.</li>
+<li>Techniques include:
+<ul>
+<li>Adversarial learning to isolate content-independent features.</li>
+<li>Back-translation to refine latent spaces without explicit style labels.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-pros-and-cons-2">(2) Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#2-pros-and-cons-2">#</a></h3>
+<ul>
+<li><strong>Pros</strong>:
+<ul>
+<li>Avoids dependency on parallel datasets.</li>
+<li>Can handle more abstract style attributes.</li>
+</ul>
+</li>
+<li><strong>Cons</strong>:
+<ul>
+<li>Difficult to achieve perfect disentanglement.</li>
+<li>Results can depend on the quality of the latent representations.</li>
+</ul>
+</li>
+</ul>
+<h2 id="45-without-style-content-disentanglement">4.5 Without Style-Content Disentanglement<a hidden class="anchor" aria-hidden="true" href="#45-without-style-content-disentanglement">#</a></h2>
+<h3 id="1-how-does-it-work-3">(1) How Does It Work?<a hidden class="anchor" aria-hidden="true" href="#1-how-does-it-work-3">#</a></h3>
+<ul>
+<li>Skips explicit separation of style and content.</li>
+<li>Methods like denoising autoencoders or domain-adaptive models directly generate target-style sentences without isolating content.</li>
+</ul>
+<h3 id="2-pros-and-cons-3">(2) Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#2-pros-and-cons-3">#</a></h3>
+<ul>
+<li><strong>Pros</strong>:
+<ul>
+<li>Simpler model structure.</li>
+<li>Suitable for tasks where disentanglement is impractical.</li>
+</ul>
+</li>
+<li><strong>Cons</strong>:
+<ul>
+<li>May lack control over stylistic changes.</li>
+<li>Risk of altering the original content unintentionally.</li>
+</ul>
+</li>
+</ul>
+<h1 id="46-attribute-control-generation">4.6 Attribute Control Generation<a hidden class="anchor" aria-hidden="true" href="#46-attribute-control-generation">#</a></h1>
+<p>Attribute control generation is a popular technique in Text Style Transfer (TST). It involves learning an attribute code to control text generation in different styles.</p>
+<h2 id="1-how-does-it-work-4">(1) How Does It Work?<a hidden class="anchor" aria-hidden="true" href="#1-how-does-it-work-4">#</a></h2>
+<ul>
+<li>
+<p>Two strategies are commonly used:</p>
+<ul>
+<li><strong>With Content-Style Disentanglement</strong>:
+<ul>
+<li>Example: Hu et al. [41] proposed a Variational Autoencoder (VAE)-based TST model.</li>
+<li>The VAE framework learns the latent representation of the sentence and separates content from style.</li>
+<li>The model combines content representation \( z \) and style vector \( a \) to generate text with the desired style.</li>
+</ul>
+</li>
+<li><strong>Without Disentanglement</strong>:
+<ul>
+<li>Attribute codes are directly learned without explicitly separating content and style.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Loss Function</strong>:</p>
+<ul>
+<li>A classifier-guided loss ensures the output aligns with the target style.</li>
+<li>Example: Gumbel-softmax or policy gradient algorithm optimizes style-specific text generation.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-pros-and-cons-4">(2) Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#2-pros-and-cons-4">#</a></h2>
+<h3 id="pros">Pros:<a hidden class="anchor" aria-hidden="true" href="#pros">#</a></h3>
+<ul>
+<li>Can effectively control style attributes such as sentiment, formality, and tone.</li>
+<li>Pre-trained style codes may be transferable to other natural language generation tasks.</li>
+</ul>
+<h3 id="cons">Cons:<a hidden class="anchor" aria-hidden="true" href="#cons">#</a></h3>
+<ul>
+<li>Highly dependent on the accuracy of the pre-trained style classifier.</li>
+<li>If the classifier performs poorly, it limits the effectiveness of attribute control.</li>
+<li>Challenges in learning disentangled representations of style and content.</li>
+</ul>
+<h1 id="47-entangled-latent-representation-editing">4.7 Entangled Latent Representation Editing<a hidden class="anchor" aria-hidden="true" href="#47-entangled-latent-representation-editing">#</a></h1>
+<h2 id="1-how-does-it-work-5">(1) How Does It Work?<a hidden class="anchor" aria-hidden="true" href="#1-how-does-it-work-5">#</a></h2>
+<ul>
+<li>This approach directly edits the latent representation learned from autoencoder-based models.</li>
+<li><strong>Steps</strong>:
+<ol>
+<li>The encoder generates a latent representation of the input text.</li>
+<li>Style-related adjustments are applied to the latent representation.</li>
+<li>The decoder reconstructs the output text with the desired style.</li>
+</ol>
+</li>
+<li>Unlike disentanglement methods, this technique modifies latent representations while keeping style and content entangled.</li>
+</ul>
+<h2 id="2-pros-and-cons-5">(2) Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#2-pros-and-cons-5">#</a></h2>
+<h3 id="pros-1">Pros:<a hidden class="anchor" aria-hidden="true" href="#pros-1">#</a></h3>
+<ul>
+<li>Eliminates the complexity of disentangling style and content.</li>
+<li>Works well when style attributes and content are tightly interlinked.</li>
+</ul>
+<h3 id="cons-1">Cons:<a hidden class="anchor" aria-hidden="true" href="#cons-1">#</a></h3>
+<ul>
+<li>Risk of unintended content alterations when modifying latent representations.</li>
+<li>May struggle to achieve precise control over stylistic changes.</li>
+</ul>
+<h1 id="48-reinforcement-learning-in-text-style-transfer">4.8 Reinforcement Learning in Text Style Transfer<a hidden class="anchor" aria-hidden="true" href="#48-reinforcement-learning-in-text-style-transfer">#</a></h1>
+<p>Reinforcement learning is a promising technique for Text Style Transfer (TST). It introduces reward functions to guide the TST process instead of relying solely on predefined loss functions.</p>
+<h2 id="1-how-does-it-work-6">(1) How Does It Work?<a hidden class="anchor" aria-hidden="true" href="#1-how-does-it-work-6">#</a></h2>
+<ul>
+<li><strong>Core Idea</strong>: Optimize TST models using reward signals.</li>
+<li><strong>Policy Gradient Algorithm</strong>: Maximizes expected rewards for transferred text to optimize model parameters.</li>
+<li><strong>Applications</strong>:
+<ul>
+<li><strong>Dual-Task Framework</strong>:
+<ul>
+<li>Example: Luo et al. proposed a dual-task RL framework using two Seq2Seq models for source-to-target and target-to-source transfers.</li>
+<li>Reward Functions:
+<ul>
+<li><strong>Style Classifier Reward (\(R_s\))</strong>: Encourages style transfer accuracy.</li>
+<li><strong>Reconstruction Reward (\(R_c\))</strong>: Ensures content preservation.</li>
+<li>Total Reward: Harmonic mean of \(R_s\) and \(R_c\).</li>
+</ul>
+</li>
+<li>Advantage: Works without disentangling style and content or requiring parallel data.</li>
+</ul>
+</li>
+<li><strong>Generator-Evaluator Setup</strong>:
+<ul>
+<li>Example: Gong et al. used an attention-based encoder-decoder model.</li>
+<li>Rewards:
+<ul>
+<li>Style accuracy.</li>
+<li>Semantic preservation.</li>
+<li>Fluency of generated text.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-pros-and-cons-6">(2) Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#2-pros-and-cons-6">#</a></h2>
+<h3 id="pros-2">Pros:<a hidden class="anchor" aria-hidden="true" href="#pros-2">#</a></h3>
+<ul>
+<li>Allows flexibility in defining and optimizing custom reward functions.</li>
+<li>Effective for non-parallel data and complex style transfer tasks.</li>
+</ul>
+<h3 id="cons-2">Cons:<a hidden class="anchor" aria-hidden="true" href="#cons-2">#</a></h3>
+<ul>
+<li>Training stability issues due to high variance in sampling gradients.</li>
+<li>Dependence on style classifiers, which may limit effectiveness if poorly trained.</li>
+</ul>
+<h1 id="49-purely-unsupervised-methods">4.9 Purely Unsupervised Methods<a hidden class="anchor" aria-hidden="true" href="#49-purely-unsupervised-methods">#</a></h1>
+<h2 id="1-how-does-it-work-7">(1) How Does It Work?<a hidden class="anchor" aria-hidden="true" href="#1-how-does-it-work-7">#</a></h2>
+<ul>
+<li>Operates on mixed corpora without explicit style labels.</li>
+<li>Key Approaches:
+<ul>
+<li><strong>Latent Representation Manipulation</strong>:
+<ul>
+<li>Radford et al. [100]: Trained LSTMs on unsupervised byte-level text data, identifying specific neuron units responsible for sentiment.</li>
+<li>Xu et al. [139]: Used unsupervised learning to separate style and content, achieving high sentiment detection accuracy.</li>
+</ul>
+</li>
+<li><strong>External Scorers</strong>:
+<ul>
+<li>Jain et al. [46]: Used language processing tools to score and guide encoder-decoder models in capturing stylistic attributes.</li>
+</ul>
+</li>
+<li><strong>Adversarial Autoencoders (AAEs)</strong>:
+<ul>
+<li>Shen et al. [113]: Introduced denoising AAEs to map sentences into distinct latent spaces and used sentiment vectors for style transfer.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-pros-and-cons-7">(2) Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#2-pros-and-cons-7">#</a></h2>
+<h3 id="pros-3">Pros:<a hidden class="anchor" aria-hidden="true" href="#pros-3">#</a></h3>
+<ul>
+<li>Removes reliance on labeled datasets, enabling flexibility in real-world applications.</li>
+<li>Effective for tasks like sentiment transfer, which rely on latent attribute discovery.</li>
+</ul>
+<h3 id="cons-3">Cons:<a hidden class="anchor" aria-hidden="true" href="#cons-3">#</a></h3>
+<ul>
+<li>Limited generalizability to other stylistic properties like formality or tone.</li>
+<li>Evaluation mostly focuses on sentiment transfer, leaving other tasks underexplored.</li>
+</ul>
+<h1 id="410-fine-tuning-pre-trained-language-models">4.10 Fine-Tuning Pre-Trained Language Models<a hidden class="anchor" aria-hidden="true" href="#410-fine-tuning-pre-trained-language-models">#</a></h1>
+<p>Fine-tuning pre-trained language models has emerged as a significant approach for Text Style Transfer (TST).</p>
+<h2 id="1-how-does-it-work-8">(1) How Does It Work?<a hidden class="anchor" aria-hidden="true" href="#1-how-does-it-work-8">#</a></h2>
+<ul>
+<li><strong>Core Idea</strong>: Utilize pre-trained language models such as GPT-2 to perform TST tasks by adapting them to specific stylistic requirements.</li>
+<li><strong>Steps</strong>:
+<ol>
+<li><strong>Pre-training</strong>: The model is trained on a large corpus of diverse text, capturing general language features.</li>
+<li><strong>Fine-tuning</strong>: The pre-trained model is fine-tuned on a style-specific dataset or with transfer rules.
+<ul>
+<li>Example: Wang et al. [130] fine-tuned GPT-2 using formality transfer rules derived from the GYAFC parallel dataset.</li>
+</ul>
+</li>
+<li><strong>Application</strong>: The fine-tuned model generates text that adheres to the target style (e.g., informal to formal).</li>
+</ol>
+</li>
+</ul>
+<h2 id="2-pros-and-cons-8">(2) Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#2-pros-and-cons-8">#</a></h2>
+<h3 id="pros-4">Pros:<a hidden class="anchor" aria-hidden="true" href="#pros-4">#</a></h3>
+<ul>
+<li><strong>Generalizability</strong>: Leverages the rich knowledge embedded in pre-trained models, enabling effective style transfer across diverse datasets.</li>
+<li><strong>Efficiency</strong>: Reduces the need for extensive training from scratch.</li>
+<li><strong>Flexibility</strong>: Pre-trained models can adapt to various stylistic tasks with minimal fine-tuning.</li>
+</ul>
+<h3 id="cons-4">Cons:<a hidden class="anchor" aria-hidden="true" href="#cons-4">#</a></h3>
+<ul>
+<li><strong>Dependency on Pre-Trained Data</strong>: The quality of the transferred text heavily depends on the diversity and quality of the pre-training corpus.</li>
+<li><strong>Limited Stylistic Understanding</strong>: Pre-trained models may not fully capture subtle stylistic nuances without significant fine-tuning.</li>
+</ul>
+<hr>
+<h1 id="5-resources-and-evaluation-methods">5. Resources and Evaluation Methods<a hidden class="anchor" aria-hidden="true" href="#5-resources-and-evaluation-methods">#</a></h1>
+<h2 id="51-tasks-and-datasets">5.1 Tasks and Datasets<a hidden class="anchor" aria-hidden="true" href="#51-tasks-and-datasets">#</a></h2>
+<ul>
+<li><strong>Datasets</strong>:
+<ul>
+<li>Many datasets are used for TST, containing text labeled with style attributes (e.g., sentiment, formality).</li>
+<li><strong>Examples</strong>:
+<ul>
+<li>Yelp dataset: Labeled with binary sentiment (positive, negative).</li>
+<li>GYAFC dataset: Contains formal and informal text pairs for formality transfer.</li>
+</ul>
+</li>
+<li>Most datasets are non-parallel, except a few (e.g., Shakespearean-Modern English, GYAFC).</li>
+</ul>
+</li>
+</ul>
+<h2 id="52-automated-evaluation">5.2 Automated Evaluation<a hidden class="anchor" aria-hidden="true" href="#52-automated-evaluation">#</a></h2>
+<p>Automated metrics evaluate TST algorithms based on three criteria:</p>
+<ol>
+<li>
+<p><strong>Transfer Strength</strong>:</p>
+<ul>
+<li>Measures how effectively the text&rsquo;s style has been transferred.</li>
+<li>Common metric: <strong>Style Transfer Accuracy</strong>, using a pre-trained style classifier.</li>
+<li>Alternative metric: <strong>Earth Mover’s Distance</strong>, indicating the intensity of the transfer.</li>
+</ul>
+</li>
+<li>
+<p><strong>Content Preservation</strong>:</p>
+<ul>
+<li>Assesses how well the original content is preserved in the transferred text.</li>
+<li>Metrics:
+<ul>
+<li><strong>BLEU</strong>: Compares the transferred text to reference texts (for parallel datasets).</li>
+<li><strong>source-BLEU (sBLEU)</strong>: Measures similarity between the original and transferred sentences for non-parallel datasets.</li>
+<li><strong>Cosine Similarity</strong>: Calculates semantic similarity between sentence embeddings.</li>
+<li><strong>Word Overlap</strong>: Counts unigram overlap between the original and transferred sentences, excluding stopwords and style-specific words.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Fluency</strong>:</p>
+<ul>
+<li>Evaluates the grammatical quality and readability of the generated text.</li>
+<li>Commonly measured using <strong>perplexity scores</strong>, with lower perplexity indicating better fluency.</li>
+</ul>
+</li>
+</ol>
+<h2 id="53-human-evaluation">5.3 Human Evaluation<a hidden class="anchor" aria-hidden="true" href="#53-human-evaluation">#</a></h2>
+<ul>
+<li><strong>Process</strong>:
+<ul>
+<li>Human annotators are recruited to evaluate sentences on three criteria:
+<ol>
+<li><strong>Transfer Strength</strong>: The extent to which the target style is achieved.</li>
+<li><strong>Content Preservation</strong>: How much original meaning is retained.</li>
+<li><strong>Fluency</strong>: The readability and grammatical correctness of the text.</li>
+</ol>
+</li>
+<li>Annotators rate each criterion on a Likert scale (e.g., 1-5).</li>
+<li>Average scores are calculated to minimize individual biases.</li>
+</ul>
+</li>
+<li><strong>Challenges</strong>:
+<ul>
+<li>Interpretation of style is subjective and can vary among annotators.</li>
+<li>Human evaluation is costly and labor-intensive but provides insights into model performance.</li>
+</ul>
+</li>
+</ul>
+<h1 id="6-reproducibility-study">6. Reproducibility Study<a hidden class="anchor" aria-hidden="true" href="#6-reproducibility-study">#</a></h1>
+<p>This section evaluates and benchmarks <strong>19 TST models</strong> on standardized datasets, addressing inconsistencies in prior studies. The goal is to provide a unified comparison and deeper insights into TST performance.</p>
+<h2 id="61-experimental-setup">6.1 Experimental Setup<a hidden class="anchor" aria-hidden="true" href="#61-experimental-setup">#</a></h2>
+<ul>
+<li><strong>Environment</strong>:
+<ul>
+<li>Ubuntu 18.04.4 LTS, 24 cores, 128 GB RAM, Nvidia GTX 2080Ti GPU.</li>
+</ul>
+</li>
+<li><strong>Datasets</strong>:
+<ul>
+<li><strong>Yelp Reviews</strong>: Sentiment transfer task (positive ↔ negative).</li>
+<li><strong>GYAFC</strong>: Formality transfer task (informal ↔ formal).</li>
+</ul>
+</li>
+<li><strong>Evaluation Metrics</strong>:
+<ul>
+<li><strong>Transfer Strength</strong>: Style Transfer Accuracy (ACC).</li>
+<li><strong>Content Preservation</strong>: BLEU, sBLEU, Cosine Similarity (CS), Word Overlap (WO).</li>
+<li><strong>Fluency</strong>: Perplexity (PPL).</li>
+<li><strong>Combined Scores</strong>:
+<ul>
+<li><strong>Geometric Mean (G-Score)</strong>: Aggregates ACC, sBLEU, WO, and 1/PPL.</li>
+<li><strong>Harmonic Mean (H-Score)</strong>: Prioritizes different aspects through weighted averages.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="62-sentiment-transfer">6.2 Sentiment Transfer<a hidden class="anchor" aria-hidden="true" href="#62-sentiment-transfer">#</a></h2>
+<ul>
+<li><strong>Goal</strong>: Evaluate TST models on their ability to change sentiment while preserving content.</li>
+<li><strong>Results</strong>: Transfer strength increases often led to reduced content preservation and fluency.</li>
+</ul>
+<h2 id="63-formality-transfer">6.3 Formality Transfer<a hidden class="anchor" aria-hidden="true" href="#63-formality-transfer">#</a></h2>
+<ul>
+<li><strong>Goal</strong>: Assess formality conversion between formal and informal texts.</li>
+<li><strong>Observation</strong>: Unlike sentiment transfer, high style accuracy does not always correlate with fluency or content preservation.</li>
+</ul>
+<h2 id="64-computational-efficiency-evaluation">6.4 Computational Efficiency Evaluation<a hidden class="anchor" aria-hidden="true" href="#64-computational-efficiency-evaluation">#</a></h2>
+<ul>
+<li><strong>Metrics</strong>: Number of parameters and FLOPs (Floating Point Operations) were measured to compare efficiency across models.</li>
+</ul>
+<h2 id="65-evaluation-metrics-trade-off-analysis">6.5 Evaluation Metrics Trade-Off Analysis<a hidden class="anchor" aria-hidden="true" href="#65-evaluation-metrics-trade-off-analysis">#</a></h2>
+<ul>
+<li><strong>Purpose</strong>: Study trade-offs between evaluation criteria:
+<ul>
+<li>Increased style accuracy often reduces content preservation.</li>
+<li>Sentence fluency may not always align with style transfer strength.</li>
+</ul>
+</li>
+<li><strong>Insight</strong>: Semantic and stylistic attributes in text are tightly coupled, making it challenging to optimize both simultaneously.</li>
+</ul>
+<h2 id="66-human-evaluation">6.6 Human Evaluation<a hidden class="anchor" aria-hidden="true" href="#66-human-evaluation">#</a></h2>
+<ul>
+<li><strong>Setup</strong>:
+<ul>
+<li>Human workers rated outputs on:
+<ol>
+<li>Style transfer accuracy.</li>
+<li>Content preservation.</li>
+<li>Fluency.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>Findings</strong>:
+<ul>
+<li>Human evaluations highlight subjective differences in style interpretation.</li>
+<li>Models with high automated scores may still fall short in human judgment.</li>
+</ul>
+</li>
+</ul>
+<h1 id="7-applications">7. Applications<a hidden class="anchor" aria-hidden="true" href="#7-applications">#</a></h1>
+<h2 id="71-writing-tools">7.1 Writing Tools<a hidden class="anchor" aria-hidden="true" href="#71-writing-tools">#</a></h2>
+<ul>
+<li><strong>Usage</strong>: TST algorithms can enhance computer-aided writing tools by:
+<ul>
+<li>Allowing users to switch between writing styles for different audiences.</li>
+<li>Improving readability by transferring text between expert and layman styles.</li>
+</ul>
+</li>
+<li><strong>Examples</strong>:
+<ul>
+<li>A writing tool analyzing a business email draft for excessive informality and suggesting revisions to make it more formal.</li>
+<li>Modifying text to reduce technical jargon for layman audiences or increase technical precision for professional contexts.</li>
+</ul>
+</li>
+</ul>
+<h2 id="72-persuasive-communication-and-marketing">7.2 Persuasive Communication and Marketing<a hidden class="anchor" aria-hidden="true" href="#72-persuasive-communication-and-marketing">#</a></h2>
+<ul>
+<li><strong>Usage</strong>: TST algorithms can improve persuasive text by:
+<ul>
+<li>Adapting text style to appeal to specific audiences, such as authoritative or humorous tones.</li>
+<li>Modifying marketing messages or news headlines into engaging styles like romantic, humorous, or clickbaity.</li>
+</ul>
+</li>
+<li><strong>Examples</strong>:
+<ul>
+<li>Personalizing marketing strategies to user profiles by adjusting text to more appealing styles.</li>
+<li>Enhancing the persuasiveness of news headlines using TST techniques.</li>
+</ul>
+</li>
+</ul>
+<h2 id="73-chatbot-dialogue">7.3 Chatbot Dialogue<a hidden class="anchor" aria-hidden="true" href="#73-chatbot-dialogue">#</a></h2>
+<ul>
+<li><strong>Usage</strong>: TST enhances chatbot flexibility by enabling:
+<ul>
+<li>Style adaptation for different conversational contexts.</li>
+<li>Persuasive styles for product recommendations and formal tones for complaint handling.</li>
+</ul>
+</li>
+<li><strong>Impact</strong>:
+<ul>
+<li>Makes chatbots more engaging and effective in influencing user behavior or improving customer support interactions.</li>
+</ul>
+</li>
+</ul>
+<h1 id="8-ethical-considerations">8. Ethical Considerations<a hidden class="anchor" aria-hidden="true" href="#8-ethical-considerations">#</a></h1>
+<h2 id="81-negative-use-cases">8.1 Negative Use Cases<a hidden class="anchor" aria-hidden="true" href="#81-negative-use-cases">#</a></h2>
+<h3 id="content-manipulation-and-forgery">Content Manipulation and Forgery<a hidden class="anchor" aria-hidden="true" href="#content-manipulation-and-forgery">#</a></h3>
+<ul>
+<li><strong>Potential Misuse</strong>:
+<ul>
+<li>Manipulating review polarities (e.g., converting negative reviews to positive ones).</li>
+<li>Forging documents in specific writing styles to create fraudulent content.</li>
+</ul>
+</li>
+<li><strong>Impact</strong>:
+<ul>
+<li>Challenges to forensic investigation efforts in detecting forged content.</li>
+</ul>
+</li>
+</ul>
+<h3 id="social-bots-and-sock-puppets">Social Bots and Sock Puppets<a hidden class="anchor" aria-hidden="true" href="#social-bots-and-sock-puppets">#</a></h3>
+<ul>
+<li><strong>Potential Misuse</strong>:
+<ul>
+<li>Using TST for generating politically biased content on social media.</li>
+<li>Creating armies of bots with diverse persuasive styles to promote harmful behaviors like:
+<ul>
+<li><strong>Cyberbullying</strong>.</li>
+<li><strong>Hate speech</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Impact</strong>:
+<ul>
+<li>Manipulation of public opinion and promotion of anti-social behavior.</li>
+</ul>
+</li>
+</ul>
+<h2 id="82-ethical-guidelines">8.2 Ethical Guidelines<a hidden class="anchor" aria-hidden="true" href="#82-ethical-guidelines">#</a></h2>
+<h3 id="raising-awareness">Raising Awareness<a hidden class="anchor" aria-hidden="true" href="#raising-awareness">#</a></h3>
+<ul>
+<li>Companies and researchers should acknowledge the risks associated with TST misuse.</li>
+</ul>
+<h3 id="ethical-review-process">Ethical Review Process<a hidden class="anchor" aria-hidden="true" href="#ethical-review-process">#</a></h3>
+<ul>
+<li><strong>Proposals</strong>:
+<ul>
+<li>Set up Ethics Review Boards (ERBs) to assess ethical concerns during all stages of TST research.</li>
+<li>Include experts in artificial intelligence and natural language processing (NLP) as part of the ERBs.</li>
+</ul>
+</li>
+</ul>
+<h3 id="best-practices">Best Practices<a hidden class="anchor" aria-hidden="true" href="#best-practices">#</a></h3>
+<ul>
+<li>Encourage researchers and organizations to follow ethical guidelines proposed in frameworks like the one by Leidner et al. [69].</li>
+<li>Build ethical considerations into research from the start to mitigate risks effectively.</li>
+</ul>
+<h1 id="9-future-research-directions-and-open-issues">9. Future Research Directions and Open Issues<a hidden class="anchor" aria-hidden="true" href="#9-future-research-directions-and-open-issues">#</a></h1>
+<h2 id="91-deeper-dive-into-style-content-disentanglement">9.1 Deeper Dive into Style-Content Disentanglement<a hidden class="anchor" aria-hidden="true" href="#91-deeper-dive-into-style-content-disentanglement">#</a></h2>
+<ul>
+<li><strong>Challenge</strong>: Separating style and content remains an open question.
+<ul>
+<li>Current methods lack clarity on the extent of disentanglement.</li>
+<li>Example: Little is known about what style representations preserve (e.g., sentence structure) and how this impacts tasks like formality transfer.</li>
+</ul>
+</li>
+<li><strong>Future Directions</strong>:
+<ul>
+<li>Develop experiments to quantify and analyze style-content disentanglement.</li>
+<li>Investigate style embeddings to gain new insights for TST model development.</li>
+</ul>
+</li>
+</ul>
+<h2 id="92-unsupervised-text-style-transfer">9.2 Unsupervised Text Style Transfer<a hidden class="anchor" aria-hidden="true" href="#92-unsupervised-text-style-transfer">#</a></h2>
+<ul>
+<li><strong>Current Limitation</strong>: Most TST methods rely on style-labeled datasets.</li>
+<li><strong>Goal</strong>: Create unsupervised techniques requiring little or no labeled data.</li>
+<li><strong>Approaches</strong>:
+<ul>
+<li>Use metrics like semantic relatedness, fluency, and readability to guide style transfer without explicit style labels.</li>
+<li>Explore additional text features (e.g., tone, brevity, sentence structure).</li>
+</ul>
+</li>
+</ul>
+<h2 id="93-going-beyond-transferring-between-two-styles">9.3 Going Beyond Transferring Between Two Styles<a hidden class="anchor" aria-hidden="true" href="#93-going-beyond-transferring-between-two-styles">#</a></h2>
+<ul>
+<li><strong>Current Focus</strong>: Most TST models are binary (e.g., formal ↔ informal).</li>
+<li><strong>Future Opportunities</strong>:
+<ul>
+<li>Introduce multi-attribute style transfer (e.g., sentiment and author gender).</li>
+<li>Develop domain-aware methods that consider both style and content domain (e.g., food vs. movie reviews).</li>
+</ul>
+</li>
+</ul>
+<h2 id="94-style-in-other-languages">9.4 Style in Other Languages<a hidden class="anchor" aria-hidden="true" href="#94-style-in-other-languages">#</a></h2>
+<ul>
+<li><strong>Issue</strong>: Most TST research focuses on English.</li>
+<li><strong>Opportunities</strong>:
+<ul>
+<li>Explore language-specific stylistic properties in non-English corpora.</li>
+<li>Develop methods tailored to languages with unique syntax and semantics.</li>
+<li>Example: Dialogue systems capturing stylistic nuances in Japanese.</li>
+</ul>
+</li>
+</ul>
+<h2 id="95-automatic-evaluation-for-text-style-transfer">9.5 Automatic Evaluation for Text Style Transfer<a hidden class="anchor" aria-hidden="true" href="#95-automatic-evaluation-for-text-style-transfer">#</a></h2>
+<ul>
+<li><strong>Current Challenges</strong>:
+<ul>
+<li>Reliance on style classifiers for evaluation, which may introduce biases.</li>
+<li>Metrics often trade off between transfer strength and content preservation.</li>
+</ul>
+</li>
+<li><strong>Future Directions</strong>:
+<ul>
+<li>Design novel automatic evaluation metrics that better balance style transfer, content retention, and fluency.</li>
+</ul>
+</li>
+</ul>
+<h1 id="10-discussion-and-conclusion">10. Discussion and Conclusion<a hidden class="anchor" aria-hidden="true" href="#10-discussion-and-conclusion">#</a></h1>
+<p>This section highlights the progress in Text Style Transfer (TST). It covers the fast growth of research, how models are organized, and a shift from separating style and content to simpler methods. A study of 19 TST models found no single best model, showing the need for better ways to measure success. The survey suggests focusing on style representation and expects TST research to keep growing, guiding future work.</p>
 <hr>
 <h3 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h3>
 <p>Hu, Z., Lee, R. K.-W., Aggarwal, C. C., &amp; Zhang, A. (2023). Text Style Transfer: A Review and Experimental Evaluation. <a href="https://arxiv.org/abs/2010.12742">Read the full paper</a>.</p>
