@@ -5,6 +5,12 @@
     <loc>https://gnehcuyz.github.io/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gnehcuyz.github.io/experience/</loc>
+    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/experience/HarpResearch/</loc>
+    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gnehcuyz.github.io/reading/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
@@ -20,17 +26,26 @@
     <loc>https://gnehcuyz.github.io/posts/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/research/MIA_LLM/</loc>
-    <lastmod>2024-12-27T00:00:00+00:00</lastmod>
+    <loc>https://gnehcuyz.github.io/research/MIA_ML/</loc>
+    <lastmod>2025-01-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/research/</loc>
-    <lastmod>2024-12-27T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/experience/UndergradResearchAssistant/</loc>
+    <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/research/MIA_LLM/</loc>
+    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/research/LIA_VFL/</loc>
     <lastmod>2024-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/research/MIA_ML/</loc>
+    <loc>https://gnehcuyz.github.io/experience/Resident-Assistant/</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/experience/MentorMLFD/</loc>
+    <lastmod>2024-12-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/Does_Label_DP_Prevent_Label_Attacks/</loc>
     <lastmod>2024-10-11T00:00:00+00:00</lastmod>
@@ -44,6 +59,9 @@
     <loc>https://gnehcuyz.github.io/reading/label_inference_attack_VFL/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gnehcuyz.github.io/experience/AICampMentor/</loc>
+    <lastmod>2024-08-27T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gnehcuyz.github.io/reading/Do_membership_inference_attacks_work_on_large_language_models/</loc>
     <lastmod>2024-06-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -53,10 +71,13 @@
     <loc>https://gnehcuyz.github.io/reading/membership_inference_attacks_fine_tuned_llms/</loc>
     <lastmod>2024-01-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/projects/FamilyPlus/</loc>
-    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+    <loc>https://gnehcuyz.github.io/projects/HandwritingDigitsRecognition/</loc>
+    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/projects/</loc>
+    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/projects/FamilyPlus/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/membership_inference_attacks_nlp_classification_models/</loc>
@@ -64,6 +85,9 @@
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/Attention_is_all_you_need/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/projects/OperatingSystemSimulation/</loc>
+    <lastmod>2023-08-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/projects/WordleGameServer/</loc>
     <lastmod>2023-08-17T00:00:00+00:00</lastmod>

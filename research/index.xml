@@ -6,14 +6,21 @@
     <description>Recent content in Research on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gnehcuyz.github.io/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Membership Inference Attacks for Machine Learning Models</title>
+      <link>https://gnehcuyz.github.io/research/MIA_ML/</link>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/research/MIA_ML/</guid>
+      <description>Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.</description>
+    </item>
     <item>
       <title>Membership Inference Attacks for Large Language Models</title>
       <link>https://gnehcuyz.github.io/research/MIA_LLM/</link>
-      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://gnehcuyz.github.io/research/MIA_LLM/</guid>
-      <description>Uncovered privacy risks in LLMs through attacks, API development, and experiments.</description>
+      <description>Advanced the understanding of privacy risks in LLMs by extending prior work with new attacks and experiments.</description>
     </item>
     <item>
       <title>Label Inference Attacks in Federated Learning</title>
@@ -21,13 +28,6 @@
       <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
       <guid>https://gnehcuyz.github.io/research/LIA_VFL/</guid>
       <description>Optimized label attacks and assessed risks in federated learning.</description>
-    </item>
-    <item>
-      <title>Membership Inference Attacks for Machine Learning Models</title>
-      <link>https://gnehcuyz.github.io/research/MIA_ML/</link>
-      <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/research/MIA_ML/</guid>
-      <description>Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.</description>
     </item>
   </channel>
 </rss>
