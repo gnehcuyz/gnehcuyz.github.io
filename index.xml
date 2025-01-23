@@ -37,11 +37,25 @@
       <description>A comprehensive review of text style transfer (TST) techniques, their evaluation, and benchmarking results across various datasets.</description>
     </item>
     <item>
-      <title>Binary Search</title>
-      <link>https://gnehcuyz.github.io/posts/BinarySearch/</link>
-      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/posts/BinarySearch/</guid>
-      <description>Binary search, your go-to algorithm</description>
+      <title>Sliding Window</title>
+      <link>https://gnehcuyz.github.io/posts/SlidingWindow/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/SlidingWindow/</guid>
+      <description>Sliding Window, an efficient technique for solving array problems</description>
+    </item>
+    <item>
+      <title>Merge Sort</title>
+      <link>https://gnehcuyz.github.io/posts/MergeSort/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/MergeSort/</guid>
+      <description>A reliable and efficient algorithm for sorting data using a divide-and-conquer approach.</description>
+    </item>
+    <item>
+      <title>Two Pointers</title>
+      <link>https://gnehcuyz.github.io/posts/TwoPointers/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/TwoPointers/</guid>
+      <description>A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently</description>
     </item>
     <item>
       <title>Membership Inference Attacks for Machine Learning Models</title>
@@ -56,6 +70,13 @@
       <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://gnehcuyz.github.io/experience/UndergradResearchAssistant/</guid>
       <description>Researching privacy vulnerabilities in ML and LLMs to advance ethical AI practices.</description>
+    </item>
+    <item>
+      <title>Binary Search</title>
+      <link>https://gnehcuyz.github.io/posts/BinarySearch/</link>
+      <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/BinarySearch/</guid>
+      <description>A fast and precise method for finding targets in sorted arrays.</description>
     </item>
     <item>
       <title>Membership Inference Attacks for Large Language Models</title>
