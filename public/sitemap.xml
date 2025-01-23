@@ -26,10 +26,13 @@
     <loc>http://localhost:1313/reading/text_style_transfer_review_evaluation/</loc>
     <lastmod>2025-01-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/BinarySearch/</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/TwoPointers/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/BinarySearch/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/research/MIA_ML/</loc>

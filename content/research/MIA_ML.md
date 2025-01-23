@@ -15,8 +15,7 @@ math: true
 - Python, NumPy, Matplotlib.
 
 ## Contributions
-- Built data pipelines for processing attack predictions across multiple seeds.
+- Built **data pipelines** for processing attack predictions across multiple seeds.
+- Created **visualizations**, including Venn diagrams and upset diagrams, to identify patterns and disparities in attack outcomes.
+- Automated **data processing** workflows with Shell Scripts to handle large datasets.
 - Calculated metrics such as Jaccard similarity, set variance, and entropy for reliability analysis.
-- Created visualizations, including Venn diagrams and upset diagrams, to identify patterns and disparities in attack outcomes.
-- Automated data processing workflows with Shell Scripts to handle large datasets.
-

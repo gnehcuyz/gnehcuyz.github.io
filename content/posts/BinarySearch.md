@@ -1,8 +1,8 @@
 ---
 title: Binary Search
-date: 2025-01-10
+date: 2025-01-02
 draft: false
-summary: Binary search, your go-to algorithm
+summary: A fast and precise method for finding targets in sorted arrays. 
 math: true
 ---
 

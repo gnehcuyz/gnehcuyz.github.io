@@ -8,12 +8,13 @@ math: true
 ---
 
 ## Description
-- Created a platform for event management, study groups, and item resale, focusing on user engagement and reliable data handling.
+
+Campus Connect is a web application for Rensselaer Polytechnic Institute (RPI) students, serving as an online hub for discussions and collaboration. It features dedicated sections for live events, study groups, coding projects, and personal item resale, enhancing both academic and social experiences. 
 
 ## Tech Stack
 - Node.js, React, MongoDB, Postman, Agile/Scrum.
 
 ## Contributions
-- Developed the back-end using Node.js for API requests and MongoDB to manage user data, events, and transactions.
-- Designed a responsive front-end with React, enabling easy navigation and user engagement.
-- Streamlined development with Agile/Scrum and validated APIs with Postman based on user feedback.
+- Developed the back-end using **Node.js** for API requests and **MongoDB** to manage user data, events, and transactions.
+- Designed a responsive front-end with **React**, enabling easy navigation and user engagement.
+- Streamlined development with **Agile/Scrum** and validated APIs with Postman based on user feedback.

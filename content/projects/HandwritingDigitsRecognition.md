@@ -15,8 +15,8 @@ math: true
 - Python.
 
 ## Contributions
-- Implemented and optimized machine learning algorithms for handwritten digit recognition.
+- Implemented and optimized **machine learning algorithms** for handwritten digit recognition.
     - Algorithms implemented: Linear regression, Logistic regression, SVM, KNN, RBF-Network, Neural network.
-- Enhanced model performance through data preprocessing and feature extraction and handled data overfitting.
+- Enhanced model performance through **data preprocessing** and **feature extraction** and handled data overfitting.
 - Improved feature representation and prediction reliability, achieving high classification accuracy.
 
