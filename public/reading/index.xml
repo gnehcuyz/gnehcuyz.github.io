@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Reading on Chengyu Zhang</title>
-    <link>http://localhost:1313/reading/</link>
+    <link>https://gnehcuyz.github.io/reading/</link>
     <description>Recent content in Reading on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/reading/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gnehcuyz.github.io/reading/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Style Transfer in Text - Exploration and Evaluation</title>
-      <link>http://localhost:1313/reading/style_transfer_text_exploration_evaluation/</link>
+      <link>https://gnehcuyz.github.io/reading/style_transfer_text_exploration_evaluation/</link>
       <pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reading/style_transfer_text_exploration_evaluation/</guid>
+      <guid>https://gnehcuyz.github.io/reading/style_transfer_text_exploration_evaluation/</guid>
       <description>This paper explores text style transfer (TST) using non-parallel data, introducing new evaluation metrics for transfer strength and content preservation.</description>
     </item>
     <item>
       <title>Text Style Transfer - A Review and Experimental Evaluation</title>
-      <link>http://localhost:1313/reading/text_style_transfer_review_evaluation/</link>
+      <link>https://gnehcuyz.github.io/reading/text_style_transfer_review_evaluation/</link>
       <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reading/text_style_transfer_review_evaluation/</guid>
+      <guid>https://gnehcuyz.github.io/reading/text_style_transfer_review_evaluation/</guid>
       <description>A comprehensive review of text style transfer (TST) techniques, their evaluation, and benchmarking results across various datasets.</description>
     </item>
     <item>
       <title>Does Label Differential Privacy Prevent Label Inference Attacks?</title>
-      <link>http://localhost:1313/reading/Does_Label_DP_Prevent_Label_Attacks/</link>
+      <link>https://gnehcuyz.github.io/reading/Does_Label_DP_Prevent_Label_Attacks/</link>
       <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reading/Does_Label_DP_Prevent_Label_Attacks/</guid>
+      <guid>https://gnehcuyz.github.io/reading/Does_Label_DP_Prevent_Label_Attacks/</guid>
       <description>Analyzes the effectiveness of label-DP in mitigating label inference attacks and provides insights on privacy settings and attack bounds.</description>
     </item>
     <item>
       <title>Using LLMs to Uncover Memorization in Instruction-Tuned Models</title>
-      <link>http://localhost:1313/reading/uncovering_memorization_in_instruction_tuned_models/</link>
+      <link>https://gnehcuyz.github.io/reading/uncovering_memorization_in_instruction_tuned_models/</link>
       <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reading/uncovering_memorization_in_instruction_tuned_models/</guid>
+      <guid>https://gnehcuyz.github.io/reading/uncovering_memorization_in_instruction_tuned_models/</guid>
       <description>A study introducing a black-box prompt optimization approach to uncover higher levels of memorization in instruction-tuned LLMs.</description>
     </item>
     <item>
       <title>Defending Batch-Level Label Inference and Replacement Attacks in Vertical Federated Learning</title>
-      <link>http://localhost:1313/reading/Defending_Batch_Level_Label_Attacks/</link>
+      <link>https://gnehcuyz.github.io/reading/Defending_Batch_Level_Label_Attacks/</link>
       <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reading/Defending_Batch_Level_Label_Attacks/</guid>
+      <guid>https://gnehcuyz.github.io/reading/Defending_Batch_Level_Label_Attacks/</guid>
       <description>Explores vulnerabilities in VFL models to label inference and backdoor attacks and proposes effective defenses like CAE and DCAE.</description>
     </item>
     <item>
       <title>Label Inference Attacks Against Vertical Federated Learning</title>
-      <link>http://localhost:1313/reading/label_inference_attack_VFL/</link>
+      <link>https://gnehcuyz.github.io/reading/label_inference_attack_VFL/</link>
       <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reading/label_inference_attack_VFL/</guid>
+      <guid>https://gnehcuyz.github.io/reading/label_inference_attack_VFL/</guid>
       <description>Evaluates privacy risks of vertical federated learning (VFL) and proposes label inference attacks with outstanding performance, highlighting vulnerabilities and defense limitations.</description>
     </item>
     <item>
       <title>Do Membership Inference Attacks Work on Large Language Models?</title>
-      <link>http://localhost:1313/reading/Do_membership_inference_attacks_work_on_large_language_models/</link>
+      <link>https://gnehcuyz.github.io/reading/Do_membership_inference_attacks_work_on_large_language_models/</link>
       <pubDate>Fri, 14 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reading/Do_membership_inference_attacks_work_on_large_language_models/</guid>
+      <guid>https://gnehcuyz.github.io/reading/Do_membership_inference_attacks_work_on_large_language_models/</guid>
       <description>This paper evaluates the effectiveness of membership inference attacks on large language models, revealing that such attacks often perform no better than random guessing.</description>
     </item>
     <item>
       <title>Practical Membership Inference Attacks Against Large-Scale Multi-Modal Models - A Pilot Study</title>
-      <link>http://localhost:1313/reading/practical_membership_inference_attacks_multimodal_models/</link>
+      <link>https://gnehcuyz.github.io/reading/practical_membership_inference_attacks_multimodal_models/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reading/practical_membership_inference_attacks_multimodal_models/</guid>
+      <guid>https://gnehcuyz.github.io/reading/practical_membership_inference_attacks_multimodal_models/</guid>
       <description>An investigation of membership inference attacks (MIAs) targeting large-scale multi-modal models like CLIP, introducing practical attack strategies without shadow training.</description>
     </item>
     <item>
       <title>Membership Inference Attacks Against Fine-tuned Large Language Models via Self-prompt Calibration</title>
-      <link>http://localhost:1313/reading/membership_inference_attacks_fine_tuned_llms/</link>
+      <link>https://gnehcuyz.github.io/reading/membership_inference_attacks_fine_tuned_llms/</link>
       <pubDate>Thu, 18 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reading/membership_inference_attacks_fine_tuned_llms/</guid>
+      <guid>https://gnehcuyz.github.io/reading/membership_inference_attacks_fine_tuned_llms/</guid>
       <description>A novel study introducing self-prompt calibration for membership inference attacks (MIAs) against fine-tuned large language models, improving reliability and practicality in privacy assessments.</description>
     </item>
     <item>
       <title>Membership Inference Attacks Against NLP Classification Models</title>
-      <link>http://localhost:1313/reading/membership_inference_attacks_nlp_classification_models/</link>
+      <link>https://gnehcuyz.github.io/reading/membership_inference_attacks_nlp_classification_models/</link>
       <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reading/membership_inference_attacks_nlp_classification_models/</guid>
+      <guid>https://gnehcuyz.github.io/reading/membership_inference_attacks_nlp_classification_models/</guid>
       <description>A comprehensive analysis of privacy risks in NLP classification models, focusing on membership inference attacks (MIAs) at both sample and user levels.</description>
     </item>
     <item>
       <title>Attention Is All You Need</title>
-      <link>http://localhost:1313/reading/Attention_is_all_you_need/</link>
+      <link>https://gnehcuyz.github.io/reading/Attention_is_all_you_need/</link>
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reading/Attention_is_all_you_need/</guid>
+      <guid>https://gnehcuyz.github.io/reading/Attention_is_all_you_need/</guid>
       <description>Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.</description>
     </item>
   </channel>
