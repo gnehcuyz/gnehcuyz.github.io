@@ -5,6 +5,7 @@ date: "2024-10-11"
 draft: false
 summary: "Analyzes the effectiveness of label-DP in mitigating label inference attacks and provides insights on privacy settings and attack bounds."
 math: true
+tags: [Differential Privacy, Label Inference Attack]
 ---
 
 ## Abstract

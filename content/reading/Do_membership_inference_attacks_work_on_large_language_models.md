@@ -5,6 +5,7 @@ date: "2024-06-14"
 draft: false
 summary: "This paper evaluates the effectiveness of membership inference attacks on large language models, revealing that such attacks often perform no better than random guessing."
 math: true
+tags: [Large Language Model, Membership Inference Attack]
 ---
 
 # Literature Review

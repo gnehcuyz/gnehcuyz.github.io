@@ -5,6 +5,7 @@ date: "2025-01-21"
 draft: false
 summary: A comprehensive review of text style transfer (TST) techniques, their evaluation, and benchmarking results across various datasets.
 math: true
+tags: [Text Style Transfer, NLG, NLP]
 ---
 
 # Introduction
@@ -14,7 +15,7 @@ The text provides an **overview of a survey paper on Text Style Transfer (TST)**
 ## Definition of Text Style
 - Text style refers to linguistic variations that preserve meaning but change stylistic properties.
 - Example: The same content expressed in different styles:
-  - Informal: *"let’s hang out on Sunday afternoon!"*
+  - Informal: *"let's hang out on Sunday afternoon!"*
   - Formal: *"We will arrange a meeting on Sunday afternoon."*
 
 ## Emergence of Text Style Transfer (TST)
@@ -366,7 +367,7 @@ Automated metrics evaluate TST algorithms based on three criteria:
 1. **Transfer Strength**:
    - Measures how effectively the text's style has been transferred.
    - Common metric: **Style Transfer Accuracy**, using a pre-trained style classifier.
-   - Alternative metric: **Earth Mover’s Distance**, indicating the intensity of the transfer.
+   - Alternative metric: **Earth Mover's Distance**, indicating the intensity of the transfer.
 
 2. **Content Preservation**:
    - Assesses how well the original content is preserved in the transferred text.

@@ -5,6 +5,7 @@ date: "2023-09-07"
 draft: false
 summary: "Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks."
 math: true
+tags: [Machine Learning]
 ---
 
 ## Key Ideas

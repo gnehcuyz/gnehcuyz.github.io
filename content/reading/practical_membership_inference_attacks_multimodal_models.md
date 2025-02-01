@@ -5,6 +5,7 @@ date: "2024-01-24"
 draft: false
 summary: An investigation of membership inference attacks (MIAs) targeting large-scale multi-modal models like CLIP, introducing practical attack strategies without shadow training.
 math: true
+tags: [Membership Inference Attack, Multi-Modal Model]
 ---
 
 ### Overview

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Binary Search | Chengyu Zhang</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="Algorithm">
 <meta name="description" content="A fast and precise method for finding targets in sorted arrays.">
 <meta name="author" content="Chengyu Zhang">
 <link rel="canonical" href="https://gnehcuyz.github.io/posts/BinarySearch/">
@@ -81,6 +81,7 @@
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-01-02T00:00:00+00:00">
     <meta property="article:modified_time" content="2025-01-02T00:00:00+00:00">
+    <meta property="article:tag" content="Algorithm">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Binary Search">
 <meta name="twitter:description" content="A fast and precise method for finding targets in sorted arrays.">
@@ -114,7 +115,7 @@
   "name": "Binary Search",
   "description": "A fast and precise method for finding targets in sorted arrays.",
   "keywords": [
-    
+    "Algorithm"
   ],
   "articleBody": "What is Binary Search? Binary search is an efficient algorithm to find the position of a target value within a sorted array or list. It operates by dividing the search interval in half repeatedly:\nCompare the target value to the middle element. If the target matches the middle element, return its index. If the target is smaller, search the left half of the array. If the target is larger, search the right half of the array. Repeat until the target is found or the search interval is empty. Key Characteristics:\nRequires a sorted array. Time complexity: \\(O(\\log n)\\). Space complexity: \\(O(1)\\) for iterative implementation and \\(O(\\log n)\\) for recursive implementation. How to Apply Binary Search Steps:\nDetermine the Search Interval: Identify the sorted array or range to search in. Set the Pointers: Initialize two pointers: left (start of the array) and right (end of the array). Iterate or Recur: Calculate the middle index: \\[ \\text{mid} = \\text{left} + \\frac{\\text{right} - \\text{left}}{2} \\] Compare the middle element with the target. Update the pointers (left or right) to narrow the search interval. Exit Condition: If left \u003e right, the target does not exist. Otherwise, return the index of the target. Pseudocode Iterative Implementation:\ndef binary_search(array, target): left = 0 right = len(array) - 1 while left \u003c= right: mid = left + (right - left) // 2 # Avoid overflow if array[mid] == target: return mid elif array[mid] \u003c target: left = mid + 1 else: right = mid - 1 return -1 # Target not found Recurrsive Implementation\ndef binary_search(array, target, left, right): if left \u003e right: return -1 # Target not found mid = left + (right - left) // 2 if array[mid] == target: return mid elif array[mid] \u003c target: return binary_search(array, target, mid + 1, right) else: return binary_search(array, target, left, mid - 1) Common Questions 1. Why is mid calculated like that?\nIn binary search, the formula for calculating the middle index is:\n\\[ \\text{mid} = \\text{left} + \\frac{\\text{right} - \\text{left}}{2} \\]This formula is designed to avoid integer overflow in programming languages where integers have a fixed range, such as C++ and Java. Here’s a detailed explanation:\nExplanation\n\\[ \\text{mid} = \\frac{\\text{left} + \\text{right}}{2} \\] While this formula is simple and works in many cases, it has a potential issue: if left and right are very large integers, their sum (left + right) can exceed the maximum integer value, causing integer overflow.\n\\[ \\text{mid} = \\text{left} + \\frac{\\text{right} - \\text{left}}{2} \\] This calculates the middle index without directly adding left and right.\nThe term \\((\\text{right} - \\text{left})\\) represents the distance between left and right, which is much smaller than their sum. Dividing this distance by 2 gives the offset from left to the midpoint. Adding this offset back to left ensures the calculation remains within safe bounds. Classic LeetCode Problems 🔗 1. Basic Binary Search\n2. Find First or Last Occurrence\n3. Search in Rotated Sorted Array\n4. Search Insert Position\n5. Find a Peak Element\n6. Kth Smallest Element in a Sorted Matrix\n7. Search a 2D Matrix\n8. Split Array into Parts\n9. Smallest Missing Positive Number\n10. Median of Two Sorted Arrays\n",
   "wordCount" : "528",
@@ -209,6 +210,11 @@
             <li>
                 <a href="https://gnehcuyz.github.io/about/" title="About">
                     <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/tags/" title="Tags">
+                    <span>Tags</span>
                 </a>
             </li>
         </ul>
@@ -365,6 +371,7 @@ This calculates the middle index without directly adding <code>left</code> and <
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://gnehcuyz.github.io/tags/Algorithm/">Algorithm</a></li>
     </ul>
   </footer>
 </article>

@@ -5,6 +5,7 @@ date: "2023-09-19"
 draft: false
 summary: A comprehensive analysis of privacy risks in NLP classification models, focusing on membership inference attacks (MIAs) at both sample and user levels.
 math: true
+tags: [Membership Inference Attack, NLP]
 ---
 
 ### Overview

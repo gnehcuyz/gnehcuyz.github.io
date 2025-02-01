@@ -5,6 +5,7 @@ date: 2024-09-16
 draft: false
 summary: Evaluates privacy risks of vertical federated learning (VFL) and proposes label inference attacks with outstanding performance, highlighting vulnerabilities and defense limitations.
 math: true
+tags: [Federated Learning, Vertical Federated Learning, Label Inference Attack]
 ---
 
 # Introduction

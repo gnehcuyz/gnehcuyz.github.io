@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Backdoor Attack on Chengyu Zhang</title>
+    <link>http://localhost:1313/tags/Backdoor-Attack/</link>
+    <description>Recent content in Backdoor Attack on Chengyu Zhang</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/Backdoor-Attack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Defending Batch-Level Label Inference and Replacement Attacks in Vertical Federated Learning</title>
+      <link>http://localhost:1313/reading/Defending_Batch_Level_Label_Attacks/</link>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/reading/Defending_Batch_Level_Label_Attacks/</guid>
+      <description>Explores vulnerabilities in VFL models to label inference and backdoor attacks and proposes effective defenses like CAE and DCAE.</description>
+    </item>
+  </channel>
+</rss>

@@ -5,6 +5,7 @@ date: "2024-10-11"
 draft: false
 summary: A study introducing a black-box prompt optimization approach to uncover higher levels of memorization in instruction-tuned LLMs.
 math: true
+tags: [Large Language Model, Memorization]
 ---
 
 ### Overview

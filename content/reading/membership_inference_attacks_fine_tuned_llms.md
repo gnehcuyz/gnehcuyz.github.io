@@ -5,6 +5,7 @@ date: "2024-01-18"
 draft: false
 summary: A novel study introducing self-prompt calibration for membership inference attacks (MIAs) against fine-tuned large language models, improving reliability and practicality in privacy assessments.
 math: true
+tags: [Large Language Model, Membership Inference Attack]
 ---
 
 ### Overview

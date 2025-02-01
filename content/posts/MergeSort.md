@@ -4,6 +4,7 @@ date: 2025-01-12
 draft: false
 summary: A reliable and efficient algorithm for sorting data using a divide-and-conquer approach.
 math: true
+tags: [Algorithm]
 ---
 
 # **What is Merge Sort?**

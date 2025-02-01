@@ -5,6 +5,7 @@ date: "2025-01-22"
 draft: false
 summary: This paper explores text style transfer (TST) using non-parallel data, introducing new evaluation metrics for transfer strength and content preservation.
 math: true
+tags: [Text Style Transfer, NLG, NLP]
 ---
 [Read the paper](https://ojs.aaai.org/index.php/AAAI/article/view/11330)
 
@@ -59,7 +60,7 @@ math: true
 ## Results and Analysis
 - The content preservation metric matched human opinions with a Spearman’s correlation of 0.5656 (p < 0.0001).
 - In the paper-news title task:
-  - The style-embedding model got content preservation scores of 0.89~0.95 and transfer strength scores of 0.2~0.6, better than the baseline.
+  - The style-embedding model got content preservation scores of 0.89-0.95 and transfer strength scores of 0.2-0.6, better than the baseline.
 - In the positive-negative review task:
   - The multi-decoder model got transfer strength of 0.8 and content preservation of 0.85, doing better than the style-embedding model, which scored 0.6 and 0.75.
 - The multi-decoder model improved transfer strength by 50% compared to the auto-encoder in this task, reaching 0.6.

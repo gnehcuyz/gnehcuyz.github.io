@@ -4,6 +4,7 @@ date: 2025-01-14
 draft: false
 summary: Sliding Window, an efficient technique for solving array problems
 math: true
+tags: [Algorithm]
 ---
 
 # **What is Sliding Window?**

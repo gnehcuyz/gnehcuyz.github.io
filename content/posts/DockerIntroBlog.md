@@ -4,6 +4,7 @@ date: 2025-01-29
 draft: false
 summary: Docker, the Easiest Way to Run Apps Anywhere
 math: true
+tags: [Docker]
 ---
 
 ## What is Docker?

@@ -5,6 +5,7 @@ date: "2024-10-07"
 draft: false
 summary: "Explores vulnerabilities in VFL models to label inference and backdoor attacks and proposes effective defenses like CAE and DCAE."
 math: true
+tags: [Federated Learning, Vertical Federated Learning, Label Inference Attack]
 ---
 
 ## Introduction
