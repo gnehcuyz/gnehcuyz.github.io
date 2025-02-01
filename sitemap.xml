@@ -2,7 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gnehcuyz.github.io/tags/Adversarial-Attacks/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Adversarial-Threats/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gnehcuyz.github.io/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Defenses/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/reading/rce_vulnerabilities_llm_apps/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/reading/prompt_injection_attacks_defenses/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Jailbreaking/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Large-Language-Model/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/LLM-Security/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Machine-Learning/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/reading/jailbreaking_llms_disguise_reconstruction/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Prompt-Injection/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/RCE-Vulnerabilities/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/reading/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Docker/</loc>
     <lastmod>2025-01-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/posts/DockerIntroBlog/</loc>
@@ -20,17 +65,26 @@
     <loc>https://gnehcuyz.github.io/experience/HarpResearch/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/projects/</loc>
+    <loc>https://gnehcuyz.github.io/tags/NLG/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/reading/</loc>
+    <loc>https://gnehcuyz.github.io/tags/NLP/</loc>
+    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/projects/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/style_transfer_text_exploration_evaluation/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Text-Style-Transfer/</loc>
+    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gnehcuyz.github.io/reading/text_style_transfer_review_evaluation/</loc>
     <lastmod>2025-01-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Algorithm/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/posts/SlidingWindow/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
@@ -65,13 +119,28 @@
     <loc>https://gnehcuyz.github.io/experience/MentorMLFD/</loc>
     <lastmod>2024-12-18T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Differential-Privacy/</loc>
+    <lastmod>2024-10-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gnehcuyz.github.io/reading/Does_Label_DP_Prevent_Label_Attacks/</loc>
+    <lastmod>2024-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Label-Inference-Attack/</loc>
+    <lastmod>2024-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Memorization/</loc>
     <lastmod>2024-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/uncovering_memorization_in_instruction_tuned_models/</loc>
     <lastmod>2024-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/Defending_Batch_Level_Label_Attacks/</loc>
+    <lastmod>2024-10-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Federated-Learning/</loc>
+    <lastmod>2024-10-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Vertical-Federated-Learning/</loc>
     <lastmod>2024-10-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/label_inference_attack_VFL/</loc>
@@ -82,6 +151,12 @@
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/Do_membership_inference_attacks_work_on_large_language_models/</loc>
     <lastmod>2024-06-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Membership-Inference-Attack/</loc>
+    <lastmod>2024-06-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Multi-Modal-Model/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/practical_membership_inference_attacks_multimodal_models/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
@@ -113,7 +188,5 @@
     <loc>https://gnehcuyz.github.io/about/</loc>
   </url><url>
     <loc>https://gnehcuyz.github.io/categories/</loc>
-  </url><url>
-    <loc>https://gnehcuyz.github.io/tags/</loc>
   </url>
 </urlset>

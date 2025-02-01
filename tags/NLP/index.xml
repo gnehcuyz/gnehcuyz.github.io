@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>NLP on Chengyu Zhang</title>
+    <link>https://gnehcuyz.github.io/tags/NLP/</link>
+    <description>Recent content in NLP on Chengyu Zhang</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://gnehcuyz.github.io/tags/NLP/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Style Transfer in Text - Exploration and Evaluation</title>
+      <link>https://gnehcuyz.github.io/reading/style_transfer_text_exploration_evaluation/</link>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/reading/style_transfer_text_exploration_evaluation/</guid>
+      <description>This paper explores text style transfer (TST) using non-parallel data, introducing new evaluation metrics for transfer strength and content preservation.</description>
+    </item>
+    <item>
+      <title>Text Style Transfer - A Review and Experimental Evaluation</title>
+      <link>https://gnehcuyz.github.io/reading/text_style_transfer_review_evaluation/</link>
+      <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/reading/text_style_transfer_review_evaluation/</guid>
+      <description>A comprehensive review of text style transfer (TST) techniques, their evaluation, and benchmarking results across various datasets.</description>
+    </item>
+    <item>
+      <title>Membership Inference Attacks Against NLP Classification Models</title>
+      <link>https://gnehcuyz.github.io/reading/membership_inference_attacks_nlp_classification_models/</link>
+      <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/reading/membership_inference_attacks_nlp_classification_models/</guid>
+      <description>A comprehensive analysis of privacy risks in NLP classification models, focusing on membership inference attacks (MIAs) at both sample and user levels.</description>
+    </item>
+  </channel>
+</rss>

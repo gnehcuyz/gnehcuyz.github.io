@@ -6,6 +6,154 @@
     <description>Recent content in Tags on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gnehcuyz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adversarial Attacks</title>
+      <link>https://gnehcuyz.github.io/tags/Adversarial-Attacks/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Adversarial-Attacks/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Adversarial Threats</title>
+      <link>https://gnehcuyz.github.io/tags/Adversarial-Threats/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Adversarial-Threats/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Defenses</title>
+      <link>https://gnehcuyz.github.io/tags/Defenses/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Defenses/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jailbreaking</title>
+      <link>https://gnehcuyz.github.io/tags/Jailbreaking/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Jailbreaking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Large Language Model</title>
+      <link>https://gnehcuyz.github.io/tags/Large-Language-Model/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Large-Language-Model/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM Security</title>
+      <link>https://gnehcuyz.github.io/tags/LLM-Security/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/LLM-Security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning</title>
+      <link>https://gnehcuyz.github.io/tags/Machine-Learning/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Machine-Learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prompt Injection</title>
+      <link>https://gnehcuyz.github.io/tags/Prompt-Injection/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Prompt-Injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RCE Vulnerabilities</title>
+      <link>https://gnehcuyz.github.io/tags/RCE-Vulnerabilities/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/RCE-Vulnerabilities/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://gnehcuyz.github.io/tags/Docker/</link>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NLG</title>
+      <link>https://gnehcuyz.github.io/tags/NLG/</link>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/NLG/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NLP</title>
+      <link>https://gnehcuyz.github.io/tags/NLP/</link>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/NLP/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Text Style Transfer</title>
+      <link>https://gnehcuyz.github.io/tags/Text-Style-Transfer/</link>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Text-Style-Transfer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Algorithm</title>
+      <link>https://gnehcuyz.github.io/tags/Algorithm/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Algorithm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Differential Privacy</title>
+      <link>https://gnehcuyz.github.io/tags/Differential-Privacy/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Differential-Privacy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Label Inference Attack</title>
+      <link>https://gnehcuyz.github.io/tags/Label-Inference-Attack/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Label-Inference-Attack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Memorization</title>
+      <link>https://gnehcuyz.github.io/tags/Memorization/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Memorization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Federated Learning</title>
+      <link>https://gnehcuyz.github.io/tags/Federated-Learning/</link>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Federated-Learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vertical Federated Learning</title>
+      <link>https://gnehcuyz.github.io/tags/Vertical-Federated-Learning/</link>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Vertical-Federated-Learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Membership Inference Attack</title>
+      <link>https://gnehcuyz.github.io/tags/Membership-Inference-Attack/</link>
+      <pubDate>Fri, 14 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Membership-Inference-Attack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multi-Modal Model</title>
+      <link>https://gnehcuyz.github.io/tags/Multi-Modal-Model/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Multi-Modal-Model/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

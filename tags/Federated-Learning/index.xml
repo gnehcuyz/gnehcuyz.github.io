@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Federated Learning on Chengyu Zhang</title>
+    <link>https://gnehcuyz.github.io/tags/Federated-Learning/</link>
+    <description>Recent content in Federated Learning on Chengyu Zhang</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://gnehcuyz.github.io/tags/Federated-Learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Defending Batch-Level Label Inference and Replacement Attacks in Vertical Federated Learning</title>
+      <link>https://gnehcuyz.github.io/reading/Defending_Batch_Level_Label_Attacks/</link>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/reading/Defending_Batch_Level_Label_Attacks/</guid>
+      <description>Explores vulnerabilities in VFL models to label inference and backdoor attacks and proposes effective defenses like CAE and DCAE.</description>
+    </item>
+    <item>
+      <title>Label Inference Attacks Against Vertical Federated Learning</title>
+      <link>https://gnehcuyz.github.io/reading/label_inference_attack_VFL/</link>
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/reading/label_inference_attack_VFL/</guid>
+      <description>Evaluates privacy risks of vertical federated learning (VFL) and proposes label inference attacks with outstanding performance, highlighting vulnerabilities and defense limitations.</description>
+    </item>
+  </channel>
+</rss>
