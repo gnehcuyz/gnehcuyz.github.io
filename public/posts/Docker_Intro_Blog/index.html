@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Chengyu Zhang</title>
+<meta name="keywords" content="">
+<meta name="description" content="Docker: The Easiest Way to Run Apps Anywhere
+What is Docker?
+Imagine you have a magic box that can run your apps anywhere—on your laptop, your friend&rsquo;s computer, or a cloud server—without any compatibility issues. That’s exactly what Docker does! Docker is a tool that helps developers package their applications with all their dependencies into containers, ensuring they run the same way on any machine.
+Why Use Docker?
+Before Docker, setting up an application often meant installing multiple dependencies, configuring settings, and troubleshooting compatibility issues. Docker solves these challenges by offering:">
+<meta name="author" content="Chengyu Zhang">
+<link rel="canonical" href="http://localhost:1313/posts/Docker_Intro_Blog/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/Docker_Intro_Blog/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/experience" title="Experience">
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/research/" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/reading/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta">3 min&nbsp;·&nbsp;Chengyu Zhang
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#docker-the-easiest-way-to-run-apps-anywhere" aria-label="Docker: The Easiest Way to Run Apps Anywhere">Docker: The Easiest Way to Run Apps Anywhere</a><ul>
+                        
+                <li>
+                    <a href="#what-is-docker" aria-label="What is Docker?">What is Docker?</a></li>
+                <li>
+                    <a href="#why-use-docker" aria-label="Why Use Docker?">Why Use Docker?</a></li>
+                <li>
+                    <a href="#how-docker-works-in-simple-terms" aria-label="How Docker Works (In Simple Terms)">How Docker Works (In Simple Terms)</a><ul>
+                        
+                <li>
+                    <a href="#key-components" aria-label="Key Components:">Key Components:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#getting-started-with-docker" aria-label="Getting Started with Docker">Getting Started with Docker</a><ul>
+                        
+                <li>
+                    <a href="#1-install-docker" aria-label="1. Install Docker">1. Install Docker</a></li>
+                <li>
+                    <a href="#2-create-a-dockerfile" aria-label="2. Create a Dockerfile">2. Create a Dockerfile</a></li>
+                <li>
+                    <a href="#3-build-and-run-your-app" aria-label="3. Build and Run Your App">3. Build and Run Your App</a></li></ul>
+                </li>
+                <li>
+                    <a href="#useful-docker-commands" aria-label="Useful Docker Commands">Useful Docker Commands</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="docker-the-easiest-way-to-run-apps-anywhere">Docker: The Easiest Way to Run Apps Anywhere<a hidden class="anchor" aria-hidden="true" href="#docker-the-easiest-way-to-run-apps-anywhere">#</a></h1>
+<h2 id="what-is-docker">What is Docker?<a hidden class="anchor" aria-hidden="true" href="#what-is-docker">#</a></h2>
+<p>Imagine you have a magic box that can run your apps anywhere—on your laptop, your friend&rsquo;s computer, or a cloud server—without any compatibility issues. That’s exactly what Docker does! Docker is a tool that helps developers package their applications with all their dependencies into <strong>containers</strong>, ensuring they run the same way on any machine.</p>
+<h2 id="why-use-docker">Why Use Docker?<a hidden class="anchor" aria-hidden="true" href="#why-use-docker">#</a></h2>
+<p>Before Docker, setting up an application often meant installing multiple dependencies, configuring settings, and troubleshooting compatibility issues. Docker solves these challenges by offering:</p>
+<ol>
+<li>
+<p><strong>Consistency Across Environments</strong> – Your app runs identically, whether it&rsquo;s on your laptop, a coworker’s machine, or a production server.</p>
+</li>
+<li>
+<p><strong>Resource Efficiency</strong> – Containers are lightweight and use fewer resources compared to traditional virtual machines (VMs), making them faster and more efficient.</p>
+</li>
+<li>
+<p><strong>Easy Deployment and Portability</strong> – Docker containers are portable and can be moved seamlessly between different environments, from development to production.</p>
+</li>
+</ol>
+<h2 id="how-docker-works-in-simple-terms">How Docker Works (In Simple Terms)<a hidden class="anchor" aria-hidden="true" href="#how-docker-works-in-simple-terms">#</a></h2>
+<p>Docker packages everything your app needs—code, libraries, system tools—into a single <strong>container</strong>. This container runs the same way no matter where you deploy it.</p>
+<h3 id="key-components">Key Components:<a hidden class="anchor" aria-hidden="true" href="#key-components">#</a></h3>
+<ul>
+<li><strong>Dockerfile</strong> – A simple script that tells Docker how to build your app.</li>
+<li><strong>Image</strong> – A snapshot of your app and its dependencies.</li>
+<li><strong>Container</strong> – A running instance of an image, acting as a lightweight, self-contained environment.</li>
+</ul>
+<h2 id="getting-started-with-docker">Getting Started with Docker<a hidden class="anchor" aria-hidden="true" href="#getting-started-with-docker">#</a></h2>
+<p>Here’s how you can quickly start using Docker:</p>
+<h3 id="1-install-docker">1. Install Docker<a hidden class="anchor" aria-hidden="true" href="#1-install-docker">#</a></h3>
+<p>Download and install Docker from <a href="https://www.docker.com/">Docker’s official website</a>.</p>
+<h3 id="2-create-a-dockerfile">2. Create a Dockerfile<a hidden class="anchor" aria-hidden="true" href="#2-create-a-dockerfile">#</a></h3>
+<p>A <strong>Dockerfile</strong> is a simple text file that tells Docker how to set up your app. Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#75715e"># Use an official Python runtime as a base image</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.9</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set the working directory</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Copy your application files into the container</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . /app<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Install dependencies</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install -r requirements.txt<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Run the app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;python&#34;</span>, <span style="color:#e6db74">&#34;app.py&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h3 id="3-build-and-run-your-app">3. Build and Run Your App<a hidden class="anchor" aria-hidden="true" href="#3-build-and-run-your-app">#</a></h3>
+<p>Once you have your Dockerfile, you can build and run your container:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Build the Docker image</span>
+</span></span><span style="display:flex;"><span>docker build -t myapp .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run the container</span>
+</span></span><span style="display:flex;"><span>docker run myapp
+</span></span></code></pre></div><p>That’s it! Your app is now running inside a container. You can share it with anyone, and it will work the same way everywhere.</p>
+<h2 id="useful-docker-commands">Useful Docker Commands<a hidden class="anchor" aria-hidden="true" href="#useful-docker-commands">#</a></h2>
+<p>Here are some handy Docker commands to get started:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># List all running containers</span>
+</span></span><span style="display:flex;"><span>docker ps
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Stop a running container</span>
+</span></span><span style="display:flex;"><span>docker stop &lt;container_id&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove a container</span>
+</span></span><span style="display:flex;"><span>docker rm &lt;container_id&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove an image</span>
+</span></span><span style="display:flex;"><span>docker rmi myapp
+</span></span></code></pre></div><h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>Docker makes running and deploying apps <strong>simple, consistent, and efficient</strong>. Whether you’re developing locally or deploying to the cloud, Docker ensures your application behaves the same way everywhere. Give it a try and experience the power of containerization!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Chengyu Zhang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

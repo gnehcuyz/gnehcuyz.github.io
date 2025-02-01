@@ -16,3 +16,6 @@ math: true
 ## Contributions
 - Developed and optimized a label inference attack algorithm in PyTorch.
 - Preprocessed and analyzed data to ensure compatibility with federated learning frameworks.
+
+## Supervisor: 
+Professor [Oshani Seneviratne](https://oshani.info)

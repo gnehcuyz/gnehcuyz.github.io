@@ -18,3 +18,6 @@ math: true
 - Implemented attack algorithms and adapted them for new experimental setups.
 - Enhanced APIs to accommodate additional functionality and streamline the evaluation process.
 - Designed advanced experiments to analyze and validate findings, leading to deeper insights into privacy risks in LLMs.
+
+## Supervisor: 
+Professor [Lei Yu](https://leiyucs.github.io)

@@ -2,7 +2,7 @@
 ShowToc: false
 title: Operating Systems Simulation
 date: 2023-08-31
-draft: false
+draft: true
 summary: Simulated an operating system and optimized CPU scheduling algorithms for performance analysis.
 math: true
 ---

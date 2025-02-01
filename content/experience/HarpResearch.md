@@ -8,7 +8,7 @@ math: true
 ---
 
 ## Role
-I am currently working as a Machine Learning Engineer at **HARP Research, Inc.**, based in Troy, NY, since **January 2025**.
+I am currently working as a Machine Learning Engineer at **[HARP Research, Inc](https://www.harpresearch.ai).**, based in Troy, NY, since January 2025.
 
 ## Responsibilities
 - Exploring and implementing **text style transfer techniques** for enhancing personalization and user engagement.
