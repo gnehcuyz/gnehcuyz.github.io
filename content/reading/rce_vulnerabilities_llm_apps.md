@@ -2,7 +2,7 @@
 ShowToc: false
 title: Demystifying RCE Vulnerabilities in LLM-Integrated Apps
 date: "2025-01-31"
-draft: false
+draft: true
 summary: This paper investigates remote code execution (RCE) vulnerabilities in applications that integrate large language models.
 math: true
 tags: [Machine Learning, Large Language Model, RCE Vulnerabilities, LLM Security, Adversarial Threats]

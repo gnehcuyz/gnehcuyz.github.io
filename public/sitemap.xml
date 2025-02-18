@@ -2,50 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gnehcuyz.github.io/tags/Adversarial-Attacks/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gnehcuyz.github.io/tags/Adversarial-Threats/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+    <loc>https://gnehcuyz.github.io/tags/AI-Security/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/tags/Defenses/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+    <loc>https://gnehcuyz.github.io/reading/jailbreaking_llm_dra/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/reading/rce_vulnerabilities_llm_apps/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+    <loc>https://gnehcuyz.github.io/reading/prompt-injection-attacks/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/reading/prompt_injection_attacks_defenses/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gnehcuyz.github.io/tags/Jailbreaking/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gnehcuyz.github.io/tags/Large-Language-Model/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gnehcuyz.github.io/tags/LLM-Security/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gnehcuyz.github.io/tags/Machine-Learning/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gnehcuyz.github.io/reading/jailbreaking_llms_disguise_reconstruction/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+    <loc>https://gnehcuyz.github.io/tags/Large-Language-Models/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/tags/Prompt-Injection/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gnehcuyz.github.io/tags/RCE-Vulnerabilities/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Security/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/tags/</loc>
-    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/tags/Docker/</loc>
     <lastmod>2025-01-29T00:00:00+00:00</lastmod>
@@ -128,6 +110,9 @@
     <loc>https://gnehcuyz.github.io/tags/Label-Inference-Attack/</loc>
     <lastmod>2024-10-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Large-Language-Model/</loc>
+    <lastmod>2024-10-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gnehcuyz.github.io/tags/Memorization/</loc>
     <lastmod>2024-10-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -174,6 +159,9 @@
     <lastmod>2023-09-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/Attention_is_all_you_need/</loc>
+    <lastmod>2023-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Machine-Learning/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/projects/WordleGameServer/</loc>
