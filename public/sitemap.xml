@@ -2,19 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gnehcuyz.github.io/tags/AI-Security/</loc>
-    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://gnehcuyz.github.io/</loc>
-    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gnehcuyz.github.io/reading/jailbreaking_llm_dra/</loc>
     <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/prompt-injection-attacks/</loc>
     <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/tags/Large-Language-Models/</loc>
+    <loc>https://gnehcuyz.github.io/tags/Large-Language-Model/</loc>
     <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/tags/Prompt-Injection/</loc>
@@ -28,6 +22,15 @@
   </url><url>
     <loc>https://gnehcuyz.github.io/tags/</loc>
     <lastmod>2025-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Adversarial-Attacks/</loc>
+    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/tags/Jailbreak/</loc>
+    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/reading/jailbreaking_llm_dra/</loc>
+    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/tags/Docker/</loc>
     <lastmod>2025-01-29T00:00:00+00:00</lastmod>
@@ -108,9 +111,6 @@
     <lastmod>2024-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/tags/Label-Inference-Attack/</loc>
-    <lastmod>2024-10-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gnehcuyz.github.io/tags/Large-Language-Model/</loc>
     <lastmod>2024-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/tags/Memorization/</loc>

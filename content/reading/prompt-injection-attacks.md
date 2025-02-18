@@ -5,7 +5,7 @@ date: "2025-02-07"
 draft: false
 summary: "Analyzes prompt injection attacks in LLMs, evaluates their impact on different models, and benchmarks defenses like Known-Answer Detection."
 math: true
-tags: [Prompt Injection, Large Language Models, Security]
+tags: [Prompt Injection, Large Language Model, Security]
 ---
 
 # Unmasking Prompt Injection: A Deep Dive into the USENIX Security 2024 Paper

@@ -16,5 +16,5 @@ Hello, World! Welcome to my portfolio! It serves as my brain bank, a space for s
 
 ## Contact
 
-If you have any questions or feedback, feel free to contact me by [email](mailto:chengyuz0921@gmail.com): 
+If you have any questions or feedback, feel free to contact me by [email](mailto:chengyuz0921@gmail.com)
 
