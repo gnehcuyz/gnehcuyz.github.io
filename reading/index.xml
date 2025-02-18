@@ -6,28 +6,21 @@
     <description>Recent content in Reading on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gnehcuyz.github.io/reading/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Demystifying RCE Vulnerabilities in LLM-Integrated Apps</title>
-      <link>https://gnehcuyz.github.io/reading/rce_vulnerabilities_llm_apps/</link>
-      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/reading/rce_vulnerabilities_llm_apps/</guid>
-      <description>This paper investigates remote code execution (RCE) vulnerabilities in applications that integrate large language models.</description>
+      <title>Formalizing and Benchmarking Prompt Injection Attacks and Defenses</title>
+      <link>https://gnehcuyz.github.io/reading/jailbreaking_llm_dra/</link>
+      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/reading/jailbreaking_llm_dra/</guid>
+      <description>Analyzes prompt injection attacks in LLMs, evaluates their impact on different models, and benchmarks defenses like Known-Answer Detection.</description>
     </item>
     <item>
       <title>Formalizing and Benchmarking Prompt Injection Attacks and Defenses</title>
-      <link>https://gnehcuyz.github.io/reading/prompt_injection_attacks_defenses/</link>
-      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/reading/prompt_injection_attacks_defenses/</guid>
-      <description>This paper provides a formal framework and benchmarking methodology for prompt injection attacks and their countermeasures in large language models.</description>
-    </item>
-    <item>
-      <title>Making Them Ask and Answer - Jailbreaking Large Language Models in Few Queries via Disguise and Reconstruction</title>
-      <link>https://gnehcuyz.github.io/reading/jailbreaking_llms_disguise_reconstruction/</link>
-      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/reading/jailbreaking_llms_disguise_reconstruction/</guid>
-      <description>Explored methods to jailbreak LLMs using disguise and reconstruction techniques with minimal queries.</description>
+      <link>https://gnehcuyz.github.io/reading/prompt-injection-attacks/</link>
+      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/reading/prompt-injection-attacks/</guid>
+      <description>Analyzes prompt injection attacks in LLMs, evaluates their impact on different models, and benchmarks defenses like Known-Answer Detection.</description>
     </item>
     <item>
       <title>Style Transfer in Text - Exploration and Evaluation</title>

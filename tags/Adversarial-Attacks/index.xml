@@ -2,17 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Adversarial Attacks on Chengyu Zhang</title>
-    <link>https://gnehcuyz.github.io/tags/Adversarial-Attacks/</link>
+    <link>http://localhost:1313/tags/Adversarial-Attacks/</link>
     <description>Recent content in Adversarial Attacks on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gnehcuyz.github.io/tags/Adversarial-Attacks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/Adversarial-Attacks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jailbreaking Large Language Models: Disguise and Reconstruction Attack (DRA)</title>
+      <link>http://localhost:1313/reading/jailbreaking_llm_dra/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/reading/jailbreaking_llm_dra/</guid>
+      <description>Explores how DRA exploits biases in LLM fine-tuning to bypass safety measures with minimal queries, achieving state-of-the-art jailbreak success.</description>
+    </item>
     <item>
       <title>Formalizing and Benchmarking Prompt Injection Attacks and Defenses</title>
-      <link>https://gnehcuyz.github.io/reading/prompt_injection_attacks_defenses/</link>
+      <link>http://localhost:1313/reading/prompt_injection_attacks_defenses/</link>
       <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/reading/prompt_injection_attacks_defenses/</guid>
+      <guid>http://localhost:1313/reading/prompt_injection_attacks_defenses/</guid>
       <description>This paper provides a formal framework and benchmarking methodology for prompt injection attacks and their countermeasures in large language models.</description>
     </item>
   </channel>

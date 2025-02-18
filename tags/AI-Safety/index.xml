@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AI Safety on Chengyu Zhang</title>
+    <link>http://localhost:1313/tags/AI-Safety/</link>
+    <description>Recent content in AI Safety on Chengyu Zhang</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/AI-Safety/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jailbreaking Large Language Models: Disguise and Reconstruction Attack (DRA)</title>
+      <link>http://localhost:1313/reading/jailbreaking_llm_dra/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/reading/jailbreaking_llm_dra/</guid>
+      <description>Explores how DRA exploits biases in LLM fine-tuning to bypass safety measures with minimal queries, achieving state-of-the-art jailbreak success.</description>
+    </item>
+  </channel>
+</rss>
