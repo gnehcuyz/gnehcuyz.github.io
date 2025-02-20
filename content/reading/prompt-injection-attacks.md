@@ -8,7 +8,6 @@ math: true
 tags: [Prompt Injection, Large Language Model, Security]
 ---
 
-# Unmasking Prompt Injection: A Deep Dive into the USENIX Security 2024 Paper
 
 ## Introduction
 
@@ -70,7 +69,7 @@ These modify the input before it reaches the model:
 | **Retokenization**     | Splits words into subword tokens to disrupt attacks. | Still allows some injections. |
 | **Delimiters**         | Wraps input in quotes to separate commands.      | Doesn’t fully block injected prompts. |
 
-🚨 **Key Finding:** No prevention method fully stops prompt injections, and some degrade LLM performance.
+**Key Finding:** No prevention method fully stops prompt injections, and some degrade LLM performance.
 
 ### **2. Detection-Based Defenses**
 These analyze the input/output to catch suspicious behavior:
@@ -90,9 +89,9 @@ These analyze the input/output to catch suspicious behavior:
 This paper highlights a critical AI security issue: **LLMs can be easily manipulated, and existing defenses are weak**.
 
 ### **Key Takeaways:**
-✅ Prompt injection attacks are **highly effective** across all tested models.  
-✅ **Larger models** are **more vulnerable** due to their improved instruction-following.  
-✅ No defense is perfect—**even the best method still misses some attacks**.  
+- Prompt injection attacks are **highly effective** across all tested models.  
+- **Larger models** are **more vulnerable** due to their improved instruction-following.  
+- No defense is perfect—**even the best method still misses some attacks**.  
 
 This means **AI security needs to evolve alongside AI capabilities**. Right now, defenses are **reactive**, but they need to become **proactive**. 
 
@@ -101,10 +100,10 @@ This means **AI security needs to evolve alongside AI capabilities**. Right now,
 ## **What’s Next? Future Research Directions**
 The paper suggests **several ways to improve security**:
 
-🔹 **Fine-tuning LLMs** to recognize and reject injected prompts.  
-🔹 **Adversarial training** to improve resistance to attacks.  
-🔹 **Hybrid defense models** that combine multiple techniques.  
-🔹 **Human-in-the-loop validation** for high-risk AI applications.  
+- **Fine-tuning LLMs** to recognize and reject injected prompts.  
+- **Adversarial training** to improve resistance to attacks.  
+- **Hybrid defense models** that combine multiple techniques.  
+- **Human-in-the-loop validation** for high-risk AI applications.  
 
 Security should not be **an afterthought**—it needs to be built into **the core design of LLMs**.
 
@@ -117,4 +116,3 @@ Prompt injection attacks **are not just theoretical—they are happening now**. 
 - Should AI **always follow** user instructions, or should it **question suspicious inputs**?  
 - How do we balance **security and usability** in AI applications?  
 
-Let’s discuss in the comments!

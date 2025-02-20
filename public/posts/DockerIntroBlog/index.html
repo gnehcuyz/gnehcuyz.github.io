@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Intro to Docker | Chengyu Zhang</title>
 <meta name="keywords" content="Docker">
 <meta name="description" content="Docker, the Easiest Way to Run Apps Anywhere">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="https://gnehcuyz.github.io/posts/DockerIntroBlog/">
+<link rel="canonical" href="http://localhost:1313/posts/DockerIntroBlog/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -28,14 +28,14 @@
   });
 </script>
   
-<link rel="icon" href="https://gnehcuyz.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://gnehcuyz.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://gnehcuyz.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://gnehcuyz.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/posts/DockerIntroBlog/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/DockerIntroBlog/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,74 +72,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gnehcuyz.github.io/posts/DockerIntroBlog/">
-  <meta property="og:site_name" content="Chengyu Zhang">
-  <meta property="og:title" content="Intro to Docker">
-  <meta property="og:description" content="Docker, the Easiest Way to Run Apps Anywhere">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-29T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-29T00:00:00+00:00">
-    <meta property="article:tag" content="Docker">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Intro to Docker">
-<meta name="twitter:description" content="Docker, the Easiest Way to Run Apps Anywhere">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://gnehcuyz.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Intro to Docker",
-      "item": "https://gnehcuyz.github.io/posts/DockerIntroBlog/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Intro to Docker",
-  "name": "Intro to Docker",
-  "description": "Docker, the Easiest Way to Run Apps Anywhere",
-  "keywords": [
-    "Docker"
-  ],
-  "articleBody": "What is Docker? Imagine you have a magic box that can run your apps anywhere—on your laptop, your friend’s computer, or a cloud server—without any compatibility issues. That’s exactly what Docker does! Docker is a tool that helps developers package their applications with all their dependencies into containers, ensuring they run the same way on any machine.\nWhy Use Docker? Before Docker, setting up an application often meant installing multiple dependencies, configuring settings, and troubleshooting compatibility issues. Docker solves these challenges by offering:\nConsistency Across Environments – Your app runs identically, whether it’s on your laptop, a coworker’s machine, or a production server.\nResource Efficiency – Containers are lightweight and use fewer resources compared to traditional virtual machines (VMs), making them faster and more efficient.\nEasy Deployment and Portability – Docker containers are portable and can be moved seamlessly between different environments, from development to production.\nHow Docker Works? Docker packages everything your app needs—code, libraries, system tools—into a single container. This container runs the same way no matter where you deploy it.\nKey Components: Dockerfile – A set of instructions that tells Docker how to build your app. Image – A ready-made package of your app and its dependencies. Container – A running instance of an image, acting as a lightweight, self-contained environment. Getting Started with Docker Here’s how you can quickly start using Docker:\n1. Install Docker Download and install Docker from Docker’s official website.\n2. Create a Dockerfile A Dockerfile is a simple text file that tells Docker how to set up your app. Example:\n# Use an official Python runtime as a base image FROM python:3.9 # Set the working directory WORKDIR /app # Copy your application files into the container COPY . /app # Install dependencies RUN pip install -r requirements.txt # Run the app CMD [\"python\", \"app.py\"] 3. Build and Run Your App Once you have your Dockerfile, you can build and run your container:\n# Build the Docker image docker build -t myapp . # Run the container docker run myapp That’s it! Your app is now running inside a container. You can share it with anyone, and it will work the same way everywhere.\nUseful Docker Commands Here are some handy Docker commands to get started:\n# List all running containers docker ps # Stop a running container docker stop # Remove a container docker rm # Remove an image docker rmi myapp Conclusion Docker makes running and deploying apps simple, consistent, and efficient. Whether you’re developing locally or deploying to the cloud, Docker ensures your application behaves the same way everywhere. Give it a try and experience the power of containerization!\n",
-  "wordCount" : "442",
-  "inLanguage": "en",
-  "datePublished": "2025-01-29T00:00:00Z",
-  "dateModified": "2025-01-29T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Chengyu Zhang"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://gnehcuyz.github.io/posts/DockerIntroBlog/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Chengyu Zhang",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://gnehcuyz.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+</noscript>
 </head>
 
 <body class="" id="top">
@@ -157,7 +90,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://gnehcuyz.github.io/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -183,37 +116,37 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gnehcuyz.github.io/experience" title="Experience">
+                <a href="http://localhost:1313/experience" title="Experience">
                     <span>Experience</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/research/" title="Research">
+                <a href="http://localhost:1313/research/" title="Research">
                     <span>Research</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/projects/" title="Projects">
+                <a href="http://localhost:1313/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/posts/" title="Blog">
+                <a href="http://localhost:1313/posts/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/reading/" title="Reading">
+                <a href="http://localhost:1313/reading/" title="Reading">
                     <span>Reading</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -224,7 +157,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       Intro to Docker
     </h1>
@@ -340,14 +273,14 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://gnehcuyz.github.io/tags/Docker/">Docker</a></li>
+      <li><a href="http://localhost:1313/tags/Docker/">Docker</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://gnehcuyz.github.io/">Chengyu Zhang</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">Chengyu Zhang</a></span> · 
 
     <span>
         Powered by
