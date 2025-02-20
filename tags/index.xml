@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gnehcuyz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Large Language Models</title>
-      <link>https://gnehcuyz.github.io/tags/Large-Language-Models/</link>
+      <title>Large Language Model</title>
+      <link>https://gnehcuyz.github.io/tags/Large-Language-Model/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/tags/Large-Language-Models/</guid>
+      <guid>https://gnehcuyz.github.io/tags/Large-Language-Model/</guid>
       <description></description>
     </item>
     <item>
@@ -27,6 +27,20 @@
       <link>https://gnehcuyz.github.io/tags/Security/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://gnehcuyz.github.io/tags/Security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Adversarial Attacks</title>
+      <link>https://gnehcuyz.github.io/tags/Adversarial-Attacks/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Adversarial-Attacks/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jailbreak</title>
+      <link>https://gnehcuyz.github.io/tags/Jailbreak/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/tags/Jailbreak/</guid>
       <description></description>
     </item>
     <item>
@@ -76,13 +90,6 @@
       <link>https://gnehcuyz.github.io/tags/Label-Inference-Attack/</link>
       <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
       <guid>https://gnehcuyz.github.io/tags/Label-Inference-Attack/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Large Language Model</title>
-      <link>https://gnehcuyz.github.io/tags/Large-Language-Model/</link>
-      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/tags/Large-Language-Model/</guid>
       <description></description>
     </item>
     <item>
