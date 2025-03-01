@@ -4,7 +4,7 @@ date: 2025-01-11
 draft: false
 summary: A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently
 math: true
-tags: [Algorithm]
+tags: [Data Structures and Algorithms (DSA]
 ---
 
 # **What is Two Pointers?**

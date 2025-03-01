@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Two Pointers | Chengyu Zhang</title>
-<meta name="keywords" content="Algorithm">
+<meta name="keywords" content="Data Structures and Algorithms (DSA">
 <meta name="description" content="A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="http://localhost:1313/posts/TwoPointers/">
+<link rel="canonical" href="https://gnehcuyz.github.io/posts/TwoPointers/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -28,14 +28,14 @@
   });
 </script>
   
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://gnehcuyz.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gnehcuyz.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gnehcuyz.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://gnehcuyz.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/TwoPointers/">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/posts/TwoPointers/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,7 +72,74 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/posts/TwoPointers/">
+  <meta property="og:site_name" content="Chengyu Zhang">
+  <meta property="og:title" content="Two Pointers">
+  <meta property="og:description" content="A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-11T00:00:00+00:00">
+    <meta property="article:tag" content="Data Structures and Algorithms (DSA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Two Pointers">
+<meta name="twitter:description" content="A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://gnehcuyz.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Two Pointers",
+      "item": "https://gnehcuyz.github.io/posts/TwoPointers/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Two Pointers",
+  "name": "Two Pointers",
+  "description": "A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently",
+  "keywords": [
+    "Data Structures and Algorithms (DSA"
+  ],
+  "articleBody": "What is Two Pointers? Two Pointers is a straightforward and flexible algorithmic technique used to solve problems efficiently, especially on arrays and strings. The basic idea is to use two pointers (or indices) to scan the data from different directions or at varying speeds.\nKey Characteristics:\nUsually works on sorted arrays or problems involving sequences. Helps reduce nested loops, making algorithms faster. Common in problems related to searching, comparing, or partitioning data. Time complexity: typically \\(O(n)\\) or \\(O(n \\log n)\\) depending on the problem. How to Apply Two Pointers Steps:\nDecide the Purpose of Each Pointer: Will they move toward each other? At different speeds? Or scan simultaneously? Initialize the Pointers: Start pointers at the beginning and end of the array, or both at the start. Iterate Until a Condition is Met: Move the pointers based on the problem requirements. Adjust their movement when conditions are satisfied. Exit Condition: Typically when the pointers cross or reach the end of the array. Pseudocode Basic Two Pointers Template:\n# Example: Check if an array has two numbers that sum to a target def two_pointers_example(array, target): left = 0 # Start of the array right = len(array) - 1 # End of the array while left \u003c right: current_sum = array[left] + array[right] if current_sum == target: return (left, right) # Found the pair elif current_sum \u003c target: left += 1 # Move left pointer to increase the sum else: right -= 1 # Move right pointer to decrease the sum return -1 # No pair found Common Patterns Here are some popular problems solved using the Two Pointers technique:\n1. Finding a Pair with a Given Sum Problem: Find two numbers in a sorted array that add up to a target value. Strategy: Use one pointer at the start and another at the end, adjust based on the sum. 2. Remove Duplicates from Sorted Array Problem: Remove duplicates in-place in a sorted array and return the new length. Strategy: Use one pointer to scan the array and another to track unique elements. 3. Reversing a String or Array Problem: Reverse the characters in a string or elements in an array. Strategy: Use two pointers, one at each end, and swap the elements. 4. Checking for Palindrome Problem: Check if a string is a palindrome. Strategy: Use two pointers, one at the start and one at the end, comparing characters. 5. Merging Two Sorted Arrays Problem: Merge two sorted arrays into one sorted array. Strategy: Use one pointer for each array and compare elements to decide which to add to the result. Classic LeetCode Problems 🔗 1. Two Sum II\n2. Remove Duplicates from Sorted Array\n3. Valid Palindrome\n4. Reverse String\n5. Container With Most Water\n6. Merge Sorted Array\n7. 3Sum\n8. Sort Colors\n9. Sliding Window Maximum\n10. Subarray Product Less Than K\n",
+  "wordCount" : "473",
+  "inLanguage": "en",
+  "datePublished": "2025-01-11T00:00:00Z",
+  "dateModified": "2025-01-11T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Chengyu Zhang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gnehcuyz.github.io/posts/TwoPointers/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chengyu Zhang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gnehcuyz.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -90,7 +157,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <a href="https://gnehcuyz.github.io/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -116,37 +183,37 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/experience" title="Experience">
+                <a href="https://gnehcuyz.github.io/experience" title="Experience">
                     <span>Experience</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/research/" title="Research">
+                <a href="https://gnehcuyz.github.io/research/" title="Research">
                     <span>Research</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/projects/" title="Projects">
+                <a href="https://gnehcuyz.github.io/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="Blog">
+                <a href="https://gnehcuyz.github.io/posts/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/reading/" title="Reading">
+                <a href="https://gnehcuyz.github.io/reading/" title="Reading">
                     <span>Reading</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="About">
+                <a href="https://gnehcuyz.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://gnehcuyz.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -157,7 +224,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       Two Pointers
     </h1>
@@ -301,131 +368,21 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/Algorithm/">Algorithm</a></li>
+      <li><a href="https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/">Data Structures and Algorithms (DSA</a></li>
     </ul>
   </footer>
 </article>
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">Chengyu Zhang</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-    <br>
-    <span>Last updated at 2025-02-07</span>
-
+    <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
+    <p>
+        Last updated on 2025-02-28 ||
+        &copy; 2025 
+        <a href="https://yourwebsite.com" style="text-decoration: underline;">Chengyu Zhang</a> ||
+        Powered by 
+        <a href="https://gohugo.io/" style="text-decoration: underline;">Hugo</a> & 
+        <a href="https://themes.gohugo.io/themes/hugo-papermod/" style="text-decoration: underline;">PaperMod</a>
+    </p>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
 </body>
 
 </html>

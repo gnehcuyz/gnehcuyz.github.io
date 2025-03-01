@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Style Transfer in Text - Exploration and Evaluation | Chengyu Zhang</title>
 <meta name="keywords" content="Text Style Transfer, NLG, NLP">
 <meta name="description" content="This paper explores text style transfer (TST) using non-parallel data, introducing new evaluation metrics for transfer strength and content preservation.">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="http://localhost:1313/reading/style_transfer_text_exploration_evaluation/">
+<link rel="canonical" href="https://gnehcuyz.github.io/reading/style_transfer_text_exploration_evaluation/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -28,14 +28,14 @@
   });
 </script>
   
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://gnehcuyz.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gnehcuyz.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gnehcuyz.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://gnehcuyz.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/reading/style_transfer_text_exploration_evaluation/">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/reading/style_transfer_text_exploration_evaluation/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,7 +72,76 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/reading/style_transfer_text_exploration_evaluation/">
+  <meta property="og:site_name" content="Chengyu Zhang">
+  <meta property="og:title" content="Style Transfer in Text - Exploration and Evaluation">
+  <meta property="og:description" content="This paper explores text style transfer (TST) using non-parallel data, introducing new evaluation metrics for transfer strength and content preservation.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="reading">
+    <meta property="article:published_time" content="2025-01-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-22T00:00:00+00:00">
+    <meta property="article:tag" content="Text Style Transfer">
+    <meta property="article:tag" content="NLG">
+    <meta property="article:tag" content="NLP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Style Transfer in Text - Exploration and Evaluation">
+<meta name="twitter:description" content="This paper explores text style transfer (TST) using non-parallel data, introducing new evaluation metrics for transfer strength and content preservation.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Reading",
+      "item": "https://gnehcuyz.github.io/reading/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Style Transfer in Text - Exploration and Evaluation",
+      "item": "https://gnehcuyz.github.io/reading/style_transfer_text_exploration_evaluation/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Style Transfer in Text - Exploration and Evaluation",
+  "name": "Style Transfer in Text - Exploration and Evaluation",
+  "description": "This paper explores text style transfer (TST) using non-parallel data, introducing new evaluation metrics for transfer strength and content preservation.",
+  "keywords": [
+    "Text Style Transfer", "NLG", "NLP"
+  ],
+  "articleBody": "Read the paper\nIntroduction This paper looks at the challenges of changing the style of text without using matching input-output examples. It introduces two new ways to measure performance: Transfer Strength: How well the style is changed. Content Preservation: How much of the original content is kept. The methods are tested on two tasks: Turning academic paper titles into news-style titles. Changing reviews from positive to negative. Results show the models balance changing style and keeping content well. Related Work The paper talks about earlier work on style transfer in images and text. It explains the difficulties in text style transfer, like not having matching input-output examples and lacking good evaluation methods. Different approaches, like adversarial networks and multi-task learning, are reviewed. The authors point out the need for better ways to keep content and separate style. Models Two models are proposed: The multi-decoder model, which has separate decoders for each style. The style-embedding model, which adds style information during generation. To test these models, two metrics are used: Transfer strength: Measures how well the new style is applied. Content preservation: Measures how much content stays the same. Tests on two datasets—paper-news titles and positive-negative reviews—show these models balance style change and content retention. The multi-decoder model focuses more on style change, while the style-embedding model keeps more content. Human evaluations show the content preservation metric aligns well with human opinions. Evaluation The models manage to change style while keeping content to varying levels. The new metrics (transfer strength and content preservation) match human evaluations well, proving their usefulness. The paper notes a trade-off between style change and content retention, suggesting different models for different tasks. Experiment Two datasets are used: A paper-news title dataset with academic paper titles and their news-style versions. A positive-negative review dataset with Amazon reviews labeled as positive or negative. The datasets were split into training, validation, and test sets. Preprocessing steps included: Filtering sentence lengths. Converting text to lowercase. Replacing numbers with placeholders. Different settings were tested to ensure fair evaluation: Word embedding size: Tried values like 64, 128, etc. Encoder hidden size: Tested sizes like 16, 32, 64, 128. Style embedding size: Checked 32, 64, 128 dimensions. Batch size: Set to 128. Optimizer: Used Adadelta with a learning rate of 0.0001. Results and Analysis The content preservation metric matched human opinions with a Spearman’s correlation of 0.5656 (p \u003c 0.0001). In the paper-news title task: The style-embedding model got content preservation scores of 0.89-0.95 and transfer strength scores of 0.2-0.6, better than the baseline. In the positive-negative review task: The multi-decoder model got transfer strength of 0.8 and content preservation of 0.85, doing better than the style-embedding model, which scored 0.6 and 0.75. The multi-decoder model improved transfer strength by 50% compared to the auto-encoder in this task, reaching 0.6. Overall, the models improved style change and content retention by 20~50% compared to the baseline. ",
+  "wordCount" : "482",
+  "inLanguage": "en",
+  "datePublished": "2025-01-22T00:00:00Z",
+  "dateModified": "2025-01-22T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Chengyu Zhang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gnehcuyz.github.io/reading/style_transfer_text_exploration_evaluation/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chengyu Zhang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gnehcuyz.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -90,7 +159,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <a href="https://gnehcuyz.github.io/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -116,37 +185,37 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/experience" title="Experience">
+                <a href="https://gnehcuyz.github.io/experience" title="Experience">
                     <span>Experience</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/research/" title="Research">
+                <a href="https://gnehcuyz.github.io/research/" title="Research">
                     <span>Research</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/projects/" title="Projects">
+                <a href="https://gnehcuyz.github.io/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="Blog">
+                <a href="https://gnehcuyz.github.io/posts/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/reading/" title="Reading">
+                <a href="https://gnehcuyz.github.io/reading/" title="Reading">
                     <span>Reading</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="About">
+                <a href="https://gnehcuyz.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://gnehcuyz.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -157,7 +226,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/reading/">Reading</a></div>
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/reading/">Reading</a></div>
     <h1 class="post-title entry-hint-parent">
       Style Transfer in Text - Exploration and Evaluation
     </h1>
@@ -262,133 +331,23 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/Text-Style-Transfer/">Text Style Transfer</a></li>
-      <li><a href="http://localhost:1313/tags/NLG/">NLG</a></li>
-      <li><a href="http://localhost:1313/tags/NLP/">NLP</a></li>
+      <li><a href="https://gnehcuyz.github.io/tags/Text-Style-Transfer/">Text Style Transfer</a></li>
+      <li><a href="https://gnehcuyz.github.io/tags/NLG/">NLG</a></li>
+      <li><a href="https://gnehcuyz.github.io/tags/NLP/">NLP</a></li>
     </ul>
   </footer>
 </article>
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">Chengyu Zhang</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-    <br>
-    <span>Last updated at 2025-02-07</span>
-
+    <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
+    <p>
+        Last updated on 2025-02-28 ||
+        &copy; 2025 
+        <a href="https://yourwebsite.com" style="text-decoration: underline;">Chengyu Zhang</a> ||
+        Powered by 
+        <a href="https://gohugo.io/" style="text-decoration: underline;">Hugo</a> & 
+        <a href="https://themes.gohugo.io/themes/hugo-papermod/" style="text-decoration: underline;">PaperMod</a>
+    </p>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
 </body>
 
 </html>

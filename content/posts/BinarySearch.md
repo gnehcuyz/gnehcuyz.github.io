@@ -4,7 +4,7 @@ date: 2025-01-02
 draft: false
 summary: A fast and precise method for finding targets in sorted arrays. 
 math: true
-tags: [Algorithm]
+tags: [Data Structures and Algorithms (DSA]
 ---
 
 # **What is Binary Search?**
