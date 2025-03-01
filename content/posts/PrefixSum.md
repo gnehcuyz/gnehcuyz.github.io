@@ -84,7 +84,7 @@ print(range_sum(prefix, 1, 3))  # Output: 18
 ---
 
 # **Classic LeetCode Problems**
-- [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) (Medium)
-- [Running Sum of 1D Array](https://leetcode.com/problems/running-sum-of-1d-array/) (Easy)
-- [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) (Medium)
-- [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/) (Easy)
+- [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
+- [Running Sum of 1D Array](https://leetcode.com/problems/running-sum-of-1d-array/)
+- [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) 
+- [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/)

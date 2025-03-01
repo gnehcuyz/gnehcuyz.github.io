@@ -9,6 +9,13 @@
     <lastBuildDate>Sat, 01 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Prefix Product</title>
+      <link>https://gnehcuyz.github.io/posts/PrefixProduct/</link>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/PrefixProduct/</guid>
+      <description>A powerful technique for efficiently computing product-related queries.</description>
+    </item>
+    <item>
       <title>Prefix Sum</title>
       <link>https://gnehcuyz.github.io/posts/PrefixSum/</link>
       <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
@@ -21,6 +28,34 @@
       <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://gnehcuyz.github.io/posts/Counter/</guid>
       <description>A special dictionary-like class for counting occurrences of elements</description>
+    </item>
+    <item>
+      <title>Sliding Window</title>
+      <link>https://gnehcuyz.github.io/posts/SlidingWindow/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/SlidingWindow/</guid>
+      <description>Sliding Window, an efficient technique for solving array problems</description>
+    </item>
+    <item>
+      <title>Merge Sort</title>
+      <link>https://gnehcuyz.github.io/posts/MergeSort/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/MergeSort/</guid>
+      <description>A reliable and efficient algorithm for sorting data using a divide-and-conquer approach.</description>
+    </item>
+    <item>
+      <title>Two Pointers</title>
+      <link>https://gnehcuyz.github.io/posts/TwoPointers/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/TwoPointers/</guid>
+      <description>A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently</description>
+    </item>
+    <item>
+      <title>Binary Search</title>
+      <link>https://gnehcuyz.github.io/posts/BinarySearch/</link>
+      <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/BinarySearch/</guid>
+      <description>A fast and precise method for finding targets in sorted arrays.</description>
     </item>
   </channel>
 </rss>

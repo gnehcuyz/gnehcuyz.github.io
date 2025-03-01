@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Sliding Window | Chengyu Zhang</title>
-<meta name="keywords" content="Data Structures and Algorithms (DSA">
+<meta name="keywords" content="Data Structures and Algorithms (DSA)">
 <meta name="description" content="Sliding Window, an efficient technique for solving array problems">
 <meta name="author" content="Chengyu Zhang">
 <link rel="canonical" href="https://gnehcuyz.github.io/posts/SlidingWindow/">
@@ -81,7 +81,7 @@
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-01-14T00:00:00+00:00">
     <meta property="article:modified_time" content="2025-01-14T00:00:00+00:00">
-    <meta property="article:tag" content="Data Structures and Algorithms (DSA">
+    <meta property="article:tag" content="Data Structures and Algorithms (DSA)">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sliding Window">
 <meta name="twitter:description" content="Sliding Window, an efficient technique for solving array problems">
@@ -115,7 +115,7 @@
   "name": "Sliding Window",
   "description": "Sliding Window, an efficient technique for solving array problems",
   "keywords": [
-    "Data Structures and Algorithms (DSA"
+    "Data Structures and Algorithms (DSA)"
   ],
   "articleBody": "What is Sliding Window? The sliding window is a technique used to solve problems that involve arrays, lists, or strings. It helps optimize performance by reducing the need for nested loops. Instead of processing the entire array multiple times, this method allows you to focus on a specific “window” of elements that moves as needed.\nKey Characteristics: Works with contiguous subarrays or substrings. Time complexity: \\(O(n)\\) in most cases. Space complexity: \\(O(1)\\) unless additional data structures are used. How Sliding Window Works Steps: Identify the Window Size:\nFor fixed-size problems, the window size remains constant. For variable-size problems, the window size changes dynamically. Initialize Variables:\nSet pointers for the start and end of the window. Use variables to track the current state, such as the sum, maximum, or frequency of elements. Expand or Shrink the Window:\nAdjust the pointers (usually start and end) to include or exclude elements. Update the state as elements are added or removed. Check for Conditions:\nEnsure the window meets the problem’s requirements. Adjust as needed to maintain the conditions. Pseudocode Fixed-Size Sliding Window: # Example: Maximum sum of a subarray of size k def max_subarray_sum(arr, k): n = len(arr) if n \u003c k: return -1 # Not enough elements max_sum = 0 window_sum = sum(arr[:k]) # Initial window sum max_sum = window_sum for i in range(k, n): window_sum += arr[i] - arr[i - k] # Slide the window max_sum = max(max_sum, window_sum) return max_sum Variable-Size Sliding Window: # Example: Smallest subarray with sum \u003e= target def min_subarray_len(target, arr): n = len(arr) min_len = float('inf') window_sum = 0 start = 0 for end in range(n): window_sum += arr[end] # Expand the window while window_sum \u003e= target: # Shrink the window min_len = min(min_len, end - start + 1) window_sum -= arr[start] start += 1 return min_len if min_len != float('inf') else 0 Common Sliding Window Patterns 1. Fixed-Size Window Problems that involve finding maximum/minimum sums, averages, or other metrics for a fixed-size subarray. 2. Dynamic Window Problems where the size of the window depends on specific conditions, such as achieving a target sum or meeting frequency constraints. 3. Two Pointers Often combined with sliding window to adjust both ends of the window efficiently. Classic LeetCode Problems 🔗 Maximum Subarray Minimum Size Subarray Sum Longest Substring Without Repeating Characters Sliding Window Maximum Permutation in String Longest Repeating Character Replacement Fruit Into Baskets ",
   "wordCount" : "395",
@@ -324,7 +324,7 @@
 </ul>
 <hr>
 <h1 id="classic-leetcode-problems-"><strong>Classic LeetCode Problems 🔗</strong><a hidden class="anchor" aria-hidden="true" href="#classic-leetcode-problems-">#</a></h1>
-<ol>
+<ul>
 <li><a href="https://leetcode.com/problems/maximum-subarray/">Maximum Subarray</a></li>
 <li><a href="https://leetcode.com/problems/minimum-size-subarray-sum/">Minimum Size Subarray Sum</a></li>
 <li><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Longest Substring Without Repeating Characters</a></li>
@@ -332,7 +332,7 @@
 <li><a href="https://leetcode.com/problems/permutation-in-string/">Permutation in String</a></li>
 <li><a href="https://leetcode.com/problems/longest-repeating-character-replacement/">Longest Repeating Character Replacement</a></li>
 <li><a href="https://leetcode.com/problems/fruit-into-baskets/">Fruit Into Baskets</a></li>
-</ol>
+</ul>
 <hr>
 
 
@@ -340,7 +340,7 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/">Data Structures and Algorithms (DSA</a></li>
+      <li><a href="https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/">Data Structures and Algorithms (DSA)</a></li>
     </ul>
   </footer>
 </article>

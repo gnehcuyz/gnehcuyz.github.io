@@ -5,7 +5,7 @@ draft: false
 summary: A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently
 math: true
 ShowToc: false
-tags: [Data Structures and Algorithms (DSA]
+tags: [Data Structures and Algorithms (DSA)]
 ---
 
 # **What is Two Pointers?**
@@ -81,22 +81,15 @@ Here are some popular problems solved using the Two Pointers technique:
 ---
 
 # **Classic LeetCode Problems 🔗**
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">1. Two Sum II</a></span>
 
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">2. Remove Duplicates from Sorted Array</a></span>
+1. [Two Sum II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)  
+2. [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)  
+3. [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)  
+4. [Reverse String](https://leetcode.com/problems/reverse-string/)  
+5. [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)  
+6. [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)  
+7. [3Sum](https://leetcode.com/problems/3sum/)  
+8. [Sort Colors](https://leetcode.com/problems/sort-colors/)  
+9. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)  
+10. [Subarray Product Less Than K](https://leetcode.com/problems/subarray-product-less-than-k/)  
 
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/valid-palindrome/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">3. Valid Palindrome</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/reverse-string/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">4. Reverse String</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/container-with-most-water/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">5. Container With Most Water</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/merge-sorted-array/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">6. Merge Sorted Array</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/3sum/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">7. 3Sum</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/sort-colors/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">8. Sort Colors</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/sliding-window-maximum/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">9. Sliding Window Maximum</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/subarray-product-less-than-k/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">10. Subarray Product Less Than K</a></span>

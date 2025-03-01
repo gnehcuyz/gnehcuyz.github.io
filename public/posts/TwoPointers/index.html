@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Two Pointers | Chengyu Zhang</title>
-<meta name="keywords" content="Data Structures and Algorithms (DSA">
+<meta name="keywords" content="Data Structures and Algorithms (DSA)">
 <meta name="description" content="A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently">
 <meta name="author" content="Chengyu Zhang">
 <link rel="canonical" href="https://gnehcuyz.github.io/posts/TwoPointers/">
@@ -81,7 +81,7 @@
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-01-11T00:00:00+00:00">
     <meta property="article:modified_time" content="2025-01-11T00:00:00+00:00">
-    <meta property="article:tag" content="Data Structures and Algorithms (DSA">
+    <meta property="article:tag" content="Data Structures and Algorithms (DSA)">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Two Pointers">
 <meta name="twitter:description" content="A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently">
@@ -115,10 +115,10 @@
   "name": "Two Pointers",
   "description": "A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently",
   "keywords": [
-    "Data Structures and Algorithms (DSA"
+    "Data Structures and Algorithms (DSA)"
   ],
-  "articleBody": "What is Two Pointers? Two Pointers is a straightforward and flexible algorithmic technique used to solve problems efficiently, especially on arrays and strings. The basic idea is to use two pointers (or indices) to scan the data from different directions or at varying speeds.\nKey Characteristics:\nUsually works on sorted arrays or problems involving sequences. Helps reduce nested loops, making algorithms faster. Common in problems related to searching, comparing, or partitioning data. Time complexity: typically \\(O(n)\\) or \\(O(n \\log n)\\) depending on the problem. How to Apply Two Pointers Steps:\nDecide the Purpose of Each Pointer: Will they move toward each other? At different speeds? Or scan simultaneously? Initialize the Pointers: Start pointers at the beginning and end of the array, or both at the start. Iterate Until a Condition is Met: Move the pointers based on the problem requirements. Adjust their movement when conditions are satisfied. Exit Condition: Typically when the pointers cross or reach the end of the array. Pseudocode Basic Two Pointers Template:\n# Example: Check if an array has two numbers that sum to a target def two_pointers_example(array, target): left = 0 # Start of the array right = len(array) - 1 # End of the array while left \u003c right: current_sum = array[left] + array[right] if current_sum == target: return (left, right) # Found the pair elif current_sum \u003c target: left += 1 # Move left pointer to increase the sum else: right -= 1 # Move right pointer to decrease the sum return -1 # No pair found Common Patterns Here are some popular problems solved using the Two Pointers technique:\n1. Finding a Pair with a Given Sum Problem: Find two numbers in a sorted array that add up to a target value. Strategy: Use one pointer at the start and another at the end, adjust based on the sum. 2. Remove Duplicates from Sorted Array Problem: Remove duplicates in-place in a sorted array and return the new length. Strategy: Use one pointer to scan the array and another to track unique elements. 3. Reversing a String or Array Problem: Reverse the characters in a string or elements in an array. Strategy: Use two pointers, one at each end, and swap the elements. 4. Checking for Palindrome Problem: Check if a string is a palindrome. Strategy: Use two pointers, one at the start and one at the end, comparing characters. 5. Merging Two Sorted Arrays Problem: Merge two sorted arrays into one sorted array. Strategy: Use one pointer for each array and compare elements to decide which to add to the result. Classic LeetCode Problems 🔗 1. Two Sum II\n2. Remove Duplicates from Sorted Array\n3. Valid Palindrome\n4. Reverse String\n5. Container With Most Water\n6. Merge Sorted Array\n7. 3Sum\n8. Sort Colors\n9. Sliding Window Maximum\n10. Subarray Product Less Than K\n",
-  "wordCount" : "473",
+  "articleBody": "What is Two Pointers? Two Pointers is a straightforward and flexible algorithmic technique used to solve problems efficiently, especially on arrays and strings. The basic idea is to use two pointers (or indices) to scan the data from different directions or at varying speeds.\nKey Characteristics:\nUsually works on sorted arrays or problems involving sequences. Helps reduce nested loops, making algorithms faster. Common in problems related to searching, comparing, or partitioning data. Time complexity: typically \\(O(n)\\) or \\(O(n \\log n)\\) depending on the problem. How to Apply Two Pointers Steps:\nDecide the Purpose of Each Pointer: Will they move toward each other? At different speeds? Or scan simultaneously? Initialize the Pointers: Start pointers at the beginning and end of the array, or both at the start. Iterate Until a Condition is Met: Move the pointers based on the problem requirements. Adjust their movement when conditions are satisfied. Exit Condition: Typically when the pointers cross or reach the end of the array. Pseudocode Basic Two Pointers Template:\n# Example: Check if an array has two numbers that sum to a target def two_pointers_example(array, target): left = 0 # Start of the array right = len(array) - 1 # End of the array while left \u003c right: current_sum = array[left] + array[right] if current_sum == target: return (left, right) # Found the pair elif current_sum \u003c target: left += 1 # Move left pointer to increase the sum else: right -= 1 # Move right pointer to decrease the sum return -1 # No pair found Common Patterns Here are some popular problems solved using the Two Pointers technique:\n1. Finding a Pair with a Given Sum Problem: Find two numbers in a sorted array that add up to a target value. Strategy: Use one pointer at the start and another at the end, adjust based on the sum. 2. Remove Duplicates from Sorted Array Problem: Remove duplicates in-place in a sorted array and return the new length. Strategy: Use one pointer to scan the array and another to track unique elements. 3. Reversing a String or Array Problem: Reverse the characters in a string or elements in an array. Strategy: Use two pointers, one at each end, and swap the elements. 4. Checking for Palindrome Problem: Check if a string is a palindrome. Strategy: Use two pointers, one at the start and one at the end, comparing characters. 5. Merging Two Sorted Arrays Problem: Merge two sorted arrays into one sorted array. Strategy: Use one pointer for each array and compare elements to decide which to add to the result. Classic LeetCode Problems 🔗 Two Sum II Remove Duplicates from Sorted Array Valid Palindrome Reverse String Container With Most Water Merge Sorted Array 3Sum Sort Colors Sliding Window Maximum Subarray Product Less Than K ",
+  "wordCount" : "463",
   "inLanguage": "en",
   "datePublished": "2025-01-11T00:00:00Z",
   "dateModified": "2025-01-11T00:00:00Z",
@@ -316,23 +316,25 @@
 </ul>
 <hr>
 <h1 id="classic-leetcode-problems-"><strong>Classic LeetCode Problems 🔗</strong><a hidden class="anchor" aria-hidden="true" href="#classic-leetcode-problems-">#</a></h1>
-<p><span style="font-size: 19px;"><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">1. Two Sum II</a></span></p>
-<p><span style="font-size: 19px;"><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">2. Remove Duplicates from Sorted Array</a></span></p>
-<p><span style="font-size: 19px;"><a href="https://leetcode.com/problems/valid-palindrome/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">3. Valid Palindrome</a></span></p>
-<p><span style="font-size: 19px;"><a href="https://leetcode.com/problems/reverse-string/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">4. Reverse String</a></span></p>
-<p><span style="font-size: 19px;"><a href="https://leetcode.com/problems/container-with-most-water/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">5. Container With Most Water</a></span></p>
-<p><span style="font-size: 19px;"><a href="https://leetcode.com/problems/merge-sorted-array/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">6. Merge Sorted Array</a></span></p>
-<p><span style="font-size: 19px;"><a href="https://leetcode.com/problems/3sum/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">7. 3Sum</a></span></p>
-<p><span style="font-size: 19px;"><a href="https://leetcode.com/problems/sort-colors/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">8. Sort Colors</a></span></p>
-<p><span style="font-size: 19px;"><a href="https://leetcode.com/problems/sliding-window-maximum/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">9. Sliding Window Maximum</a></span></p>
-<p><span style="font-size: 19px;"><a href="https://leetcode.com/problems/subarray-product-less-than-k/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">10. Subarray Product Less Than K</a></span></p>
+<ol>
+<li><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/">Two Sum II</a></li>
+<li><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">Remove Duplicates from Sorted Array</a></li>
+<li><a href="https://leetcode.com/problems/valid-palindrome/">Valid Palindrome</a></li>
+<li><a href="https://leetcode.com/problems/reverse-string/">Reverse String</a></li>
+<li><a href="https://leetcode.com/problems/container-with-most-water/">Container With Most Water</a></li>
+<li><a href="https://leetcode.com/problems/merge-sorted-array/">Merge Sorted Array</a></li>
+<li><a href="https://leetcode.com/problems/3sum/">3Sum</a></li>
+<li><a href="https://leetcode.com/problems/sort-colors/">Sort Colors</a></li>
+<li><a href="https://leetcode.com/problems/sliding-window-maximum/">Sliding Window Maximum</a></li>
+<li><a href="https://leetcode.com/problems/subarray-product-less-than-k/">Subarray Product Less Than K</a></li>
+</ol>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/">Data Structures and Algorithms (DSA</a></li>
+      <li><a href="https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/">Data Structures and Algorithms (DSA)</a></li>
     </ul>
   </footer>
 </article>

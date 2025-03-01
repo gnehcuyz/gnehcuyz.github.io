@@ -5,7 +5,7 @@ draft: false
 summary: Sliding Window, an efficient technique for solving array problems
 math: true
 ShowToc: false
-tags: [Data Structures and Algorithms (DSA]
+tags: [Data Structures and Algorithms (DSA)]
 ---
 
 # **What is Sliding Window?**
@@ -93,12 +93,12 @@ def min_subarray_len(target, arr):
 ---
 
 # **Classic LeetCode Problems 🔗**
-1. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
-2. [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)
-3. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-4. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
-5. [Permutation in String](https://leetcode.com/problems/permutation-in-string/)
-6. [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
-7. [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
+- [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+- [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)
+- [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+- [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
+- [Permutation in String](https://leetcode.com/problems/permutation-in-string/)
+- [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
+- [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
 
 ---

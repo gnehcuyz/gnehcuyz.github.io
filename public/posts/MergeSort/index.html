@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Merge Sort | Chengyu Zhang</title>
-<meta name="keywords" content="Data Structures and Algorithms (DSA">
+<meta name="keywords" content="Data Structures and Algorithms (DSA)">
 <meta name="description" content="A reliable and efficient algorithm for sorting data using a divide-and-conquer approach.">
 <meta name="author" content="Chengyu Zhang">
 <link rel="canonical" href="https://gnehcuyz.github.io/posts/MergeSort/">
@@ -81,7 +81,7 @@
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-01-12T00:00:00+00:00">
     <meta property="article:modified_time" content="2025-01-12T00:00:00+00:00">
-    <meta property="article:tag" content="Data Structures and Algorithms (DSA">
+    <meta property="article:tag" content="Data Structures and Algorithms (DSA)">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Merge Sort">
 <meta name="twitter:description" content="A reliable and efficient algorithm for sorting data using a divide-and-conquer approach.">
@@ -115,7 +115,7 @@
   "name": "Merge Sort",
   "description": "A reliable and efficient algorithm for sorting data using a divide-and-conquer approach.",
   "keywords": [
-    "Data Structures and Algorithms (DSA"
+    "Data Structures and Algorithms (DSA)"
   ],
   "articleBody": "What is Merge Sort? Merge Sort is a divide-and-conquer algorithm used to sort an array or list. It splits the array into smaller parts, sorts them, and then merges the sorted parts back together. It is very efficient, especially for large datasets.\nKey Characteristics Time complexity: \\(O(n \\log n)\\) for all cases (best, average, and worst). Space complexity: \\(O(n)\\) because it uses temporary arrays. Stable sorting: Keeps the relative order of equal elements. How Merge Sort Works Merge Sort follows these steps:\nDivide: Split the array into two halves. Conquer: Recursively sort each half. Combine: Merge the two sorted halves into a single sorted array. Pseudocode def merge_sort(array): if len(array) \u003c= 1: return array # Step 1: Split the array mid = len(array) // 2 left_half = merge_sort(array[:mid]) right_half = merge_sort(array[mid:]) # Step 2: Merge sorted halves return merge(left_half, right_half) def merge(left, right): merged = [] i = j = 0 # Compare elements and merge while i \u003c len(left) and j \u003c len(right): if left[i] \u003c= right[j]: merged.append(left[i]) i += 1 else: merged.append(right[j]) j += 1 # Add remaining elements merged.extend(left[i:]) merged.extend(right[j:]) return merged How the Merge Step Works The merge step combines two sorted arrays into one sorted array:\nCompare the first elements of both arrays. Add the smaller element to the result array. Repeat until one array is empty. Add all remaining elements from the non-empty array. Common Questions 1. What is the downside of Merge Sort? Merge Sort requires extra space to store temporary arrays during the merge process. This space complexity of \\(O(n)\\) can be a limitation in memory-constrained environments.\nClassic Practice Problems Sort an Array\nMerge Sorted Array\nCount Inversions\nSort a Linked List\nKth Smallest Element\n",
   "wordCount" : "283",
@@ -331,7 +331,7 @@
 <p>Merge Sort requires extra space to store temporary arrays during the merge process. This space complexity of \(O(n)\) can be a limitation in memory-constrained environments.</p>
 <hr>
 <h1 id="classic-practice-problems"><strong>Classic Practice Problems</strong><a hidden class="anchor" aria-hidden="true" href="#classic-practice-problems">#</a></h1>
-<ol>
+<ul>
 <li>
 <p><a href="https://leetcode.com/problems/sort-an-array/">Sort an Array</a></p>
 </li>
@@ -347,14 +347,14 @@
 <li>
 <p><a href="https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/">Kth Smallest Element</a></p>
 </li>
-</ol>
+</ul>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/">Data Structures and Algorithms (DSA</a></li>
+      <li><a href="https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/">Data Structures and Algorithms (DSA)</a></li>
     </ul>
   </footer>
 </article>

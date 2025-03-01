@@ -4,7 +4,7 @@ date: 2025-01-12
 draft: false
 summary: A reliable and efficient algorithm for sorting data using a divide-and-conquer approach.
 math: true
-tags: [Data Structures and Algorithms (DSA]
+tags: [Data Structures and Algorithms (DSA)]
 ---
 
 # **What is Merge Sort?**
@@ -79,13 +79,13 @@ Merge Sort requires extra space to store temporary arrays during the merge proce
 ---
 
 # **Classic Practice Problems**
-1. [Sort an Array](https://leetcode.com/problems/sort-an-array/)
+- [Sort an Array](https://leetcode.com/problems/sort-an-array/)
 
-2. [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
+- [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
 
-3. [Count Inversions](https://practice.geeksforgeeks.org/problems/inversion-of-array/0)
+- [Count Inversions](https://practice.geeksforgeeks.org/problems/inversion-of-array/0)
 
-4. [Sort a Linked List](https://leetcode.com/problems/sort-list/)
+- [Sort a Linked List](https://leetcode.com/problems/sort-list/)
 
-5. [Kth Smallest Element](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
+- [Kth Smallest Element](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
 

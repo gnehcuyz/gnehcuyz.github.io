@@ -4,7 +4,7 @@ date: 2025-01-02
 draft: false
 summary: A fast and precise method for finding targets in sorted arrays. 
 math: true
-tags: [Data Structures and Algorithms (DSA]
+tags: [Data Structures and Algorithms (DSA)]
 ---
 
 # **What is Binary Search?**
@@ -109,22 +109,14 @@ This formula is designed to **avoid integer overflow** in programming languages 
 ---
 
 # **Classic LeetCode Problems 🔗**
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/binary-search/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">1. Basic Binary Search</a></span>
 
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">2. Find First or Last Occurrence</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">3. Search in Rotated Sorted Array</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/search-insert-position/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">4. Search Insert Position</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/find-peak-element/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">5. Find a Peak Element</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">6. Kth Smallest Element in a Sorted Matrix</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/search-a-2d-matrix/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">7. Search a 2D Matrix</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/split-array-largest-sum/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">8. Split Array into Parts</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/kth-missing-positive-number/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">9. Smallest Missing Positive Number</a></span>
-
-<span style="font-size: 19px;"><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" style="color: black; text-decoration: none;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">10. Median of Two Sorted Arrays</a></span>
+- [Basic Binary Search](https://leetcode.com/problems/binary-search/)  
+- [Find First or Last Occurrence](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)  
+- [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)  
+- [Search Insert Position](https://leetcode.com/problems/search-insert-position/)  
+- [Find a Peak Element](https://leetcode.com/problems/find-peak-element/)  
+- [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)  
+- [Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)  
+- [Split Array into Parts](https://leetcode.com/problems/split-array-largest-sum/)  
+- [Smallest Missing Positive Number](https://leetcode.com/problems/kth-missing-positive-number/)  
+- [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)  
