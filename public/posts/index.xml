@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gnehcuyz.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prefix Sum</title>
+      <link>https://gnehcuyz.github.io/posts/PrefixSum/</link>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/PrefixSum/</guid>
+      <description>A powerful technique for efficiently computing sum-related queries.</description>
+    </item>
     <item>
       <title>Counter in Python</title>
       <link>https://gnehcuyz.github.io/posts/Counter/</link>

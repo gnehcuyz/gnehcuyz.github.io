@@ -1,40 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Data Structures and Algorithms (DSA on Chengyu Zhang</title>
+    <title>Data Structures and Algorithms (DSA) on Chengyu Zhang</title>
     <link>https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/</link>
-    <description>Recent content in Data Structures and Algorithms (DSA on Chengyu Zhang</description>
+    <description>Recent content in Data Structures and Algorithms (DSA) on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Sliding Window</title>
-      <link>https://gnehcuyz.github.io/posts/SlidingWindow/</link>
-      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/posts/SlidingWindow/</guid>
-      <description>Sliding Window, an efficient technique for solving array problems</description>
+      <title>Prefix Sum</title>
+      <link>https://gnehcuyz.github.io/posts/PrefixSum/</link>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/PrefixSum/</guid>
+      <description>A powerful technique for efficiently computing sum-related queries.</description>
     </item>
     <item>
-      <title>Merge Sort</title>
-      <link>https://gnehcuyz.github.io/posts/MergeSort/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/posts/MergeSort/</guid>
-      <description>A reliable and efficient algorithm for sorting data using a divide-and-conquer approach.</description>
-    </item>
-    <item>
-      <title>Two Pointers</title>
-      <link>https://gnehcuyz.github.io/posts/TwoPointers/</link>
-      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/posts/TwoPointers/</guid>
-      <description>A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently</description>
-    </item>
-    <item>
-      <title>Binary Search</title>
-      <link>https://gnehcuyz.github.io/posts/BinarySearch/</link>
-      <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/posts/BinarySearch/</guid>
-      <description>A fast and precise method for finding targets in sorted arrays.</description>
+      <title>Counter in Python</title>
+      <link>https://gnehcuyz.github.io/posts/Counter/</link>
+      <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/Counter/</guid>
+      <description>A special dictionary-like class for counting occurrences of elements</description>
     </item>
   </channel>
 </rss>
