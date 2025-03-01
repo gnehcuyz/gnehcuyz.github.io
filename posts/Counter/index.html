@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Counter in Python | Chengyu Zhang</title>
+<meta name="keywords" content="Data Structures and Algorithms (DSA)">
+<meta name="description" content="A special dictionary-like class for counting occurrences of elements">
+<meta name="author" content="Chengyu Zhang">
+<link rel="canonical" href="https://gnehcuyz.github.io/posts/Counter/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},   
+        {left: '$$', right: '$$', display: true},     
+        {left: '\\(', right: '\\)', display: false},  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+  
+<link rel="icon" href="https://gnehcuyz.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gnehcuyz.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gnehcuyz.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://gnehcuyz.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/posts/Counter/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/posts/Counter/">
+  <meta property="og:site_name" content="Chengyu Zhang">
+  <meta property="og:title" content="Counter in Python">
+  <meta property="og:description" content="A special dictionary-like class for counting occurrences of elements">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-28T00:00:00+00:00">
+    <meta property="article:tag" content="Data Structures and Algorithms (DSA)">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Counter in Python">
+<meta name="twitter:description" content="A special dictionary-like class for counting occurrences of elements">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://gnehcuyz.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Counter in Python",
+      "item": "https://gnehcuyz.github.io/posts/Counter/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Counter in Python",
+  "name": "Counter in Python",
+  "description": "A special dictionary-like class for counting occurrences of elements",
+  "keywords": [
+    "Data Structures and Algorithms (DSA)"
+  ],
+  "articleBody": "What is Counter? Counter is a special dictionary-like class in the collections module. It helps count occurrences of elements in a list, string, or iterable.\nHow to Use Counter Importing Counter from collections import Counter Counting Elements in a List nums = [1, 1, 1, 2, 2, 3] count = Counter(nums) print(count) # Output: Counter({1: 3, 2: 2, 3: 1}) Counting Characters in a String word = \"banana\" char_count = Counter(word) print(char_count) # Output: Counter({'a': 3, 'n': 2, 'b': 1}) Getting Count of a Specific Element print(count[1]) # Output: 3 print(count[2]) # Output: 2 print(count[5]) # Output: 0 (returns 0 instead of KeyError) Finding the Most Common Elements nums = [1, 1, 1, 2, 2, 3] count = Counter(nums) print(count.most_common(2)) # Output: [(1, 3), (2, 2)] Converting Counter to a Dictionary count_dict = dict(count) print(count_dict) # Output: {1: 3, 2: 2, 3: 1} Arithmetic Operations with Counter Adding Two Counter Objects a = Counter(\"hello\") b = Counter(\"world\") print(a + b) # Output: Counter({'l': 5, 'o': 2, 'h': 1, 'e': 1, 'w': 1, 'r': 1, 'd': 1}) Subtracting Counts a.subtract(b) print(a) # Output: Counter({'l': 3, 'h': 1, 'e': 1, 'o': 0, 'w': -1, 'r': -1, 'd': -1}) Summary Table Feature Counter Default value Returns 0 for missing keys Counting elements Counter(iterable) Get most frequent elements .most_common(k) Convert to dictionary dict(Counter(iterable)) Supports arithmetic Counter + Counter This covers the basics of Counter. It is useful for counting and analyzing data efficiently.\n",
+  "wordCount" : "239",
+  "inLanguage": "en",
+  "datePublished": "2025-02-28T00:00:00Z",
+  "dateModified": "2025-02-28T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Chengyu Zhang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gnehcuyz.github.io/posts/Counter/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chengyu Zhang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gnehcuyz.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gnehcuyz.github.io/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gnehcuyz.github.io/experience" title="Experience">
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/research/" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/reading/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Counter in Python
+    </h1>
+    <div class="post-meta"><span title='2025-02-28 00:00:00 +0000 UTC'>February 28, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="what-is-counter">What is <code>Counter</code>?<a hidden class="anchor" aria-hidden="true" href="#what-is-counter">#</a></h2>
+<p><code>Counter</code> is a special dictionary-like class in the <code>collections</code> module. It helps count occurrences of elements in a list, string, or iterable.</p>
+<h2 id="how-to-use-counter">How to Use <code>Counter</code><a hidden class="anchor" aria-hidden="true" href="#how-to-use-counter">#</a></h2>
+<h3 id="importing-counter">Importing <code>Counter</code><a hidden class="anchor" aria-hidden="true" href="#importing-counter">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> Counter
+</span></span></code></pre></div><h3 id="counting-elements-in-a-list">Counting Elements in a List<a hidden class="anchor" aria-hidden="true" href="#counting-elements-in-a-list">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>nums <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>count <span style="color:#f92672">=</span> Counter(nums)
+</span></span><span style="display:flex;"><span>print(count)  <span style="color:#75715e"># Output: Counter({1: 3, 2: 2, 3: 1})</span>
+</span></span></code></pre></div><h3 id="counting-characters-in-a-string">Counting Characters in a String<a hidden class="anchor" aria-hidden="true" href="#counting-characters-in-a-string">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>word <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;banana&#34;</span>
+</span></span><span style="display:flex;"><span>char_count <span style="color:#f92672">=</span> Counter(word)
+</span></span><span style="display:flex;"><span>print(char_count)  <span style="color:#75715e"># Output: Counter({&#39;a&#39;: 3, &#39;n&#39;: 2, &#39;b&#39;: 1})</span>
+</span></span></code></pre></div><h3 id="getting-count-of-a-specific-element">Getting Count of a Specific Element<a hidden class="anchor" aria-hidden="true" href="#getting-count-of-a-specific-element">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(count[<span style="color:#ae81ff">1</span>])  <span style="color:#75715e"># Output: 3</span>
+</span></span><span style="display:flex;"><span>print(count[<span style="color:#ae81ff">2</span>])  <span style="color:#75715e"># Output: 2</span>
+</span></span><span style="display:flex;"><span>print(count[<span style="color:#ae81ff">5</span>])  <span style="color:#75715e"># Output: 0 (returns 0 instead of KeyError)</span>
+</span></span></code></pre></div><h3 id="finding-the-most-common-elements">Finding the Most Common Elements<a hidden class="anchor" aria-hidden="true" href="#finding-the-most-common-elements">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>nums <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>count <span style="color:#f92672">=</span> Counter(nums)
+</span></span><span style="display:flex;"><span>print(count<span style="color:#f92672">.</span>most_common(<span style="color:#ae81ff">2</span>))  <span style="color:#75715e"># Output: [(1, 3), (2, 2)]</span>
+</span></span></code></pre></div><h3 id="converting-counter-to-a-dictionary">Converting <code>Counter</code> to a Dictionary<a hidden class="anchor" aria-hidden="true" href="#converting-counter-to-a-dictionary">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>count_dict <span style="color:#f92672">=</span> dict(count)
+</span></span><span style="display:flex;"><span>print(count_dict)  <span style="color:#75715e"># Output: {1: 3, 2: 2, 3: 1}</span>
+</span></span></code></pre></div><h2 id="arithmetic-operations-with-counter">Arithmetic Operations with <code>Counter</code><a hidden class="anchor" aria-hidden="true" href="#arithmetic-operations-with-counter">#</a></h2>
+<h3 id="adding-two-counter-objects">Adding Two <code>Counter</code> Objects<a hidden class="anchor" aria-hidden="true" href="#adding-two-counter-objects">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> Counter(<span style="color:#e6db74">&#34;hello&#34;</span>)
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> Counter(<span style="color:#e6db74">&#34;world&#34;</span>)
+</span></span><span style="display:flex;"><span>print(a <span style="color:#f92672">+</span> b)  <span style="color:#75715e"># Output: Counter({&#39;l&#39;: 5, &#39;o&#39;: 2, &#39;h&#39;: 1, &#39;e&#39;: 1, &#39;w&#39;: 1, &#39;r&#39;: 1, &#39;d&#39;: 1})</span>
+</span></span></code></pre></div><h3 id="subtracting-counts">Subtracting Counts<a hidden class="anchor" aria-hidden="true" href="#subtracting-counts">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a<span style="color:#f92672">.</span>subtract(b)
+</span></span><span style="display:flex;"><span>print(a)  <span style="color:#75715e"># Output: Counter({&#39;l&#39;: 3, &#39;h&#39;: 1, &#39;e&#39;: 1, &#39;o&#39;: 0, &#39;w&#39;: -1, &#39;r&#39;: -1, &#39;d&#39;: -1})</span>
+</span></span></code></pre></div><h2 id="summary-table">Summary Table<a hidden class="anchor" aria-hidden="true" href="#summary-table">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th><code>Counter</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Default value</td>
+          <td>Returns <code>0</code> for missing keys</td>
+      </tr>
+      <tr>
+          <td>Counting elements</td>
+          <td><code>Counter(iterable)</code></td>
+      </tr>
+      <tr>
+          <td>Get most frequent elements</td>
+          <td><code>.most_common(k)</code></td>
+      </tr>
+      <tr>
+          <td>Convert to dictionary</td>
+          <td><code>dict(Counter(iterable))</code></td>
+      </tr>
+      <tr>
+          <td>Supports arithmetic</td>
+          <td><code>Counter + Counter</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>This covers the basics of <code>Counter</code>. It is useful for counting and analyzing data efficiently.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/">Data Structures and Algorithms (DSA)</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
+    <p>
+        Last updated on 2025-03-01 ||
+        &copy; 2025 
+        <a href="https://yourwebsite.com" style="text-decoration: underline;">Chengyu Zhang</a> ||
+        Powered by 
+        <a href="https://gohugo.io/" style="text-decoration: underline;">Hugo</a> & 
+        <a href="https://themes.gohugo.io/themes/hugo-papermod/" style="text-decoration: underline;">PaperMod</a>
+    </p>
+</footer>
+</body>
+
+</html>
