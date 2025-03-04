@@ -106,6 +106,12 @@ This formula is designed to **avoid integer overflow** in programming languages 
    - Dividing this distance by 2 gives the offset from `left` to the midpoint.
    - Adding this offset back to `left` ensures the calculation remains within safe bounds.
 
+
+In **Python**, using `(l + r) // 2` in binary search is safe because Python's integers are 
+**arbitrary-precision** and do not overflow since Python dynamically expands integers as needed. 
+However, in languages with fixed integer limits such as **C++ and Java** (e.g., `INT_MAX = 2^31 - 1`), calculating the middle index as `(l + r) // 2` can lead to **integer overflow** when `l` and `r` are large. 
+In this case, we should use `l + (r - l) // 2`.
+
 ---
 
 # **Classic LeetCode Problems 🔗**
