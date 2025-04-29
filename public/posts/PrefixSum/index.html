@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Prefix Sum | Chengyu Zhang</title>
 <meta name="keywords" content="Data Structures and Algorithms (DSA)">
 <meta name="description" content="A powerful technique for efficiently computing sum-related queries.">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="https://gnehcuyz.github.io/posts/PrefixSum/">
+<link rel="canonical" href="http://localhost:1313/posts/PrefixSum/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -28,14 +28,14 @@
   });
 </script>
   
-<link rel="icon" href="https://gnehcuyz.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://gnehcuyz.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://gnehcuyz.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://gnehcuyz.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/posts/PrefixSum/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/PrefixSum/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,74 +72,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gnehcuyz.github.io/posts/PrefixSum/">
-  <meta property="og:site_name" content="Chengyu Zhang">
-  <meta property="og:title" content="Prefix Sum">
-  <meta property="og:description" content="A powerful technique for efficiently computing sum-related queries.">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-03-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-01T00:00:00+00:00">
-    <meta property="article:tag" content="Data Structures and Algorithms (DSA)">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Prefix Sum">
-<meta name="twitter:description" content="A powerful technique for efficiently computing sum-related queries.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://gnehcuyz.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Prefix Sum",
-      "item": "https://gnehcuyz.github.io/posts/PrefixSum/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Prefix Sum",
-  "name": "Prefix Sum",
-  "description": "A powerful technique for efficiently computing sum-related queries.",
-  "keywords": [
-    "Data Structures and Algorithms (DSA)"
-  ],
-  "articleBody": "What is Prefix Sum? Prefix Sum is a technique used to precompute cumulative sums in an array, allowing sum-related queries to be answered efficiently.\nPrefix Sum Visualization\nHow to Construct a Prefix Sum Array Steps: Initialize an array prefix of the same size as the input array.\nCompute cumulative sums:\n\\[ \\text{prefix}[i] = \\text{prefix}[i-1] + arr[i] \\] Use prefix sums for efficient range queries:\n\\[ \\text{Sum}(l, r) = \\text{prefix}[r] - \\text{prefix}[l-1] \\] Example arr = [2, 4, 6, 8, 10] prefix = [2, 6, 12, 20, 30] # Precomputed sum array prefix[2] = 2 + 4 + 6 = 12 prefix[4] = 2 + 4 + 6 + 8 + 10 = 30 Efficient Query Example: Find sum from index 1 to 3:\nSum(1,3) = prefix[3] - prefix[0] = 20 - 2 = 18 Implementation of Prefix Sum def prefix_sum(arr): n = len(arr) prefix = [0] * n prefix[0] = arr[0] for i in range(1, n): prefix[i] = prefix[i-1] + arr[i] return prefix def range_sum(prefix, l, r): if l == 0: return prefix[r] return prefix[r] - prefix[l-1] # Example usage arr = [2, 4, 6, 8, 10] prefix = prefix_sum(arr) # Sum from index 1 to 3 print(range_sum(prefix, 1, 3)) # Output: 18 Time and Space Complexity Time Complexity Preprocessing step: Constructing the prefix sum array takes O(N) time since each element is computed once. Querying a range sum: Once the prefix sum array is built, each query runs in O(1) time since it only involves a simple subtraction. Space Complexity If storing the prefix sum separately, it requires an additional O(N) space. If the input array itself is modified to store prefix sums, the space complexity is O(1). Classic LeetCode Problems Subarray Sum Equals K Running Sum of 1D Array Product of Array Except Self Range Sum Query - Immutable ",
-  "wordCount" : "301",
-  "inLanguage": "en",
-  "datePublished": "2025-03-01T00:00:00Z",
-  "dateModified": "2025-03-01T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Chengyu Zhang"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://gnehcuyz.github.io/posts/PrefixSum/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Chengyu Zhang",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://gnehcuyz.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+</noscript>
 </head>
 
 <body class="" id="top">
@@ -157,7 +90,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://gnehcuyz.github.io/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -183,37 +116,37 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gnehcuyz.github.io/experience" title="Experience">
+                <a href="http://localhost:1313/experience" title="Experience">
                     <span>Experience</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/research/" title="Research">
+                <a href="http://localhost:1313/research/" title="Research">
                     <span>Research</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/projects/" title="Projects">
+                <a href="http://localhost:1313/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/posts/" title="Blog">
+                <a href="http://localhost:1313/posts/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/reading/" title="Reading">
+                <a href="http://localhost:1313/reading/" title="Reading">
                     <span>Reading</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://gnehcuyz.github.io/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -224,7 +157,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       Prefix Sum
     </h1>
@@ -350,14 +283,14 @@ Find sum from index <strong>1 to 3</strong>:</p>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/">Data Structures and Algorithms (DSA)</a></li>
+      <li><a href="http://localhost:1313/tags/Data-Structures-and-Algorithms-DSA/">Data Structures and Algorithms (DSA)</a></li>
     </ul>
   </footer>
 </article>
     </main>
     <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
     <p>
-        Last updated on 2025-03-04 ||
+        Last updated on 2025-03-07 ||
         &copy; 2025 
         <a href="https://yourwebsite.com" style="text-decoration: underline;">Chengyu Zhang</a> ||
         Powered by 
