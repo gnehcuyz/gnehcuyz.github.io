@@ -1,6 +1,6 @@
 ---
 ShowToc: false
-title: Undergraduate Research Assistant
+title: Research Assistant
 date: 2025-01-08
 draft: false
 summary: Researching privacy vulnerabilities in ML and LLMs to advance ethical AI practices.
@@ -8,7 +8,7 @@ math: true
 ---
 
 ## Role
-I have worked as an Undergraduate Research Assistant at the **Data Security and Privacy Lab** at RPI in Troy, NY, **from Jan 2024 to Jan 2025**.
+I have worked as a Research Assistant at the **Data Security and Privacy Lab** at RPI in Troy, NY, **from Jan 2024 to Jan 2025**.
 
 ## Responsibilities
 - Conducted research on privacy vulnerabilities in ML and LLMs, enhancing understanding of data protection and ethical AI practices.  
