@@ -1,10 +1,11 @@
 baseURL: "https://gnehcuyz.github.io/"
 languageCode: en-us
 params:
+
   profileMode:
     enabled: true
     title: "Chengyu Zhang" # optional default will be site title
-    subtitle: "Machine Learning Engineer || Software Engineer" 
+    subtitle: "Machine Learning Engineer || Software Engineer || Researcher" 
     imageUrl: "images/profile.jpg" # optional
     imageWidth: 200 # custom size
     imageHeight: 200 # custom size
@@ -16,6 +17,7 @@ params:
       url: "https://www.linkedin.com/in/chengyuz"
     - name: email
       url: "mailto:chengyuz0921@gmail.com"
+
   
   # Post Settings:
   ShowReadingTime: true

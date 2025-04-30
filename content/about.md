@@ -5,7 +5,8 @@ ShowToc: false
 
 I am Chengyu Zhang, a recent graduate from Rensselaer Polytechnic Institute (RPI) with a degree in Computer Science and a minor in Economics. My focus has been on **Artificial Intelligence**, **Machine Learning**, and **Software Development**.
 
-I have worked as a Research Assistant in the Data Security and Privacy Lab, studying privacy vulnerabilities in machine learning models and large language models (LLMs). I also gained experience with Python, PyTorch, TensorFlow, and full-stack development through projects and research.
+I’m currently working as a Machine Learning Engineer at [HARP Research](https://www.harpresearch.ai). Previously, I was a Research Assistant in the [Data Security and Privacy Lab](https://leiyucs.github.io), where I worked with Professor Lei Yu to study privacy vulnerabilities in machine learning models and large language models (LLMs). I also conducted research in [Professor Oshani Seneviratne](https://oshani.info)’s BRAIN Lab, focusing on label inference attacks in federated learning. Through these experiences, I’ve gained hands-on skills in Python, PyTorch, TensorFlow, and full-stack development across both research and project work.
+
 
 **Research Interests**:
 - Trustworthy AI
