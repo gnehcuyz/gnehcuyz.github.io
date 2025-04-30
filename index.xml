@@ -6,8 +6,15 @@
     <description>Recent content on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gnehcuyz.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BFS - Breadth First Search</title>
+      <link>https://gnehcuyz.github.io/posts/BreadthFirstSearch/</link>
+      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/BreadthFirstSearch/</guid>
+      <description>A way to explore trees, graphs, or grids one level at a time.</description>
+    </item>
     <item>
       <title>Prefix Product</title>
       <link>https://gnehcuyz.github.io/posts/PrefixProduct/</link>

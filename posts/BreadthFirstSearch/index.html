@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>BFS - Breadth First Search | Chengyu Zhang</title>
+<meta name="keywords" content="Data Structures and Algorithms (DSA)">
+<meta name="description" content="A way to explore trees, graphs, or grids one level at a time.">
+<meta name="author" content="Chengyu Zhang">
+<link rel="canonical" href="https://gnehcuyz.github.io/posts/BreadthFirstSearch/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},   
+        {left: '$$', right: '$$', display: true},     
+        {left: '\\(', right: '\\)', display: false},  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+  
+<link rel="icon" href="https://gnehcuyz.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gnehcuyz.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gnehcuyz.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://gnehcuyz.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/posts/BreadthFirstSearch/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/posts/BreadthFirstSearch/">
+  <meta property="og:site_name" content="Chengyu Zhang">
+  <meta property="og:title" content="BFS - Breadth First Search">
+  <meta property="og:description" content="A way to explore trees, graphs, or grids one level at a time.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-24T00:00:00+00:00">
+    <meta property="article:tag" content="Data Structures and Algorithms (DSA)">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BFS - Breadth First Search">
+<meta name="twitter:description" content="A way to explore trees, graphs, or grids one level at a time.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://gnehcuyz.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "BFS - Breadth First Search",
+      "item": "https://gnehcuyz.github.io/posts/BreadthFirstSearch/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "BFS - Breadth First Search",
+  "name": "BFS - Breadth First Search",
+  "description": "A way to explore trees, graphs, or grids one level at a time.",
+  "keywords": [
+    "Data Structures and Algorithms (DSA)"
+  ],
+  "articleBody": "Breadth-First Search (BFS) is a way to explore trees, graphs, or grids one level at a time. It starts at a point, checks all neighbors, then their neighbors, and so on.\nKey Concepts Queue-Based Traversal: BFS uses a queue to manage the order of exploration. Nodes are processed in the order they are discovered — first in, first out (FIFO). Visited Tracking: To avoid visiting the same node more than once (especially in graphs or grids), a visited set or array is used to keep track of what’s already been seen. Level-by-Level Exploration: BFS explores nodes one level at a time. It checks all immediate neighbors before going deeper, which is useful for finding the shortest path or tracking depth. Implementation Pseudocode For trees: FUNCTION BFS_Tree(root): IF root is NULL: RETURN INITIALIZE queue with root WHILE queue is not empty: SET size = length of queue FOR i FROM 1 TO size: node = REMOVE from queue PROCESS node (e.g., print or store node.value) IF node has left child: ADD node.left to queue IF node has right child: ADD node.right to queue For graphs: FUNCTION BFS(start): INITIALIZE queue with start INITIALIZE visited set with start WHILE queue is not empty: node = REMOVE from queue PROCESS node (e.g., print, record, etc.) FOR each neighbor of node: IF neighbor is not in visited: ADD neighbor to visited ADD neighbor to queue For grids: FUNCTION BFS(start_row, start_col): INITIALIZE queue with (start_row, start_col) INITIALIZE visited set with (start_row, start_col) WHILE queue is not empty: (r, c) = REMOVE from queue PROCESS (r, c) FOR each direction in [up, down, left, right]: new_r, new_c = r + dr, c + dc IF (new_r, new_c) is in bounds AND not in visited: ADD (new_r, new_c) to visited ADD (new_r, new_c) to queue Python Code For trees: from collections import deque def bfs_tree(root): if not root: return [] result = [] queue = deque([root]) while queue: level = [] for _ in range(len(queue)): node = queue.popleft() level.append(node.val) if node.left: queue.append(node.left) if node.right: queue.append(node.right) result.append(level) return result For graphs (Adjacency List): from collections import deque def bfs_graph(graph, start): visited = set() queue = deque([start]) visited.add(start) result = [] while queue: node = queue.popleft() result.append(node) for neighbor in graph[node]: if neighbor not in visited: visited.add(neighbor) queue.append(neighbor) return result For grids (2D matrix): from collections import deque def bfs_grid(grid, start_row, start_col): rows, cols = len(grid), len(grid[0]) visited = set() queue = deque([(start_row, start_col)]) visited.add((start_row, start_col)) directions = [(-1, 0), (1, 0), (0, -1), (0, 1)] result = [] while queue: r, c = queue.popleft() result.append((r, c)) for dr, dc in directions: nr, nc = r + dr, c + dc if (0 \u003c= nr \u003c rows and 0 \u003c= nc \u003c cols and (nr, nc) not in visited and grid[nr][nc] == 0): visited.add((nr, nc)) queue.append((nr, nc)) return result Time and Space Complexity Operation Time Complexity Space Complexity Tree O(n) O(n) Graph O(V + E) O(V) Grid \\(O(m \\times n)\\) \\(O(m \\times n)\\) Classic LeetCode Problems Binary Tree Level Order Traversal Minimum Depth of Binary Tree Cousins in Binary Tree Word Ladder All Nodes Distance K in Binary Tree Rotting Oranges Number of Islands Shortest Path in Binary Matrix Walls and Gates When to Use BFS “Shortest path” “Minimum steps” / “Fewest moves” “Find distance from…” “Level-order traversal” “Explore neighbors” “All possible states” “Reach all nodes / areas” “Flood fill” “First occurrence” / “Earliest time” “From X to Y in a grid/maze” “Multi-source traversal” “Propagation” (infection, rumor, fire spread) Resources Leetcode Pattern Full LeetCode BFS Problem List ",
+  "wordCount" : "587",
+  "inLanguage": "en",
+  "datePublished": "2025-04-24T00:00:00Z",
+  "dateModified": "2025-04-24T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Chengyu Zhang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gnehcuyz.github.io/posts/BreadthFirstSearch/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chengyu Zhang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gnehcuyz.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gnehcuyz.github.io/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gnehcuyz.github.io/experience" title="Experience">
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/research/" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/reading/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      BFS - Breadth First Search
+    </h1>
+    <div class="post-meta"><span title='2025-04-24 00:00:00 +0000 UTC'>April 24, 2025</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Chengyu Zhang
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#key-concepts" aria-label="Key Concepts">Key Concepts</a></li>
+                <li>
+                    <a href="#implementation" aria-label="Implementation">Implementation</a><ul>
+                        
+                <li>
+                    <a href="#pseudocode" aria-label="Pseudocode">Pseudocode</a><ul>
+                        
+                <li>
+                    <a href="#for-trees" aria-label="For trees:">For trees:</a></li>
+                <li>
+                    <a href="#for-graphs" aria-label="For graphs:">For graphs:</a></li>
+                <li>
+                    <a href="#for-grids" aria-label="For grids:">For grids:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#python-code" aria-label="Python Code">Python Code</a><ul>
+                        
+                <li>
+                    <a href="#for-trees-1" aria-label="For trees:">For trees:</a></li>
+                <li>
+                    <a href="#for-graphs-adjacency-list" aria-label="For graphs (Adjacency List):">For graphs (Adjacency List):</a></li>
+                <li>
+                    <a href="#for-grids-2d-matrix" aria-label="For grids (2D matrix):">For grids (2D matrix):</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#time-and-space-complexity" aria-label="Time and Space Complexity">Time and Space Complexity</a></li>
+                <li>
+                    <a href="#classic-leetcode-problems" aria-label="Classic LeetCode Problems">Classic LeetCode Problems</a></li>
+                <li>
+                    <a href="#when-to-use-bfs" aria-label="When to Use BFS">When to Use BFS</a></li>
+                <li>
+                    <a href="#resources" aria-label="Resources">Resources</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p><strong>Breadth-First Search (BFS)</strong> is a way to explore trees, graphs, or grids <strong>one level at a time</strong>. It starts at a point, checks all neighbors, then their neighbors, and so on.</p>
+<hr>
+<h2 id="key-concepts">Key Concepts<a hidden class="anchor" aria-hidden="true" href="#key-concepts">#</a></h2>
+<ul>
+<li><strong>Queue-Based Traversal</strong>: BFS uses a queue to manage the order of exploration. Nodes are processed in the order they are discovered — first in, first out (FIFO).</li>
+<li><strong>Visited Tracking</strong>: To avoid visiting the same node more than once (especially in graphs or grids), a visited set or array is used to keep track of what’s already been seen.</li>
+<li><strong>Level-by-Level Exploration</strong>: BFS explores nodes one level at a time. It checks all immediate neighbors before going deeper, which is useful for finding the shortest path or tracking depth.</li>
+</ul>
+<hr>
+<h2 id="implementation">Implementation<a hidden class="anchor" aria-hidden="true" href="#implementation">#</a></h2>
+<h3 id="pseudocode">Pseudocode<a hidden class="anchor" aria-hidden="true" href="#pseudocode">#</a></h3>
+<h4 id="for-trees">For trees:<a hidden class="anchor" aria-hidden="true" href="#for-trees">#</a></h4>
+<pre tabindex="0"><code class="language-pseudo" data-lang="pseudo">FUNCTION BFS_Tree(root):
+    IF root is NULL:
+        RETURN
+
+    INITIALIZE queue with root
+
+    WHILE queue is not empty:
+        SET size = length of queue
+
+        FOR i FROM 1 TO size:
+            node = REMOVE from queue
+            PROCESS node (e.g., print or store node.value)
+
+            IF node has left child:
+                ADD node.left to queue
+
+            IF node has right child:
+                ADD node.right to queue
+</code></pre><h4 id="for-graphs">For graphs:<a hidden class="anchor" aria-hidden="true" href="#for-graphs">#</a></h4>
+<pre tabindex="0"><code class="language-pseudo" data-lang="pseudo">FUNCTION BFS(start):
+    INITIALIZE queue with start
+    INITIALIZE visited set with start
+
+    WHILE queue is not empty:
+        node = REMOVE from queue
+        PROCESS node (e.g., print, record, etc.)
+
+        FOR each neighbor of node:
+            IF neighbor is not in visited:
+                ADD neighbor to visited
+                ADD neighbor to queue
+</code></pre><h4 id="for-grids">For grids:<a hidden class="anchor" aria-hidden="true" href="#for-grids">#</a></h4>
+<pre tabindex="0"><code class="language-pseudo" data-lang="pseudo">FUNCTION BFS(start_row, start_col):
+    INITIALIZE queue with (start_row, start_col)
+    INITIALIZE visited set with (start_row, start_col)
+
+    WHILE queue is not empty:
+        (r, c) = REMOVE from queue
+        PROCESS (r, c)
+
+        FOR each direction in [up, down, left, right]:
+            new_r, new_c = r + dr, c + dc
+
+            IF (new_r, new_c) is in bounds AND not in visited:
+                ADD (new_r, new_c) to visited
+                ADD (new_r, new_c) to queue
+</code></pre><h3 id="python-code">Python Code<a hidden class="anchor" aria-hidden="true" href="#python-code">#</a></h3>
+<h4 id="for-trees-1">For trees:<a hidden class="anchor" aria-hidden="true" href="#for-trees-1">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bfs_tree</span>(root):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> root:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    queue <span style="color:#f92672">=</span> deque([root])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> queue:
+</span></span><span style="display:flex;"><span>        level <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(len(queue)):
+</span></span><span style="display:flex;"><span>            node <span style="color:#f92672">=</span> queue<span style="color:#f92672">.</span>popleft()
+</span></span><span style="display:flex;"><span>            level<span style="color:#f92672">.</span>append(node<span style="color:#f92672">.</span>val)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>left:
+</span></span><span style="display:flex;"><span>                queue<span style="color:#f92672">.</span>append(node<span style="color:#f92672">.</span>left)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>right:
+</span></span><span style="display:flex;"><span>                queue<span style="color:#f92672">.</span>append(node<span style="color:#f92672">.</span>right)
+</span></span><span style="display:flex;"><span>        result<span style="color:#f92672">.</span>append(level)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> result
+</span></span></code></pre></div><h4 id="for-graphs-adjacency-list">For graphs (Adjacency List):<a hidden class="anchor" aria-hidden="true" href="#for-graphs-adjacency-list">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bfs_graph</span>(graph, start):
+</span></span><span style="display:flex;"><span>    visited <span style="color:#f92672">=</span> set()
+</span></span><span style="display:flex;"><span>    queue <span style="color:#f92672">=</span> deque([start])
+</span></span><span style="display:flex;"><span>    visited<span style="color:#f92672">.</span>add(start)
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> queue:
+</span></span><span style="display:flex;"><span>        node <span style="color:#f92672">=</span> queue<span style="color:#f92672">.</span>popleft()
+</span></span><span style="display:flex;"><span>        result<span style="color:#f92672">.</span>append(node)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> neighbor <span style="color:#f92672">in</span> graph[node]:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> neighbor <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>                visited<span style="color:#f92672">.</span>add(neighbor)
+</span></span><span style="display:flex;"><span>                queue<span style="color:#f92672">.</span>append(neighbor)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> result
+</span></span></code></pre></div><h4 id="for-grids-2d-matrix">For grids (2D matrix):<a hidden class="anchor" aria-hidden="true" href="#for-grids-2d-matrix">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bfs_grid</span>(grid, start_row, start_col):
+</span></span><span style="display:flex;"><span>    rows, cols <span style="color:#f92672">=</span> len(grid), len(grid[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>    visited <span style="color:#f92672">=</span> set()
+</span></span><span style="display:flex;"><span>    queue <span style="color:#f92672">=</span> deque([(start_row, start_col)])
+</span></span><span style="display:flex;"><span>    visited<span style="color:#f92672">.</span>add((start_row, start_col))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    directions <span style="color:#f92672">=</span> [(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)]
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> queue:
+</span></span><span style="display:flex;"><span>        r, c <span style="color:#f92672">=</span> queue<span style="color:#f92672">.</span>popleft()
+</span></span><span style="display:flex;"><span>        result<span style="color:#f92672">.</span>append((r, c))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> dr, dc <span style="color:#f92672">in</span> directions:
+</span></span><span style="display:flex;"><span>            nr, nc <span style="color:#f92672">=</span> r <span style="color:#f92672">+</span> dr, c <span style="color:#f92672">+</span> dc
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> nr <span style="color:#f92672">&lt;</span> rows <span style="color:#f92672">and</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> nc <span style="color:#f92672">&lt;</span> cols <span style="color:#f92672">and</span>
+</span></span><span style="display:flex;"><span>                (nr, nc) <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited <span style="color:#f92672">and</span> grid[nr][nc] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>                visited<span style="color:#f92672">.</span>add((nr, nc))
+</span></span><span style="display:flex;"><span>                queue<span style="color:#f92672">.</span>append((nr, nc))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> result
+</span></span></code></pre></div><hr>
+<h2 id="time-and-space-complexity">Time and Space Complexity<a hidden class="anchor" aria-hidden="true" href="#time-and-space-complexity">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Operation</th>
+          <th>Time Complexity</th>
+          <th>Space Complexity</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Tree</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+      </tr>
+      <tr>
+          <td>Graph</td>
+          <td>O(V + E)</td>
+          <td>O(V)</td>
+      </tr>
+      <tr>
+          <td>Grid</td>
+          <td>\(O(m \times n)\)</td>
+          <td>\(O(m \times n)\)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="classic-leetcode-problems">Classic LeetCode Problems<a hidden class="anchor" aria-hidden="true" href="#classic-leetcode-problems">#</a></h2>
+<ul>
+<li><a href="https://leetcode.com/problems/binary-tree-level-order-traversal">Binary Tree Level Order Traversal</a></li>
+<li><a href="https://leetcode.com/problems/minimum-depth-of-binary-tree">Minimum Depth of Binary Tree</a></li>
+<li><a href="https://leetcode.com/problems/cousins-in-binary-tree">Cousins in Binary Tree</a></li>
+<li><a href="https://leetcode.com/problems/word-ladder">Word Ladder</a></li>
+<li><a href="https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree">All Nodes Distance K in Binary Tree</a></li>
+<li><a href="https://leetcode.com/problems/rotting-oranges">Rotting Oranges</a></li>
+<li><a href="https://leetcode.com/problems/number-of-islands">Number of Islands</a></li>
+<li><a href="https://leetcode.com/problems/shortest-path-in-binary-matrix">Shortest Path in Binary Matrix</a></li>
+<li><a href="https://www.lintcode.com/problem/663/">Walls and Gates</a></li>
+</ul>
+<hr>
+<!-- 
+## Common Mistakes and Tips
+- Mistake 1: ...
+- Tip 1: ...
+- Debugging idea: ...
+
+--- -->
+<h2 id="when-to-use-bfs">When to Use BFS<a hidden class="anchor" aria-hidden="true" href="#when-to-use-bfs">#</a></h2>
+<ul>
+<li>&ldquo;Shortest path&rdquo;</li>
+<li>&ldquo;Minimum steps&rdquo; / &ldquo;Fewest moves&rdquo;</li>
+<li>&ldquo;Find distance from&hellip;&rdquo;</li>
+<li>&ldquo;Level-order traversal&rdquo;</li>
+<li>&ldquo;Explore neighbors&rdquo;</li>
+<li>&ldquo;All possible states&rdquo;</li>
+<li>&ldquo;Reach all nodes / areas&rdquo;</li>
+<li>&ldquo;Flood fill&rdquo;</li>
+<li>&ldquo;First occurrence&rdquo; / &ldquo;Earliest time&rdquo;</li>
+<li>&ldquo;From X to Y in a grid/maze&rdquo;</li>
+<li>&ldquo;Multi-source traversal&rdquo;</li>
+<li>&ldquo;Propagation&rdquo; (infection, rumor, fire spread)</li>
+</ul>
+<hr>
+<!-- 
+## Notes and Observations
+- Observation 1: ...
+- Something I didn’t understand at first: ...
+
+--- -->
+<h2 id="resources">Resources<a hidden class="anchor" aria-hidden="true" href="#resources">#</a></h2>
+<ul>
+<li><a href="https://medium.com/leetcode-patterns/leetcode-pattern-2-dfs-bfs-25-of-the-problems-part-2-a5b269597f52">Leetcode Pattern</a></li>
+<li><a href="https://leetcode.com/problem-list/breadth-first-search/">Full LeetCode BFS Problem List</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gnehcuyz.github.io/tags/Data-Structures-and-Algorithms-DSA/">Data Structures and Algorithms (DSA)</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
+    <p>
+        Last updated on 2025-04-30 ||
+        &copy; 2025 
+        <a href="https://yourwebsite.com" style="text-decoration: underline;">Chengyu Zhang</a> ||
+        Powered by 
+        <a href="https://gohugo.io/" style="text-decoration: underline;">Hugo</a> & 
+        <a href="https://themes.gohugo.io/themes/hugo-papermod/" style="text-decoration: underline;">PaperMod</a>
+    </p>
+</footer>
+</body>
+
+</html>
