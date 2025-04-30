@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Data Structures and Algorithms (DSA) | Chengyu Zhang</title>
+<title>DSA | Chengyu Zhang</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="http://localhost:1313/tags/Data-Structures-and-Algorithms-DSA/">
+<link rel="canonical" href="http://localhost:1313/tags/DSA/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
 <link rel="icon" href="http://localhost:1313/favicon.ico">
@@ -19,8 +19,8 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/Data-Structures-and-Algorithms-DSA/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/Data-Structures-and-Algorithms-DSA/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/DSA/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/DSA/">
 <noscript>
     <style>
         #theme-toggle,
@@ -141,7 +141,7 @@
 <main class="main"> 
 <header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/tags/">Tags</a></div>
   <h1>
-    Data Structures and Algorithms (DSA)
+    DSA
   </h1>
 </header>
 
@@ -151,94 +151,11 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>A way to explore trees, graphs, or grids one level at a time.</p>
+    <p>Summary Breadth-First Search (BFS) is a way to explore trees, graphs, or grids one level at a time. It starts at a point, checks all neighbors, then their neighbors, and so on.
+Key Concepts Queue-Based Traversal: BFS uses a queue to manage the order of exploration. Nodes are processed in the order they are discovered — first in, first out (FIFO). Visited Tracking: To avoid visiting the same node more than once (especially in graphs or grids), a visited set or array is used to keep track of what’s already been seen. Level-by-Level Exploration: BFS explores nodes one level at a time. It checks all immediate neighbors before going deeper, which is useful for finding the shortest path or tracking depth. Implementation Pseudocode For trees: FUNCTION BFS_Tree(root): IF root is NULL: RETURN INITIALIZE queue with root WHILE queue is not empty: SET size = length of queue FOR i FROM 1 TO size: node = REMOVE from queue PROCESS node (e.g., print or store node.value) IF node has left child: ADD node.left to queue IF node has right child: ADD node.right to queue For graphs: FUNCTION BFS(start): INITIALIZE queue with start INITIALIZE visited set with start WHILE queue is not empty: node = REMOVE from queue PROCESS node (e.g., print, record, etc.) FOR each neighbor of node: IF neighbor is not in visited: ADD neighbor to visited ADD neighbor to queue For grids: FUNCTION BFS(start_row, start_col): INITIALIZE queue with (start_row, start_col) INITIALIZE visited set with (start_row, start_col) WHILE queue is not empty: (r, c) = REMOVE from queue PROCESS (r, c) FOR each direction in [up, down, left, right]: new_r, new_c = r &#43; dr, c &#43; dc IF (new_r, new_c) is in bounds AND not in visited: ADD (new_r, new_c) to visited ADD (new_r, new_c) to queue Python Code For trees: from collections import deque def bfs_tree(root): if not root: return [] result = [] queue = deque([root]) while queue: level = [] for _ in range(len(queue)): node = queue.popleft() level.append(node.val) if node.left: queue.append(node.left) if node.right: queue.append(node.right) result.append(level) return result For graphs (Adjacency List): from collections import deque def bfs_graph(graph, start): visited = set() queue = deque([start]) visited.add(start) result = [] while queue: node = queue.popleft() result.append(node) for neighbor in graph[node]: if neighbor not in visited: visited.add(neighbor) queue.append(neighbor) return result For grids (2D matrix): from collections import deque def bfs_grid(grid, start_row, start_col): rows, cols = len(grid), len(grid[0]) visited = set() queue = deque([(start_row, start_col)]) visited.add((start_row, start_col)) directions = [(-1, 0), (1, 0), (0, -1), (0, 1)] result = [] while queue: r, c = queue.popleft() result.append((r, c)) for dr, dc in directions: nr, nc = r &#43; dr, c &#43; dc if (0 &lt;= nr &lt; rows and 0 &lt;= nc &lt; cols and (nr, nc) not in visited and grid[nr][nc] == 0): visited.add((nr, nc)) queue.append((nr, nc)) return result Time and Space Complexity Operation Time Complexity Space Complexity Tree O(n) O(n) Graph O(V &#43; E) O(V) Grid O(m $\times$ n) O(m $\times$ n) Classic LeetCode Problems Binary Tree Level Order Traversal Minimum Depth of Binary Tree Cousins in Binary Tree Word Ladder All Nodes Distance K in Binary Tree Rotting Oranges Number of Islands Shortest Path in Binary Matrix Walls and Gates Common Mistakes and Tips Mistake 1: … Tip 1: … Debugging idea: … When to Use BFS “Shortest path” “Minimum steps” / “Fewest moves” “Find distance from…” “Level-order traversal” “Explore neighbors” “All possible states” “Reach all nodes / areas” “Flood fill” “First occurrence” / “Earliest time” “From X to Y in a grid/maze” “Multi-source traversal” “Propagation” (infection, rumor, fire spread) Notes and Observations Observation 1: … Something I didn’t understand at first: … Resources Leetcode Pattern Full LeetCode BFS Problem List </p>
   </div>
   <footer class="entry-footer"><span title='2025-04-24 00:00:00 +0000 UTC'>April 24, 2025</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Chengyu Zhang</footer>
   <a class="entry-link" aria-label="post link to BFS - Breadth First Search" href="http://localhost:1313/posts/BreadthFirstSearch/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Prefix Product
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>A powerful technique for efficiently computing product-related queries.</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-01 00:00:00 +0000 UTC'>March 1, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang</footer>
-  <a class="entry-link" aria-label="post link to Prefix Product" href="http://localhost:1313/posts/PrefixProduct/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Prefix Sum
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>A powerful technique for efficiently computing sum-related queries.</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-01 00:00:00 +0000 UTC'>March 1, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang</footer>
-  <a class="entry-link" aria-label="post link to Prefix Sum" href="http://localhost:1313/posts/PrefixSum/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Counter in Python
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>A special dictionary-like class for counting occurrences of elements</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-02-28 00:00:00 +0000 UTC'>February 28, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang</footer>
-  <a class="entry-link" aria-label="post link to Counter in Python" href="http://localhost:1313/posts/Counter/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Sliding Window
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Sliding Window, an efficient technique for solving array problems</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-01-14 00:00:00 +0000 UTC'>January 14, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang</footer>
-  <a class="entry-link" aria-label="post link to Sliding Window" href="http://localhost:1313/posts/SlidingWindow/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Merge Sort
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>A reliable and efficient algorithm for sorting data using a divide-and-conquer approach.</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-01-12 00:00:00 +0000 UTC'>January 12, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang</footer>
-  <a class="entry-link" aria-label="post link to Merge Sort" href="http://localhost:1313/posts/MergeSort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Two Pointers
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>A simple and adaptable technique that optimizes problem-solving by scanning arrays efficiently</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-01-11 00:00:00 +0000 UTC'>January 11, 2025</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Chengyu Zhang</footer>
-  <a class="entry-link" aria-label="post link to Two Pointers" href="http://localhost:1313/posts/TwoPointers/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Binary Search
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>A fast and precise method for finding targets in sorted arrays.</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-01-02 00:00:00 +0000 UTC'>January 2, 2025</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Chengyu Zhang</footer>
-  <a class="entry-link" aria-label="post link to Binary Search" href="http://localhost:1313/posts/BinarySearch/"></a>
 </article>
     </main>
     <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
