@@ -6,8 +6,15 @@
     <description>Recent content on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gnehcuyz.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Real-Time E-commerce Analytics System</title>
+      <link>https://gnehcuyz.github.io/projects/RealTimeEcommerce/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/projects/RealTimeEcommerce/</guid>
+      <description>Built a modular real-time analytics platform using Kafka, Spark, Postgres, and Superset for live event ingestion and dashboarding.</description>
+    </item>
     <item>
       <title>BFS - Breadth First Search</title>
       <link>https://gnehcuyz.github.io/posts/BreadthFirstSearch/</link>

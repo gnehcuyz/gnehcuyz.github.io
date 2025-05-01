@@ -6,8 +6,15 @@
     <description>Recent content in Projects on Chengyu Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gnehcuyz.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Real-Time E-commerce Analytics System</title>
+      <link>https://gnehcuyz.github.io/projects/RealTimeEcommerce/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/projects/RealTimeEcommerce/</guid>
+      <description>Built a modular real-time analytics platform using Kafka, Spark, Postgres, and Superset for live event ingestion and dashboarding.</description>
+    </item>
     <item>
       <title>AdApt - Personalized Advertising Tool</title>
       <link>https://gnehcuyz.github.io/projects/AdApt/</link>
