@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Defending Batch-Level Label Inference and Replacement Attacks in Vertical Federated Learning | Chengyu Zhang</title>
-<meta name="keywords" content="Federated Learning, Vertical Federated Learning, Label Inference Attack">
-<meta name="description" content="Explores vulnerabilities in VFL models to label inference and backdoor attacks and proposes effective defenses like CAE and DCAE.">
+<title>SQL-like Natural Language Query Interpreter | Chengyu Zhang</title>
+<meta name="keywords" content="">
+<meta name="description" content="Built a Prolog-based interpreter that parses and executes SQL-style natural language queries with logical reasoning.">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="http://localhost:1313/reading/Defending_Batch_Level_Label_Attacks/">
+<link rel="canonical" href="http://localhost:1313/projects/QueryInterpreter/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -35,7 +35,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/reading/Defending_Batch_Level_Label_Attacks/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/QueryInterpreter/">
 <noscript>
     <style>
         #theme-toggle,
@@ -157,63 +157,35 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/reading/">Reading</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/projects/">Projects</a></div>
     <h1 class="post-title entry-hint-parent">
-      Defending Batch-Level Label Inference and Replacement Attacks in Vertical Federated Learning
+      SQL-like Natural Language Query Interpreter
     </h1>
-    <div class="post-meta"><span title='2024-10-07 00:00:00 +0000 UTC'>October 7, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
+    <div class="post-meta"><span title='2024-12-04 00:00:00 +0000 UTC'>December 4, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
-<p>This paper explores the vulnerabilities of Vertical Federated Learning (VFL) models to batch-level label inference and backdoor attacks. The authors demonstrate that even with Homomorphic Encryption (HE) protection, batch-level gradients can be exploited to infer labels with high accuracy. Key contributions include:</p>
+  <div class="post-content"><h2 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h2>
+<p>This project focused on building an interpreter in Prolog that reads natural language commands similar to SQL, parses them using Definite Clause Grammar (DCG), and executes them through logical and constraint-based reasoning. The system supports commands like filtering, joining, and matching values across tables. It processes inputs from a text file, extracts structured queries, and evaluates them against a Prolog-based knowledge base. The results are formatted and displayed in tables.</p>
+<h2 id="tech-stack">Tech Stack<a hidden class="anchor" aria-hidden="true" href="#tech-stack">#</a></h2>
 <ul>
-<li>Demonstrating label inversion and replacement attacks through gradient manipulation.</li>
-<li>Proposing Confusional Autoencoder (CAE) and its enhanced version, DiscreteSGD-enhanced CAE (DCAE), as defense strategies.</li>
-<li>Balancing privacy and task accuracy better than existing techniques like Differential Privacy and Gradient Sparsification.</li>
+<li>SWI-Prolog</li>
+<li>Definite Clause Grammar (DCG)</li>
 </ul>
-<h2 id="related-work">Related Work<a hidden class="anchor" aria-hidden="true" href="#related-work">#</a></h2>
-<p>Key points:</p>
+<h2 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h2>
 <ul>
-<li>Introduction of a new label inversion attack specific to VFL settings that leverages batch-level gradients for high accuracy.</li>
-<li>A novel backdoor attack approach enabling gradient modifications while preserving task performance.</li>
-<li>Development of defense methods combining autoencoders with entropy regularization for robust label protection.</li>
+<li>Implemented a parser using <strong>DCG</strong> to convert natural language commands into structured Prolog queries.</li>
+<li>Built logic to evaluate commands by filtering data based on comparison operators and logical conditions (e.g., AND, OR).</li>
+<li>Handled complex operations like table joins and nested queries by linking related data through shared attributes.</li>
+<li>Used helper utilities to format and print the result tables based on filtered queries.</li>
+<li>Ensured proper handling of edge cases like invalid date comparisons and empty result sets.</li>
 </ul>
-<h2 id="vfl-framework-with-homomorphic-encryption">VFL Framework with Homomorphic Encryption<a hidden class="anchor" aria-hidden="true" href="#vfl-framework-with-homomorphic-encryption">#</a></h2>
-<p>The VFL framework uses HE to ensure data security during collaborative training. Each party manages a portion of the feature vector, with encrypted updates protecting sensitive data. This framework enables secure multi-organization collaboration while maintaining efficiency.</p>
-<h2 id="batch-level-label-inference-attacks">Batch-Level Label Inference Attacks<a hidden class="anchor" aria-hidden="true" href="#batch-level-label-inference-attacks">#</a></h2>
-<p>Threat model assumptions:</p>
-<ol>
-<li>Attackers control the training process of one passive party and access its local model.</li>
-<li>They can access batched-averaged gradients and encrypted per-sample gradients but cannot modify updates or coordination protocols.</li>
-</ol>
-<p>Unlike prior models, attackers in this scenario can act only at the batch/population level and do not rely on balanced auxiliary labeled samples.</p>
-<h2 id="label-replacement-backdoor-attacks">Label Replacement Backdoor Attacks<a hidden class="anchor" aria-hidden="true" href="#label-replacement-backdoor-attacks">#</a></h2>
-<p>Backdoor attacks involve replacing some labels stealthily through gradient manipulation. This method allows attackers to inject triggers into the model without affecting overall task accuracy, causing mislabeling in targeted scenarios.</p>
-<h2 id="defense-mechanisms">Defense Mechanisms<a hidden class="anchor" aria-hidden="true" href="#defense-mechanisms">#</a></h2>
-<p>The proposed defenses include CAE and DCAE, which obscure true labels through noise and confusion. These methods effectively counter label inference and backdoor attacks while maintaining task performance.</p>
-<h2 id="experiments">Experiments<a hidden class="anchor" aria-hidden="true" href="#experiments">#</a></h2>
-<ul>
-<li><strong>Batch-Level Label Inference Attacks</strong>: Performance improves with increased class diversity but becomes challenging as the search space grows.</li>
-<li><strong>Backdoor Attacks</strong>: Achieve over 90% success with well-chosen trigger patterns and amplification rates.</li>
-<li><strong>Defenses</strong>: CAE and DCAE significantly reduce attack success while preserving task accuracy.</li>
-</ul>
-<h2 id="thoughts-after-reading">Thoughts After Reading<a hidden class="anchor" aria-hidden="true" href="#thoughts-after-reading">#</a></h2>
-<ul>
-<li><strong>Accuracy Trade-offs</strong>: Future research should minimize accuracy loss while enhancing privacy.</li>
-<li><strong>Testing Beyond Image Data</strong>: Expanding to text, time-series, and graph data can evaluate defense robustness across diverse fields like healthcare and finance.</li>
-</ul>
-<h2 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h2>
-<p>Ye, M., Zhou, C., Ji, S., et al. (2022). <em>Defending Against Membership Inference Attacks via Adversarial Examples and Ensemble Learning</em>. <a href="https://arxiv.org/abs/2202.12968">arXiv:2202.12968</a></p>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/Federated-Learning/">Federated Learning</a></li>
-      <li><a href="http://localhost:1313/tags/Vertical-Federated-Learning/">Vertical Federated Learning</a></li>
-      <li><a href="http://localhost:1313/tags/Label-Inference-Attack/">Label Inference Attack</a></li>
     </ul>
   </footer>
 </article>

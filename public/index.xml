@@ -163,6 +163,20 @@
       <description>Mentored students and provided feedback in ML coursework.</description>
     </item>
     <item>
+      <title>SQL-like Natural Language Query Interpreter</title>
+      <link>http://localhost:1313/projects/QueryInterpreter/</link>
+      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/QueryInterpreter/</guid>
+      <description>Built a Prolog-based interpreter that parses and executes SQL-style natural language queries with logical reasoning.</description>
+    </item>
+    <item>
+      <title>Distributed File System Simulator</title>
+      <link>http://localhost:1313/projects/DistributedFileSystem/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/DistributedFileSystem/</guid>
+      <description>Built a fault-tolerant distributed file system using the actor model and ring-based topology.</description>
+    </item>
+    <item>
       <title>Does Label Differential Privacy Prevent Label Inference Attacks?</title>
       <link>http://localhost:1313/reading/Does_Label_DP_Prevent_Label_Attacks/</link>
       <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
@@ -182,6 +196,13 @@
       <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/reading/Defending_Batch_Level_Label_Attacks/</guid>
       <description>Explores vulnerabilities in VFL models to label inference and backdoor attacks and proposes effective defenses like CAE and DCAE.</description>
+    </item>
+    <item>
+      <title>Lambda Calculus Interpreter</title>
+      <link>http://localhost:1313/projects/lambdaCalculator/</link>
+      <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/lambdaCalculator/</guid>
+      <description>Developed a functional interpreter for lambda calculus expressions with support for beta and eta reductions in applicative order.</description>
     </item>
     <item>
       <title>Label Inference Attacks Against Vertical Federated Learning</title>
@@ -245,6 +266,13 @@
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/reading/Attention_is_all_you_need/</guid>
       <description>Proposed the Transformer model, a novel architecture using self-attention to improve sequence transduction tasks.</description>
+    </item>
+    <item>
+      <title>Operating Systems Simulation</title>
+      <link>http://localhost:1313/projects/OperatingSystemSimulation/</link>
+      <pubDate>Thu, 31 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/OperatingSystemSimulation/</guid>
+      <description>Simulated an operating system and optimized CPU scheduling algorithms for performance analysis.</description>
     </item>
     <item>
       <title>Wordle Game</title>

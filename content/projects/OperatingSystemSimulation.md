@@ -2,14 +2,13 @@
 ShowToc: false
 title: Operating Systems Simulation
 date: 2023-08-31
-draft: true
+draft: false
 summary: Simulated an operating system and optimized CPU scheduling algorithms for performance analysis.
 math: true
 ---
 
 ## Description
-- Simulated an operating system to manage processes and implement CPU scheduling.
-- Enhanced understanding of process management through algorithmic development and analysis.
+This project involved simulating an operating system to manage processes and implement CPU scheduling. Through developing and analyzing scheduling algorithms, I deepened my understanding of process management.
 
 ## Tech Stack
 - C++.

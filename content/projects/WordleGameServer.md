@@ -8,7 +8,7 @@ math: true
 ---
 
 ## Description
-- Built a multi-threaded Wordle game server capable of handling multiple simultaneous client connections.
+A multi-threaded Wordle game server capable of handling multiple simultaneous client connections.
 
 ## Tech Stack
 - C, POSIX Threads

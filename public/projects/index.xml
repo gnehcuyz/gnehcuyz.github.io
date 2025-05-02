@@ -23,6 +23,27 @@
       <description>Building a personalized advertising tool leveraging NLP, multimodal data, and automated pipelines for hyper-personalized messaging.</description>
     </item>
     <item>
+      <title>SQL-like Natural Language Query Interpreter</title>
+      <link>http://localhost:1313/projects/QueryInterpreter/</link>
+      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/QueryInterpreter/</guid>
+      <description>Built a Prolog-based interpreter that parses and executes SQL-style natural language queries with logical reasoning.</description>
+    </item>
+    <item>
+      <title>Distributed File System Simulator</title>
+      <link>http://localhost:1313/projects/DistributedFileSystem/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/DistributedFileSystem/</guid>
+      <description>Built a fault-tolerant distributed file system using the actor model and ring-based topology.</description>
+    </item>
+    <item>
+      <title>Lambda Calculus Interpreter</title>
+      <link>http://localhost:1313/projects/lambdaCalculator/</link>
+      <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/lambdaCalculator/</guid>
+      <description>Developed a functional interpreter for lambda calculus expressions with support for beta and eta reductions in applicative order.</description>
+    </item>
+    <item>
       <title>Handwriting Digits Recognition</title>
       <link>http://localhost:1313/projects/HandwritingDigitsRecognition/</link>
       <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
@@ -35,6 +56,13 @@
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/FamilyPlus/</guid>
       <description>Built an AI and blockchain platform for secure, accessible health data.</description>
+    </item>
+    <item>
+      <title>Operating Systems Simulation</title>
+      <link>http://localhost:1313/projects/OperatingSystemSimulation/</link>
+      <pubDate>Thu, 31 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/OperatingSystemSimulation/</guid>
+      <description>Simulated an operating system and optimized CPU scheduling algorithms for performance analysis.</description>
     </item>
     <item>
       <title>Wordle Game</title>

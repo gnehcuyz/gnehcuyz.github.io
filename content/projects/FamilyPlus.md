@@ -8,7 +8,9 @@ math: true
 ---
 
 ## Description
-- An AI-powered healthcare platform to simplify medical terminology and ensure secure storage and privacy of health data using blockchain.
+Family+ is a web app that uses AI and blockchain to help users better understand and manage their medical documents. With a secure, role-based system for Doctors, Patients, and Family Members, it empowers users to make informed healthcare decisions and take control of their health data.
+
+[GitHub Repo](https://github.com/AI-and-Blockchain/F23_FamilyPlus)
 
 ## Tech Stack
 - Solidity, React, Llama 2.

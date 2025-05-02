@@ -8,7 +8,9 @@ math: true
 ---
 
 ## Description
-- This platform helps students navigate Rensselaer Polytechnic Institute's HASS curriculum. It simplifies fulfilling HASS requirements by guiding students through Integrative Pathways, which add focus and depth to their coursework. Many pathways can also be transitioned into minors or majors, enhancing academic and professional opportunities.
+This platform helps students navigate Rensselaer Polytechnic Institute's HASS curriculum. It simplifies fulfilling HASS requirements by guiding students through Integrative Pathways, which add focus and depth to their coursework. Many pathways can also be transitioned into minors or majors, enhancing academic and professional opportunities.
+
+[GitHub Repo](https://github.com/gnehcuyz/HASSPathways)
 
 ## Tech Stack
 - Python, Vue.js, CSS, Flask.

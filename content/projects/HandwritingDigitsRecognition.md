@@ -8,11 +8,10 @@ math: true
 ---
 
 ## Description
-- Focused on achieving high precision in handwritten digit classification by implementing and optimizing multiple machine learning algorithms.
-- Addressed overfitting challenges with extensive data preprocessing and feature extraction.
+Handwriting Digits Recognition is a machine learning project focused on classifying handwritten digits with high accuracy. 
 
 ## Tech Stack
-- Python.
+- Python
 
 ## Contributions
 - Implemented and optimized **machine learning algorithms** for handwritten digit recognition.

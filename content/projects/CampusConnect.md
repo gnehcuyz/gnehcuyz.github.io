@@ -11,6 +11,8 @@ math: true
 
 Campus Connect is a web application for Rensselaer Polytechnic Institute (RPI) students, serving as an online hub for discussions and collaboration. It features dedicated sections for live events, study groups, coding projects, and personal item resale, enhancing both academic and social experiences. 
 
+[GitHub Repo](https://github.com/Byte-Force/Campus-Connect)
+
 ## Tech Stack
 - Node.js, React, MongoDB, Postman, Agile/Scrum.
 

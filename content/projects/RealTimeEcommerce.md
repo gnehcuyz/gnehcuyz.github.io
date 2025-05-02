@@ -14,7 +14,7 @@ This real-time analytics system ingests user interaction events from an e-commer
 [Github Repo](https://github.com/gnehcuyz/Real-Time-E-commerce-Analytics-with-Spark-and-Kafka)
 
 ## Tech Stack
-- Kafka, PySpark, PostgreSQL, Apache Superset, Docker, Apache Zookeeper.
+- Python, PostgreSQL, Docker, Apache Kafka, Apache Zookeeper, Apache Spark, Apache Superset.
 
 ## Contributions
 - Stream behavioral event data from a retail dataset using a custom **Kafka** producer, and develop **PySpark streaming** jobs to parse, transform, and structure the data into feature-rich records suitable for downstream analysis and modeling.
