@@ -5,13 +5,29 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Experience | Chengyu Zhang</title>
+<title>Distributed File System Simulator | Chengyu Zhang</title>
 <meta name="keywords" content="">
-<meta name="description" content="Experience - Chengyu Zhang">
+<meta name="description" content="Built a fault-tolerant distributed file system using the actor model and ring-based topology.">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="https://gnehcuyz.github.io/experience/">
+<link rel="canonical" href="https://gnehcuyz.github.io/projects/DistributedFileSystem/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},   
+        {left: '$$', right: '$$', display: true},     
+        {left: '\\(', right: '\\)', display: false},  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+  
 <link rel="icon" href="https://gnehcuyz.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://gnehcuyz.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://gnehcuyz.github.io/favicon-32x32.png">
@@ -19,8 +35,7 @@
 <link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://gnehcuyz.github.io/experience/index.xml">
-<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/experience/">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/projects/DistributedFileSystem/">
 <noscript>
     <style>
         #theme-toggle,
@@ -57,14 +72,18 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gnehcuyz.github.io/experience/">
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/projects/DistributedFileSystem/">
   <meta property="og:site_name" content="Chengyu Zhang">
-  <meta property="og:title" content="Experience">
+  <meta property="og:title" content="Distributed File System Simulator">
+  <meta property="og:description" content="Built a fault-tolerant distributed file system using the actor model and ring-based topology.">
   <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2024-10-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-28T00:00:00+00:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Experience">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Distributed File System Simulator">
+<meta name="twitter:description" content="Built a fault-tolerant distributed file system using the actor model and ring-based topology.">
 
 
 <script type="application/ld+json">
@@ -75,15 +94,54 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "Experience",
-      "item": "https://gnehcuyz.github.io/experience/"
+      "name": "Projects",
+      "item": "https://gnehcuyz.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Distributed File System Simulator",
+      "item": "https://gnehcuyz.github.io/projects/DistributedFileSystem/"
     }
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Distributed File System Simulator",
+  "name": "Distributed File System Simulator",
+  "description": "Built a fault-tolerant distributed file system using the actor model and ring-based topology.",
+  "keywords": [
+    
+  ],
+  "articleBody": "Description This project simulates a fault-tolerant distributed file system using the actor model. The system includes a Directory Service and multiple File Servers connected in a ring. Clients send commands to upload and download files, and the Directory Service assigns files to servers using a hash function. Files are automatically replicated to improve reliability, and if a server fails, the system continues working by forwarding the request to the next server in the ring.\nTech Stack erlang Shell scripting Contributions Implemented the Directory Service to manage file locations and ring connections. Built File Server actors to handle file storage, replication, and fault handling. Developed the Client actor to process upload, download, and query commands. Ensured system could handle server crashes by forwarding requests to active neighbors. Tested the system under different failure scenarios to confirm reliability. ",
+  "wordCount" : "136",
+  "inLanguage": "en",
+  "datePublished": "2024-10-28T00:00:00Z",
+  "dateModified": "2024-10-28T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Chengyu Zhang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gnehcuyz.github.io/projects/DistributedFileSystem/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chengyu Zhang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gnehcuyz.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -125,7 +183,7 @@
         <ul id="menu">
             <li>
                 <a href="https://gnehcuyz.github.io/experience" title="Experience">
-                    <span class="active">Experience</span>
+                    <span>Experience</span>
                 </a>
             </li>
             <li>
@@ -161,71 +219,41 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a></div>
-  <h1>
-    Experience
-  </h1>
-</header>
+<main class="main">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Machine Learning Engineer
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Optimizing ML and LLM workflows, including text style transfer, while enhancing data handling for scalable advertising.</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-01-22 00:00:00 +0000 UTC'>January 22, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang</footer>
-  <a class="entry-link" aria-label="post link to Machine Learning Engineer" href="https://gnehcuyz.github.io/experience/HarpResearch/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/projects/">Projects</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Distributed File System Simulator
+    </h1>
+    <div class="post-meta"><span title='2024-10-28 00:00:00 +0000 UTC'>October 28, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Research Assistant
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Researching privacy vulnerabilities in ML and LLMs to advance ethical AI practices.</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-01-08 00:00:00 +0000 UTC'>January 8, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang</footer>
-  <a class="entry-link" aria-label="post link to Research Assistant" href="https://gnehcuyz.github.io/experience/UndergradResearchAssistant/"></a>
-</article>
+</div>
+  </header> 
+  <div class="post-content"><h2 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h2>
+<p>This project simulates a fault-tolerant distributed file system using the actor model. The system includes a Directory Service and multiple File Servers connected in a ring. Clients send commands to upload and download files, and the Directory Service assigns files to servers using a hash function. Files are automatically replicated to improve reliability, and if a server fails, the system continues working by forwarding the request to the next server in the ring.</p>
+<h2 id="tech-stack">Tech Stack<a hidden class="anchor" aria-hidden="true" href="#tech-stack">#</a></h2>
+<ul>
+<li>erlang</li>
+<li>Shell scripting</li>
+</ul>
+<h2 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h2>
+<ul>
+<li>Implemented the Directory Service to manage file locations and ring connections.</li>
+<li>Built File Server actors to handle file storage, replication, and fault handling.</li>
+<li>Developed the Client actor to process upload, download, and query commands.</li>
+<li>Ensured system could handle server crashes by forwarding requests to active neighbors.</li>
+<li>Tested the system under different failure scenarios to confirm reliability.</li>
+</ul>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Resident Assistant
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Building community and supporting residents at RPI.</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-12-20 00:00:00 +0000 UTC'>December 20, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang</footer>
-  <a class="entry-link" aria-label="post link to Resident Assistant" href="https://gnehcuyz.github.io/experience/Resident-Assistant/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Course Mentor for Machine Learning from Data
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Mentored students and provided feedback in ML coursework.</p>
   </div>
-  <footer class="entry-footer"><span title='2024-12-18 00:00:00 +0000 UTC'>December 18, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang</footer>
-  <a class="entry-link" aria-label="post link to Course Mentor for Machine Learning from Data" href="https://gnehcuyz.github.io/experience/MentorMLFD/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">AI Camp Mentor
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Guided teens in learning AI concepts and applications remotely.</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-08-27 00:00:00 +0000 UTC'>August 27, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Chengyu Zhang</footer>
-  <a class="entry-link" aria-label="post link to AI Camp Mentor" href="https://gnehcuyz.github.io/experience/AICampMentor/"></a>
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
 </article>
     </main>
     <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
