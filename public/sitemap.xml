@@ -119,6 +119,12 @@
     <loc>http://localhost:1313/experience/MentorMLFD/</loc>
     <lastmod>2024-12-18T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/projects/QueryInterpreter/</loc>
+    <lastmod>2024-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/DistributedFileSystem/</loc>
+    <lastmod>2024-10-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/Differential-Privacy/</loc>
     <lastmod>2024-10-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -142,6 +148,9 @@
   </url><url>
     <loc>http://localhost:1313/tags/Vertical-Federated-Learning/</loc>
     <lastmod>2024-10-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/lambdaCalculator/</loc>
+    <lastmod>2024-09-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/reading/label_inference_attack_VFL/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
@@ -178,6 +187,9 @@
   </url><url>
     <loc>http://localhost:1313/tags/Machine-Learning/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/OperatingSystemSimulation/</loc>
+    <lastmod>2023-08-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/WordleGameServer/</loc>
     <lastmod>2023-08-17T00:00:00+00:00</lastmod>

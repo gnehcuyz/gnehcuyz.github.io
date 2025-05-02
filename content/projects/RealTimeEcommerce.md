@@ -17,8 +17,8 @@ This real-time analytics system ingests user interaction events from an e-commer
 - Python, PostgreSQL, Docker, Apache Kafka, Apache Zookeeper, Apache Spark, Apache Superset.
 
 ## Contributions
-- Stream behavioral event data from a retail dataset using a custom **Kafka** producer, and develop **PySpark streaming** jobs to parse, transform, and structure the data into feature-rich records suitable for downstream analysis and modeling.
-- Manage data persistence using **Postgres**, with optimized batch inserts and schema enforcement to ensure analytical readiness and data quality.
-- Create real-time dashboards in **Apache Superset** to visualize key metrics such as event volume, user activity patterns, and conversion-related behavior.
-- Use **Docker Compose** to coordinate the full pipeline, enabling reproducible analytics workflows across containerized services.
+- Streaming behavioral event data from a retail dataset using a custom **Kafka** producer, and develop **PySpark streaming** jobs to parse, transform, and structure the data into feature-rich records suitable for downstream analysis and modeling.
+- Managing data persistence using **Postgres**, with optimized batch inserts and schema enforcement to ensure analytical readiness and data quality.
+- Creating real-time dashboards in **Apache Superset** to visualize key metrics such as event volume, user activity patterns, and conversion-related behavior.
+- Using **Docker Compose** to coordinate the full pipeline, enabling reproducible analytics workflows across containerized services.
 
