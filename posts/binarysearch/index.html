@@ -10,7 +10,7 @@
 <meta name="description" content="A fast and precise method for finding targets in sorted arrays.">
 <meta name="author" content="Chengyu Zhang">
 <link rel="canonical" href="http://localhost:1313/posts/BinarySearch/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
@@ -92,7 +92,7 @@
         <div class="logo">
             <a href="http://localhost:1313/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -269,12 +269,18 @@ Identify the sorted array or range to search in.</li>
 <p><span style="font-size: 19px;"><strong> Explanation</strong></span></p>
 <ol>
 <li>
+<p><strong>Standard Calculation</strong>:
+The straightforward way to compute the middle index is:
+</p>
 \[
    \text{mid} = \frac{\text{left} + \text{right}}{2}
    \]<p>
 While this formula is simple and works in many cases, it has a potential issue: if <code>left</code> and <code>right</code> are very large integers, their sum (<code>left + right</code>) can exceed the maximum integer value, causing integer overflow.</p>
 </li>
 <li>
+<p><strong>Alternative Formula</strong>:
+To prevent overflow, the formula is rewritten as:
+</p>
 \[
    \text{mid} = \text{left} + \frac{\text{right} - \text{left}}{2}
    \]<p>
@@ -317,7 +323,7 @@ In this case, we should use <code>l + (r - l) // 2</code>.</p>
     </main>
     <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
     <p>
-        Last updated on 2025-05-01 ||
+        Last updated on 2025-05-03 ||
         &copy; 2025 
         <a href="https://yourwebsite.com" style="text-decoration: underline;">Chengyu Zhang</a> ||
         Powered by 

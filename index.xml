@@ -4,10 +4,17 @@
     <title>Chengyu Zhang</title>
     <link>https://gnehcuyz.github.io/</link>
     <description>Recent content on Chengyu Zhang</description>
-    <generator>Hugo -- 0.140.2</generator>
+    <generator>Hugo -- 0.147.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gnehcuyz.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic SQL</title>
+      <link>https://gnehcuyz.github.io/posts/BasicSQL/</link>
+      <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://gnehcuyz.github.io/posts/BasicSQL/</guid>
+      <description>A beginner-friendly note covering basic SQL syntax and logic</description>
+    </item>
     <item>
       <title>Real-Time E-commerce Analytics System</title>
       <link>https://gnehcuyz.github.io/projects/RealTimeEcommerce/</link>

@@ -10,7 +10,7 @@
 <meta name="description" content="A fast and precise method for finding targets in sorted arrays.">
 <meta name="author" content="Chengyu Zhang">
 <link rel="canonical" href="https://gnehcuyz.github.io/posts/BinarySearch/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
@@ -117,8 +117,8 @@
   "keywords": [
     "Data Structures and Algorithms (DSA)"
   ],
-  "articleBody": "What is Binary Search? Binary search is an efficient algorithm to find the position of a target value within a sorted array or list. It operates by dividing the search interval in half repeatedly:\nCompare the target value to the middle element. If the target matches the middle element, return its index. If the target is smaller, search the left half of the array. If the target is larger, search the right half of the array. Repeat until the target is found or the search interval is empty. Key Characteristics:\nRequires a sorted array. Time complexity: \\(O(\\log n)\\). Space complexity: \\(O(1)\\) for iterative implementation and \\(O(\\log n)\\) for recursive implementation. How to Apply Binary Search Steps:\nDetermine the Search Interval: Identify the sorted array or range to search in. Set the Pointers: Initialize two pointers: left (start of the array) and right (end of the array). Iterate or Recur: Calculate the middle index: \\[ \\text{mid} = \\text{left} + \\frac{\\text{right} - \\text{left}}{2} \\] Compare the middle element with the target. Update the pointers (left or right) to narrow the search interval. Exit Condition: If left \u003e right, the target does not exist. Otherwise, return the index of the target. Pseudocode Iterative Implementation:\ndef binary_search(array, target): left = 0 right = len(array) - 1 while left \u003c= right: mid = left + (right - left) // 2 # Avoid overflow if array[mid] == target: return mid elif array[mid] \u003c target: left = mid + 1 else: right = mid - 1 return -1 # Target not found Recurrsive Implementation\ndef binary_search(array, target, left, right): if left \u003e right: return -1 # Target not found mid = left + (right - left) // 2 if array[mid] == target: return mid elif array[mid] \u003c target: return binary_search(array, target, mid + 1, right) else: return binary_search(array, target, left, mid - 1) Common Questions 1. Why is mid calculated like that?\nIn binary search, the formula for calculating the middle index is:\n\\[ \\text{mid} = \\text{left} + \\frac{\\text{right} - \\text{left}}{2} \\]This formula is designed to avoid integer overflow in programming languages where integers have a fixed range, such as C++ and Java. Here’s a detailed explanation:\nExplanation\n\\[ \\text{mid} = \\frac{\\text{left} + \\text{right}}{2} \\] While this formula is simple and works in many cases, it has a potential issue: if left and right are very large integers, their sum (left + right) can exceed the maximum integer value, causing integer overflow.\n\\[ \\text{mid} = \\text{left} + \\frac{\\text{right} - \\text{left}}{2} \\] This calculates the middle index without directly adding left and right.\nThe term \\((\\text{right} - \\text{left})\\) represents the distance between left and right, which is much smaller than their sum. Dividing this distance by 2 gives the offset from left to the midpoint. Adding this offset back to left ensures the calculation remains within safe bounds. In Python, using (l + r) // 2 in binary search is safe because Python’s integers are arbitrary-precision and do not overflow since Python dynamically expands integers as needed. However, in languages with fixed integer limits such as C++ and Java (e.g., INT_MAX = 2^31 - 1), calculating the middle index as (l + r) // 2 can lead to integer overflow when l and r are large. In this case, we should use l + (r - l) // 2.\nClassic LeetCode Problems 🔗 Basic Binary Search Find First or Last Occurrence Search in Rotated Sorted Array Search Insert Position Find a Peak Element Kth Smallest Element in a Sorted Matrix Search a 2D Matrix Split Array into Parts Smallest Missing Positive Number Median of Two Sorted Arrays ",
-  "wordCount" : "599",
+  "articleBody": "What is Binary Search? Binary search is an efficient algorithm to find the position of a target value within a sorted array or list. It operates by dividing the search interval in half repeatedly:\nCompare the target value to the middle element. If the target matches the middle element, return its index. If the target is smaller, search the left half of the array. If the target is larger, search the right half of the array. Repeat until the target is found or the search interval is empty. Key Characteristics:\nRequires a sorted array. Time complexity: \\(O(\\log n)\\). Space complexity: \\(O(1)\\) for iterative implementation and \\(O(\\log n)\\) for recursive implementation. How to Apply Binary Search Steps:\nDetermine the Search Interval: Identify the sorted array or range to search in. Set the Pointers: Initialize two pointers: left (start of the array) and right (end of the array). Iterate or Recur: Calculate the middle index: \\[ \\text{mid} = \\text{left} + \\frac{\\text{right} - \\text{left}}{2} \\] Compare the middle element with the target. Update the pointers (left or right) to narrow the search interval. Exit Condition: If left \u003e right, the target does not exist. Otherwise, return the index of the target. Pseudocode Iterative Implementation:\ndef binary_search(array, target): left = 0 right = len(array) - 1 while left \u003c= right: mid = left + (right - left) // 2 # Avoid overflow if array[mid] == target: return mid elif array[mid] \u003c target: left = mid + 1 else: right = mid - 1 return -1 # Target not found Recurrsive Implementation\ndef binary_search(array, target, left, right): if left \u003e right: return -1 # Target not found mid = left + (right - left) // 2 if array[mid] == target: return mid elif array[mid] \u003c target: return binary_search(array, target, mid + 1, right) else: return binary_search(array, target, left, mid - 1) Common Questions 1. Why is mid calculated like that?\nIn binary search, the formula for calculating the middle index is:\n\\[ \\text{mid} = \\text{left} + \\frac{\\text{right} - \\text{left}}{2} \\]This formula is designed to avoid integer overflow in programming languages where integers have a fixed range, such as C++ and Java. Here’s a detailed explanation:\nExplanation\nStandard Calculation: The straightforward way to compute the middle index is: \\[ \\text{mid} = \\frac{\\text{left} + \\text{right}}{2} \\] While this formula is simple and works in many cases, it has a potential issue: if left and right are very large integers, their sum (left + right) can exceed the maximum integer value, causing integer overflow.\nAlternative Formula: To prevent overflow, the formula is rewritten as: \\[ \\text{mid} = \\text{left} + \\frac{\\text{right} - \\text{left}}{2} \\] This calculates the middle index without directly adding left and right.\nThe term \\((\\text{right} - \\text{left})\\) represents the distance between left and right, which is much smaller than their sum. Dividing this distance by 2 gives the offset from left to the midpoint. Adding this offset back to left ensures the calculation remains within safe bounds. In Python, using (l + r) // 2 in binary search is safe because Python’s integers are arbitrary-precision and do not overflow since Python dynamically expands integers as needed. However, in languages with fixed integer limits such as C++ and Java (e.g., INT_MAX = 2^31 - 1), calculating the middle index as (l + r) // 2 can lead to integer overflow when l and r are large. In this case, we should use l + (r - l) // 2.\nClassic LeetCode Problems 🔗 Basic Binary Search Find First or Last Occurrence Search in Rotated Sorted Array Search Insert Position Find a Peak Element Kth Smallest Element in a Sorted Matrix Search a 2D Matrix Split Array into Parts Smallest Missing Positive Number Median of Two Sorted Arrays ",
+  "wordCount" : "620",
   "inLanguage": "en",
   "datePublished": "2025-01-02T00:00:00Z",
   "dateModified": "2025-01-02T00:00:00Z",
@@ -159,7 +159,7 @@
         <div class="logo">
             <a href="https://gnehcuyz.github.io/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -336,12 +336,18 @@ Identify the sorted array or range to search in.</li>
 <p><span style="font-size: 19px;"><strong> Explanation</strong></span></p>
 <ol>
 <li>
+<p><strong>Standard Calculation</strong>:
+The straightforward way to compute the middle index is:
+</p>
 \[
    \text{mid} = \frac{\text{left} + \text{right}}{2}
    \]<p>
 While this formula is simple and works in many cases, it has a potential issue: if <code>left</code> and <code>right</code> are very large integers, their sum (<code>left + right</code>) can exceed the maximum integer value, causing integer overflow.</p>
 </li>
 <li>
+<p><strong>Alternative Formula</strong>:
+To prevent overflow, the formula is rewritten as:
+</p>
 \[
    \text{mid} = \text{left} + \frac{\text{right} - \text{left}}{2}
    \]<p>
@@ -384,7 +390,7 @@ In this case, we should use <code>l + (r - l) // 2</code>.</p>
     </main>
     <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
     <p>
-        Last updated on 2025-05-02 ||
+        Last updated on 2025-05-04 ||
         &copy; 2025 
         <a href="https://yourwebsite.com" style="text-decoration: underline;">Chengyu Zhang</a> ||
         Powered by 
