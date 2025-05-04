@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>SQL Essentials - Aggregate Functions &amp; Grouping | Chengyu Zhang</title>
+<meta name="keywords" content="SQL">
+<meta name="description" content="Deep dive into GROUP BY, HAVING, COUNT, and DISTINCT in SQL">
+<meta name="author" content="Chengyu Zhang">
+<link rel="canonical" href="https://gnehcuyz.github.io/posts/IntermediateSQL/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},   
+        {left: '$$', right: '$$', display: true},     
+        {left: '\\(', right: '\\)', display: false},  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+  
+<link rel="icon" href="https://gnehcuyz.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gnehcuyz.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gnehcuyz.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://gnehcuyz.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/posts/IntermediateSQL/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/posts/IntermediateSQL/">
+  <meta property="og:site_name" content="Chengyu Zhang">
+  <meta property="og:title" content="SQL Essentials - Aggregate Functions & Grouping">
+  <meta property="og:description" content="Deep dive into GROUP BY, HAVING, COUNT, and DISTINCT in SQL">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-04T00:00:00+00:00">
+    <meta property="article:tag" content="SQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL Essentials - Aggregate Functions &amp; Grouping">
+<meta name="twitter:description" content="Deep dive into GROUP BY, HAVING, COUNT, and DISTINCT in SQL">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://gnehcuyz.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "SQL Essentials - Aggregate Functions \u0026 Grouping",
+      "item": "https://gnehcuyz.github.io/posts/IntermediateSQL/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SQL Essentials - Aggregate Functions \u0026 Grouping",
+  "name": "SQL Essentials - Aggregate Functions \u0026 Grouping",
+  "description": "Deep dive into GROUP BY, HAVING, COUNT, and DISTINCT in SQL",
+  "keywords": [
+    "SQL"
+  ],
+  "articleBody": "Aggregate Functions \u0026 Grouping Background In the examples below, assume we have a table called users with the following columns:\nname – the user’s name age – the user’s age city – the city where the user lives signup_date – the date the user signed up email – the user’s email address COUNT() Returns the number of rows that match a specified condition. COUNT(*) counts all rows, including those with NULLs. So does COUNT(1). COUNT(column_name) only counts non-null values. SELECT COUNT(*) FROM users SELECT COUNT(city) FROM users SUM() Adds all the non-null values in a numeric column. Treat null values as 0. SELECT SUM(age) FROM users MIN() / MAX() Finds the smallest or largest value in a column. SELECT MIN(age), MAX(age) FROM users AVG() Calculates the average of non-null numeric values in a column. SELECT AVG(age) FROM users GROUP BY Groups rows that share the same value in a column so aggregate functions can be applied to each group. SELECT city, COUNT(*) FROM users GROUP BY city This returns a table like the following:\ncity count New York 10 Boston 7 San Diego 5 HAVING Filters grouped records (unlike WHERE, which filters rows before aggregating). SELECT city, COUNT(*) FROM users GROUP BY city HAVING COUNT(*) \u003e 5 This returns a table like the following:\ncity count New York 10 Boston 7 DISTINCT To view unique values Examples Get all the unique cities users come from: SELECT DISTINCT city FROM users city New York Boston San Diego Seattle Get unique (city, age) pairs: SELECT DISTINCT city, age FROM users city age New York 25 Boston 30 San Diego 25 New York 30 Seattle 40 This shows the unique pairs of city and age — meaning the same city can appear more than once, but only if it’s paired with a different age. Using DISTINCT in aggregations SELECT COUNT(DISTINCT city) AS unique_cities FROM users unique_cities 4 DISTINCT goes inside the aggregate function rather than at the beginning of the SELECT clause. Query Clause Order The order in which we write SQL clauses matters. Here’s the standard order for everything we’ve learned so far:\nSELECT FROM WHERE GROUP BY HAVING ORDER BY Reference These notes are based on the Mode Intermediate SQL Tutorial. I’ve written them to help myself quickly recall aggregation and grouping tools in SQL.\n",
+  "wordCount" : "384",
+  "inLanguage": "en",
+  "datePublished": "2025-05-04T00:00:00Z",
+  "dateModified": "2025-05-04T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Chengyu Zhang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gnehcuyz.github.io/posts/IntermediateSQL/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chengyu Zhang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gnehcuyz.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gnehcuyz.github.io/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gnehcuyz.github.io/experience" title="Experience">
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/research/" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/reading/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      SQL Essentials - Aggregate Functions &amp; Grouping
+    </h1>
+    <div class="post-meta"><span title='2025-05-04 00:00:00 +0000 UTC'>May 4, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#aggregate-functions--grouping" aria-label="Aggregate Functions &amp; Grouping">Aggregate Functions &amp; Grouping</a><ul>
+                        
+                <li>
+                    <a href="#background" aria-label="Background">Background</a></li>
+                <li>
+                    <a href="#count" aria-label="COUNT()">COUNT()</a></li>
+                <li>
+                    <a href="#sum" aria-label="SUM()">SUM()</a></li>
+                <li>
+                    <a href="#min--max" aria-label="MIN() / MAX()">MIN() / MAX()</a></li>
+                <li>
+                    <a href="#avg" aria-label="AVG()">AVG()</a></li>
+                <li>
+                    <a href="#group-by" aria-label="GROUP BY">GROUP BY</a></li>
+                <li>
+                    <a href="#having" aria-label="HAVING">HAVING</a></li>
+                <li>
+                    <a href="#distinct" aria-label="DISTINCT">DISTINCT</a></li>
+                <li>
+                    <a href="#to-view-unique-values" aria-label="To view unique values">To view unique values</a><ul>
+                        
+                <li>
+                    <a href="#examples" aria-label="Examples">Examples</a></li></ul>
+                </li>
+                <li>
+                    <a href="#using-distinct-in-aggregations" aria-label="Using DISTINCT in aggregations">Using DISTINCT in aggregations</a></li></ul>
+                </li>
+                <li>
+                    <a href="#query-clause-order" aria-label="Query Clause Order">Query Clause Order</a></li>
+                <li>
+                    <a href="#reference" aria-label="Reference">Reference</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="aggregate-functions--grouping">Aggregate Functions &amp; Grouping<a hidden class="anchor" aria-hidden="true" href="#aggregate-functions--grouping">#</a></h2>
+<h3 id="background">Background<a hidden class="anchor" aria-hidden="true" href="#background">#</a></h3>
+<p>In the examples below, assume we have a table called <code>users</code> with the following columns:</p>
+<ul>
+<li><code>name</code> – the user&rsquo;s name</li>
+<li><code>age</code> – the user&rsquo;s age</li>
+<li><code>city</code> – the city where the user lives</li>
+<li><code>signup_date</code> – the date the user signed up</li>
+<li><code>email</code> – the user&rsquo;s email address</li>
+</ul>
+<hr>
+<h3 id="count"><code>COUNT()</code><a hidden class="anchor" aria-hidden="true" href="#count">#</a></h3>
+<ul>
+<li>Returns the number of rows that match a specified condition.</li>
+<li><code>COUNT(*)</code> counts all rows, <strong>including those with NULLs</strong>. So does <code>COUNT(1)</code>.</li>
+<li><code>COUNT(column_name)</code> only counts non-null values.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">FROM</span> users
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(city) <span style="color:#66d9ef">FROM</span> users
+</span></span></code></pre></div><h3 id="sum"><code>SUM()</code><a hidden class="anchor" aria-hidden="true" href="#sum">#</a></h3>
+<ul>
+<li>Adds all the <strong>non-null</strong> values in a numeric column. Treat null values as 0.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">SUM</span>(age) <span style="color:#66d9ef">FROM</span> users
+</span></span></code></pre></div><h3 id="min--max"><code>MIN()</code> / <code>MAX()</code><a hidden class="anchor" aria-hidden="true" href="#min--max">#</a></h3>
+<ul>
+<li>Finds the smallest or largest value in a column.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MIN</span>(age), <span style="color:#66d9ef">MAX</span>(age) <span style="color:#66d9ef">FROM</span> users
+</span></span></code></pre></div><h3 id="avg"><code>AVG()</code><a hidden class="anchor" aria-hidden="true" href="#avg">#</a></h3>
+<ul>
+<li>Calculates the average of non-null numeric values in a column.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">AVG</span>(age) <span style="color:#66d9ef">FROM</span> users
+</span></span></code></pre></div><hr>
+<h3 id="group-by"><code>GROUP BY</code><a hidden class="anchor" aria-hidden="true" href="#group-by">#</a></h3>
+<ul>
+<li>Groups rows that share the same value in a column so aggregate functions can be applied to each group.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> city, <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">FROM</span> users 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> city
+</span></span></code></pre></div><p>This returns a table like the following:</p>
+<table>
+  <thead>
+      <tr>
+          <th>city</th>
+          <th>count</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>New York</td>
+          <td>10</td>
+      </tr>
+      <tr>
+          <td>Boston</td>
+          <td>7</td>
+      </tr>
+      <tr>
+          <td>San Diego</td>
+          <td>5</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="having"><code>HAVING</code><a hidden class="anchor" aria-hidden="true" href="#having">#</a></h3>
+<ul>
+<li>Filters grouped records (unlike <code>WHERE</code>, which filters rows before aggregating).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> city, <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> users 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> city 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><p>This returns a table like the following:</p>
+<table>
+  <thead>
+      <tr>
+          <th>city</th>
+          <th>count</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>New York</td>
+          <td>10</td>
+      </tr>
+      <tr>
+          <td>Boston</td>
+          <td>7</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="distinct"><code>DISTINCT</code><a hidden class="anchor" aria-hidden="true" href="#distinct">#</a></h3>
+<h3 id="to-view-unique-values">To view unique values<a hidden class="anchor" aria-hidden="true" href="#to-view-unique-values">#</a></h3>
+<h4 id="examples">Examples<a hidden class="anchor" aria-hidden="true" href="#examples">#</a></h4>
+<ol>
+<li>Get all the unique cities users come from:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span> city <span style="color:#66d9ef">FROM</span> users
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>city</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>New York</td>
+      </tr>
+      <tr>
+          <td>Boston</td>
+      </tr>
+      <tr>
+          <td>San Diego</td>
+      </tr>
+      <tr>
+          <td>Seattle</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>Get unique (city, age) pairs:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span> city, age <span style="color:#66d9ef">FROM</span> users
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>city</th>
+          <th>age</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>New York</td>
+          <td>25</td>
+      </tr>
+      <tr>
+          <td>Boston</td>
+          <td>30</td>
+      </tr>
+      <tr>
+          <td>San Diego</td>
+          <td>25</td>
+      </tr>
+      <tr>
+          <td>New York</td>
+          <td>30</td>
+      </tr>
+      <tr>
+          <td>Seattle</td>
+          <td>40</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>This shows the <strong>unique pairs</strong> of city and age — meaning the same city can appear more than once, but only if it&rsquo;s paired with a different age.</li>
+</ul>
+</li>
+</ol>
+<h3 id="using-distinct-in-aggregations">Using <code>DISTINCT</code> in aggregations<a hidden class="anchor" aria-hidden="true" href="#using-distinct-in-aggregations">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> city) <span style="color:#66d9ef">AS</span> unique_cities
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> users
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>unique_cities</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>4</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><code>DISTINCT</code> goes inside the aggregate function rather than at the beginning of the <code>SELECT</code> clause.</li>
+</ul>
+<hr>
+<h2 id="query-clause-order">Query Clause Order<a hidden class="anchor" aria-hidden="true" href="#query-clause-order">#</a></h2>
+<p>The order in which we write SQL clauses matters. Here&rsquo;s the standard order for everything we&rsquo;ve learned so far:</p>
+<ol>
+<li><code>SELECT</code></li>
+<li><code>FROM</code></li>
+<li><code>WHERE</code></li>
+<li><code>GROUP BY</code></li>
+<li><code>HAVING</code></li>
+<li><code>ORDER BY</code></li>
+</ol>
+<h2 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h2>
+<p>These notes are based on the <a href="https://mode.com/sql-tutorial/intro-to-intermediate-sql">Mode Intermediate SQL Tutorial</a>. I&rsquo;ve written them to help myself quickly recall aggregation and grouping tools in SQL.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gnehcuyz.github.io/tags/SQL/">SQL</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
+    <p>
+        Last updated on 2025-05-04 ||
+        &copy; 2025 
+        <a href="https://yourwebsite.com" style="text-decoration: underline;">Chengyu Zhang</a> ||
+        Powered by 
+        <a href="https://gohugo.io/" style="text-decoration: underline;">Hugo</a> & 
+        <a href="https://themes.gohugo.io/themes/hugo-papermod/" style="text-decoration: underline;">PaperMod</a>
+    </p>
+</footer>
+</body>
+
+</html>
