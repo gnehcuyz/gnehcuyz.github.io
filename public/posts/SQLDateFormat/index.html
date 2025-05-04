@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>SQL Essentials - Date Format | Chengyu Zhang</title>
+<meta name="keywords" content="SQL">
+<meta name="description" content="Learn to store, manipulate, and format dates correctly in SQL for accurate querying and sorting">
+<meta name="author" content="Chengyu Zhang">
+<link rel="canonical" href="http://localhost:1313/posts/SQLDateFormat/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},   
+        {left: '$$', right: '$$', display: true},     
+        {left: '\\(', right: '\\)', display: false},  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+  
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/SQLDateFormat/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/experience" title="Experience">
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/research/" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/reading/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      SQL Essentials - Date Format
+    </h1>
+    <div class="post-meta"><span title='2025-05-04 00:00:00 +0000 UTC'>May 4, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#postgresql-date-functions" aria-label="PostgreSQL Date Functions">PostgreSQL Date Functions</a><ul>
+                        
+                <li>
+                    <a href="#1-now" aria-label="1. NOW()">1. NOW()</a></li>
+                <li>
+                    <a href="#2-current_date-and-current_time" aria-label="2. CURRENT_DATE and CURRENT_TIME">2. CURRENT_DATE and CURRENT_TIME</a></li>
+                <li>
+                    <a href="#3-date_part" aria-label="3. DATE_PART()">3. DATE_PART()</a></li>
+                <li>
+                    <a href="#4-date_trunc" aria-label="4. DATE_TRUNC()">4. DATE_TRUNC()</a></li>
+                <li>
+                    <a href="#5-age" aria-label="5. AGE()">5. AGE()</a></li>
+                <li>
+                    <a href="#6-to_date-and-to_timestamp" aria-label="6. TO_DATE() and TO_TIMESTAMP()">6. TO_DATE() and TO_TIMESTAMP()</a></li>
+                <li>
+                    <a href="#7-to_char" aria-label="7. TO_CHAR()">7. TO_CHAR()</a></li></ul>
+                </li>
+                <li>
+                    <a href="#date-arithmetic-and-intervals" aria-label="Date Arithmetic and Intervals">Date Arithmetic and Intervals</a></li>
+                <li>
+                    <a href="#reference" aria-label="Reference">Reference</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="postgresql-date-functions">PostgreSQL Date Functions<a hidden class="anchor" aria-hidden="true" href="#postgresql-date-functions">#</a></h2>
+<p>PostgreSQL provides many functions for working with dates and times:</p>
+<h3 id="1-now">1. <code>NOW()</code><a hidden class="anchor" aria-hidden="true" href="#1-now">#</a></h3>
+<p>Returns the current date and time.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> NOW();
+</span></span></code></pre></div><h3 id="2-current_date-and-current_time">2. <code>CURRENT_DATE</code> and <code>CURRENT_TIME</code><a hidden class="anchor" aria-hidden="true" href="#2-current_date-and-current_time">#</a></h3>
+<p>Returns the current date or time.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">CURRENT_DATE</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">CURRENT_TIME</span>;
+</span></span></code></pre></div><h3 id="3-date_part">3. <code>DATE_PART()</code><a hidden class="anchor" aria-hidden="true" href="#3-date_part">#</a></h3>
+<p>Extracts parts of a date/time (e.g., year, month, day).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> DATE_PART(<span style="color:#e6db74">&#39;year&#39;</span>, <span style="color:#66d9ef">TIMESTAMP</span> <span style="color:#e6db74">&#39;2025-05-04 14:45:29&#39;</span>);
+</span></span></code></pre></div><p>It will return the year part of the timestamp: 2025.</p>
+<h3 id="4-date_trunc">4. <code>DATE_TRUNC()</code><a hidden class="anchor" aria-hidden="true" href="#4-date_trunc">#</a></h3>
+<p>Truncates a timestamp to a specified precision.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> DATE_TRUNC(<span style="color:#e6db74">&#39;month&#39;</span>, <span style="color:#66d9ef">TIMESTAMP</span> <span style="color:#e6db74">&#39;2025-05-04 14:45:29&#39;</span>);
+</span></span></code></pre></div><p>This will return the timestamp truncated to the start of the month: <code>2025-05-01 00:00:00</code>.</p>
+<h3 id="5-age">5. <code>AGE()</code><a hidden class="anchor" aria-hidden="true" href="#5-age">#</a></h3>
+<p>Returns the interval between two dates or timestamps.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> AGE(<span style="color:#66d9ef">TIMESTAMP</span> <span style="color:#e6db74">&#39;2025-05-04&#39;</span>, <span style="color:#66d9ef">TIMESTAMP</span> <span style="color:#e6db74">&#39;2020-01-01&#39;</span>);
+</span></span></code></pre></div><p>This will return the interval between the two timestamps: <code>5 years 4 months 3 days</code>.</p>
+<h3 id="6-to_date-and-to_timestamp">6. <code>TO_DATE()</code> and <code>TO_TIMESTAMP()</code><a hidden class="anchor" aria-hidden="true" href="#6-to_date-and-to_timestamp">#</a></h3>
+<p>Converts strings into dates or timestamps.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> TO_DATE(<span style="color:#e6db74">&#39;2025-05-04&#39;</span>, <span style="color:#e6db74">&#39;YYYY-MM-DD&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> TO_TIMESTAMP(<span style="color:#e6db74">&#39;2025-05-04 14:45:29&#39;</span>, <span style="color:#e6db74">&#39;YYYY-MM-DD HH24:MI:SS&#39;</span>);
+</span></span></code></pre></div><h3 id="7-to_char">7. <code>TO_CHAR()</code><a hidden class="anchor" aria-hidden="true" href="#7-to_char">#</a></h3>
+<p>Formats date/time values into strings.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> TO_CHAR(NOW(), <span style="color:#e6db74">&#39;YYYY-MM-DD HH24:MI:SS&#39;</span>);
+</span></span></code></pre></div><hr>
+<h2 id="date-arithmetic-and-intervals">Date Arithmetic and Intervals<a hidden class="anchor" aria-hidden="true" href="#date-arithmetic-and-intervals">#</a></h2>
+<ul>
+<li><strong>Calculating Differences</strong>: Subtracting one date from another returns an <code>interval</code>.</li>
+<li><strong>Adding Intervals</strong>: Use <code>INTERVAL</code> to add time durations.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">CURRENT_DATE</span> <span style="color:#f92672">-</span> INTERVAL <span style="color:#e6db74">&#39;6 day&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">CURRENT_DATE</span> <span style="color:#f92672">+</span> INTERVAL <span style="color:#e6db74">&#39;11 week&#39;</span>;
+</span></span></code></pre></div><hr>
+<h2 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h2>
+<p>These notes are based on the <a href="https://mode.com/sql-tutorial/sql-datetime-format">Mode Date Format</a> and <a href="https://mode.com/blog/postgres-sql-date-functions?utm_medium=referral&amp;utm_source=mode-site&amp;utm_campaign=sql-tutorial">PostgreSQL Date Functions and 7 Ways to Use Them in Business Analysis</a>. I&rsquo;ve written them to help myself quickly recall these useful functions in SQL.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/SQL/">SQL</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
+    <p>
+        Last updated on 2025-05-04 ||
+        &copy; 2025 
+        <a href="https://yourwebsite.com" style="text-decoration: underline;">Chengyu Zhang</a> ||
+        Powered by 
+        <a href="https://gohugo.io/" style="text-decoration: underline;">Hugo</a> & 
+        <a href="https://themes.gohugo.io/themes/hugo-papermod/" style="text-decoration: underline;">PaperMod</a>
+    </p>
+</footer>
+</body>
+
+</html>

@@ -6,14 +6,42 @@
     <description>Recent content in SQL on Chengyu Zhang</description>
     <generator>Hugo -- 0.147.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/SQL/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Basic SQL</title>
+      <title>SQL Essentials - Aggregate Functions &amp; Grouping</title>
+      <link>http://localhost:1313/posts/IntermediateSQL/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/IntermediateSQL/</guid>
+      <description>Deep dive into GROUP BY, HAVING, COUNT, and DISTINCT in SQL</description>
+    </item>
+    <item>
+      <title>SQL Essentials - CASE</title>
+      <link>http://localhost:1313/posts/SQLCase/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/SQLCase/</guid>
+      <description>A beginner&amp;rsquo;s guide to using the CASE statement for conditional queries</description>
+    </item>
+    <item>
+      <title>SQL Essentials - Date Format</title>
+      <link>http://localhost:1313/posts/SQLDateFormat/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/SQLDateFormat/</guid>
+      <description>Learn to store, manipulate, and format dates correctly in SQL for accurate querying and sorting</description>
+    </item>
+    <item>
+      <title>SQL Essentials - JOIN</title>
+      <link>http://localhost:1313/posts/SQLJoin/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/SQLJoin/</guid>
+      <description>Understand how SQL JOINs work — including INNER, LEFT, RIGHT, FULL, and SELF JOIN</description>
+    </item>
+    <item>
+      <title>SQL Essentials - Key Concepts &amp; Syntax</title>
       <link>http://localhost:1313/posts/BasicSQL/</link>
       <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/BasicSQL/</guid>
-      <description>A beginner-friendly note covering basic SQL syntax and logic</description>
+      <description>Core SQL concepts like SELECT, WHERE, ORDER BY, and LIMIT for beginners</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>SQL Essentials - JOIN | Chengyu Zhang</title>
+<meta name="keywords" content="SQL">
+<meta name="description" content="Understand how SQL JOINs work — including INNER, LEFT, RIGHT, FULL, and SELF JOIN">
+<meta name="author" content="Chengyu Zhang">
+<link rel="canonical" href="http://localhost:1313/posts/SQLJoin/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},   
+        {left: '$$', right: '$$', display: true},     
+        {left: '\\(', right: '\\)', display: false},  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+  
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/SQLJoin/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/experience" title="Experience">
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/research/" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/reading/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      SQL Essentials - JOIN
+    </h1>
+    <div class="post-meta"><span title='2025-05-04 00:00:00 +0000 UTC'>May 4, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Chengyu Zhang
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#join-in-sql" aria-label="JOIN in SQL">JOIN in SQL</a><ul>
+                        
+                <li>
+                    <a href="#what-is-a-join" aria-label="What is a JOIN?">What is a JOIN?</a><ul>
+                        
+                <li>
+                    <a href="#determining-left-and-right-tables" aria-label="Determining Left and Right Tables">Determining Left and Right Tables</a></li>
+                <li>
+                    <a href="#tables-used-in-examples" aria-label="Tables Used in Examples">Tables Used in Examples</a></li></ul>
+                </li>
+                <li>
+                    <a href="#types-of-joins" aria-label="Types of JOINs">Types of JOINs</a><ul>
+                        
+                <li>
+                    <a href="#1-inner-join" aria-label="1. INNER JOIN">1. INNER JOIN</a></li>
+                <li>
+                    <a href="#2-left-join-left-outer-join" aria-label="2. LEFT JOIN (LEFT OUTER JOIN)">2. LEFT JOIN (LEFT OUTER JOIN)</a></li>
+                <li>
+                    <a href="#3-right-join-right-outer-join" aria-label="3. RIGHT JOIN (RIGHT OUTER JOIN)">3. RIGHT JOIN (RIGHT OUTER JOIN)</a></li>
+                <li>
+                    <a href="#4-full-join-full-outer-join" aria-label="4. FULL JOIN (FULL OUTER JOIN)">4. FULL JOIN (FULL OUTER JOIN)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#self-join" aria-label="Self JOIN">Self JOIN</a><ul>
+                        
+                <li>
+                    <a href="#example-table-employees" aria-label="Example Table: employees">Example Table: employees</a></li></ul>
+                </li>
+                <li>
+                    <a href="#join-conditions-using-where-vs-on" aria-label="JOIN Conditions Using WHERE vs ON">JOIN Conditions Using WHERE vs ON</a><ul>
+                        
+                <li>
+                    <a href="#example" aria-label="Example:">Example:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#joins-with-comparison-operators" aria-label="JOINs with Comparison Operators">JOINs with Comparison Operators</a></li>
+                <li>
+                    <a href="#joins-on-multiple-keys" aria-label="JOINs on Multiple Keys">JOINs on Multiple Keys</a></li>
+                <li>
+                    <a href="#references" aria-label="References">References</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="join-in-sql">JOIN in SQL<a hidden class="anchor" aria-hidden="true" href="#join-in-sql">#</a></h1>
+<h2 id="what-is-a-join">What is a JOIN?<a hidden class="anchor" aria-hidden="true" href="#what-is-a-join">#</a></h2>
+<p>A <code>JOIN</code> clause in SQL is used to retrieve data from two or more tables based on a related column between them. It allows for the combination of rows where there is a logical relationship between the datasets.</p>
+<h3 id="determining-left-and-right-tables">Determining Left and Right Tables<a hidden class="anchor" aria-hidden="true" href="#determining-left-and-right-tables">#</a></h3>
+<p>In a SQL <code>JOIN</code>, the table that appears first after the <code>FROM</code> keyword is referred to as the <strong>left table</strong>, and the table that follows the <code>JOIN</code> keyword is referred to as the <strong>right table</strong>. This distinction is critical in <code>LEFT</code> and <code>RIGHT</code> joins.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table1 <span style="color:#75715e">-- Left Table
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">JOIN</span> table2 <span style="color:#75715e">-- Right Table
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">ON</span> table1.id <span style="color:#f92672">=</span> table2.id; <span style="color:#75715e">-- Match Condition
+</span></span></span></code></pre></div><h3 id="tables-used-in-examples">Tables Used in Examples<a hidden class="anchor" aria-hidden="true" href="#tables-used-in-examples">#</a></h3>
+<p><strong>Table: <code>students</code></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>student_id</th>
+          <th>name</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>Alice</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Bob</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Carol</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>David</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Table: <code>scores</code></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>student_id</th>
+          <th>score</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>95</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>88</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>70</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>100</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="types-of-joins">Types of JOINs<a hidden class="anchor" aria-hidden="true" href="#types-of-joins">#</a></h2>
+<h3 id="1-inner-join">1. INNER JOIN<a hidden class="anchor" aria-hidden="true" href="#1-inner-join">#</a></h3>
+<p>Returns only those records where there is a match in both tables.</p>
+<ul>
+<li>If we just write <code>JOIN</code>, SQL assumes you mean <code>INNER JOIN</code> by default.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> students.name, scores.score
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> students
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> scores <span style="color:#75715e">-- OR: JOIN scores
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">ON</span> students.student_id <span style="color:#f92672">=</span> scores.student_id;
+</span></span></code></pre></div><p><strong>Output:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>name</th>
+          <th>score</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Alice</td>
+          <td>95</td>
+      </tr>
+      <tr>
+          <td>Bob</td>
+          <td>88</td>
+      </tr>
+      <tr>
+          <td>David</td>
+          <td>70</td>
+      </tr>
+  </tbody>
+</table>
+<p>Carol is not included because she has no score.<br>
+Student ID 5 is not included because there is no matching student.</p>
+<hr>
+<h3 id="2-left-join-left-outer-join">2. LEFT JOIN (LEFT OUTER JOIN)<a hidden class="anchor" aria-hidden="true" href="#2-left-join-left-outer-join">#</a></h3>
+<p>Returns all records from the left table, and the matched records from the right table. If no match exists, NULL values are returned for columns from the right table.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> students.name, scores.score
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> students
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> scores
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> students.student_id <span style="color:#f92672">=</span> scores.student_id;
+</span></span></code></pre></div><p><strong>Example Output:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>name</th>
+          <th>score</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Alice</td>
+          <td>95</td>
+      </tr>
+      <tr>
+          <td>Bob</td>
+          <td>88</td>
+      </tr>
+      <tr>
+          <td>Carol</td>
+          <td>NULL</td>
+      </tr>
+      <tr>
+          <td>David</td>
+          <td>70</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="3-right-join-right-outer-join">3. RIGHT JOIN (RIGHT OUTER JOIN)<a hidden class="anchor" aria-hidden="true" href="#3-right-join-right-outer-join">#</a></h3>
+<p>Returns all records from the right table, and the matched records from the left table. If no match exists, NULL values are returned for columns from the left table.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> students.name, scores.score
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> students
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">RIGHT</span> <span style="color:#66d9ef">JOIN</span> scores
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> students.student_id <span style="color:#f92672">=</span> scores.student_id;
+</span></span></code></pre></div><p><strong>Example Output:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>name</th>
+          <th>score</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Alice</td>
+          <td>95</td>
+      </tr>
+      <tr>
+          <td>Bob</td>
+          <td>88</td>
+      </tr>
+      <tr>
+          <td>David</td>
+          <td>70</td>
+      </tr>
+      <tr>
+          <td>NULL</td>
+          <td>100</td>
+      </tr>
+  </tbody>
+</table>
+<p>The last row represents a score entry without a corresponding student (student_id = 5).</p>
+<hr>
+<h3 id="4-full-join-full-outer-join">4. FULL JOIN (FULL OUTER JOIN)<a hidden class="anchor" aria-hidden="true" href="#4-full-join-full-outer-join">#</a></h3>
+<p>Returns all records when there is a match in either the left or right table. Non-matching rows are returned with NULLs for the missing side.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> students.name, scores.score
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> students
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FULL</span> <span style="color:#66d9ef">JOIN</span> scores
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> students.student_id <span style="color:#f92672">=</span> scores.student_id;
+</span></span></code></pre></div><p><strong>Example Output:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>name</th>
+          <th>score</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Alice</td>
+          <td>95</td>
+      </tr>
+      <tr>
+          <td>Bob</td>
+          <td>88</td>
+      </tr>
+      <tr>
+          <td>Carol</td>
+          <td>NULL</td>
+      </tr>
+      <tr>
+          <td>David</td>
+          <td>70</td>
+      </tr>
+      <tr>
+          <td>NULL</td>
+          <td>100</td>
+      </tr>
+  </tbody>
+</table>
+<p>Carol has no score, and student_id 5 has a score but no matching student.</p>
+<hr>
+<h2 id="self-join">Self JOIN<a hidden class="anchor" aria-hidden="true" href="#self-join">#</a></h2>
+<p>A self join is a join of a table with itself. It is commonly used for hierarchical data, such as employees and their managers.</p>
+<h3 id="example-table-employees">Example Table: <code>employees</code><a hidden class="anchor" aria-hidden="true" href="#example-table-employees">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>emp_id</th>
+          <th>name</th>
+          <th>manager_id</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>Alice</td>
+          <td>NULL</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Bob</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Carol</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>David</td>
+          <td>2</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> e.name <span style="color:#66d9ef">AS</span> employee_name, m.name <span style="color:#66d9ef">AS</span> manager_name
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> employees e
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> employees m
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ON</span> e.manager_id <span style="color:#f92672">=</span> m.emp_id;
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>employee_name</th>
+          <th>manager_name</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Alice</td>
+          <td>NULL</td>
+      </tr>
+      <tr>
+          <td>Bob</td>
+          <td>Alice</td>
+      </tr>
+      <tr>
+          <td>Carol</td>
+          <td>Alice</td>
+      </tr>
+      <tr>
+          <td>David</td>
+          <td>Bob</td>
+      </tr>
+  </tbody>
+</table>
+<p>This allows for comparing records within the same dataset.</p>
+<hr>
+<h2 id="join-conditions-using-where-vs-on">JOIN Conditions Using WHERE vs ON<a hidden class="anchor" aria-hidden="true" href="#join-conditions-using-where-vs-on">#</a></h2>
+<p>JOIN conditions can be written using either <code>ON</code> or <code>WHERE</code>. However, the <code>ON</code> clause is preferred, especially when working with outer joins, as it clearly separates join logic from filter logic.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- Preferred
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> a
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> b <span style="color:#66d9ef">ON</span> a.id <span style="color:#f92672">=</span> b.id;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- Less preferred (older style)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> a, b
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> a.id <span style="color:#f92672">=</span> b.id;
+</span></span></code></pre></div><p>Filtering after a <code>LEFT/RIGHT/FULL JOIN</code> using <code>WHERE</code> may unintentionally exclude NULL-matched rows. Use <code>ON</code> for conditions that are part of the join logic.</p>
+<h3 id="example">Example:<a hidden class="anchor" aria-hidden="true" href="#example">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> students.name, scores.score
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> students
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> scores
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ON</span> students.student_id <span style="color:#f92672">=</span> scores.student_id <span style="color:#66d9ef">AND</span> scores.score <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">90</span>;
+</span></span></code></pre></div><p><strong>Result:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>name</th>
+          <th>score</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Alice</td>
+          <td>95</td>
+      </tr>
+      <tr>
+          <td>Bob</td>
+          <td>NULL</td>
+      </tr>
+      <tr>
+          <td>Carol</td>
+          <td>NULL</td>
+      </tr>
+      <tr>
+          <td>David</td>
+          <td>NULL</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>Alice matches the condition and joins successfully.</li>
+<li>Bob, Carol, and David remain in the result with <code>NULL</code> scores because they didn’t meet the filter, but <code>LEFT JOIN</code> preserves them.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> students.name, scores.score
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> students
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> scores
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ON</span> students.student_id <span style="color:#f92672">=</span> scores.student_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> scores.score <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">90</span>;
+</span></span></code></pre></div><p><strong>Result:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>name</th>
+          <th>score</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Alice</td>
+          <td>95</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>Only Alice is returned because <code>WHERE scores.score &gt; 90</code> filters out all other rows, including those with <code>NULL</code>.</li>
+</ul>
+<hr>
+<h2 id="joins-with-comparison-operators">JOINs with Comparison Operators<a hidden class="anchor" aria-hidden="true" href="#joins-with-comparison-operators">#</a></h2>
+<p>JOINs can be constructed using inequality or range-based conditions. This is useful for business rules like tiered discounts or overlapping date ranges.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> p.name, p.price, d.discount_percent
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> products p
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> discounts d
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ON</span> p.price <span style="color:#f92672">&gt;=</span> d.min_price;
+</span></span></code></pre></div><p>Use aggregation functions like <code>MAX()</code> and <code>GROUP BY</code> to obtain the best applicable match.</p>
+<hr>
+<h2 id="joins-on-multiple-keys">JOINs on Multiple Keys<a hidden class="anchor" aria-hidden="true" href="#joins-on-multiple-keys">#</a></h2>
+<p>In many cases, a single column is insufficient to uniquely identify relationships between rows. Multiple keys can be used with an <code>AND</code> operator.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> orders o
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> inventory i
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> o.order_id <span style="color:#f92672">=</span> i.order_id <span style="color:#66d9ef">AND</span> o.product_id <span style="color:#f92672">=</span> i.product_id;
+</span></span></code></pre></div><hr>
+<h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
+<p>These notes are based on the <a href="https://mode.com/sql-tutorial/sql-joins">Mode Intermediate SQL: JOIN</a>. I&rsquo;ve written them to help myself quickly recall <code>JOIN</code> in SQL.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/SQL/">SQL</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
+    <p>
+        Last updated on 2025-05-04 ||
+        &copy; 2025 
+        <a href="https://yourwebsite.com" style="text-decoration: underline;">Chengyu Zhang</a> ||
+        Powered by 
+        <a href="https://gohugo.io/" style="text-decoration: underline;">Hugo</a> & 
+        <a href="https://themes.gohugo.io/themes/hugo-papermod/" style="text-decoration: underline;">PaperMod</a>
+    </p>
+</footer>
+</body>
+
+</html>

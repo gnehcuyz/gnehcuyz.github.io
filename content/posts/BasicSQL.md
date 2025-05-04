@@ -1,13 +1,13 @@
 ---
-title: Basic SQL
+title: SQL Essentials - Key Concepts & Syntax
 date: 2025-05-03
 draft: false
-summary: A beginner-friendly note covering basic SQL syntax and logic
+summary: Core SQL concepts like SELECT, WHERE, ORDER BY, and LIMIT for beginners
 math: true
 tags: [SQL]
 ---
 
-## Basic SQL – Key Concepts & Syntax
+## SQL Key Concepts & Syntax
 
 ### Background
 In the examples below, assume we have a table called `users` with the following columns:
