@@ -4,10 +4,17 @@
     <title>Posts on Chengyu Zhang</title>
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Chengyu Zhang</description>
-    <generator>Hugo -- 0.140.2</generator>
+    <generator>Hugo -- 0.147.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic SQL</title>
+      <link>http://localhost:1313/posts/BasicSQL/</link>
+      <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/BasicSQL/</guid>
+      <description>A beginner-friendly note covering basic SQL syntax and logic</description>
+    </item>
     <item>
       <title>BFS - Breadth First Search</title>
       <link>http://localhost:1313/posts/BreadthFirstSearch/</link>

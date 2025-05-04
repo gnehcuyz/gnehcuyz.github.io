@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Basic SQL | Chengyu Zhang</title>
+<meta name="keywords" content="SQL">
+<meta name="description" content="A beginner-friendly note covering basic SQL syntax and logic">
+<meta name="author" content="Chengyu Zhang">
+<link rel="canonical" href="http://localhost:1313/posts/BasicSQL/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},   
+        {left: '$$', right: '$$', display: true},     
+        {left: '\\(', right: '\\)', display: false},  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+  
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/BasicSQL/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/experience" title="Experience">
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/research/" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/reading/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Basic SQL
+    </h1>
+    <div class="post-meta"><span title='2025-05-03 00:00:00 +0000 UTC'>May 3, 2025</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Chengyu Zhang
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#basic-sql--key-concepts--syntax" aria-label="Basic SQL – Key Concepts &amp; Syntax">Basic SQL – Key Concepts &amp; Syntax</a><ul>
+                        
+                <li>
+                    <a href="#background" aria-label="Background">Background</a></li>
+                <li>
+                    <a href="#select" aria-label="SELECT">SELECT</a></li>
+                <li>
+                    <a href="#where" aria-label="WHERE">WHERE</a></li>
+                <li>
+                    <a href="#limit" aria-label="LIMIT">LIMIT</a></li>
+                <li>
+                    <a href="#order-by" aria-label="ORDER BY">ORDER BY</a></li></ul>
+                </li>
+                <li>
+                    <a href="#logical-operators" aria-label="Logical Operators">Logical Operators</a><ul>
+                        
+                <li>
+                    <a href="#like" aria-label="LIKE">LIKE</a><ul>
+                        
+                <li>
+                    <a href="#wildcards" aria-label="Wildcards:">Wildcards:</a></li>
+                <li>
+                    <a href="#case-insensitive-matching" aria-label="Case-insensitive matching:">Case-insensitive matching:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#in" aria-label="IN">IN</a></li>
+                <li>
+                    <a href="#between" aria-label="BETWEEN">BETWEEN</a></li>
+                <li>
+                    <a href="#is-null" aria-label="IS NULL">IS NULL</a></li>
+                <li>
+                    <a href="#and" aria-label="AND">AND</a></li>
+                <li>
+                    <a href="#or" aria-label="OR">OR</a></li>
+                <li>
+                    <a href="#not" aria-label="NOT">NOT</a><ul>
+                        
+                <li>
+                    <a href="#example-1-not-between" aria-label="Example 1: NOT BETWEEN">Example 1: NOT BETWEEN</a></li>
+                <li>
+                    <a href="#example-2-not-like" aria-label="Example 2: NOT LIKE">Example 2: NOT LIKE</a></li>
+                <li>
+                    <a href="#example-3-is-not-null" aria-label="Example 3: IS NOT NULL">Example 3: IS NOT NULL</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#reference" aria-label="Reference">Reference</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="basic-sql--key-concepts--syntax">Basic SQL – Key Concepts &amp; Syntax<a hidden class="anchor" aria-hidden="true" href="#basic-sql--key-concepts--syntax">#</a></h2>
+<h3 id="background">Background<a hidden class="anchor" aria-hidden="true" href="#background">#</a></h3>
+<p>In the examples below, assume we have a table called <code>users</code> with the following columns:</p>
+<ul>
+<li><code>name</code> – the user&rsquo;s name</li>
+<li><code>age</code> – the user&rsquo;s age</li>
+<li><code>city</code> – the city where the user lives</li>
+<li><code>signup_date</code> – the date the user signed up</li>
+<li><code>email</code> – the user&rsquo;s email address</li>
+</ul>
+<hr>
+<h3 id="select"><code>SELECT</code><a hidden class="anchor" aria-hidden="true" href="#select">#</a></h3>
+<ul>
+<li>Retrieves data from a table.</li>
+<li>To select specific columns:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> name, age <span style="color:#66d9ef">FROM</span> users
+</span></span></code></pre></div></li>
+<li>To select <strong>all columns</strong>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="where"><code>WHERE</code><a hidden class="anchor" aria-hidden="true" href="#where">#</a></h3>
+<ul>
+<li>Filters rows that meet a condition.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> age <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">30</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="limit"><code>LIMIT</code><a hidden class="anchor" aria-hidden="true" href="#limit">#</a></h3>
+<ul>
+<li>Limits the number of results returned.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="order-by"><code>ORDER BY</code><a hidden class="anchor" aria-hidden="true" href="#order-by">#</a></h3>
+<ul>
+<li>Sorts the results by one or more columns.</li>
+<li>Default is ascending (<code>ASC</code>). Use <code>DESC</code> for descending.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> signup_date <span style="color:#66d9ef">DESC</span>
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h2 id="logical-operators">Logical Operators<a hidden class="anchor" aria-hidden="true" href="#logical-operators">#</a></h2>
+<h3 id="like"><code>LIKE</code><a hidden class="anchor" aria-hidden="true" href="#like">#</a></h3>
+<ul>
+<li>
+<p><code>LIKE</code> is a logical operator that allows us to match on similar values or patterns.</p>
+</li>
+<li>
+<p>It is <strong>case-sensitive</strong> in Mode SQL.</p>
+<h4 id="wildcards">Wildcards:<a hidden class="anchor" aria-hidden="true" href="#wildcards">#</a></h4>
+<ul>
+<li>
+<p><code>%</code> matches <strong>any number of characters</strong>.<br>
+Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> users
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;Alex%&#39;</span>
+</span></span></code></pre></div><p>This will return rows where the <code>name</code> starts with &ldquo;Alex&rdquo; (e.g., &ldquo;Alex&rdquo;, &ldquo;Alexander&rdquo;, &ldquo;Alexis&rdquo;).</p>
+</li>
+<li>
+<p><code>_</code> (underscore) matches <strong>a single character</strong>.<br>
+Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> users
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> email <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;a_b@example.com&#39;</span>
+</span></span></code></pre></div><p>This matches emails where the second character can be anything (e.g., <code>a1b@example.com</code>, <code>acb@example.com</code>).</p>
+</li>
+</ul>
+<h4 id="case-insensitive-matching">Case-insensitive matching:<a hidden class="anchor" aria-hidden="true" href="#case-insensitive-matching">#</a></h4>
+<ul>
+<li>Use <code>ILIKE</code> instead of <code>LIKE</code> if you want the match to be <strong>case-insensitive</strong>.<br>
+Example:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> users
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> name <span style="color:#66d9ef">ILIKE</span> <span style="color:#e6db74">&#39;alex%&#39;</span>
+</span></span></code></pre></div>This matches names like &ldquo;alex&rdquo;, &ldquo;Alex&rdquo;, or &ldquo;ALEXANDRA&rdquo;.</li>
+</ul>
+</li>
+</ul>
+<h3 id="in"><code>IN</code><a hidden class="anchor" aria-hidden="true" href="#in">#</a></h3>
+<ul>
+<li>Checks if a value is in a specific list.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> city <span style="color:#66d9ef">IN</span> (<span style="color:#e6db74">&#39;NY&#39;</span>, <span style="color:#e6db74">&#39;LA&#39;</span>)
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="between"><code>BETWEEN</code><a hidden class="anchor" aria-hidden="true" href="#between">#</a></h3>
+<ul>
+<li>Selects values within a range (inclusive).
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> age <span style="color:#66d9ef">BETWEEN</span> <span style="color:#ae81ff">20</span> <span style="color:#66d9ef">AND</span> <span style="color:#ae81ff">30</span>
+</span></span></code></pre></div><ul>
+<li>This is equivalent to
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> age <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">20</span> <span style="color:#66d9ef">AND</span> age <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">30</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h3 id="is-null"><code>IS NULL</code><a hidden class="anchor" aria-hidden="true" href="#is-null">#</a></h3>
+<ul>
+<li>Finds rows where a column has no value. We can use this to  exclude rows with missing data from our results.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> email <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NULL</span>
+</span></span></code></pre></div></li>
+<li><code>WHERE email = NULL</code> will not work because we can&rsquo;t perform arithmetic on null values.</li>
+</ul>
+<h3 id="and"><code>AND</code><a hidden class="anchor" aria-hidden="true" href="#and">#</a></h3>
+<ul>
+<li>Combines conditions where <strong>both must be true</strong>.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> age <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">18</span> <span style="color:#66d9ef">AND</span> city <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Boston&#39;</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="or"><code>OR</code><a hidden class="anchor" aria-hidden="true" href="#or">#</a></h3>
+<ul>
+<li>Combines conditions where <strong>at least one must be true</strong>.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> age <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span> <span style="color:#66d9ef">OR</span> city <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Boston&#39;</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="not"><code>NOT</code><a hidden class="anchor" aria-hidden="true" href="#not">#</a></h3>
+<ul>
+<li>
+<p><code>NOT</code> is a logical operator that reverses a condition—only rows where the condition is false will be included.</p>
+<h4 id="example-1-not-between">Example 1: <code>NOT BETWEEN</code><a hidden class="anchor" aria-hidden="true" href="#example-1-not-between">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> users
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> age <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">BETWEEN</span> <span style="color:#ae81ff">20</span> <span style="color:#66d9ef">AND</span> <span style="color:#ae81ff">30</span>
+</span></span></code></pre></div><p>This will return users whose age is <strong>not</strong> between 20 and 30.</p>
+<h4 id="example-2-not-like">Example 2: <code>NOT LIKE</code><a hidden class="anchor" aria-hidden="true" href="#example-2-not-like">#</a></h4>
+<p><code>NOT</code> is often used with <code>LIKE</code> to exclude matching patterns.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> users
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> name <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;%alex%&#39;</span>
+</span></span></code></pre></div><p>This excludes any name that contains &ldquo;alex&rdquo;.</p>
+<h4 id="example-3-is-not-null">Example 3: <code>IS NOT NULL</code><a hidden class="anchor" aria-hidden="true" href="#example-3-is-not-null">#</a></h4>
+<p>You can also use <code>NOT</code> to check for non-null values (must use <code>IS NOT NULL</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> users
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> email <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+</span></span></code></pre></div><p>This returns all users who have an email address.</p>
+</li>
+</ul>
+<h2 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h2>
+<p>These are my study notes based on the <a href="https://mode.com/sql-tutorial/introduction-to-sql">Mode SQL Tutorial</a>. I’ve organized them as a personal cheat sheet for quick reference.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/SQL/">SQL</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
+    <p>
+        Last updated on 2025-05-03 ||
+        &copy; 2025 
+        <a href="https://yourwebsite.com" style="text-decoration: underline;">Chengyu Zhang</a> ||
+        Powered by 
+        <a href="https://gohugo.io/" style="text-decoration: underline;">Hugo</a> & 
+        <a href="https://themes.gohugo.io/themes/hugo-papermod/" style="text-decoration: underline;">PaperMod</a>
+    </p>
+</footer>
+</body>
+
+</html>

@@ -4,10 +4,17 @@
     <title>Tags on Chengyu Zhang</title>
     <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Chengyu Zhang</description>
-    <generator>Hugo -- 0.140.2</generator>
+    <generator>Hugo -- 0.147.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL</title>
+      <link>http://localhost:1313/tags/SQL/</link>
+      <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/SQL/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Data Structures and Algorithms (DSA)</title>
       <link>http://localhost:1313/tags/Data-Structures-and-Algorithms-DSA/</link>

@@ -1,7 +1,8 @@
 baseURL: "https://gnehcuyz.github.io/"
 languageCode: en-us
 params:
-
+  defaultTheme: auto
+  disableThemeToggle: false
   profileMode:
     enabled: true
     title: "Chengyu Zhang" # optional default will be site title
