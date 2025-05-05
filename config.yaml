@@ -7,7 +7,7 @@ params:
     enabled: true
     title: "Chengyu Zhang" # optional default will be site title
     subtitle: "Machine Learning Engineer || Software Engineer || Researcher" 
-    imageUrl: "images/profile.jpg" # optional
+    imageUrl: "images/2.jpg" # optional
     imageWidth: 200 # custom size
     imageHeight: 200 # custom size
 
@@ -47,9 +47,9 @@ menu:
     - name: "Reading"
       url: "/reading/"
       weight: 3
-    - name: "About"
+    - name: "About me"
       url: "/about/"
-      weight: 4
+      weight: 1
     - name: "Tags"
       url: "/tags/"
       weight: 5
