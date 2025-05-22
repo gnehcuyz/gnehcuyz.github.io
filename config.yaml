@@ -7,7 +7,7 @@ params:
     enabled: true
     title: "Chengyu Zhang" # optional default will be site title
     subtitle: "Machine Learning Engineer || Software Engineer || Researcher" 
-    imageUrl: "images/4.jpg" # optional
+    imageUrl: "images/1.jpg" # optional
     imageWidth: 200 # custom size
     imageHeight: 200 # custom size
 
