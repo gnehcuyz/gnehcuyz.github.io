@@ -8,9 +8,9 @@ math: true
 ---
 
 ## Description
-- Conducted research on privacy vulnerabilities in machine learning models by implementing membership inference attacks to evaluate reliability and disparities in privacy.
-- This work has led to a paper, *Membership Inference Attacks as Privacy Tools: Reliability, Disparity, and Ensemble*, which has been submitted to ***ACM CCS 2025*** and is currently **under review**.
-- This project was ongoing for more than a year. I contributed to it from **January 2024** to **January 2025**, focusing on building data pipeline and conducting comprehensive evaluations.
+I conducted research on privacy vulnerabilities in machine learning models by implementing membership inference attacks (MIAs) to evaluate their reliability and disparities. Our study revealed that different MIA methods—and even repeated runs of the same method—can yield inconsistent results, raising concerns about their robustness. To address this, we proposed a systematic evaluation framework based on coverage and stability metrics, and introduced ensemble strategies to improve the accuracy and consistency of attack results. 
+
+This work culminated in the paper [*Membership Inference Attacks as Privacy Tools: Reliability, Disparity, and Ensemble*](/publications/MIA), which has been accepted by ***ACM CCS 2025***.
 
 ## Tech Stack
 - Python, NumPy, Matplotlib.
@@ -24,3 +24,4 @@ math: true
 
 ## Supervisor: 
 Professor [Lei Yu](https://leiyucs.github.io)
+

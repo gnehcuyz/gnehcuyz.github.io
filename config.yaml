@@ -44,15 +44,18 @@ menu:
     - name: "Blog"
       url: "/posts/"
       weight: 3
-    - name: "Reading"
-      url: "/reading/"
-      weight: 3
+    - name: "Publications"
+      url: "/publications/"
+      weight: 1
+    # - name: "Reading"
+    #   url: "/reading/"
+    #   weight: 3
     - name: "About me"
       url: "/about/"
       weight: 1
     - name: "Tags"
       url: "/tags/"
-      weight: 5
+      weight: 4
 
 
 title: Chengyu Zhang

@@ -3,7 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/Membership-Inference-Attacks/</loc>
+    <lastmod>2025-05-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/publications/MIA/</loc>
+    <lastmod>2025-05-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/publications/</loc>
+    <lastmod>2025-05-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-05-04T00:00:00+00:00</lastmod>
@@ -21,9 +33,6 @@
     <lastmod>2025-05-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/SQLJoin/</loc>
-    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-05-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/BasicSQL/</loc>

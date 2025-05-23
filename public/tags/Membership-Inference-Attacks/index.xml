@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Membership Inference Attacks on Chengyu Zhang</title>
+    <link>http://localhost:1313/tags/Membership-Inference-Attacks/</link>
+    <description>Recent content in Membership Inference Attacks on Chengyu Zhang</description>
+    <generator>Hugo -- 0.147.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/Membership-Inference-Attacks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Membership Inference Attacks as Privacy Tools - Reliability, Disparity and Ensemble</title>
+      <link>http://localhost:1313/publications/MIA/</link>
+      <pubDate>Thu, 22 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/MIA/</guid>
+      <description>A study on the reliability and disparities of membership inference attacks (MIAs), proposing a framework for evaluating and improving them using ensemble strategies.</description>
+    </item>
+  </channel>
+</rss>

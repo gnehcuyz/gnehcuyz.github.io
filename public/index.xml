@@ -6,8 +6,15 @@
     <description>Recent content on Chengyu Zhang</description>
     <generator>Hugo -- 0.147.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Membership Inference Attacks as Privacy Tools - Reliability, Disparity and Ensemble</title>
+      <link>http://localhost:1313/publications/MIA/</link>
+      <pubDate>Thu, 22 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/MIA/</guid>
+      <description>A study on the reliability and disparities of membership inference attacks (MIAs), proposing a framework for evaluating and improving them using ensemble strategies.</description>
+    </item>
     <item>
       <title>SQL Essentials - Aggregate Functions &amp; Grouping</title>
       <link>http://localhost:1313/posts/IntermediateSQL/</link>
