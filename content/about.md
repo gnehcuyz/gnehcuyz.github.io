@@ -3,18 +3,22 @@ ShowToc: false
 ---
 # Hello World!
 
-I am Chengyu Zhang, a recent graduate from Rensselaer Polytechnic Institute (RPI) with a degree in Computer Science and a minor in Economics. My focus has been on **Artificial Intelligence**, **Machine Learning**, and **Software Development**.
+I’m a Machine Learning Engineer at [HARP Research](https://www.harpresearch.ai), where I help build and improve AI systems for real-world use. Before this, I worked as a Research Assistant in the [Data Security and Privacy Lab](https://leiyucs.github.io) with [Professor Lei Yu](https://leiyucs.github.io), studying privacy risks in machine learning and large language models. I also conducted research in [Professor Oshani Seneviratne](https://oshani.info)’s BRAIN Lab, focusing on label inference attacks in federated learning.
 
-I’m currently working as a Machine Learning Engineer at [HARP Research](https://www.harpresearch.ai). Previously, I was a Research Assistant in the [Data Security and Privacy Lab](https://leiyucs.github.io), where I worked with [Professor Lei Yu](https://leiyucs.github.io) to study privacy vulnerabilities in machine learning models and large language models (LLMs). I also conducted research in [Professor Oshani Seneviratne](https://oshani.info)’s BRAIN Lab, focusing on label inference attacks in federated learning. Through these experiences, I’ve developed hands-on skills in Python, PyTorch, TensorFlow, and full-stack development, applied in both research and real-world projects.
+I graduated from Rensselaer Polytechnic Institute with a degree in Computer Science and a minor in Economics. During my time there, I developed a strong foundation in Python, PyTorch, TensorFlow, and full-stack development—skills I’ve applied in both research and production settings. 
+
+I care most about building things that work well in the real world—something clear, useful, and reliable.
+Whether it’s a research prototype or a production system, I try to focus on what actually makes an impact: code that’s easy to maintain, systems that can scale, and tools that solve real problems for real people.
 
 
 **Research Interests**:
 - Trustworthy AI
 - Adversarial Robustness
 - Privacy in Machine Learning and LLMs
-- Membership Inference Attacks
 - Secure AI System Design and Evaluation
-- Applied Data Science for Privacy and Security
-- AI for Social Good
 
-My goal is to use my skills in machine learning, privacy, and software engineering to solve real-world problems and build technology that helps people.
+**Current and Past Explorations**:
+- Membership Inference Attacks
+- Label Inference Attacks
+- Privacy and Security in AI BOM and AI SBOM
+- AI for Social Good

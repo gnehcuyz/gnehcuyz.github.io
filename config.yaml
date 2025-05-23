@@ -40,13 +40,13 @@ menu:
       weight: 1
     - name: "Projects"
       url: "/projects/"
-      weight: 2
+      weight: 3
     - name: "Blog"
       url: "/posts/"
-      weight: 3
+      weight: 4
     - name: "Publications"
       url: "/publications/"
-      weight: 1
+      weight: 2
     # - name: "Reading"
     #   url: "/reading/"
     #   weight: 3
