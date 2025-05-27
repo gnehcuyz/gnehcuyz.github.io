@@ -8,14 +8,15 @@ math: true
 ---
 
 ## Description
-- Explored label inference attacks in vertical federated learning (VFL) to evaluate the risks of revealing label information during training.
+We investigated privacy risks in vertical federated learning (VFL), with a primary focus on Direct Label Inference Attacks—a technique that exploits the mathematical properties of gradient signs to infer sensitive label information without model splitting. Demonstrated that this attack can achieve perfect accuracy across various datasets, underscoring critical vulnerabilities in current federated learning frameworks.
 
 ## Tech Stack
 - Python, PyTorch, NumPy, Scikit-learn.
 
 ## Contributions
-- Developed and optimized a label inference attack algorithm in PyTorch.
-- Preprocessed and analyzed data to ensure compatibility with federated learning frameworks.
+- Implemented a Direct Label Inference Attack by analyzing gradient signs and demonstrated its effectiveness in exposing label leakage.
+- Preprocessed and aligned multi-party datasets to simulate vertical federated learning scenarios.
+- Analyzed gradient-based leakage and tested privacy defense strategies such as gradient compression and DiscreteSGD.
 
 ## Supervisor: 
 Professor [Oshani Seneviratne](https://oshani.info)
