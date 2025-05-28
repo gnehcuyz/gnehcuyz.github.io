@@ -22,7 +22,7 @@ Campus Connect is a web application for Rensselaer Polytechnic Institute (RPI) s
 
 [![Code](https://img.shields.io/badge/Code-View%20on%20GitHub-blue)](https://github.com/Byte-Force/Campus-Connect)
 
-## Demo
+<!-- ## Demo
 Let’s start by creating an account. This is the Sign Up page. Here, we enter a username, password, re-type the password, and an email — make sure it ends with @rpi.edu to register.
 ![Sign Up](/images/campusConnect/signup.jpg)
 Once we fill this out, we hit the Sign Up button, and we’re good to go.
@@ -44,4 +44,4 @@ Let’s create our own post. I’ll click the plus button in the top right. We e
 
 That’s Campus Connect—a space where you can engage with peers, explore topics you care about, and never miss an event or study group again.
 
-Join the conversation, stay informed, and make your campus life more connected.
+Join the conversation, stay informed, and make your campus life more connected. -->
