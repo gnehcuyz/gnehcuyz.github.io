@@ -11,5 +11,5 @@ This paper revisits membership inference attacks (MIAs) not just as privacy thre
 
 ---
 This paper is accepted by **ACM CCS 2025**.
-[![Paper](https://img.shields.io/badge/Paper-Read%20Here-blue)](https://github.com/RPI-DSPlab/mia-disparity/blob/main/paper.pdf) 
+[![Paper](https://img.shields.io/badge/Paper-Read%20Here-blue)](https://arxiv.org/abs/2506.13972v1) 
 [![Code](https://img.shields.io/badge/Code-View%20on%20GitHub-blue)](https://github.com/RPI-DSPlab/mia-disparity)
