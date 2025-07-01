@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Tmux for remote development | Chengyu Zhang</title>
+<meta name="keywords" content="Tools">
+<meta name="description" content="Keep your scripts running even after disconnection by using tmux on remote servers.">
+<meta name="author" content="Chengyu Zhang">
+<link rel="canonical" href="https://gnehcuyz.github.io/posts/Tmux/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+
+<link rel="icon" href="https://gnehcuyz.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gnehcuyz.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gnehcuyz.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://gnehcuyz.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://gnehcuyz.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://gnehcuyz.github.io/posts/Tmux/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://gnehcuyz.github.io/posts/Tmux/">
+  <meta property="og:site_name" content="Chengyu Zhang">
+  <meta property="og:title" content="Tmux for remote development">
+  <meta property="og:description" content="Keep your scripts running even after disconnection by using tmux on remote servers.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-30T00:00:00+00:00">
+    <meta property="article:tag" content="Tools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tmux for remote development">
+<meta name="twitter:description" content="Keep your scripts running even after disconnection by using tmux on remote servers.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://gnehcuyz.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Tmux for remote development",
+      "item": "https://gnehcuyz.github.io/posts/Tmux/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Tmux for remote development",
+  "name": "Tmux for remote development",
+  "description": "Keep your scripts running even after disconnection by using tmux on remote servers.",
+  "keywords": [
+    "Tools"
+  ],
+  "articleBody": "What is tmux? tmux (Terminal Multiplexer) is a powerful terminal tool that lets you:\nRun multiple shell sessions in a single terminal window. Keep processes running even after SSH disconnection. Reattach to sessions from anywhere. If you’re running long scripts or model training on a server, tmux protects your work by keeping it alive when your network fails.\nBasic Workflow (Step-by-Step) Start a tmux session tmux new -s session_name Run the script like usual python run.py # or bash attack_local.sh Detach safely (but keep it running) Press:\nCtrl + b, then d Reattach later tmux attach -t session_name List all sessions tmux ls Kill a session when done tmux kill-session -t session_name What Happens if I Don’t Use tmux? If you start a job in a normal SSH session and the session drops:\nYour training job is killed No way to resume it You may lose logs and progress So for long or important tasks: Always use tmux\nCommon tmux Shortcuts Action Shortcut Detach from tmux Ctrl + b, then d Create new window Ctrl + b, then c Next/Previous window Ctrl + b, then n / p Split pane (horizontal) Ctrl + b, then \" Split pane (vertical) Ctrl + b, then % Move between panes Ctrl + b, then arrow key Kill pane/window Ctrl + b, then x Rename window Ctrl + b, then , Resources tmux Cheat Sheet ",
+  "wordCount" : "231",
+  "inLanguage": "en",
+  "datePublished": "2025-06-30T00:00:00Z",
+  "dateModified": "2025-06-30T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Chengyu Zhang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gnehcuyz.github.io/posts/Tmux/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chengyu Zhang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gnehcuyz.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gnehcuyz.github.io/" accesskey="h" title="Chengyu Zhang (Alt + H)">Chengyu Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gnehcuyz.github.io/about/" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/research/" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/experience" title="Experience">
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gnehcuyz.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gnehcuyz.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gnehcuyz.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Tmux for remote development
+    </h1>
+    <div class="post-meta"><span title='2025-06-30 00:00:00 +0000 UTC'>June 30, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is" aria-label="What is tmux?">What is tmux?</a></li>
+                <li>
+                    <a href="#basic-workflow-step-by-step" aria-label="Basic Workflow (Step-by-Step)">Basic Workflow (Step-by-Step)</a><ul>
+                        
+                <li>
+                    <a href="#start-a-tmux-session" aria-label="Start a tmux session">Start a tmux session</a></li>
+                <li>
+                    <a href="#run-the-script-like-usual" aria-label="Run the script like usual">Run the script like usual</a></li>
+                <li>
+                    <a href="#detach-safely-but-keep-it-running" aria-label="Detach safely (but keep it running)">Detach safely (but keep it running)</a></li>
+                <li>
+                    <a href="#reattach-later" aria-label="Reattach later">Reattach later</a></li>
+                <li>
+                    <a href="#list-all-sessions" aria-label="List all sessions">List all sessions</a></li>
+                <li>
+                    <a href="#kill-a-session-when-done" aria-label="Kill a session when done">Kill a session when done</a></li></ul>
+                </li>
+                <li>
+                    <a href="#what-happens-if-i-dont-use" aria-label="What Happens if I Don’t Use tmux?">What Happens if I Don’t Use tmux?</a></li>
+                <li>
+                    <a href="#common-tmux-shortcuts" aria-label="Common tmux Shortcuts">Common tmux Shortcuts</a></li>
+                <li>
+                    <a href="#resources" aria-label="Resources">Resources</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="what-is"><strong>What is <code>tmux</code>?</strong><a hidden class="anchor" aria-hidden="true" href="#what-is">#</a></h1>
+<p><code>tmux</code> (Terminal Multiplexer) is a powerful terminal tool that lets you:</p>
+<ul>
+<li>Run multiple shell sessions in a single terminal window.</li>
+<li>Keep processes running even after SSH disconnection.</li>
+<li>Reattach to sessions from anywhere.</li>
+</ul>
+<p>If you’re running <strong>long scripts or model training on a server</strong>, <code>tmux</code> protects your work by keeping it alive when your network fails.</p>
+<hr>
+<h1 id="basic-workflow-step-by-step"><strong>Basic Workflow (Step-by-Step)</strong><a hidden class="anchor" aria-hidden="true" href="#basic-workflow-step-by-step">#</a></h1>
+<h2 id="start-a-tmux-session">Start a tmux session<a hidden class="anchor" aria-hidden="true" href="#start-a-tmux-session">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tmux new -s session_name
+</span></span></code></pre></div><h2 id="run-the-script-like-usual">Run the script like usual<a hidden class="anchor" aria-hidden="true" href="#run-the-script-like-usual">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python run.py
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span>bash attack_local.sh
+</span></span></code></pre></div><h2 id="detach-safely-but-keep-it-running">Detach safely (but keep it running)<a hidden class="anchor" aria-hidden="true" href="#detach-safely-but-keep-it-running">#</a></h2>
+<p>Press:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ctrl + b, then d
+</span></span></code></pre></div><h2 id="reattach-later">Reattach later<a hidden class="anchor" aria-hidden="true" href="#reattach-later">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tmux attach -t session_name
+</span></span></code></pre></div><h2 id="list-all-sessions">List all sessions<a hidden class="anchor" aria-hidden="true" href="#list-all-sessions">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tmux ls
+</span></span></code></pre></div><h2 id="kill-a-session-when-done">Kill a session when done<a hidden class="anchor" aria-hidden="true" href="#kill-a-session-when-done">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tmux kill-session -t session_name
+</span></span></code></pre></div><hr>
+<h1 id="what-happens-if-i-dont-use"><strong>What Happens if I Don’t Use <code>tmux</code>?</strong><a hidden class="anchor" aria-hidden="true" href="#what-happens-if-i-dont-use">#</a></h1>
+<p>If you start a job in a normal SSH session and the session drops:</p>
+<ul>
+<li>Your training job is killed</li>
+<li>No way to resume it</li>
+<li>You may lose logs and progress</li>
+</ul>
+<p>So for long or important tasks: <strong>Always use tmux</strong></p>
+<hr>
+<h1 id="common-tmux-shortcuts"><strong>Common tmux Shortcuts</strong><a hidden class="anchor" aria-hidden="true" href="#common-tmux-shortcuts">#</a></h1>
+<table>
+  <thead>
+      <tr>
+          <th>Action</th>
+          <th>Shortcut</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Detach from tmux</td>
+          <td>Ctrl + b, then d</td>
+      </tr>
+      <tr>
+          <td>Create new window</td>
+          <td>Ctrl + b, then c</td>
+      </tr>
+      <tr>
+          <td>Next/Previous window</td>
+          <td>Ctrl + b, then n / p</td>
+      </tr>
+      <tr>
+          <td>Split pane (horizontal)</td>
+          <td>Ctrl + b, then &quot;</td>
+      </tr>
+      <tr>
+          <td>Split pane (vertical)</td>
+          <td>Ctrl + b, then %</td>
+      </tr>
+      <tr>
+          <td>Move between panes</td>
+          <td>Ctrl + b, then arrow key</td>
+      </tr>
+      <tr>
+          <td>Kill pane/window</td>
+          <td>Ctrl + b, then x</td>
+      </tr>
+      <tr>
+          <td>Rename window</td>
+          <td>Ctrl + b, then ,</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h1 id="resources">Resources<a hidden class="anchor" aria-hidden="true" href="#resources">#</a></h1>
+<ul>
+<li><a href="https://tmuxcheatsheet.com">tmux Cheat Sheet</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gnehcuyz.github.io/tags/Tools/">Tools</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
+    <p>
+        Last updated on 2025-07-01 ||
+        &copy; 2025 
+        <a href="https://yourwebsite.com" style="text-decoration: underline;">Chengyu Zhang</a> ||
+        Powered by 
+        <a href="https://gohugo.io/" style="text-decoration: underline;">Hugo</a> & 
+        <a href="https://themes.gohugo.io/themes/hugo-papermod/" style="text-decoration: underline;">PaperMod</a>
+    </p>
+</footer>
+</body>
+
+</html>
