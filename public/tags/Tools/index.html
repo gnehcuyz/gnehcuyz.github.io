@@ -5,29 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Using LLMs to Uncover Memorization in Instruction-Tuned Models | Chengyu Zhang</title>
-<meta name="keywords" content="Large Language Model, Memorization">
-<meta name="description" content="A study introducing a black-box prompt optimization approach to uncover higher levels of memorization in instruction-tuned LLMs.">
+<title>Tools | Chengyu Zhang</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
 <meta name="author" content="Chengyu Zhang">
-<link rel="canonical" href="http://localhost:1313/reading/uncovering_memorization_in_instruction_tuned_models/">
+<link rel="canonical" href="http://localhost:1313/tags/Tools/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    renderMathInElement(document.body, {
-      delimiters: [
-        {left: '\\[', right: '\\]', display: true},   
-        {left: '$$', right: '$$', display: true},     
-        {left: '\\(', right: '\\)', display: false},  
-      ],
-      throwOnError : false
-    });
-  });
-</script>
-  
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -35,7 +19,8 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/reading/uncovering_memorization_in_instruction_tuned_models/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/Tools/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/Tools/">
 <noscript>
     <style>
         #theme-toggle,
@@ -75,7 +60,7 @@
 </noscript>
 </head>
 
-<body class="" id="top">
+<body class="list" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -153,58 +138,23 @@
         </ul>
     </nav>
 </header>
-<main class="main">
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/tags/">Tags</a></div>
+  <h1>
+    Tools
+  </h1>
+</header>
 
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/reading/">Reading</a></div>
-    <h1 class="post-title entry-hint-parent">
-      Using LLMs to Uncover Memorization in Instruction-Tuned Models
-    </h1>
-    <div class="post-meta"><span title='2024-10-11 00:00:00 +0000 UTC'>October 11, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang
-
-</div>
-  </header> 
-  <div class="post-content"><h3 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h3>
-<p>This paper investigates memorization in large language models (LLMs), focusing on how instruction-tuned models can reveal more pre-training data than their base counterparts. It introduces a <strong>black-box prompt optimization method</strong>, leveraging an attacker model to generate effective prompts that induce training data leakage from instruction-tuned models like Alpaca and Vicuna.</p>
-<h3 id="contributions">Contributions<a hidden class="anchor" aria-hidden="true" href="#contributions">#</a></h3>
-<p>The paper highlights three major contributions:</p>
-<ol>
-<li><strong>Prompt Optimization Approach:</strong> A method to optimize prompts iteratively, increasing overlap between generated outputs and training data while minimizing prompt similarity to the original training context.</li>
-<li><strong>Higher Memorization Discovery:</strong> Demonstrates that instruction-tuned models can expose up to 23.7% more training data compared to baseline methods.</li>
-<li><strong>Automated Attack Exploration:</strong> Introduces automated strategies for auditing memorization in LLMs, identifying privacy risks through efficient and reproducible techniques.</li>
-</ol>
-<h3 id="methodology">Methodology<a hidden class="anchor" aria-hidden="true" href="#methodology">#</a></h3>
-<h4 id="black-box-prompt-optimization">Black-box Prompt Optimization<a hidden class="anchor" aria-hidden="true" href="#black-box-prompt-optimization">#</a></h4>
-<p>This approach uses an iterative rejection-sampling process to optimize prompts. The attacker model generates candidates that maximize output overlap with training data while penalizing prompt similarity to the ground truth.</p>
-<h4 id="evaluation-metrics">Evaluation Metrics<a hidden class="anchor" aria-hidden="true" href="#evaluation-metrics">#</a></h4>
-<p>The study employs <strong>ROUGE-L</strong> to measure memorization (overlap between generated and true data) and <strong>Longest Common Subsequence Prompt-Overlap (LCSP)</strong> to quantify prompt similarity with training data.</p>
-<h3 id="experimental-findings">Experimental Findings<a hidden class="anchor" aria-hidden="true" href="#experimental-findings">#</a></h3>
-<ul>
-<li><strong>Datasets and Models:</strong> Evaluated on models like Alpaca, Tulu, and Vicuna across datasets such as GitHub, ArXiv, and C4.</li>
-<li><strong>Results:</strong> The proposed method achieves:
-<ul>
-<li>12.4% higher memorization detection in instruction-tuned models than base models.</li>
-<li>12.5% more training data extraction compared to white-box methods like Greedy Coordinate Gradient (GCG).</li>
-</ul>
-</li>
-<li><strong>Insights:</strong> Larger sequence lengths and open-source attacker models (e.g., Zephyr) enhance attack efficacy.</li>
-</ul>
-<h3 id="implications">Implications<a hidden class="anchor" aria-hidden="true" href="#implications">#</a></h3>
-<p>The findings raise concerns about instruction-tuned models&rsquo; vulnerability to data leakage. The study calls for robust privacy safeguards in LLM training and instruction-tuning processes.</p>
-<hr>
-<h3 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h3>
-<p>Kassem, A. M., Mahmoud, O., Mireshghallah, N., et al. (2024). Using LLMs to Uncover Memorization in Instruction-Tuned Models. <a href="https://arxiv.org/abs/2403.04801">Read the full paper</a>.</p>
-
-
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Tmux for remote development
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Keep your scripts running even after disconnection by using tmux on remote servers.</p>
   </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/Large-Language-Model/">Large Language Model</a></li>
-      <li><a href="http://localhost:1313/tags/Memorization/">Memorization</a></li>
-    </ul>
-  </footer>
+  <footer class="entry-footer"><span title='2025-06-30 00:00:00 +0000 UTC'>June 30, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Chengyu Zhang</footer>
+  <a class="entry-link" aria-label="post link to Tmux for remote development" href="http://localhost:1313/posts/Tmux/"></a>
 </article>
     </main>
     <footer style="text-align: center; padding: 1rem 0; font-size: 0.9rem;">
