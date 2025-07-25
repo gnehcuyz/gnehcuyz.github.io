@@ -115,17 +115,17 @@
     </item>
     <item>
       <title>AdApt - Personalized Advertising Tool</title>
-      <link>https://gnehcuyz.github.io/projects/AdApt/</link>
+      <link>https://gnehcuyz.github.io/projects/ada-pt/</link>
       <pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/projects/AdApt/</guid>
+      <guid>https://gnehcuyz.github.io/projects/ada-pt/</guid>
       <description>Building a personalized advertising tool leveraging NLP, multimodal data, and automated pipelines for hyper-personalized messaging.</description>
     </item>
     <item>
-      <title>Machine Learning Engineer</title>
+      <title>Software Engineer, ML Infra</title>
       <link>https://gnehcuyz.github.io/experience/HarpResearch/</link>
       <pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://gnehcuyz.github.io/experience/HarpResearch/</guid>
-      <description>Optimizing ML and LLM workflows, including text style transfer, while enhancing data handling for scalable advertising.</description>
+      <description>Building personalized advertising systems by combining text style transfer with scalable ML infra.</description>
     </item>
     <item>
       <title>Style Transfer in Text - Exploration and Evaluation</title>
@@ -164,9 +164,9 @@
     </item>
     <item>
       <title>Membership Inference Attacks for Machine Learning Models</title>
-      <link>https://gnehcuyz.github.io/research/MIA_ML/</link>
+      <link>https://gnehcuyz.github.io/research/mia-ml/</link>
       <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/research/MIA_ML/</guid>
+      <guid>https://gnehcuyz.github.io/research/mia-ml/</guid>
       <description>Analyzed ML vulnerabilities with pipelines, metrics, and visualizations.</description>
     </item>
     <item>
@@ -185,16 +185,16 @@
     </item>
     <item>
       <title>Membership Inference Attacks for Large Language Models</title>
-      <link>https://gnehcuyz.github.io/research/MIA_LLM/</link>
+      <link>https://gnehcuyz.github.io/research/mia-llm/</link>
       <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/research/MIA_LLM/</guid>
+      <guid>https://gnehcuyz.github.io/research/mia-llm/</guid>
       <description>Advanced the understanding of privacy risks in LLMs by extending prior work with new attacks and experiments.</description>
     </item>
     <item>
       <title>Label Inference Attacks in Federated Learning</title>
-      <link>https://gnehcuyz.github.io/research/LIA_VFL/</link>
+      <link>https://gnehcuyz.github.io/research/lia-fl/</link>
       <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://gnehcuyz.github.io/research/LIA_VFL/</guid>
+      <guid>https://gnehcuyz.github.io/research/lia-fl/</guid>
       <description>Optimized label attacks and assessed risks in federated learning.</description>
     </item>
     <item>

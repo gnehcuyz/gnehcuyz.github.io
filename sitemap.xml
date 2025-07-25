@@ -95,19 +95,19 @@
     <loc>https://gnehcuyz.github.io/posts/DockerIntroBlog/</loc>
     <lastmod>2025-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/projects/AdApt/</loc>
+    <loc>https://gnehcuyz.github.io/projects/ada-pt/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/experience/</loc>
-    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gnehcuyz.github.io/experience/HarpResearch/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/tags/NLG/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/tags/NLP/</loc>
+    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gnehcuyz.github.io/experience/HarpResearch/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/reading/style_transfer_text_exploration_evaluation/</loc>
@@ -128,7 +128,7 @@
     <loc>https://gnehcuyz.github.io/posts/TwoPointers/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/research/MIA_ML/</loc>
+    <loc>https://gnehcuyz.github.io/research/mia-ml/</loc>
     <lastmod>2025-01-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/research/</loc>
@@ -140,10 +140,10 @@
     <loc>https://gnehcuyz.github.io/posts/BinarySearch/</loc>
     <lastmod>2025-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/research/MIA_LLM/</loc>
+    <loc>https://gnehcuyz.github.io/research/mia-llm/</loc>
     <lastmod>2025-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gnehcuyz.github.io/research/LIA_VFL/</loc>
+    <loc>https://gnehcuyz.github.io/research/lia-fl/</loc>
     <lastmod>2024-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gnehcuyz.github.io/experience/Resident-Assistant/</loc>
