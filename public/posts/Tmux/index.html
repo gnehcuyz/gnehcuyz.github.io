@@ -203,8 +203,11 @@
 </span></span><span style="display:flex;"><span>bash attack_local.sh
 </span></span></code></pre></div><h2 id="detach-safely-but-keep-it-running">Detach safely (but keep it running)<a hidden class="anchor" aria-hidden="true" href="#detach-safely-but-keep-it-running">#</a></h2>
 <p>Press:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ctrl + b, then d
-</span></span></code></pre></div><h2 id="reattach-later">Reattach later<a hidden class="anchor" aria-hidden="true" href="#reattach-later">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ctrl + b
+</span></span><span style="display:flex;"><span>(then release both keys)
+</span></span><span style="display:flex;"><span>then: d
+</span></span></code></pre></div><p>You should see a message like: <code>[detached (from session session_name)]</code></p>
+<h2 id="reattach-later">Reattach later<a hidden class="anchor" aria-hidden="true" href="#reattach-later">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tmux attach -t session_name
 </span></span></code></pre></div><h2 id="list-all-sessions">List all sessions<a hidden class="anchor" aria-hidden="true" href="#list-all-sessions">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tmux ls

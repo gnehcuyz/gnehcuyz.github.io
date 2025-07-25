@@ -33,8 +33,11 @@ bash attack_local.sh
 ## Detach safely (but keep it running)
 Press:
 ```text
-Ctrl + b, then d
+Ctrl + b
+(then release both keys)
+then: d
 ```
+You should see a message like: `[detached (from session session_name)]`
 
 ## Reattach later
 ```bash
