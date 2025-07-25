@@ -5,6 +5,8 @@ date: 2024-12-22
 draft: false
 summary: Optimized label attacks and assessed risks in federated learning.
 math: true
+slug: "lia-fl"
+url: "/research/lia-fl/"
 ---
 
 ## Description

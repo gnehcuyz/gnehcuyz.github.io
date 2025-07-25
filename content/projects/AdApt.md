@@ -5,6 +5,8 @@ date: 2025-01-22
 draft: false
 summary: Building a personalized advertising tool leveraging NLP, multimodal data, and automated pipelines for hyper-personalized messaging.
 math: true
+slug: "ada-pt"
+url: "/projects/ada-pt/"
 ---
 
 ## Description
@@ -12,10 +14,11 @@ The Social Discourse Analysis (SDA) tool generates hyper-personalized brand mess
 
 
 ## Tech Stack
-- Python, NLP, Machine Learning
+- Python, Docker, Vue, Streamlit
 
-## Contributions
+
+
+<!-- ## Contributions
 - Developing **NLP models** to extract linguistic patterns and user-specific profiles, enabling hyper-personalized messaging.
 - Integrating **multimodal data sources**, such as text and behavioral signals, to enhance semantic and syntactic adaptation.
-- Building an **automated pipeline** for message generation and delivery, using A/B testing to optimize engagement.
-- Ensuring compliance with **data privacy** regulations (GDPR, CCPA) by implementing ethical data handling practices.
+- Building an **automated pipeline** for message generation and delivery, using A/B testing to optimize engagement. -->

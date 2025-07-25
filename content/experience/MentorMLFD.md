@@ -8,7 +8,7 @@ math: true
 ---
 
 ## Role
-I worked as a Course Mentor for **Machine Learning from Data** at Rensselaer Polytechnic Institute in Troy, NY, from Fall 2024 semester
+I worked as a Course Mentor for **Machine Learning from Data** at Rensselaer Polytechnic Institute in Troy, NY, during the Fall 2024 semester.
 
 ## Responsibilities
 - Provided mentorship to students by clarifying challenging ML concepts and assisting with coursework.  

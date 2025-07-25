@@ -5,6 +5,8 @@ date: 2025-01-01
 draft: false
 summary: Advanced the understanding of privacy risks in LLMs by extending prior work with new attacks and experiments.
 math: true
+slug: "mia-llm"
+url: "/research/mia-llm/"
 ---
 
 ## Description

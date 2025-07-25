@@ -101,13 +101,13 @@
     <loc>http://localhost:1313/experience/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/experience/HarpResearch/</loc>
-    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/NLG/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/NLP/</loc>
+    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/experience/HarpResearch/</loc>
     <lastmod>2025-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/reading/style_transfer_text_exploration_evaluation/</loc>

@@ -1,16 +1,21 @@
 ---
 ShowToc: false
-title: Machine Learning Engineer
+title: Software Engineer, ML Infra
 date: 2025-01-22
 draft: false
-summary: Optimizing ML and LLM workflows, including text style transfer, while enhancing data handling for scalable advertising.
+summary: Building personalized advertising systems by combining text style transfer with scalable ML infra.
 math: true
 ---
 
 ## Role
-I am currently working as a Machine Learning Engineer at **[HARP Research, Inc](https://www.harpresearch.ai).**, based in Troy, NY, since January 2025.
+I am currently working as a Software Engineer, ML Infra at **[HARP Research, Inc](https://www.harpresearch.ai).**, since January 2025.
+
+## Project
+- [**AdApt**](/projects/ada-pt/): A personalized advertising tool leveraging NLP, multimodal data, and automated pipelines for hyper-personalized messaging.
 
 ## Responsibilities
-- Exploring and implementing **text style transfer techniques** for enhancing personalization and user engagement.
-- Developing advanced **NLP** and **multimodal algorithms** to analyze user behavior and enhance content personalization.
-- Building scalable systems integrating machine learning (ML) and large language models (LLMs) for **advertising optimization**.
+- Lead developer of a style transfer system for personalized advertising, making messages feel more natural and improving engagement through semantic scoring and few-shot fine-tuning.
+- Implemented **text style transfer techniques** for enhancing personalization and user engagement.
+- Delivered an internal Streamlit tool to support business demos and unblock frontend/backend alignment, enabling faster stakeholder feedback.
+- Refactored a shared text/image scraping framework, reducing response latency by $83\%$ and Docker build time by $70\%$ via modularization and targeted caching.
+- Co-developing a Vue web app for the demo launch and using Streamlit for model validation and edge case testing.

@@ -8,7 +8,7 @@ math: true
 ---
 
 ## Role
-I worked as an AI Camp Mentor for the **AI for Good Camp** remotely in **August 2024**.
+I volunteered as an AI Camp Mentor for the [**AI for Good Camp**](https://aicampcenter.org) remotely.
 
 ## Responsibilities
 - Mentored teens in understanding AI concepts, machine learning, and ethical considerations in technology.  
